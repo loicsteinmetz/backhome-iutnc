@@ -1,29 +1,15 @@
-# README #
+# titre #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+DUT Informatique (AS)
+IUT Nancy Charlemagne
+Année 2019-2020
 
-### What is this repository for? ###
+## Conception ##
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+### Cas d'utilisation ###
 
-### How do I get set up? ###
+![use_case_uml](uml/use_case_uml.png)
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+### Classes ###
 
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+![class_diagram](uml/class_diag.png)
