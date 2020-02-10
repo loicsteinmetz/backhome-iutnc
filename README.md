@@ -1,7 +1,7 @@
 # titre #
 
-> DUT Informatique (AS)
-> IUT Nancy Charlemagne
+> DUT Informatique (AS) - 
+> IUT Nancy Charlemagne - 
 > Année 2019-2020
 
 ## Conception ##
