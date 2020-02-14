@@ -25,8 +25,10 @@ Deux temps dans le gameplay :
 - A bord du vaisseau : Sélection des planètes à visiter ; parcours de l'inventaire.
 - Sur les planètes visitées : Dialogues, combats, énigmes.
 
-![diagramme_uml](uml/use_case_diagram.png)
+![use_case_uml](uml/use_case_diagram.png)
 
 ## Conception technique ##
 
 ### Diagramme de classe ###
+
+![class_diagram_uml](uml/class_diagram.png)
