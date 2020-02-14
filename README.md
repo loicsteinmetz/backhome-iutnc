@@ -16,8 +16,17 @@ Le personnage va donc devoir entamer un voyage pour retrouver Calypso, à traver
 
 ![cartographie_planetes](doc/cartographie_planetes.png)
 
-## Conception / Gameplay ##
+## Gameplay ##
 
 ### Fonctionnalités, phases de jeu ###
 
-![use_case_diagram](uml/class_diag.png)
+Deux temps dans le gameplay :
+
+- A bord du vaisseau : Sélection des planètes à visiter ; parcours de l'inventaire.
+- Sur les planètes visitées : Dialogues, combats, énigmes.
+
+![diagramme_uml](uml/use_case_diagram.png)
+
+## Conception technique ##
+
+### Diagramme de classe ###
