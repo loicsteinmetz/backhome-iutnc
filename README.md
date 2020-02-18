@@ -14,7 +14,7 @@ Le personnage est né sur cette planète, suite à l'exode de ses parents, origi
 
 Le personnage va donc devoir entamer un voyage pour retrouver Calypso, à travers de nécessaires détours par des planètes plus ou moins hospitalières...
 
-![cartographie_planetes](doc/cartographie_planetes.png)
+![cartographie_planetes](uml/cartographie_planetes.png)
 
 ## Gameplay ##
 
