@@ -1,3 +1,5 @@
+package models;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,7 +10,7 @@ public class BackHome extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("BackHome.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../views/BackHome.fxml"));
         primaryStage.setTitle("Back Home");
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
