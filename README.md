@@ -14,7 +14,7 @@ Le personnage est né sur cette planète, suite à l'exode de ses parents, origi
 
 Le personnage va donc devoir entamer un voyage pour retrouver Calypso, à travers de nécessaires détours par des planètes plus ou moins hospitalières...
 
-![cartographie_planetes](uml/cartographie_planetes.png)
+![cartographie_planetes](readme_img/cartographie_planetes.png)
 
 ## Gameplay ##
 
@@ -25,10 +25,10 @@ Deux temps dans le gameplay :
 - A bord du vaisseau : Sélection des planètes à visiter ; parcours de l'inventaire.
 - Sur les planètes visitées : Dialogues, combats, énigmes.
 
-![use_case_uml](uml/use_case_diagram.png)
+![use_case_uml](readme_img/use_case_diagram.png)
 
 ## Conception technique ##
 
 ### Diagramme de classe ###
 
-![class_diagram_uml](uml/class_diagram.png)
+![class_diagram_uml](readme_img/class_diagram.png)
