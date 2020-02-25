@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="BackHome">
+    <output-path>$PROJECT_DIR$/out/artifacts/BackHome</output-path>
+    <root id="archive" name="BackHome.jar">
+      <element id="module-output" name="projet_jeu_iutnc" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>
