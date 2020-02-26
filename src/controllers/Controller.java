@@ -7,12 +7,18 @@ import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
+/**
+ * Controleur principal
+ */
 public class Controller {
 
     @FXML
     private ImageView starsBg1,starsBg2;
 
-    public void animateBg() {
+    /**
+     * Anime l'image d'arrière-plan de l'écran d'accueil
+     */
+    private void animerBg() {
         TranslateTransition tt1 = new TranslateTransition(Duration.seconds(1.5), starsBg1);
         tt1.setFromY(-600);
         tt1.setToY(0);
@@ -27,7 +33,10 @@ public class Controller {
         tt2.play();
     }
 
+    /**
+     * Initialisation de l'écran d'accueil
+     */
     public void initialize(){
-        animateBg();
+        animerBg();
     }
 }
