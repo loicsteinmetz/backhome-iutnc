@@ -4,12 +4,12 @@ public class Planete {
 
     private String nom;
     private int niveau;
-    private Planete[] planeteVoisines;
+    private Planete[] planetesVoisines;
 
     public Planete(String nom, int niveau, Planete[] planeteVoisines) {
         this.nom = nom;
         this.niveau = niveau;
-        this.planeteVoisines = planeteVoisines;
+        this.planetesVoisines = planeteVoisines;
     }
 
     // getters //
@@ -22,8 +22,8 @@ public class Planete {
         return niveau;
     }
 
-    public Planete[] getPlaneteVoisines() {
-        return planeteVoisines;
+    public Planete[] getPlanetesVoisines() {
+        return planetesVoisines;
     }
 
 }

@@ -1,0 +1,37 @@
+{"planetes": [
+  {
+    "nom":"Utopia",
+    "niveau":"0",
+    "planetesVoisines": ["ienos","zephyr","hermes"]
+  },
+  {
+    "nom":"Ienos",
+    "niveau":"1",
+    "planetesVoisines": ["zephyr","hermes","lumini","tremor"]
+  },
+  {
+    "nom":"Zéphyr",
+    "niveau":"1",
+    "planetesVoisines": ["ienos","hermes","lumini","tremor"]
+  },
+  {
+    "nom":"Hermès",
+    "niveau":"1",
+    "planetesVoisines": ["ienos","zephyr","lumini","tremor"]
+  },
+  {
+    "nom":"Lumini",
+    "niveau":"2",
+    "planetesVoisines": ["calypso"]
+  },
+  {
+    "nom":"Tremor",
+    "niveau":"2",
+    "planetesVoisines": ["calypso"]
+  },
+  {
+    "nom":"Calypso",
+    "niveau":"3",
+    "planetesVoisines": []
+  }
+]}
