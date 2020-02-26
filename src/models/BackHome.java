@@ -7,6 +7,8 @@ import javafx.scene.Scene;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
+import static models.Heros.getHeros;
+
 public class BackHome extends Application {
 
     @Override
@@ -23,6 +25,8 @@ public class BackHome extends Application {
 
 
     public static void main(String[] args) {
+        getHeros().setNom("Gargamel");
+        System.out.println(getHeros().getNom());
         launch(args);
     }
 }
