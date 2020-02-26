@@ -39,3 +39,16 @@ AnchorPane{
     -fx-font-weight:400;
     -fx-font-family: "ZCOOL QingKe HuangYou";
 }
+
+#ecran{
+    -fx-font-size:25;
+    -fx-text-fill:white;
+    -fx-font-family: "Roboto Slab";
+    -fx-text-alignment: center;
+    -fx-line-spacing: 0.8em;
+    -fx-vertical-alignment:center;
+    -fx-alignment:center;
+    -fx-min-width:800;
+    -fx-min-height:600;
+    -fx-opacity:0;
+}

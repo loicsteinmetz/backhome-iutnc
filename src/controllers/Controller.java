@@ -1,19 +1,17 @@
 package controllers;
 
-import javafx.animation.FadeTransition;
-import javafx.animation.Interpolator;
-import javafx.animation.Timeline;
-import javafx.animation.TranslateTransition;
-import javafx.beans.property.BooleanProperty;
+import javafx.animation.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 import utils.JavaFxAssistant;
+import utils.Parser;
+
+import static models.Carte.getCarte;
 
 /**
  * Controleur principal
@@ -21,17 +19,25 @@ import utils.JavaFxAssistant;
 public class Controller {
 
     @FXML
+    private AnchorPane pane;
+    @FXML
     private Label texte;
     @FXML
     private Button startBtn;
     @FXML
     private ImageView vaisseau, starsBg1,starsBg2;
 
+    /**
+     * Initialisation de l'animation de l'écran d'accueil
+     */
+    public void initialize(){
+        animeBg();
+    }
 
     /**
      * Anime l'image d'arrière-plan de l'écran d'accueil
      */
-    private void animerBg() {
+    private void animeBg() {
         TranslateTransition tt1 = new TranslateTransition(Duration.seconds(1.5), starsBg1);
         tt1.setFromY(-600);
         tt1.setToY(0);
@@ -46,18 +52,18 @@ public class Controller {
         tt2.play();
     }
 
-    /**
-     * Initialisation de l'animation de l'écran d'accueil
-     */
-    public void initialize(){
-        animerBg();
-    }
-
     @FXML
-    private void lancerJeu(ActionEvent event) {
-        String[] scenario =
+    private void lanceJeu(ActionEvent event) throws Exception {
         startBtn.setVisible(false);
         texte.setVisible(false);
-        JavaFxAssistant.fadeOut(vaisseau, 1.5);
+        JavaFxAssistant.fadeOut(vaisseau, 1.5, 0);
+        String[] scenario = Parser.parseStrings("src/assets/config/scenario.json", "nouvellePartie");
+        Transition t;
+        if ((t = JavaFxAssistant.transitionTexteDeroulant(scenario, pane)) == null){
+            throw new RuntimeException();
+        }
+        t.setOnFinished((e) -> {
+            JavaFxAssistant.switchTo(getCarte(), event, 2);
+        });
     }
 }

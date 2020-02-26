@@ -5,7 +5,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.control.Label?>
-<AnchorPane fx:controller="controllers.Controller"
+<AnchorPane fx:id="pane"
+            fx:controller="controllers.Controller"
             xmlns:fx="http://javafx.com/fxml">
 
     <ImageView fx:id="vaisseau"
@@ -37,7 +38,7 @@
 
     <Button fx:id="startBtn" text="JOUER"
             layoutX="280" layoutY="450"
-            onAction="#lancerJeu">
+            onAction="#lanceJeu">
     </Button>
 
 </AnchorPane>

@@ -10,19 +10,15 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="file://$MODULE_DIR$/lib" />
+          <root url="file://$MODULE_DIR$/src/lib/javafx" />
         </CLASSES>
         <JAVADOC />
-        <NATIVE>
-          <root url="file://$MODULE_DIR$/lib" />
-        </NATIVE>
         <SOURCES>
-          <root url="file://$MODULE_DIR$/lib" />
+          <root url="file://$MODULE_DIR$/src/lib/javafx" />
         </SOURCES>
-        <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" />
-        <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" type="SOURCES" />
+        <jarDirectory url="file://$MODULE_DIR$/src/lib/javafx" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/src/lib/javafx" recursive="false" type="SOURCES" />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="lib" level="project" />
   </component>
 </module>
