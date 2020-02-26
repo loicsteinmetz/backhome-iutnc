@@ -36,7 +36,8 @@
     </Label>
 
     <Button fx:id="startBtn" text="JOUER"
-            layoutX="280" layoutY="450">
+            layoutX="280" layoutY="450"
+            onAction="#lancerJeu">
     </Button>
 
 </AnchorPane>

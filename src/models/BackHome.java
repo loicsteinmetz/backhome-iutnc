@@ -38,8 +38,6 @@ public class BackHome extends Application {
      * @param args arguments
      */
     public static void main(String[] args) {
-        getHeros().setNom("Gargamel");
-        System.out.println(getHeros().getNom());
         launch(args);
     }
 }

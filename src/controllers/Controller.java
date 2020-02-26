@@ -1,11 +1,19 @@
 package controllers;
 
+import javafx.animation.FadeTransition;
 import javafx.animation.Interpolator;
 import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
+import javafx.beans.property.BooleanProperty;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
+import utils.JavaFxAssistant;
 
 /**
  * Controleur principal
@@ -13,7 +21,12 @@ import javafx.util.Duration;
 public class Controller {
 
     @FXML
-    private ImageView starsBg1,starsBg2;
+    private Label texte;
+    @FXML
+    private Button startBtn;
+    @FXML
+    private ImageView vaisseau, starsBg1,starsBg2;
+
 
     /**
      * Anime l'image d'arrière-plan de l'écran d'accueil
@@ -34,9 +47,17 @@ public class Controller {
     }
 
     /**
-     * Initialisation de l'écran d'accueil
+     * Initialisation de l'animation de l'écran d'accueil
      */
     public void initialize(){
         animerBg();
+    }
+
+    @FXML
+    private void lancerJeu(ActionEvent event) {
+        String[] scenario =
+        startBtn.setVisible(false);
+        texte.setVisible(false);
+        JavaFxAssistant.fadeOut(vaisseau, 1.5);
     }
 }
