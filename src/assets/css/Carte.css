@@ -1,0 +1,29 @@
+AnchorPane{
+    -fx-background-color: black;
+}
+
+#hud{
+    -fx-opacity:0;
+}
+
+Button{
+    -fx-padding:10 25;
+    -fx-font-size:20;
+    -fx-text-fill:white;
+    -fx-border-radius:5;
+    -fx-background-color: #1F1F1F;
+    -fx-font-family: "Roboto Slab";
+}
+
+Button:hover{
+    -fx-background-color: #5F5F5F;
+    -fx-cursor: hand;
+}
+
+#goBtn{
+    -fx-background-color: #CB4242;
+}
+
+#goBtn:hover{
+    -fx-background-color: #EB3232;
+}

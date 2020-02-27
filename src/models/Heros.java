@@ -1,5 +1,7 @@
 package models;
 
+import static models.Carte.getCarte;
+
 /**
  * Singleton générant le héros du jeu
  */
@@ -13,6 +15,7 @@ public class Heros extends Personnage {
      */
     private Heros(){
         super();
+        this.localisation = getCarte().getPlaneteParNom("utopia");
     }
 
     /**

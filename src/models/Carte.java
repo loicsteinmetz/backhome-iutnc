@@ -118,7 +118,7 @@ public class Carte extends Application {
     public void start(Stage stage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("../views/Carte.fxml"));
         Scene scene = new Scene(root, 800, 600);
-        scene.getStylesheets().add("assets/css/BackHome.css");
+        scene.getStylesheets().add("assets/css/Carte.css");
         stage.setScene(scene);
     }
 }

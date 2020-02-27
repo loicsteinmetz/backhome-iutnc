@@ -1,8 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.layout.AnchorPane?>
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.Button?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
             fx:controller="controllers.CarteController">
-
+    <ImageView fx:id="hud"
+               fitHeight="600.0"
+               fitWidth="800">
+        <image>
+            <Image url="/assets/img/hud.png"/>
+        </image>
+    </ImageView>
+    <Button fx:id="prevBtn" text="Prec"
+            layoutX="200" layoutY="450"
+            onAction="#planetePrecedente">
+    </Button>
+    <Button fx:id="nextBtn" text="Suiv"
+            layoutX="505" layoutY="450"
+            onAction="#planeteSuivante">
+    </Button>
+    <Button fx:id="goBtn" text="GO"
+            layoutX="360" layoutY="450"
+            onAction="#allerPlanete">
+    </Button>
 </AnchorPane>

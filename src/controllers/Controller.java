@@ -37,6 +37,7 @@ public class Controller {
     /**
      * Anime l'image d'arrière-plan de l'écran d'accueil
      */
+    @FXML
     private void animeBg() {
         TranslateTransition tt1 = new TranslateTransition(Duration.seconds(1.5), starsBg1);
         tt1.setFromY(-600);
