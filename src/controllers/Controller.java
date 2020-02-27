@@ -62,7 +62,8 @@ public class Controller {
         startBtn.setVisible(false);
         texte.setVisible(false);
         JavaFxAssistant.fadeOut(vaisseau, 1.5, 0);
-        String[] scenario = Parser.parseStrings("src/assets/config/scenario.json", "nouvellePartie");
+        String fichierScenario = Parser.parseChemin("src/assets/config/scenario.json");
+        String[] scenario = Parser.parseStrings(fichierScenario, "nouvellePartie");
         Transition t;
         if ((t = JavaFxAssistant.transitionTexteDeroulant(scenario, pane)) == null){
             throw new RuntimeException();

@@ -5,11 +5,12 @@ import lib.org.json.simple.JSONObject;
 import lib.org.json.simple.parser.JSONParser;
 import lib.org.json.simple.parser.ParseException;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
 /**
- * Classe utilitaire de gestion du parsing de fichiers de configuration
+ * Classe utilitaire de gestion du parsing
  */
 public class Parser {
 
@@ -31,5 +32,13 @@ public class Parser {
             res[i] = (String) arr.get(i);
         }
         return res;
+    }
+
+    public static String parseChemin(String chemin){
+        String[] split = chemin.split("");
+        for (String s : split){
+            if (s == "/") s = File.separator;
+        }
+        return String.join("", split);
     }
 }
