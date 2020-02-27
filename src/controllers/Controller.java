@@ -52,6 +52,11 @@ public class Controller {
         tt2.play();
     }
 
+    /**
+     * Lance le jeu lors du clic sur le boutton dédié
+     * @param event clic sur le boutton de lancement
+     * @throws Exception
+     */
     @FXML
     private void lanceJeu(ActionEvent event) throws Exception {
         startBtn.setVisible(false);

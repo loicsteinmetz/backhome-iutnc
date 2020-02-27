@@ -11,8 +11,18 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+/**
+ * Classe utilitaire de gestion de fontionnalités JavaFx
+ */
 public class JavaFxAssistant {
 
+    /**
+     * Lance une animation fade out sur un élément
+     * @param node élément
+     * @param dureeSec durée de l'animation
+     * @param delaySec délai avant animation
+     * @return la transition générée
+     */
     public static Transition fadeOut(Node node, double dureeSec, double delaySec){
         FadeTransition ft = new FadeTransition(Duration.seconds(dureeSec), node);
         ft.setFromValue(1.0);
@@ -22,6 +32,13 @@ public class JavaFxAssistant {
         return ft;
     }
 
+    /**
+     * Lance une animation fade in sur un élément
+     * @param node élément
+     * @param dureeSec durée de l'animation
+     * @param delaySec délai avant animation
+     * @return la transition générée
+     */
     public static Transition fadeIn(Node node, double dureeSec, double delaySec){
         FadeTransition ft = new FadeTransition(Duration.seconds(dureeSec), node);
         ft.setFromValue(0.0);
@@ -31,6 +48,11 @@ public class JavaFxAssistant {
         return ft;
     }
 
+    /**
+     * Redirige vers une nouvelle interface
+     * @param app la classe gérant l'interface à générée
+     * @param e l'événement déclenchant la redirection
+     */
     public static void switchTo(Application app, Event e){
         try {
             app.start((Stage) ((Node) e.getSource()).getScene().getWindow());
@@ -39,6 +61,12 @@ public class JavaFxAssistant {
         }
     }
 
+    /**
+     * Redirige vers une nouvelle interface après un délai
+     * @param app la classe gérant l'interface à générée
+     * @param e l'événement déclenchant la redirection
+     * @param delaySec délai avant redirection
+     */
     public static void switchTo(Application app, Event e, double delaySec){
         PauseTransition wait = new PauseTransition(Duration.seconds(delaySec));
         wait.setOnFinished((a) -> {
@@ -47,6 +75,12 @@ public class JavaFxAssistant {
         wait.play();
     }
 
+    /**
+     * Génère un texte défilant
+     * @param s le tableau contenant les différents écrans texte
+     * @param p le paneau sur lequel le texte est affiché
+     * @return la dernière transition générée
+     */
     public static Transition transitionTexteDeroulant(String[] s, Pane p){
         Transition derniereTransition = null;
         double inDelay = 0, outDelay;

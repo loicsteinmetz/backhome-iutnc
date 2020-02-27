@@ -8,8 +8,19 @@ import lib.org.json.simple.parser.ParseException;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * Classe utilitaire de gestion du parsing de fichiers de configuration
+ */
 public class Parser {
 
+    /**
+     * Parse un tableau de chaînes dans un fichier json
+     * @param fichier chemin vers le fichier json
+     * @param cle la clé du tableau json
+     * @return le tableau java
+     * @throws IOException
+     * @throws ParseException
+     */
     public static String[] parseStrings(String fichier, String cle) throws IOException, ParseException {
         JSONParser parser = new JSONParser();
         Object obj = parser.parse(new FileReader(fichier));

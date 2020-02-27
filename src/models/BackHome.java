@@ -7,10 +7,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import utils.Fonts;
 
-
-import static models.Heros.getHeros;
-
-
 /**
  * Classe principale du programme ; Modélisation du système de jeu
  */
