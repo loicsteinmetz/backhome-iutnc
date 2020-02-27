@@ -1,5 +1,7 @@
 package models;
 
+import java.util.ArrayList;
+
 /**
  * Modélisation d'une planète
  */
@@ -7,18 +9,16 @@ public class Planete {
 
     private String nom;
     private int niveau;
-    private Planete[] planetesVoisines;
+    private ArrayList<Planete> planetesVoisines = new ArrayList<Planete>();
 
     /**
      * Constructeur
      * @param nom nom de la planète
      * @param niveau niveau d'accès requis
-     * @param planeteVoisines planètes accessible depuis la planète créée
      */
-    public Planete(String nom, int niveau, Planete[] planeteVoisines) {
+    public Planete(String nom, int niveau) {
         this.nom = nom;
         this.niveau = niveau;
-        this.planetesVoisines = planeteVoisines;
     }
 
     /**
@@ -41,8 +41,15 @@ public class Planete {
      * Getter
      * @return planètes accessible depuis la planète créée
      */
-    public Planete[] getPlanetesVoisines() {
+    public ArrayList<Planete> getPlanetesVoisines() {
         return planetesVoisines;
     }
 
+    /**
+     * Ajoute une planète voisine
+     * @param p Planète à ajouter aux planètes voisines
+     */
+    public void nouvellePlaneteVoisine(Planete p) {
+        this.planetesVoisines.add(p);
+    }
 }

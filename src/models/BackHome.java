@@ -5,7 +5,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import lib.org.json.simple.parser.ParseException;
 import utils.Fonts;
+
+import java.io.IOException;
 
 /**
  * Classe principale du programme ; Modélisation du système de jeu
@@ -33,7 +36,7 @@ public class BackHome extends Application {
      * Méthode exécutable
      * @param args arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ParseException {
         launch(args);
     }
 }

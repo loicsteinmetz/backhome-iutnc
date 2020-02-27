@@ -15,7 +15,7 @@ import java.io.IOException;
 public class Parser {
 
     /**
-     * Parse un tableau de chaînes dans un fichier json
+     * Parse un tableau de chaînes à partir d'un fichier json
      * @param fichier chemin vers le fichier json
      * @param cle la clé du tableau json
      * @return le tableau java
@@ -34,6 +34,31 @@ public class Parser {
         return res;
     }
 
+    /**
+     * Parse un tableau d'objets json à partir d'un fichier json
+     * @param fichier chemin vers le fichier json
+     * @param cle la clé de l'objet json
+     * @return l'objet json
+     * @throws IOException
+     * @throws ParseException
+     */
+    public static JSONObject[] parseObjects(String fichier, String cle) throws IOException, ParseException {
+        JSONParser parser = new JSONParser();
+        Object obj = parser.parse(new FileReader(fichier));
+        JSONObject jsonObject = (JSONObject) obj;
+        JSONArray arr = (JSONArray) jsonObject.get(cle);
+        JSONObject[] res = new JSONObject[arr.size()];
+        for (int i = 0 ; i < arr.size() ; i++){
+            res[i] = (JSONObject) arr.get(i);
+        }
+        return res;
+    }
+
+    /**
+     * Parse un chemin au format linux pour format universel
+     * @param chemin chemin au format linux
+     * @return format universel
+     */
     public static String parseChemin(String chemin){
         String[] split = chemin.split("");
         for (String s : split){
