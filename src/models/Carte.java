@@ -50,8 +50,7 @@ public class Carte extends Application {
      * @throws ParseException
      */
     private void initialiserPlanetes() throws IOException, ParseException {
-        String fichierPlenetes = Parser.parseChemin("src/assets/config/planetes.json");
-        JSONObject[] planetes = Parser.parseObjects(fichierPlenetes, "planetes");
+        JSONObject[] planetes = Parser.parseObjects("src/assets/config/planetes.json", "planetes");
         for (JSONObject p : planetes){
             this.nouvellePlanete(new Planete(
                     p.get("nom").toString(),
@@ -66,8 +65,7 @@ public class Carte extends Application {
      * @throws ParseException
      */
     private void initialiserPlanetesVoisines() throws IOException, ParseException {
-        String fichierPlenetes = Parser.parseChemin("src/assets/config/planetes.json");
-        JSONObject[] planetes = Parser.parseObjects(fichierPlenetes, "planetes");
+        JSONObject[] planetes = Parser.parseObjects("src/assets/config/planetes.json", "planetes");
         for (int i = 0 ; i < this.planetes.size() ; i++){
             JSONArray arr = (JSONArray) planetes[i].get("planetesVoisines");
             for (Object p : arr){

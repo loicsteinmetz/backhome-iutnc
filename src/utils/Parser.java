@@ -53,17 +53,4 @@ public class Parser {
         }
         return res;
     }
-
-    /**
-     * Parse un chemin au format linux pour format universel
-     * @param chemin chemin au format linux
-     * @return format universel
-     */
-    public static String parseChemin(String chemin){
-        String[] split = chemin.split("");
-        for (String s : split){
-            if (s == "/") s = File.separator;
-        }
-        return String.join("", split);
-    }
 }
