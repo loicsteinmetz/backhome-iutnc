@@ -17,12 +17,12 @@ public class Fonts {
         Font.loadFont(BackHome .class.getResource(
           File.separator + "assets" +
                 File.separator + "fonts" +
-                File.separator + "ZCOOLQingKeHuangYou-Regular.ttf")
+                File.separator + "ZCOOLQingKeHuang.ttf")
             .toExternalForm(), 10);
         Font.loadFont(BackHome.class.getResource(
           File.separator + "assets" +
                 File.separator + "fonts" +
-                File.separator + "RobotoSlab-VariableFont:wght.ttf")
+                File.separator + "RobotoSlab.ttf")
             .toExternalForm(), 10);
     }
 }

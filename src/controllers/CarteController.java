@@ -6,6 +6,10 @@ import javafx.scene.image.ImageView;
 import models.Planete;
 import utils.JavaFxAssistant;
 
+import java.util.ArrayList;
+
+import static models.Heros.getHeros;
+
 /**
  * Controller de la carte
  */
@@ -15,14 +19,18 @@ public class CarteController {
      private ImageView hud;
      @FXML
      private Button prevBtn, nextBtn, goBtn;
+
      private Planete planeteSelectionnee;
+     private int idPlaneteSelectionnee;
 
     /**
      * Initialisation de l'animation de l'écran d'accueil
      */
     public void initialize(){
         chargeInterface();
-        chargePlanetes();
+        planeteSelectionnee = getHeros().getLocalisation().getPlanetesVoisines().get(0);
+        idPlaneteSelectionnee = 0;
+        chargePlanete(planeteSelectionnee);
     }
 
     @FXML
@@ -37,19 +45,28 @@ public class CarteController {
     }
 
     @FXML
-    private void chargePlanetes(){
+    private void chargePlanete(Planete p){
+        ArrayList<Planete> planetesVoisines = getHeros().getLocalisation().getPlanetesVoisines();
+        if (idPlaneteSelectionnee == 0){
+            prevBtn.setDisable(true);
+        } else if (idPlaneteSelectionnee == planetesVoisines.size() - 1){
+            nextBtn.setDisable(true);
+        }
         // todo
-        // this.planeteSelectionnee = ?
     }
 
     @FXML
     private void planeteSuivante(){
-        // todo
+        idPlaneteSelectionnee++;
+        planeteSelectionnee = getHeros().getLocalisation().getPlanetesVoisines().get(idPlaneteSelectionnee);
+        chargePlanete(planeteSelectionnee);
     }
 
     @FXML
     private void planetePrecedente(){
-        // todo
+        idPlaneteSelectionnee--;
+        planeteSelectionnee = getHeros().getLocalisation().getPlanetesVoisines().get(idPlaneteSelectionnee);
+        chargePlanete(planeteSelectionnee);
     }
 
     @FXML
