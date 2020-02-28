@@ -23,16 +23,6 @@ AnchorPane{
     -fx-cursor: hand;
 }
 
-@font-face {
-    font-family: "ZCOOL QingKe HuangYou";
-    src: url("/assets/fonts/ZCOOLQingKeHuangYou-Regular.ttf");
-}
-
-@font-face {
-    font-family: "Roboto Slab";
-    src: url("/assets/fonts/RobotoSlab-VariableFont:wght.ttf");
-}
-
 #texte{
     -fx-font-size:80px;
     -fx-text-fill:white;
