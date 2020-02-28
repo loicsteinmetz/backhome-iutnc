@@ -7,18 +7,5 @@
     </content>
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library" exported="">
-      <library>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/src/lib/javafx" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/src/lib/javafx" />
-        </SOURCES>
-        <jarDirectory url="file://$MODULE_DIR$/src/lib/javafx" recursive="false" />
-        <jarDirectory url="file://$MODULE_DIR$/src/lib/javafx" recursive="false" type="SOURCES" />
-      </library>
-    </orderEntry>
   </component>
 </module>

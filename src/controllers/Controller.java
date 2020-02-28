@@ -12,6 +12,7 @@ import utils.JavaFxAssistant;
 import utils.Parser;
 
 import static models.Carte.getCarte;
+import static utils.Parser.getParser;
 
 /**
  * Controleur principal
@@ -63,7 +64,7 @@ public class Controller {
         startBtn.setVisible(false);
         texte.setVisible(false);
         JavaFxAssistant.fadeOut(vaisseau, 1.5, 0);
-        String[] scenario = Parser.parseStrings("src/assets/config/scenario.json", "nouvellePartie");
+        String[] scenario = getParser().parseStrings("/assets/config/scenario.json", "nouvellePartie");
         Transition t;
         if ((t = JavaFxAssistant.transitionTexteDeroulant(scenario, pane)) == null){
             throw new RuntimeException();

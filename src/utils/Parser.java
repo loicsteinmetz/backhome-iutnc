@@ -5,14 +5,22 @@ import lib.org.json.simple.JSONObject;
 import lib.org.json.simple.parser.JSONParser;
 import lib.org.json.simple.parser.ParseException;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.net.URISyntaxException;
 
 /**
  * Classe utilitaire de gestion du parsing
  */
 public class Parser {
+
+    private static Parser PARSER = new Parser();
+
+    private Parser(){
+    }
+
+    public static Parser getParser(){
+        return PARSER;
+    }
 
     /**
      * Parse un tableau de chaînes à partir d'un fichier json
@@ -22,9 +30,9 @@ public class Parser {
      * @throws IOException
      * @throws ParseException
      */
-    public static String[] parseStrings(String fichier, String cle) throws IOException, ParseException {
+    public String[] parseStrings(String fichier, String cle) throws IOException, ParseException, URISyntaxException {
         JSONParser parser = new JSONParser();
-        Object obj = parser.parse(new FileReader(fichier));
+        Object obj = parser.parse(new InputStreamReader(getClass().getResourceAsStream(fichier)));
         JSONObject jsonObject = (JSONObject) obj;
         JSONArray arr = (JSONArray) jsonObject.get(cle);
         String[] res = new String[arr.size()];
@@ -42,9 +50,9 @@ public class Parser {
      * @throws IOException
      * @throws ParseException
      */
-    public static JSONObject[] parseObjects(String fichier, String cle) throws IOException, ParseException {
+    public JSONObject[] parseObjects(String fichier, String cle) throws IOException, ParseException {
         JSONParser parser = new JSONParser();
-        Object obj = parser.parse(new FileReader(fichier));
+        Object obj = parser.parse(new InputStreamReader(getClass().getResourceAsStream(fichier)));
         JSONObject jsonObject = (JSONObject) obj;
         JSONArray arr = (JSONArray) jsonObject.get(cle);
         JSONObject[] res = new JSONObject[arr.size()];

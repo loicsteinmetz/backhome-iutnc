@@ -13,6 +13,8 @@ import utils.Parser;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import static utils.Parser.getParser;
+
 /**
  * Singleton générant la carte et son interface.
  */
@@ -50,7 +52,7 @@ public class Carte extends Application {
      * @throws ParseException
      */
     private void initialiserPlanetes() throws IOException, ParseException {
-        JSONObject[] planetes = Parser.parseObjects("src/assets/config/planetes.json", "planetes");
+        JSONObject[] planetes = getParser().parseObjects("/assets/config/planetes.json", "planetes");
         for (JSONObject p : planetes){
             this.nouvellePlanete(new Planete(
                     p.get("nom").toString(),
@@ -65,7 +67,7 @@ public class Carte extends Application {
      * @throws ParseException
      */
     private void initialiserPlanetesVoisines() throws IOException, ParseException {
-        JSONObject[] planetes = Parser.parseObjects("src/assets/config/planetes.json", "planetes");
+        JSONObject[] planetes = getParser().parseObjects("/assets/config/planetes.json", "planetes");
         for (int i = 0 ; i < this.planetes.size() ; i++){
             JSONArray arr = (JSONArray) planetes[i].get("planetesVoisines");
             for (Object p : arr){
@@ -114,9 +116,9 @@ public class Carte extends Application {
      */
     @Override
     public void start(Stage stage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../views/Carte.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/views/Carte.fxml"));
         Scene scene = new Scene(root, 800, 600);
-        scene.getStylesheets().add("assets/css/Carte.css");
+        scene.getStylesheets().add("/assets/css/Carte.css");
         stage.setScene(scene);
     }
 }
