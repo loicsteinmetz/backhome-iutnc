@@ -3,12 +3,10 @@ package utils;
 import javafx.scene.text.Font;
 import models.BackHome;
 
-import java.io.File;
-
 /**
  * Classe utilitaire de gestion des polices d'écriture
  */
-public class Fonts {
+public class FontsLoader {
 
     /**
      * Charge les polices

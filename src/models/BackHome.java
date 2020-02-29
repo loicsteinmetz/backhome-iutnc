@@ -1,42 +1,21 @@
 package models;
 
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+
 import lib.org.json.simple.parser.ParseException;
-import utils.Fonts;
+import utils.JsonParser;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 /**
- * Classe principale du programme ; Modélisation du système de jeu
+ * Modélisation du système de jeu
  */
-public class BackHome extends Application {
+public class BackHome {
 
-    /**
-     * Génère l'interface du jeu
-     * @param primaryStage
-     * @throws Exception
-     */
-    @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/views/BackHome.fxml"));
-        Fonts.load();
-        Scene scene = new Scene(root, 800, 600);
-        scene.getStylesheets().add("/assets/css/BackHome.css");
-        primaryStage.setTitle("Back Home");
-        primaryStage.setScene(scene);
-        primaryStage.setResizable(false);
-        primaryStage.show();
-    }
-
-    /**
-     * Méthode exécutable
-     * @param args arguments
-     */
-    public static void main(String[] args) throws IOException, ParseException {
-        launch(args);
+    public String[] getScenario() throws ParseException, IOException, URISyntaxException {
+        String chemin = "/assets/config/scenario.json";
+        JsonParser parser = new JsonParser();
+        String[] scenario = parser.parseStrings(chemin, "nouvellePartie");
+        return scenario;
     }
 }

@@ -1,27 +1,20 @@
 package models;
 
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 import lib.org.json.simple.JSONArray;
 import lib.org.json.simple.JSONObject;
 import lib.org.json.simple.parser.ParseException;
-import utils.Parser;
+import utils.JsonParser;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
-import static utils.Parser.getParser;
-
 /**
- * Singleton générant la carte et son interface.
+ * Singleton modélisant la carte du jeu
  */
-public class Carte extends Application {
+public class Carte {
 
     private static Carte CARTE = new Carte();
-    private ArrayList<Planete> planetes = new ArrayList<Planete>();
+    private ArrayList<Planete> planetes = new ArrayList<>();
 
     /**
      * Constructeur privé
@@ -44,37 +37,6 @@ public class Carte extends Application {
             CARTE = new Carte();
         }
         return CARTE;
-    }
-
-    /**
-     * Initialise les planètes de la carte
-     * @throws IOException
-     * @throws ParseException
-     */
-    private void initialiserPlanetes() throws IOException, ParseException {
-        JSONObject[] planetes = getParser().parseObjects("/assets/config/planetes.json", "planetes");
-        for (JSONObject p : planetes){
-            this.nouvellePlanete(new Planete(
-                    p.get("nom").toString(),
-                    Integer.parseInt(p.get("niveau").toString())
-            ));
-        }
-    }
-
-    /**
-     * Initialise les planètes voisines de chaque planète de la carte
-     * @throws IOException
-     * @throws ParseException
-     */
-    private void initialiserPlanetesVoisines() throws IOException, ParseException {
-        JSONObject[] planetes = getParser().parseObjects("/assets/config/planetes.json", "planetes");
-        for (int i = 0 ; i < this.planetes.size() ; i++){
-            JSONArray arr = (JSONArray) planetes[i].get("planetesVoisines");
-            for (Object p : arr){
-                Planete voisine = this.getPlaneteParNom(p.toString());
-                this.planetes.get(i).nouvellePlaneteVoisine(voisine);
-            }
-        }
     }
 
     /**
@@ -102,23 +64,45 @@ public class Carte extends Application {
     }
 
     /**
+     * Initialise les planètes de la carte
+     * @throws IOException
+     * @throws ParseException
+     */
+    private void initialiserPlanetes() throws IOException, ParseException {
+        String cheminConf = "/assets/config/planetes.json";
+        String cle = "planetes";
+        JSONObject[] planetes = new JsonParser().parseObjects(cheminConf, cle);
+        for (JSONObject p : planetes){
+            this.nouvellePlanete(new Planete(
+                    p.get("nom").toString(),
+                    Integer.parseInt(p.get("niveau").toString())
+            ));
+        }
+    }
+
+    /**
+     * Initialise les planètes voisines de chaque planète de la carte
+     * @throws IOException
+     * @throws ParseException
+     */
+    private void initialiserPlanetesVoisines() throws IOException, ParseException {
+        String cheminConf = "/assets/config/planetes.json";
+        String cle = "planetes";
+        JSONObject[] planetes = new JsonParser().parseObjects(cheminConf, cle);
+        for (int i = 0 ; i < this.planetes.size() ; i++){
+            JSONArray arr = (JSONArray) planetes[i].get("planetesVoisines");
+            for (Object p : arr){
+                Planete voisine = this.getPlaneteParNom(p.toString());
+                this.planetes.get(i).nouvellePlaneteVoisine(voisine);
+            }
+        }
+    }
+
+    /**
      * Ajoute une planète à la carte
      * @param p planète à ajouter
      */
     private void nouvellePlanete(Planete p){
         this.planetes.add(p);
-    }
-
-    /**
-     * Génère l'interface de la carte
-     * @param stage primaryStage
-     * @throws Exception
-     */
-    @Override
-    public void start(Stage stage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/views/Carte.fxml"));
-        Scene scene = new Scene(root, 800, 600);
-        scene.getStylesheets().add("/assets/css/Carte.css");
-        stage.setScene(scene);
     }
 }

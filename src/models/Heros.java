@@ -3,7 +3,7 @@ package models;
 import static models.Carte.getCarte;
 
 /**
- * Singleton générant le héros du jeu
+ * Singleton modélisant le héros du jeu
  */
 public class Heros extends Personnage {
 
@@ -16,6 +16,17 @@ public class Heros extends Personnage {
     private Heros(){
         super();
         this.localisation = getCarte().getPlaneteParNom("utopia");
+    }
+
+    /**
+     * Getter de l'instance du héros (singleton)
+     * @return l'instance du héros
+     */
+    public static Heros getHeros(){
+        if(HEROS == null) {
+            HEROS = new Heros();
+        }
+        return HEROS;
     }
 
     /**
@@ -32,16 +43,5 @@ public class Heros extends Personnage {
      */
     public void setLocalisation(Planete localisation) {
         this.localisation = localisation;
-    }
-
-    /**
-     * Getter de l'instance du héros (singleton)
-     * @return l'instance du héros
-     */
-    public static Heros getHeros(){
-        if(HEROS == null) {
-            HEROS = new Heros();
-        }
-        return HEROS;
     }
 }

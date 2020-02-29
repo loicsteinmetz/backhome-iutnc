@@ -9,18 +9,10 @@ import java.io.*;
 import java.net.URISyntaxException;
 
 /**
- * Classe utilitaire de gestion du parsing
+ * Classe utilitaire de gestion du parsing json
+ * @see lib.org.json.simple.parser.JSONParser
  */
-public class Parser {
-
-    private static Parser PARSER = new Parser();
-
-    private Parser(){
-    }
-
-    public static Parser getParser(){
-        return PARSER;
-    }
+public class JsonParser {
 
     /**
      * Parse un tableau de chaînes à partir d'un fichier json

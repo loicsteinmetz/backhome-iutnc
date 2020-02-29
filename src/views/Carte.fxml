@@ -1,7 +1,6 @@
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
-<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml"
             fx:controller="controllers.CarteController">
     <ImageView fx:id="hud"
@@ -11,16 +10,4 @@
             <Image url="/assets/img/hud.png"/>
         </image>
     </ImageView>
-    <Button fx:id="prevBtn" text="Prec"
-            layoutX="200" layoutY="450"
-            onAction="#planetePrecedente">
-    </Button>
-    <Button fx:id="nextBtn" text="Suiv"
-            layoutX="505" layoutY="450"
-            onAction="#planeteSuivante">
-    </Button>
-    <Button fx:id="goBtn" text="GO"
-            layoutX="360" layoutY="450"
-            onAction="#allerPlanete">
-    </Button>
 </AnchorPane>
