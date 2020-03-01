@@ -23,14 +23,14 @@ AnchorPane{
     -fx-font-size: 35;
 }
 
-#planete{
+.planete{
     -fx-background-color: #1F2C2F;
     -fx-background-radius:5;
     -fx-min-width: 500px;
     -fx-padding:20 30;
 }
 
-#planete:hover{
+.planete:hover{
     -fx-background-color: #CB4242;
     -fx-cursor: hand;
 }

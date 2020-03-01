@@ -2,6 +2,7 @@ package app;
 
 import controllers.BackHomeController;
 import javafx.application.Application;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import lib.org.json.simple.parser.ParseException;
 import utils.FontsLoader;
@@ -27,6 +28,7 @@ public class Main extends Application {
         FontsLoader.load();
         primaryStage.setTitle("Back Home");
         primaryStage.setResizable(false);
+        primaryStage.getIcons().add(new Image("/assets/img/vaisseau.png"));
         // initialisation de l'interface de lancement
         new ViewLoader().switchTo(START_VIEW, primaryStage);
         // création de la fenête

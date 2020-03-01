@@ -3,19 +3,18 @@ package controllers;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Orientation;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import models.Carte;
 import models.Planete;
 import utils.EffetsJavaFx;
+import utils.ViewLoader;
 
 import static models.Heros.getHeros;
 
@@ -65,10 +64,11 @@ public class CarteController extends Application {
     /**
      * Initialisation de l'animation de l'écran d'accueil
      */
+    @FXML
     public void initialize(){
         chargeElementsInterface();
-        chargePlanetes();
-        chargeInfos();
+        chargeLocalisation();
+        chargePlanetesDisponibles();
     }
 
     /**
@@ -79,12 +79,27 @@ public class CarteController extends Application {
         EffetsJavaFx.fadeIn(hud, 2, 0);
     }
 
+    /**
+     * Charge la localisation du héros
+     */
     @FXML
-    private void chargePlanetes(){
+    private void chargeLocalisation(){
+        loc.setText("LOCALISATION : " + getHeros().getLocalisation().getNom());
+        EffetsJavaFx.fadeIn(dest, 2, 0);
+        EffetsJavaFx.fadeIn(loc, 2, 0);
+    }
+
+    /**
+     * Charge les planètes disponibles pour le héros
+     */
+    @FXML
+    private void chargePlanetesDisponibles(){
         for (Planete p : getHeros().getLocalisation().getPlanetesVoisines()){
             HBox box = new HBox();
+            box.setOnMouseClicked(this::allerPlanete);
+            box.setUserData(p.getNom());
             box.setOpacity(0);
-            box.setId("planete");
+            box.getStyleClass().add("planete");
             Label nom = new Label();
             nom.setText(p.getNom());
             box.getChildren().add(nom);
@@ -93,15 +108,15 @@ public class CarteController extends Application {
         }
     }
 
+    /**
+     * Fait naviguer le héros vers l'une des planètes disponibles
+     * @param e clic sur l'une des options
+     */
     @FXML
-    private void chargeInfos(){
-        loc.setText("LOCALISATION : " + getHeros().getLocalisation().getNom());
-        EffetsJavaFx.fadeIn(dest, 2, 0);
-        EffetsJavaFx.fadeIn(loc, 2, 0);
-    }
-
-    @FXML
-    private void allerPlanete(){
-        // todo
+    private void allerPlanete(MouseEvent e){
+        HBox box = (HBox) e.getSource();
+        Planete nouvellePlanete = MODELE.getPlaneteParNom((String) box.getUserData());
+        getHeros().setLocalisation(nouvellePlanete);
+        new ViewLoader().switchTo(VIEW, e, 0.5);
     }
 }
