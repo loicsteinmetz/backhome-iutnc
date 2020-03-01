@@ -2,12 +2,26 @@ AnchorPane{
     -fx-background-color: black;
 }
 
+GridPane{
+    -fx-alignment:center;
+    -fx-min-width:800;
+    -fx-min-height:600;
+}
+
+HBox{
+    -fx-alignment:center;
+    -fx-padding:40;
+}
+
 #starsBg1, #starsBg2{
     -fx-opacity:0.5;
 }
 
-#vaisseau{
-    -fx-alignment: center;
+#titre{
+    -fx-font-size:80px;
+    -fx-text-fill:white;
+    -fx-font-weight:400;
+    -fx-font-family: "ZCOOL QingKe HuangYou";
 }
 
 #startBtn{
@@ -23,20 +37,12 @@ AnchorPane{
     -fx-cursor: hand;
 }
 
-#texte{
-    -fx-font-size:80px;
-    -fx-text-fill:white;
-    -fx-font-weight:400;
-    -fx-font-family: "ZCOOL QingKe HuangYou";
-}
-
 #ecran{
     -fx-font-size:25;
     -fx-text-fill:white;
     -fx-font-family: "Roboto Slab";
     -fx-text-alignment: center;
     -fx-line-spacing: 0.8em;
-    -fx-vertical-alignment:center;
     -fx-alignment:center;
     -fx-min-width:800;
     -fx-min-height:600;

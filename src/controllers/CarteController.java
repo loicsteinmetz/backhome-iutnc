@@ -3,12 +3,21 @@ package controllers;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Orientation;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import models.Carte;
+import models.Planete;
 import utils.EffetsJavaFx;
+
+import static models.Heros.getHeros;
 
 /**
  * Controller de la carte
@@ -24,6 +33,12 @@ public class CarteController extends Application {
 
     @FXML
     private ImageView hud;
+    @FXML
+    private FlowPane flow;
+    @FXML
+    private Label loc;
+    @FXML
+    private Label dest;
 
     /**
      * Retourne la vue associée au controller
@@ -52,6 +67,8 @@ public class CarteController extends Application {
      */
     public void initialize(){
         chargeElementsInterface();
+        chargePlanetes();
+        chargeInfos();
     }
 
     /**
@@ -60,6 +77,27 @@ public class CarteController extends Application {
     @FXML
     private void chargeElementsInterface(){
         EffetsJavaFx.fadeIn(hud, 2, 0);
+    }
+
+    @FXML
+    private void chargePlanetes(){
+        for (Planete p : getHeros().getLocalisation().getPlanetesVoisines()){
+            HBox box = new HBox();
+            box.setOpacity(0);
+            box.setId("planete");
+            Label nom = new Label();
+            nom.setText(p.getNom());
+            box.getChildren().add(nom);
+            flow.getChildren().add(box);
+            EffetsJavaFx.fadeIn(box, 2, 0);
+        }
+    }
+
+    @FXML
+    private void chargeInfos(){
+        loc.setText("LOCALISATION : " + getHeros().getLocalisation().getNom());
+        EffetsJavaFx.fadeIn(dest, 2, 0);
+        EffetsJavaFx.fadeIn(loc, 2, 0);
     }
 
     @FXML

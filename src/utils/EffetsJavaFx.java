@@ -1,6 +1,7 @@
 package utils;
 
 import javafx.animation.FadeTransition;
+import javafx.animation.PauseTransition;
 import javafx.animation.Transition;
 import javafx.scene.Node;
 import javafx.scene.control.Label;

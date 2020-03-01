@@ -32,7 +32,7 @@ public class BackHomeController extends Application {
     @FXML
     private AnchorPane pane;
     @FXML
-    private Label texte;
+    private Label titre;
     @FXML
     private Button startBtn;
     @FXML
@@ -95,7 +95,7 @@ public class BackHomeController extends Application {
     @FXML
     private void lanceJeu(ActionEvent event) throws Exception {
         startBtn.setVisible(false);
-        texte.setVisible(false);
+        titre.setVisible(false);
         EffetsJavaFx.fadeOut(vaisseau, 1.5, 0);
         String[] scenario = MODELE.getScenario();
         Transition t;

@@ -2,19 +2,12 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <AnchorPane fx:id="pane"
             fx:controller="controllers.BackHomeController"
             xmlns:fx="http://javafx.com/fxml">
 
-    <ImageView fx:id="vaisseau"
-               disable="false"
-               layoutX="320.0" layoutY="225.0"
-               fitHeight="150.0"
-               preserveRatio="true">
-        <image>
-            <Image url="/assets/img/vaisseau.png"/>
-        </image>
-    </ImageView>
     <ImageView fx:id="starsBg1">
         <image>
             <Image url="/assets/img/stars_bg.png"/>
@@ -26,16 +19,25 @@
         </image>
     </ImageView>
 
-    <Label fx:id="texte"
-           layoutX="225.0" layoutY="60">
-        <text>
-            BACK HOME
-        </text>
-    </Label>
+    <GridPane>
 
-    <Button fx:id="startBtn" text="JOUER"
-            layoutX="280" layoutY="450"
-            onAction="#lanceJeu">
-    </Button>
+        <HBox GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <ImageView fx:id="vaisseau" fitHeight="150.0" preserveRatio="true">
+                <Image url="/assets/img/vaisseau.png"/>
+            </ImageView>
+        </HBox>
 
+        <HBox GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <Label fx:id="titre" text="BACK HOME">
+            </Label>
+        </HBox>
+
+        <HBox GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Button fx:id="startBtn" text="JOUER"
+                    GridPane.columnIndex="1" GridPane.rowIndex="2"
+                    onAction="#lanceJeu">
+            </Button>
+        </HBox>
+
+    </GridPane>
 </AnchorPane>

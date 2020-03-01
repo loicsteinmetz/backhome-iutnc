@@ -1,13 +1,26 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml"
             fx:controller="controllers.CarteController">
-    <ImageView fx:id="hud"
-               fitHeight="600.0"
-               fitWidth="800">
-        <image>
-            <Image url="/assets/img/hud.png"/>
-        </image>
+
+    <ImageView fx:id="hud" fitHeight="600.0" fitWidth="800.0">
+        <Image url="/assets/img/hud.png"/>
     </ImageView>
+
+    <FlowPane fx:id="flow">
+        <HBox styleClass="infos">
+            <Label fx:id="loc">
+        </Label>
+        </HBox>
+        <HBox styleClass="infos">
+            <Label fx:id="dest" text="Destinations">
+            </Label>
+        </HBox>
+    </FlowPane>
+
 </AnchorPane>
