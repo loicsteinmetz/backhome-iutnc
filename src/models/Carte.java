@@ -11,7 +11,7 @@ import java.util.ArrayList;
 /**
  * Singleton modélisant la carte du jeu
  */
-public class Carte {
+public class Carte implements Configurable {
 
     private static Carte CARTE = new Carte();
     private ArrayList<Planete> planetes = new ArrayList<>();
@@ -63,15 +63,26 @@ public class Carte {
         return res;
     }
 
+    @Override
+    public JSONObject[] recupereDonnees() {
+        String cheminConf = "/assets/config/carte.json";
+        String cle = "planetes";
+        JSONObject[] pl = null;
+        try {
+            pl = new JsonParser().parseObjects(cheminConf, cle);
+        } catch (IOException | ParseException e) {
+            e.printStackTrace();
+        }
+        return pl;
+    }
+
     /**
      * Initialise les planètes de la carte
      * @throws IOException
      * @throws ParseException
      */
     private void initialiserPlanetes() throws IOException, ParseException {
-        String cheminConf = "/assets/config/planetes.json";
-        String cle = "planetes";
-        JSONObject[] planetes = new JsonParser().parseObjects(cheminConf, cle);
+        JSONObject[] planetes = recupereDonnees();
         for (JSONObject p : planetes){
             this.nouvellePlanete(new Planete(
                     p.get("nom").toString(),
@@ -86,9 +97,7 @@ public class Carte {
      * @throws ParseException
      */
     private void initialiserPlanetesVoisines() throws IOException, ParseException {
-        String cheminConf = "/assets/config/planetes.json";
-        String cle = "planetes";
-        JSONObject[] planetes = new JsonParser().parseObjects(cheminConf, cle);
+        JSONObject[] planetes = recupereDonnees();
         for (int i = 0 ; i < this.planetes.size() ; i++){
             JSONArray arr = (JSONArray) planetes[i].get("planetesVoisines");
             for (Object p : arr){
