@@ -61,11 +61,18 @@ public abstract class Personnage {
     }
 
     /**
-     *
+     * Lance une attaque sur un personnage, avec une arme choisie
+     * @param cible victime de l'attaque
+     * @param a arme utilisée
      */
     public void attaquer(Personnage cible, Arme a){
         a.attaquer(cible);
     }
+
+    /**
+     * Gère les effets d'une attaque sur un personnage
+     * @param dommages les pv perdus par le personnage
+     */
     public void subirAttaque(double dommages){
         this.modifierPv((int) -dommages);
     };
