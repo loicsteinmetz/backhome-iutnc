@@ -2,22 +2,22 @@
   {
     "nom":"Utopia",
     "niveau":"0",
-    "planetesVoisines": ["ienos","zÃ©phyr","hermÃ¨s"]
+    "planetesVoisines": ["ienos","zéphyr","hermès"]
   },
   {
     "nom":"Ienos",
     "niveau":"1",
-    "planetesVoisines": ["zÃ©phyr","hermÃ¨s","lumini","tremor"]
+    "planetesVoisines": ["zéphyr","hermès","lumini","tremor"]
   },
   {
-    "nom":"ZÃ©phyr",
+    "nom":"Zéphyr",
     "niveau":"1",
-    "planetesVoisines": ["ienos","hermÃ¨s","lumini","tremor"]
+    "planetesVoisines": ["ienos","hermès","lumini","tremor"]
   },
   {
-    "nom":"HermÃ¨s",
+    "nom":"Hermès",
     "niveau":"1",
-    "planetesVoisines": ["ienos","zÃ©phyr","lumini","tremor"]
+    "planetesVoisines": ["ienos","zéphyr","lumini","tremor"]
   },
   {
     "nom":"Lumini",
