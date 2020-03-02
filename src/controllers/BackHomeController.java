@@ -108,7 +108,7 @@ public class BackHomeController extends Application {
             label.setUserData(0);
             label.setOnMouseClicked(this::passeTexte);
             pane.getChildren().add(label);
-            EffetsJavaFx.fadeIn(label, 2.0, 0);
+            EffetsJavaFx.fadeIn(label, 2.0, 1.5);
         });
     }
 
