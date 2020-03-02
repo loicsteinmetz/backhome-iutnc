@@ -63,6 +63,10 @@ public abstract class Personnage {
     /**
      *
      */
-    public abstract void attaquer(Personnage cible);
-    public abstract void subirAttaque();
+    public void attaquer(Personnage cible, Arme a){
+        a.attaquer(cible);
+    }
+    public void subirAttaque(double dommages){
+        this.modifierPv((int) -dommages);
+    };
 }

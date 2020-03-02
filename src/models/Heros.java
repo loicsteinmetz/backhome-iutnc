@@ -45,8 +45,4 @@ public class Heros extends Personnage {
         this.localisation = localisation;
     }
 
-    @Override
-    public void attaquer(Personnage cible, Arme a) {
-        a.attaquer(cible);
-    }
 }
