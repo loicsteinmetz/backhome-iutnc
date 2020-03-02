@@ -3,14 +3,12 @@ package models;
 /**
  * Modélisation d'un personnage
  */
-public class Personnage {
+public abstract class Personnage {
 
     protected String nom;
-    protected int pv, puissance, eloquence;
+    protected int pv;
 
     private static final int PV = 100;
-    private static final int PUISSANCE = 1;
-    private static final int ELOQUENCE = 1;
 
     /**
      * Constructeur avec paramètres par défaut
@@ -18,22 +16,16 @@ public class Personnage {
     public Personnage(){
         // ajout initialisation planète //
         this.pv = PV;
-        this.puissance = PUISSANCE;
-        this.eloquence = ELOQUENCE;
     }
 
     /**
      * Constructeur paramétrable
      * @param nom nom du personnage
      * @param pv points de vie du personnage
-     * @param puissance puissance du personnage
-     * @param eloquence éloquence du personnage
      */
-    public Personnage(String nom, int pv, int puissance, int eloquence) {
+    public Personnage(String nom, int pv) {
         this.nom = nom;
         this.pv = pv;
-        this.puissance = puissance;
-        this.eloquence = eloquence;
     }
 
     /**
@@ -53,22 +45,6 @@ public class Personnage {
     }
 
     /**
-     * Getter
-     * @return puissance du personnage
-     */
-    public int getPuissance() {
-        return puissance;
-    }
-
-    /**
-     * Getter
-     * @return éloquence du personnage
-     */
-    public int getEloquence() {
-        return eloquence;
-    }
-
-    /**
      * Setter
      * @param nom nom du personnage
      */
@@ -85,18 +61,8 @@ public class Personnage {
     }
 
     /**
-     * Ajoute ou retire des points de puissance au personnage
-     * @param puissance points de puissance
+     *
      */
-    public void modifierPuissance(int puissance) {
-        this.puissance += puissance;
-    }
-
-    /**
-     * Ajoute ou retire des points d'éloquence au personnage
-     * @param eloquence points d'éloquence
-     */
-    public void modifierEloquence(int eloquence) {
-        this.eloquence += eloquence;
-    }
+    public abstract void attaquer(Personnage cible);
+    public abstract void subirAttaque();
 }
