@@ -7,7 +7,7 @@ public class Inventaire {
 	protected ArmeCac armeCac;
 	protected ArmeDistance armeDist;
 	
-	public Inventaire()
+	private Inventaire()
 	{
 		this.carburant = 0;
 		this.armeCac = null;
