@@ -4,8 +4,8 @@ public class Inventaire {
 	
 	private static Inventaire Inventaire= new Inventaire();
 	protected int carburant;
-	protected armeCac armeCac;
-	protected armeDistance armeDist;
+	protected ArmeCac armeCac;
+	protected ArmeDistance armeDist;
 	
 	public Inventaire()
 	{
@@ -40,22 +40,22 @@ public class Inventaire {
 		return this.carburant;
 	}
 	
-	public void modifierArmeCac(armeCac Arme)
+	public void modifierArmeCac(ArmeCac Arme)
 	{
 		this.armeCac=Arme;
 	}
 	
-	public armeCac getArmeCac()
+	public ArmeCac getArmeCac()
 	{
 		return  this.armeCac;
 	}
 	
-	public void modifierArmeDist(armeDistance Arme)
+	public void modifierArmeDist(ArmeDistance Arme)
 	{
 		this.armeDist=Arme;
 	}
 	
-	public armeDistance getArmeDist()
+	public ArmeDistance getArmeDist()
 	{
 		return  this.armeDist;
 	}

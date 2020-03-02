@@ -9,14 +9,10 @@
             xmlns:fx="http://javafx.com/fxml">
 
     <ImageView fx:id="starsBg1">
-        <image>
-            <Image url="/assets/img/stars_bg.png"/>
-        </image>
+        <Image url="/assets/img/stars_bg.png"/>
     </ImageView>
     <ImageView fx:id="starsBg2">
-        <image>
-            <Image url="/assets/img/stars_bg.png"/>
-        </image>
+        <Image url="/assets/img/stars_bg.png"/>
     </ImageView>
 
     <GridPane>
