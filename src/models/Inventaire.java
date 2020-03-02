@@ -2,7 +2,7 @@ package models;
 
 public class Inventaire {
 	
-	private static Inventaire Inventaire= new Inventaire();
+	private static Inventaire INVENTAIRE = new Inventaire();
 	protected int carburant;
 	protected ArmeCac armeCac;
 	protected ArmeDistance armeDist;
@@ -16,10 +16,10 @@ public class Inventaire {
 	
 	
 	public static Inventaire getInventaire(){
-        if(Inventaire== null) {
-            Inventaire= new Inventaire();
+        if(INVENTAIRE == null) {
+            INVENTAIRE = new Inventaire();
         }
-        return Inventaire;
+        return INVENTAIRE;
     }
 	
 	
