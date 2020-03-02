@@ -20,13 +20,8 @@ public class Carte implements Configurable {
      * Constructeur privé
      */
     private Carte(){
-        try {
-            this.initialiserPlanetes();
-            this.initialiserPlanetesVoisines();
-        } catch (IOException | ParseException e) {
-            e.printStackTrace();
-        }
-    };
+        recupereDonnees();
+    }
 
     /**
      * Getter de l'instance de la carte (singleton)
@@ -63,8 +58,11 @@ public class Carte implements Configurable {
         return res;
     }
 
+    /**
+     * Récupère les données de configuration de la carte
+     */
     @Override
-    public JSONObject[] recupereDonnees() {
+    public void recupereDonnees() {
         String cheminConf = "/assets/config/carte.json";
         String cle = "planetes";
         JSONObject[] pl = null;
@@ -73,16 +71,16 @@ public class Carte implements Configurable {
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
-        return pl;
+        if (pl != null){
+            initialiserPlanetes(pl);
+            initialiserPlanetesVoisines(pl);
+        }
     }
 
     /**
      * Initialise les planètes de la carte
-     * @throws IOException
-     * @throws ParseException
      */
-    private void initialiserPlanetes() throws IOException, ParseException {
-        JSONObject[] planetes = recupereDonnees();
+    private void initialiserPlanetes(JSONObject[] planetes) {
         for (JSONObject p : planetes){
             this.nouvellePlanete(new Planete(
                     p.get("nom").toString(),
@@ -93,11 +91,8 @@ public class Carte implements Configurable {
 
     /**
      * Initialise les planètes voisines de chaque planète de la carte
-     * @throws IOException
-     * @throws ParseException
      */
-    private void initialiserPlanetesVoisines() throws IOException, ParseException {
-        JSONObject[] planetes = recupereDonnees();
+    private void initialiserPlanetesVoisines(JSONObject[] planetes) {
         for (int i = 0 ; i < this.planetes.size() ; i++){
             JSONArray arr = (JSONArray) planetes[i].get("planetesVoisines");
             for (Object p : arr){

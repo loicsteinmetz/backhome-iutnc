@@ -31,7 +31,7 @@
         <HBox GridPane.columnIndex="1" GridPane.rowIndex="2">
             <Button fx:id="startBtn" text="JOUER"
                     GridPane.columnIndex="1" GridPane.rowIndex="2"
-                    onAction="#lanceJeu">
+                    onAction="#bouttonJouer">
             </Button>
         </HBox>
 

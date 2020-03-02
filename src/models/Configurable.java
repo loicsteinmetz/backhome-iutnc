@@ -8,5 +8,5 @@ public interface Configurable {
      * Récupère les données nécessaires aux modèles configurés via un fichier externe
      * @return données
      */
-    Object recupereDonnees();
+    void recupereDonnees();
 }

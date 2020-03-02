@@ -1,8 +1,12 @@
 package controllers;
 
-import javafx.animation.*;
+import javafx.animation.Interpolator;
+import javafx.animation.Timeline;
+import javafx.animation.Transition;
+import javafx.animation.TranslateTransition;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -93,15 +97,38 @@ public class BackHomeController extends Application {
      * @throws Exception
      */
     @FXML
-    private void lanceJeu(ActionEvent event) throws Exception {
+    private void bouttonJouer(ActionEvent event) throws Exception {
         startBtn.setVisible(false);
         titre.setVisible(false);
-        EffetsJavaFx.fadeOut(vaisseau, 1.5, 0);
-        String[] scenario = MODELE.getScenario();
-        Transition t;
-        if ((t = EffetsJavaFx.textePleinEcran(scenario, pane)) == null){
-            throw new RuntimeException();
+        Transition fadeOut = EffetsJavaFx.fadeOut(vaisseau, 1.5, 0);
+        fadeOut.setOnFinished((e) -> {
+            Label label = new Label(MODELE.getScenario()[0]);
+            label.setId("ecran");
+            label.setOpacity(0);
+            label.setUserData(0);
+            label.setOnMouseClicked(this::passeTexte);
+            pane.getChildren().add(label);
+            EffetsJavaFx.fadeIn(label, 2.0, 0);
+        });
+    }
+
+    /**
+     * Saute la page de texte pour aller à la prochaîne ou vers la prochaîne vue
+     * @param event clic
+     */
+    @FXML
+    private void passeTexte(Event event){
+        Label label = (Label) event.getSource();
+        int index = (int) label.getUserData() + 1;
+        if (index < MODELE.getScenario().length){
+            label.setOpacity(0);
+            label.setText(MODELE.getScenario()[index]);
+            EffetsJavaFx.fadeIn(label, 2, 0);
+            label.setUserData(index);
+        } else if (index == MODELE.getScenario().length) {
+            label.setDisable(true);
+            label.setVisible(false);
+            new ViewLoader().switchTo(CarteController.getView(), event, 2);
         }
-        t.setOnFinished((e) -> new ViewLoader().switchTo(CarteController.getView(), event, 2));
     }
 }
