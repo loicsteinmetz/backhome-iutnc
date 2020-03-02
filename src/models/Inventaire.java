@@ -40,7 +40,7 @@ public class Inventaire {
 		return this.carburant;
 	}
 	
-	public void modifierArmeCac(ArmeCac Arme)
+	public void setArmeCac(ArmeCac Arme)
 	{
 		this.armeCac=Arme;
 	}
@@ -50,7 +50,7 @@ public class Inventaire {
 		return  this.armeCac;
 	}
 	
-	public void modifierArmeDist(ArmeDistance Arme)
+	public void setArmeDist(ArmeDistance Arme)
 	{
 		this.armeDist=Arme;
 	}
