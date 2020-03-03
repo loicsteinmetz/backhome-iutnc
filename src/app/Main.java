@@ -1,18 +1,11 @@
 package app;
 
 import controllers.BackHomeController;
-import controllers.CarteController;
-import controllers.InventaireController;
 import javafx.application.Application;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import lib.org.json.simple.parser.ParseException;
 import utils.FontsLoader;
 import utils.ViewLoader;
-import models.*;
-import static models.Inventaire.getInventaire;
-
-import java.io.IOException;
 
 /**
  * Classe principale du programme
@@ -23,8 +16,7 @@ public class Main extends Application {
 
     /**
      * Génère la fenêtre du programme et l'initialise
-     * @param primaryStage
-     * @throws Exception
+     * @param primaryStage stage initial
      */
     @Override
     public void start(Stage primaryStage){
@@ -34,7 +26,7 @@ public class Main extends Application {
         primaryStage.setResizable(false);
         primaryStage.getIcons().add(new Image("/assets/img/vaisseau.png"));
         // initialisation de l'interface de lancement
-        new ViewLoader().switchTo(CarteController.getView(), primaryStage);
+        new ViewLoader().switchTo(START_VIEW, primaryStage);
         // création de la fenête
         primaryStage.show();
     }
@@ -43,8 +35,7 @@ public class Main extends Application {
      * Méthode exécutable
      * @param args arguments
      */
-    public static void main(String[] args) throws IOException, ParseException {
+    public static void main(String[] args) {
         launch(args);
     }
 }
-

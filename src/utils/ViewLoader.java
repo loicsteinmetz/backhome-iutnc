@@ -49,9 +49,7 @@ public class ViewLoader {
      */
     public void switchTo(String view, Event e, double delaySec){
         PauseTransition wait = new PauseTransition(Duration.seconds(delaySec));
-        wait.setOnFinished((a) -> {
-            switchTo(view, e);
-        });
+        wait.setOnFinished((a) -> switchTo(view, e));
         wait.play();
     }
 }

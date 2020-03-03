@@ -9,8 +9,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
-import models.BackHome;
-import models.Carte;
 import models.Inventaire;
 import utils.ViewLoader;
 
@@ -54,7 +52,7 @@ public class InventaireController extends Application {
     /**
      * Génère l'interface d'accueil
      * @param stage primaryStage
-     * @throws Exception
+     * @throws Exception chargement de la vue
      */
     @Override
     public void start(Stage stage) throws Exception{
@@ -64,6 +62,9 @@ public class InventaireController extends Application {
         stage.setScene(scene);
     }
 
+    /**
+     * Initialisation de la vue
+     */
     @FXML
     private void initialize(){
         armeCacNom.setText(MODELE.getArmeCac().getNom());
@@ -76,6 +77,10 @@ public class InventaireController extends Application {
         niveauCarburantLitres.setText(MODELE.getCarburant() + "L");
     }
 
+    /**
+     * Permet d'accéder à la carte
+     * @param event clic sur le bouton
+     */
     @FXML
     private void allerCarte(Event event){
         new ViewLoader().switchTo(CarteController.getView(), event);

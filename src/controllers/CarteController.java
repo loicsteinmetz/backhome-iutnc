@@ -13,7 +13,6 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import models.Carte;
-import models.Inventaire;
 import models.Planete;
 import utils.EffetsJavaFx;
 import utils.ViewLoader;
@@ -53,7 +52,7 @@ public class CarteController extends Application {
     /**
      * Génère l'interface de la carte
      * @param stage primaryStage
-     * @throws Exception
+     * @throws Exception chargement de la vue
      */
     @Override
     public void start(Stage stage) throws Exception{
@@ -64,7 +63,7 @@ public class CarteController extends Application {
     }
 
     /**
-     * Initialisation de l'animation de l'écran d'accueil
+     * Initialisation de la vue
      */
     @FXML
     private void initialize(){
@@ -126,6 +125,10 @@ public class CarteController extends Application {
         new ViewLoader().switchTo(VIEW, e, 0.5);
     }
 
+    /**
+     * Permet d'accéder à l'inventaire
+     * @param e clic sur le bouton
+     */
     @FXML
     private void allerInventaire(Event e){
         new ViewLoader().switchTo(InventaireController.getView(), e, 0);

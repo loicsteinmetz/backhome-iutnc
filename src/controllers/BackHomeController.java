@@ -5,7 +5,6 @@ import javafx.animation.Timeline;
 import javafx.animation.Transition;
 import javafx.animation.TranslateTransition;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -54,7 +53,7 @@ public class BackHomeController extends Application {
     /**
      * Génère l'interface d'accueil
      * @param stage primaryStage
-     * @throws Exception
+     * @throws Exception chargement de la vue
      */
     @Override
     public void start(Stage stage) throws Exception{
@@ -65,7 +64,7 @@ public class BackHomeController extends Application {
     }
 
     /**
-     * Initialisation de l'écran d'accueil
+     * Initialisation de la vue
      */
     @FXML
     private void initialize(){
@@ -93,11 +92,9 @@ public class BackHomeController extends Application {
 
     /**
      * Lance le jeu lors du clic sur le boutton dédié
-     * @param event clic sur le boutton de lancement
-     * @throws Exception
      */
     @FXML
-    private void bouttonJouer(ActionEvent event) throws Exception {
+    private void bouttonJouer() {
         startBtn.setVisible(false);
         titre.setVisible(false);
         Transition fadeOut = EffetsJavaFx.fadeOut(vaisseau, 1.5, 0);

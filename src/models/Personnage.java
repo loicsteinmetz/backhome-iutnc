@@ -75,5 +75,5 @@ public abstract class Personnage {
      */
     public void subirAttaque(double dommages){
         this.modifierPv((int) -dommages);
-    };
+    }
 }

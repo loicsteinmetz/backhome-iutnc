@@ -8,8 +8,8 @@ public class ArmeDistance extends Arme {
 
     /**
      * Constructeur d'arme à distance
-     * @param puissance
-     * @param nom
+     * @param puissance puissance de l'arme
+     * @param nom nom de l'arme
      */
     public ArmeDistance(int puissance, String nom){
         super(puissance);

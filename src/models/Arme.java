@@ -11,7 +11,7 @@ public class Arme {
 
     /**
      * Constructeur d'arme générique
-     * @param puissance
+     * @param puissance puissance de l'arme
      */
     public Arme(int puissance){
         degats = puissance;
@@ -39,14 +39,6 @@ public class Arme {
      */
     public String getNom() {
         return nom;
-    }
-
-    /**
-     * Setter
-     * @param degats dégâts de l'arme
-     */
-    public void setDegats(int degats) {
-        this.degats = degats;
     }
 
     /**

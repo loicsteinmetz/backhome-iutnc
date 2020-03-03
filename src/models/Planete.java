@@ -47,6 +47,10 @@ public class Planete {
         return planetesVoisines;
     }
 
+    /**
+     * Getter
+     * @return description de la planète
+     */
     public String getDescription(){
         return description;
     }

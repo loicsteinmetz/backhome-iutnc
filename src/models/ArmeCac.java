@@ -8,8 +8,8 @@ public class ArmeCac extends Arme {
 
     /**
      * Constructeur d'arme au cac
-     * @param puissance
-     * @param nom
+     * @param puissance puissance de l'arme
+     * @param nom nom de l'arme
      */
     public ArmeCac(int puissance, String nom){
         super(puissance);
