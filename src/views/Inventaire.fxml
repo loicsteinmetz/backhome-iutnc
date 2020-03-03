@@ -14,26 +14,29 @@
     </ImageView>
 
     <FlowPane id="flow">
+        <HBox id="titreBox">
+            <Label id="titre" text="INVENTAIRE"/>
+        </HBox>
         <HBox styleClass="item">
             <ImageView fitHeight="60.0" preserveRatio="true">
                 <Image url="/assets/img/epee.png"/>
             </ImageView>
             <Label fx:id="armeCacNom" text="Epee de bois" styleClass="nomItem"/>
-            <Label fx:id="armeCacDesc" text="Niveau 1" styleClass="descItem"/>
+            <Label fx:id="armeCacDesc" text="DEGATS  :  10" styleClass="descItem"/>
         </HBox>
         <HBox styleClass="item">
             <ImageView fitHeight="60.0" preserveRatio="true">
                 <Image url="/assets/img/pistolet.png"/>
             </ImageView>
             <Label fx:id="armeDistNom" text="Pistolet laser" styleClass="nomItem"/>
-            <Label fx:id="armeDistDesc" text="Niveau 1" styleClass="descItem"/>
+            <Label fx:id="armeDistDesc" text="DEGATS  :  10" styleClass="descItem"/>
         </HBox>
         <HBox styleClass="item">
             <ImageView fitHeight="60.0" preserveRatio="true">
                 <Image url="/assets/img/bouclier.png"/>
             </ImageView>
             <Label fx:id="armureNom" text="Gilet pare-balles" styleClass="nomItem"/>
-            <Label fx:id="armureDesc" text="Niveau 1" styleClass="descItem"/>
+            <Label fx:id="armureDesc" text="PROTEC  :  10" styleClass="descItem"/>
         </HBox>
     </FlowPane>
 

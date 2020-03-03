@@ -1,9 +1,11 @@
 package controllers;
 
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import models.BackHome;
 import models.Inventaire;
@@ -11,6 +13,19 @@ import models.Inventaire;
 import static models.Inventaire.getInventaire;
 
 public class InventaireController extends Application {
+
+    @FXML
+    private Label armeCacNom;
+    @FXML
+    private Label armeCacDesc;
+    @FXML
+    private Label armeDistNom;
+    @FXML
+    private Label armeDistDesc;
+    @FXML
+    private Label armureNom;
+    @FXML
+    private Label armureDesc;
 
     @Controller
     private static final String VIEW = "/views/Inventaire.fxml";
@@ -39,5 +54,15 @@ public class InventaireController extends Application {
         Scene scene = new Scene(root, 800, 600);
         scene.getStylesheets().add(STYLE);
         stage.setScene(scene);
+    }
+
+    @FXML
+    private void initialize(){
+        armeCacNom.setText(MODELE.getArmeCac().getNom());
+        armeCacDesc.setText("DEGATS  :  " + MODELE.getArmeCac().getDegats());
+        armeDistNom.setText(MODELE.getArmeDist().getNom());
+        armeDistDesc.setText("DEGATS  :  " + MODELE.getArmeDist().getDegats());
+        //armureNom.setText(MODELE.getArmure().getNom());
+        //armureDesc.setText("PROTEC  :  " + MODELE.getArmure().getResistance());
     }
 }

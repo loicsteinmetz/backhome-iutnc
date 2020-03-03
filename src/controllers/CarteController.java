@@ -67,7 +67,7 @@ public class CarteController extends Application {
      * Initialisation de l'animation de l'écran d'accueil
      */
     @FXML
-    public void initialize(){
+    private void initialize(){
         chargeElementsInterface();
         chargeLocalisation();
         chargePlanetesDisponibles();

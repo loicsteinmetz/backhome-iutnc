@@ -2,6 +2,17 @@ AnchorPane{
     -fx-background-color: black;
 }
 
+#titreBox{
+    -fx-alignment:center;
+    -fx-padding:0 0 20px 0;
+}
+
+#titre{
+    -fx-text-fill: white;
+    -fx-font-size: 30px;
+    -fx-font-family: "ZCOOL QingKe HuangYou";
+}
+
 #flow{
     -fx-alignment:center;
     -fx-min-width:800;
@@ -42,5 +53,7 @@ AnchorPane{
     -fx-text-alignment: right;
     -fx-border-color:white;
     -fx-border-width: 0 0 0 1px;
-    -fx-border-style: solid
+    -fx-border-style: solid;
+    -fx-min-width: 180px;
+    -fx-alignment: center;
 }

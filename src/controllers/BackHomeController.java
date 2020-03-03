@@ -68,7 +68,7 @@ public class BackHomeController extends Application {
      * Initialisation de l'écran d'accueil
      */
     @FXML
-    public void initialize(){
+    private void initialize(){
         animeBg();
     }
 

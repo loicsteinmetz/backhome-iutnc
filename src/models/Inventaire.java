@@ -3,15 +3,15 @@ package models;
 public class Inventaire {
 	
 	private static Inventaire INVENTAIRE = new Inventaire();
-	protected int carburant;
-	protected ArmeCac armeCac;
-	protected ArmeDistance armeDist;
+	private int carburant;
+	private ArmeCac armeCac;
+	private ArmeDistance armeDist;
+
 	
-	private Inventaire()
-	{
+	private Inventaire(){
 		this.carburant = 0;
-		this.armeCac = new ArmeCac(10,"petit couteau");
-		this.armeDist = new ArmeDistance(15,"petit pistolet");
+		this.armeCac = new ArmeCac(10,"Petit Couteau");
+		this.armeDist = new ArmeDistance(15,"Petit Pistolet");
 	}
 	
 	
