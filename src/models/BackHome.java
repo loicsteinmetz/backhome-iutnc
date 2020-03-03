@@ -10,7 +10,7 @@ import java.net.URISyntaxException;
 /**
  * Modélisation du système de jeu
  */
-public class BackHome implements Configurable {
+public class BackHome {
 
     private String[] scenario;
 
@@ -29,7 +29,8 @@ public class BackHome implements Configurable {
     /**
      * Récupère les données de configuration de la page d'accueil
      */
-    public void recupereDonnees() {
+    @Configuration
+    private void recupereDonnees() {
         String chemin = "/assets/config/scenario.json";
         JsonParser parser = new JsonParser();
         String[] scenario = new String[0];

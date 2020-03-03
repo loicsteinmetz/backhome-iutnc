@@ -11,7 +11,7 @@ import java.util.ArrayList;
 /**
  * Singleton modélisant la carte du jeu
  */
-public class Carte implements Configurable {
+public class Carte {
 
     private static Carte CARTE = new Carte();
     private ArrayList<Planete> planetes = new ArrayList<>();
@@ -61,8 +61,8 @@ public class Carte implements Configurable {
     /**
      * Récupère les données de configuration de la carte
      */
-    @Override
-    public void recupereDonnees() {
+    @Configuration
+    private void recupereDonnees() {
         String cheminConf = "/assets/config/carte.json";
         String cle = "planetes";
         JSONObject[] pl = null;
