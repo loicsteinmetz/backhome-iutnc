@@ -34,7 +34,7 @@ public class Main extends Application {
         primaryStage.setResizable(false);
         primaryStage.getIcons().add(new Image("/assets/img/vaisseau.png"));
         // initialisation de l'interface de lancement
-        new ViewLoader().switchTo(InventaireController.getView(), primaryStage);
+        new ViewLoader().switchTo(START_VIEW, primaryStage);
         // création de la fenête
         primaryStage.show();
     }
