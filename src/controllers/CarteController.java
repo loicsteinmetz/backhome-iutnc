@@ -104,7 +104,11 @@ public class CarteController extends Application {
             box.getStyleClass().add("planete");
             Label nom = new Label();
             nom.setText(p.getNom());
+            Label desc = new Label();
+            desc.getStyleClass().add("descriptionPlanete");
+            desc.setText(p.getDescription());
             box.getChildren().add(nom);
+            box.getChildren().add(desc);
             flow.getChildren().add(box);
             EffetsJavaFx.fadeIn(box, 2, 0);
         }

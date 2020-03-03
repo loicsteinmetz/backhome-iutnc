@@ -20,6 +20,7 @@ public class Planete {
     public Planete(String nom, int niveau, String description) {
         this.nom = nom;
         this.niveau = niveau;
+        this.description = description;
     }
 
     /**

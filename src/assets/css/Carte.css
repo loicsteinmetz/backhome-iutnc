@@ -28,6 +28,8 @@ AnchorPane{
     -fx-background-radius:5;
     -fx-min-width: 500px;
     -fx-padding:20 30;
+    -fx-alignment:center;
+    -fx-spacing: 40px;
 }
 
 .planete:hover{
@@ -39,6 +41,10 @@ Label{
     -fx-font-size:25px;
     -fx-text-fill:white;
     -fx-font-family: "Roboto Slab";
+}
+
+.descriptionPlanete{
+    -fx-font-size:15px;
 }
 
 Button{
