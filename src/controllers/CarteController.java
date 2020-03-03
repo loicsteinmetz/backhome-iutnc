@@ -1,6 +1,7 @@
 package controllers;
 
 import javafx.application.Application;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,6 +13,7 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import models.Carte;
+import models.Inventaire;
 import models.Planete;
 import utils.EffetsJavaFx;
 import utils.ViewLoader;
@@ -118,5 +120,10 @@ public class CarteController extends Application {
         Planete nouvellePlanete = MODELE.getPlaneteParNom((String) box.getUserData());
         getHeros().setLocalisation(nouvellePlanete);
         new ViewLoader().switchTo(VIEW, e, 0.5);
+    }
+
+    @FXML
+    private void allerInventaire(Event e){
+        new ViewLoader().switchTo(InventaireController.getView(), e, 0);
     }
 }

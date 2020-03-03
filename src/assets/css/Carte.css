@@ -41,6 +41,26 @@ Label{
     -fx-font-family: "Roboto Slab";
 }
 
+Button{
+    -fx-text-fill: white;
+    -fx-font-family: "Roboto Slab";
+    -fx-font-size:18px;
+    -fx-background-color: #1F2C2F;
+    -fx-min-width: 150px;
+}
+
+Button:hover{
+    -fx-background-color: #CB4242;
+    -fx-cursor: hand;
+}
+
+#btnBox{
+    -fx-spacing: 420px;
+    -fx-min-width: 800px;
+    -fx-min-height: 100px;
+    -fx-alignment:center;
+}
+
 #hud{
     -fx-opacity:0;
 }

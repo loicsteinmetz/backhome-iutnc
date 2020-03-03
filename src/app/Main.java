@@ -1,6 +1,8 @@
 package app;
 
 import controllers.BackHomeController;
+import controllers.CarteController;
+import controllers.InventaireController;
 import javafx.application.Application;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;

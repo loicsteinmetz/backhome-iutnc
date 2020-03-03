@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.InventaireController">
+
+    <ImageView fx:id="starsBg2">
+        <Image url="/assets/img/inventaire_bg.png"/>
+    </ImageView>
+
+</AnchorPane>
