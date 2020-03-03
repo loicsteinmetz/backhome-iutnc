@@ -39,9 +39,14 @@
             <Label fx:id="armureNom" text="Gilet pare-balles" styleClass="nomItem"/>
             <Label fx:id="armureDesc" text="PROTEC  :  10" styleClass="descItem"/>
         </HBox>
+        <HBox id="titreCarbBox">
+            <Label text="Carburant"/>
+        </HBox>
         <HBox id="btnBox">
-            <HBox>
-                <Label text="Gilet pare-balles"/>
+            <HBox id="carburant">
+                <HBox fx:id="niveauCarburant">
+                    <Label fx:id="niveauCarburantLitres" text="100L"/>
+                </HBox>
             </HBox>
             <Button id="retourBtn" text="Retour"
                     onAction="#allerCarte">

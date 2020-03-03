@@ -10,10 +10,10 @@ public class Inventaire {
 
 	
 	private Inventaire(){
-		this.carburant = 0;
+		this.carburant = 400;
 		this.armeCac = new ArmeCac(10,"Petit Couteau");
 		this.armeDist = new ArmeDistance(15,"Petit Pistolet");
-		this.armure = new Armure(5,"armure en cuir");
+		this.armure = new Armure(5,"Armure en cuir");
 	}
 	
 	

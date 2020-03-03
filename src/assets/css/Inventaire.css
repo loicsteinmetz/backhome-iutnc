@@ -4,7 +4,7 @@ AnchorPane{
 
 #titreBox{
     -fx-alignment:center;
-    -fx-padding:0 0 20px 0;
+    -fx-padding:0 0 10px 0;
 }
 
 #titre{
@@ -59,7 +59,7 @@ AnchorPane{
 }
 
 #btnBox{
-    -fx-spacing: 437px;
+    -fx-spacing: 84px;
 }
 
 #retourBtn{
@@ -73,4 +73,34 @@ AnchorPane{
 #retourBtn:hover{
     -fx-background-color: #CB4242;
     -fx-cursor: hand;
+}
+
+#carburant{
+    -fx-min-height: 38px;
+    -fx-min-width: 460px;
+    -fx-border-width: 3;
+    -fx-border-color:white;
+    -fx-border-radius:5;
+}
+
+#niveauCarburant{
+    -fx-min-height: 38px;
+    -fx-background-color: white;
+    -fx-alignment:center-right;
+}
+
+#niveauCarburant Label{
+    -fx-padding: 0 15px 0 0;
+    -fx-font-size: 18px;
+    -fx-font-family: "ZCOOL QingKe HuangYou";
+}
+
+#titreCarbBox{
+    -fx-padding: 0 0 -15px 0;
+}
+
+#titreCarbBox Label{
+    -fx-font-family: "ZCOOL QingKe HuangYou";
+    -fx-text-fill:white;
+    -fx-font-size: 18px;
 }

@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import models.BackHome;
 import models.Carte;
@@ -29,6 +30,10 @@ public class InventaireController extends Application {
     private Label armureNom;
     @FXML
     private Label armureDesc;
+    @FXML
+    private HBox niveauCarburant;
+    @FXML
+    private Label niveauCarburantLitres;
 
     @Controller
     private static final String VIEW = "/views/Inventaire.fxml";
@@ -65,8 +70,10 @@ public class InventaireController extends Application {
         armeCacDesc.setText("DEGATS  :  " + MODELE.getArmeCac().getDegats());
         armeDistNom.setText(MODELE.getArmeDist().getNom());
         armeDistDesc.setText("DEGATS  :  " + MODELE.getArmeDist().getDegats());
-        //armureNom.setText(MODELE.getArmure().getNom());
-        //armureDesc.setText("PROTEC  :  " + MODELE.getArmure().getResistance());
+        armureNom.setText(MODELE.getArmure().getNom());
+        armureDesc.setText("PROTEC  :  " + MODELE.getArmure().getResistance());
+        niveauCarburant.setMinWidth(MODELE.getCarburant());
+        niveauCarburantLitres.setText(MODELE.getCarburant() + "L");
     }
 
     @FXML
