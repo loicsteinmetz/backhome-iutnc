@@ -9,6 +9,8 @@ import javafx.stage.Stage;
 import lib.org.json.simple.parser.ParseException;
 import utils.FontsLoader;
 import utils.ViewLoader;
+import models.*;
+import static models.Inventaire.getInventaire;
 
 import java.io.IOException;
 
@@ -43,6 +45,7 @@ public class Main extends Application {
      */
     public static void main(String[] args) throws IOException, ParseException {
         launch(args);
+        getInventaire();
     }
 }
 
