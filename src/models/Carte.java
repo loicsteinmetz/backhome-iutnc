@@ -84,7 +84,8 @@ public class Carte {
         for (JSONObject p : planetes){
             this.nouvellePlanete(new Planete(
                     p.get("nom").toString(),
-                    Integer.parseInt(p.get("niveau").toString())
+                    Integer.parseInt(p.get("niveau").toString()),
+                    p.get("description").toString()
             ));
         }
     }
