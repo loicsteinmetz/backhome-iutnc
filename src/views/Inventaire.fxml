@@ -6,6 +6,7 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml"
             fx:controller="controllers.InventaireController">
 
@@ -37,6 +38,14 @@
             </ImageView>
             <Label fx:id="armureNom" text="Gilet pare-balles" styleClass="nomItem"/>
             <Label fx:id="armureDesc" text="PROTEC  :  10" styleClass="descItem"/>
+        </HBox>
+        <HBox id="btnBox">
+            <HBox>
+                <Label text="Gilet pare-balles"/>
+            </HBox>
+            <Button id="retourBtn" text="Retour"
+                    onAction="#allerCarte">
+            </Button>
         </HBox>
     </FlowPane>
 

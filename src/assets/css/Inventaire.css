@@ -57,3 +57,20 @@ AnchorPane{
     -fx-min-width: 180px;
     -fx-alignment: center;
 }
+
+#btnBox{
+    -fx-spacing: 437px;
+}
+
+#retourBtn{
+    -fx-text-fill: white;
+    -fx-font-family: "Roboto Slab";
+    -fx-font-size:18px;
+    -fx-background-color: #1F2C2F;
+    -fx-padding:10 20;
+}
+
+#retourBtn:hover{
+    -fx-background-color: #CB4242;
+    -fx-cursor: hand;
+}

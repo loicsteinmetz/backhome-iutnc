@@ -1,6 +1,7 @@
 package controllers;
 
 import javafx.application.Application;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,7 +9,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import models.BackHome;
+import models.Carte;
 import models.Inventaire;
+import utils.ViewLoader;
 
 import static models.Inventaire.getInventaire;
 
@@ -64,5 +67,10 @@ public class InventaireController extends Application {
         armeDistDesc.setText("DEGATS  :  " + MODELE.getArmeDist().getDegats());
         //armureNom.setText(MODELE.getArmure().getNom());
         //armureDesc.setText("PROTEC  :  " + MODELE.getArmure().getResistance());
+    }
+
+    @FXML
+    private void allerCarte(Event event){
+        new ViewLoader().switchTo(CarteController.getView(), event);
     }
 }
