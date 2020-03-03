@@ -36,7 +36,7 @@ public class BackHome {
         String[] scenario = new String[0];
         try {
             scenario = parser.parseStrings(chemin, "nouvellePartie");
-        } catch (IOException | ParseException | URISyntaxException e) {
+        } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
         this.scenario = scenario;
