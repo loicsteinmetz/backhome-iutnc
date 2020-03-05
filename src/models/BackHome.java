@@ -12,10 +12,33 @@ import java.net.URISyntaxException;
  */
 public class BackHome {
 
-    public String[] getScenario() throws ParseException, IOException, URISyntaxException {
+    private String[] scenario;
+
+    public BackHome(){
+        recupereDonnees();
+    }
+
+    /**
+     * Getter
+     * @return scenario
+     */
+    public String[] getScenario(){
+        return scenario;
+    }
+
+    /**
+     * Récupère les données de configuration de la page d'accueil
+     */
+    @Configuration
+    private void recupereDonnees() {
         String chemin = "/assets/config/scenario.json";
         JsonParser parser = new JsonParser();
-        String[] scenario = parser.parseStrings(chemin, "nouvellePartie");
-        return scenario;
+        String[] scenario = new String[0];
+        try {
+            scenario = parser.parseStrings(chemin, "nouvellePartie");
+        } catch (IOException | ParseException e) {
+            e.printStackTrace();
+        }
+        this.scenario = scenario;
     }
 }

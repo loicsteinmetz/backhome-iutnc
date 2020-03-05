@@ -44,4 +44,5 @@ public class Heros extends Personnage {
     public void setLocalisation(Planete localisation) {
         this.localisation = localisation;
     }
+
 }

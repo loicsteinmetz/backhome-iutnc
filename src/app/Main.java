@@ -4,11 +4,8 @@ import controllers.BackHomeController;
 import javafx.application.Application;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import lib.org.json.simple.parser.ParseException;
 import utils.FontsLoader;
 import utils.ViewLoader;
-
-import java.io.IOException;
 
 /**
  * Classe principale du programme
@@ -19,8 +16,7 @@ public class Main extends Application {
 
     /**
      * Génère la fenêtre du programme et l'initialise
-     * @param primaryStage
-     * @throws Exception
+     * @param primaryStage stage initial
      */
     @Override
     public void start(Stage primaryStage){
@@ -39,8 +35,7 @@ public class Main extends Application {
      * Méthode exécutable
      * @param args arguments
      */
-    public static void main(String[] args) throws IOException, ParseException {
+    public static void main(String[] args) {
         launch(args);
     }
 }
-

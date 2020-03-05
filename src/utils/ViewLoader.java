@@ -10,6 +10,11 @@ import javafx.util.Duration;
 
 public class ViewLoader {
 
+    /**
+     * Accède à une nouvelle vue (méthode initiale)
+     * @param view chemin de la view
+     * @param primaryStage stage initial
+     */
     public void switchTo(String view, Stage primaryStage){
         try {
             System.out.println(getClass().getResource(view));
@@ -21,6 +26,11 @@ public class ViewLoader {
         }
     }
 
+    /**
+     * Accède à une nouvelle vue à partir d'un événement
+     * @param view chemin de la view
+     * @param e événement déclencheur
+     */
     public void switchTo(String view, Event e){
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(view));
@@ -31,11 +41,15 @@ public class ViewLoader {
         }
     }
 
+    /**
+     * Accède à une nouvelle vue à partir d'un événement, après un délai
+     * @param view chemin de la view
+     * @param e événement déclencheur
+     * @param delaySec délai en secondes
+     */
     public void switchTo(String view, Event e, double delaySec){
         PauseTransition wait = new PauseTransition(Duration.seconds(delaySec));
-        wait.setOnFinished((a) -> {
-            switchTo(view, e);
-        });
+        wait.setOnFinished((a) -> switchTo(view, e));
         wait.play();
     }
 }

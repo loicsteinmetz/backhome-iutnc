@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.InventaireController">
+
+    <ImageView>
+        <Image url="/assets/img/inventaire_bg.png"/>
+    </ImageView>
+
+    <FlowPane id="flow">
+        <HBox id="titreBox">
+            <Label id="titre" text="INVENTAIRE"/>
+        </HBox>
+        <HBox styleClass="item">
+            <ImageView fitHeight="60.0" preserveRatio="true">
+                <Image url="/assets/img/epee.png"/>
+            </ImageView>
+            <Label fx:id="armeCacNom" text="Epee de bois" styleClass="nomItem"/>
+            <Label fx:id="armeCacDesc" text="DEGATS  :  10" styleClass="descItem"/>
+        </HBox>
+        <HBox styleClass="item">
+            <ImageView fitHeight="60.0" preserveRatio="true">
+                <Image url="/assets/img/pistolet.png"/>
+            </ImageView>
+            <Label fx:id="armeDistNom" text="Pistolet laser" styleClass="nomItem"/>
+            <Label fx:id="armeDistDesc" text="DEGATS  :  10" styleClass="descItem"/>
+        </HBox>
+        <HBox styleClass="item">
+            <ImageView fitHeight="60.0" preserveRatio="true">
+                <Image url="/assets/img/bouclier.png"/>
+            </ImageView>
+            <Label fx:id="armureNom" text="Gilet pare-balles" styleClass="nomItem"/>
+            <Label fx:id="armureDesc" text="PROTEC  :  10" styleClass="descItem"/>
+        </HBox>
+        <HBox id="titreCarbBox">
+            <Label text="Carburant"/>
+        </HBox>
+        <HBox id="btnBox">
+            <HBox id="carburant">
+                <HBox fx:id="niveauCarburant">
+                    <Label fx:id="niveauCarburantLitres" text="100L"/>
+                </HBox>
+            </HBox>
+            <Button id="retourBtn" text="Retour"
+                    onAction="#allerCarte">
+            </Button>
+        </HBox>
+    </FlowPane>
+
+</AnchorPane>

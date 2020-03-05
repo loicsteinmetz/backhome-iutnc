@@ -20,13 +20,8 @@ public class Carte {
      * Constructeur privé
      */
     private Carte(){
-        try {
-            this.initialiserPlanetes();
-            this.initialiserPlanetesVoisines();
-        } catch (IOException | ParseException e) {
-            e.printStackTrace();
-        }
-    };
+        recupereDonnees();
+    }
 
     /**
      * Getter de l'instance de la carte (singleton)
@@ -64,31 +59,41 @@ public class Carte {
     }
 
     /**
-     * Initialise les planètes de la carte
-     * @throws IOException
-     * @throws ParseException
+     * Récupère les données de configuration de la carte
      */
-    private void initialiserPlanetes() throws IOException, ParseException {
-        String cheminConf = "/assets/config/planetes.json";
+    @Configuration
+    private void recupereDonnees() {
+        String cheminConf = "/assets/config/carte.json";
         String cle = "planetes";
-        JSONObject[] planetes = new JsonParser().parseObjects(cheminConf, cle);
+        JSONObject[] pl = null;
+        try {
+            pl = new JsonParser().parseObjects(cheminConf, cle);
+        } catch (IOException | ParseException e) {
+            e.printStackTrace();
+        }
+        if (pl != null){
+            initialiserPlanetes(pl);
+            initialiserPlanetesVoisines(pl);
+        }
+    }
+
+    /**
+     * Initialise les planètes de la carte
+     */
+    private void initialiserPlanetes(JSONObject[] planetes) {
         for (JSONObject p : planetes){
             this.nouvellePlanete(new Planete(
                     p.get("nom").toString(),
-                    Integer.parseInt(p.get("niveau").toString())
+                    Integer.parseInt(p.get("niveau").toString()),
+                    p.get("description").toString()
             ));
         }
     }
 
     /**
      * Initialise les planètes voisines de chaque planète de la carte
-     * @throws IOException
-     * @throws ParseException
      */
-    private void initialiserPlanetesVoisines() throws IOException, ParseException {
-        String cheminConf = "/assets/config/planetes.json";
-        String cle = "planetes";
-        JSONObject[] planetes = new JsonParser().parseObjects(cheminConf, cle);
+    private void initialiserPlanetesVoisines(JSONObject[] planetes) {
         for (int i = 0 ; i < this.planetes.size() ; i++){
             JSONArray arr = (JSONArray) planetes[i].get("planetesVoisines");
             for (Object p : arr){

@@ -5,8 +5,8 @@ import lib.org.json.simple.JSONObject;
 import lib.org.json.simple.parser.JSONParser;
 import lib.org.json.simple.parser.ParseException;
 
-import java.io.*;
-import java.net.URISyntaxException;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  * Classe utilitaire de gestion du parsing json
@@ -19,10 +19,10 @@ public class JsonParser {
      * @param fichier chemin vers le fichier json
      * @param cle la clé du tableau json
      * @return le tableau java
-     * @throws IOException
-     * @throws ParseException
+     * @throws IOException récupération du fichier json
+     * @throws ParseException parsing du fichier json
      */
-    public String[] parseStrings(String fichier, String cle) throws IOException, ParseException, URISyntaxException {
+    public String[] parseStrings(String fichier, String cle) throws IOException, ParseException {
         JSONParser parser = new JSONParser();
         Object obj = parser.parse(new InputStreamReader(getClass().getResourceAsStream(fichier)));
         JSONObject jsonObject = (JSONObject) obj;
@@ -39,8 +39,8 @@ public class JsonParser {
      * @param fichier chemin vers le fichier json
      * @param cle la clé de l'objet json
      * @return l'objet json
-     * @throws IOException
-     * @throws ParseException
+     * @throws IOException récupération du fichier json
+     * @throws ParseException parsing du fichier json
      */
     public JSONObject[] parseObjects(String fichier, String cle) throws IOException, ParseException {
         JSONParser parser = new JSONParser();

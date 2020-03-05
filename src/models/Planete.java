@@ -9,16 +9,18 @@ public class Planete {
 
     private String nom;
     private int niveau;
-    private ArrayList<Planete> planetesVoisines = new ArrayList<Planete>();
+    private ArrayList<Planete> planetesVoisines = new ArrayList<>();
+    private String description;
 
     /**
      * Constructeur
      * @param nom nom de la planète
      * @param niveau niveau d'accès requis
      */
-    public Planete(String nom, int niveau) {
+    public Planete(String nom, int niveau, String description) {
         this.nom = nom;
         this.niveau = niveau;
+        this.description = description;
     }
 
     /**
@@ -43,6 +45,14 @@ public class Planete {
      */
     public ArrayList<Planete> getPlanetesVoisines() {
         return planetesVoisines;
+    }
+
+    /**
+     * Getter
+     * @return description de la planète
+     */
+    public String getDescription(){
+        return description;
     }
 
     /**

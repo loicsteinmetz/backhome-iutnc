@@ -1,6 +1,7 @@
 package controllers;
 
 import javafx.application.Application;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -51,7 +52,7 @@ public class CarteController extends Application {
     /**
      * Génère l'interface de la carte
      * @param stage primaryStage
-     * @throws Exception
+     * @throws Exception chargement de la vue
      */
     @Override
     public void start(Stage stage) throws Exception{
@@ -62,10 +63,10 @@ public class CarteController extends Application {
     }
 
     /**
-     * Initialisation de l'animation de l'écran d'accueil
+     * Initialisation de la vue
      */
     @FXML
-    public void initialize(){
+    private void initialize(){
         chargeElementsInterface();
         chargeLocalisation();
         chargePlanetesDisponibles();
@@ -102,7 +103,11 @@ public class CarteController extends Application {
             box.getStyleClass().add("planete");
             Label nom = new Label();
             nom.setText(p.getNom());
+            Label desc = new Label();
+            desc.getStyleClass().add("descriptionPlanete");
+            desc.setText(p.getDescription());
             box.getChildren().add(nom);
+            box.getChildren().add(desc);
             flow.getChildren().add(box);
             EffetsJavaFx.fadeIn(box, 2, 0);
         }
@@ -118,5 +123,14 @@ public class CarteController extends Application {
         Planete nouvellePlanete = MODELE.getPlaneteParNom((String) box.getUserData());
         getHeros().setLocalisation(nouvellePlanete);
         new ViewLoader().switchTo(VIEW, e, 0.5);
+    }
+
+    /**
+     * Permet d'accéder à l'inventaire
+     * @param e clic sur le bouton
+     */
+    @FXML
+    private void allerInventaire(Event e){
+        new ViewLoader().switchTo(InventaireController.getView(), e, 0);
     }
 }

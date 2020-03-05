@@ -9,14 +9,10 @@
             xmlns:fx="http://javafx.com/fxml">
 
     <ImageView fx:id="starsBg1">
-        <image>
-            <Image url="/assets/img/stars_bg.png"/>
-        </image>
+        <Image url="/assets/img/stars_bg.png"/>
     </ImageView>
     <ImageView fx:id="starsBg2">
-        <image>
-            <Image url="/assets/img/stars_bg.png"/>
-        </image>
+        <Image url="/assets/img/stars_bg.png"/>
     </ImageView>
 
     <GridPane>
@@ -35,7 +31,7 @@
         <HBox GridPane.columnIndex="1" GridPane.rowIndex="2">
             <Button fx:id="startBtn" text="JOUER"
                     GridPane.columnIndex="1" GridPane.rowIndex="2"
-                    onAction="#lanceJeu">
+                    onAction="#bouttonJouer">
             </Button>
         </HBox>
 
