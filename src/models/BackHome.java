@@ -29,7 +29,7 @@ public class BackHome implements Configurable {
      * Récupère les données de configuration de la page d'accueil
      */
     public void initConfiguration() {
-        String chemin = "/assets/config/BackHome.json";
+        String chemin = "/assets/config/backhome.json";
         JsonParser parser = new JsonParser();
         String[] scenario = new String[0];
         try {
