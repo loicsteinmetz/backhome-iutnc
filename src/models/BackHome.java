@@ -9,12 +9,12 @@ import java.io.IOException;
 /**
  * Modélisation du système de jeu
  */
-public class BackHome {
+public class BackHome implements Configurable {
 
     private String[] scenario;
 
     public BackHome(){
-        recupereDonnees();
+        initConfiguration();
     }
 
     /**
@@ -28,8 +28,7 @@ public class BackHome {
     /**
      * Récupère les données de configuration de la page d'accueil
      */
-    @Configuration
-    private void recupereDonnees() {
+    public void initConfiguration() {
         String chemin = "/assets/config/BackHome.json";
         JsonParser parser = new JsonParser();
         String[] scenario = new String[0];
