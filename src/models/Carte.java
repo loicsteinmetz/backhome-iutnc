@@ -63,7 +63,7 @@ public class Carte {
      */
     @Configuration
     private void recupereDonnees() {
-        String cheminConf = "/assets/config/carte.json";
+        String cheminConf = "/assets/config/Carte.json";
         String cle = "planetes";
         JSONObject[] pl = null;
         try {

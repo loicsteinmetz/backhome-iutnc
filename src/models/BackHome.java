@@ -5,7 +5,6 @@ import lib.org.json.simple.parser.ParseException;
 import utils.JsonParser;
 
 import java.io.IOException;
-import java.net.URISyntaxException;
 
 /**
  * Modélisation du système de jeu
@@ -31,7 +30,7 @@ public class BackHome {
      */
     @Configuration
     private void recupereDonnees() {
-        String chemin = "/assets/config/scenario.json";
+        String chemin = "/assets/config/BackHome.json";
         JsonParser parser = new JsonParser();
         String[] scenario = new String[0];
         try {
