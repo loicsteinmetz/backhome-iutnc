@@ -5,6 +5,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml"
             fx:controller="controllers.QueteController"
             fx:id="pane">
@@ -16,6 +18,13 @@
         <Image url="/assets/img/stars_bg.png"/>
     </ImageView>
 
-    <Label fx:id="nomPlanete" text="..."/>
+    <GridPane>
+        <HBox GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Label fx:id="nomPlanete" text="..."/>
+        </HBox>
+        <HBox GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Button onAction="#lancerQuete" text="COMMENCER" fx:id="startBtn"/>
+        </HBox>
+    </GridPane>
 
 </AnchorPane>

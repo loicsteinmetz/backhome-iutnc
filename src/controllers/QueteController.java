@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -38,6 +39,8 @@ public class QueteController extends Application {
     private AnchorPane pane;
     @FXML
     private Label nomPlanete;
+    @FXML
+    private Button startBtn;
 
     /**
      * Génère l'interface de quête
@@ -68,14 +71,20 @@ public class QueteController extends Application {
     @FXML
     public void initialize(){
         MODELE = getQuete();
+        startBtn.setVisible(false);
         EffetsJavaFx.defilementBg(starsBg1, starsBg2);
         nomPlanete.setText(getHeros().getLocalisation().getNom().toUpperCase());
-        Transition t = EffetsJavaFx.fadeIn(starsBg1, 2, 0);
+        EffetsJavaFx.fadeIn(starsBg1, 2, 0);
         EffetsJavaFx.fadeIn(starsBg2, 2, 0);
-        EffetsJavaFx.fadeIn(nomPlanete, 2, 1);
+        Transition t = EffetsJavaFx.fadeIn(nomPlanete, 2, 1.5);
         t.setOnFinished((e)->{
-            pane.setOnMouseClicked(this::switchType);;
+            startBtn.setVisible(true);
         });
+    }
+
+    @FXML
+    private void lancerQuete(Event e){
+        switchType(e);
     }
 
     private void switchType(Event e){
