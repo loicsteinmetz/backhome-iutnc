@@ -1,14 +1,38 @@
 package models;
 
-public class Quete {
+public class Quete implements Configurable {
 
     private static Quete QUETE = new Quete();
+    private Evenement prochainEvenement;
+    private int idProchainEvenement;
 
     private Quete(){
 
     }
 
+    /**
+     * Getter de l'instance de Quete (singleton)
+     * @return l'instance de quete
+     */
     public static Quete getQuete(){
+        if(QUETE == null) {
+            QUETE = new Quete();
+        }
         return QUETE;
+    }
+
+    public void initEvenementSuivant(int id){
+        idProchainEvenement = id;
+        initConfiguration();
+    }
+
+    public void initEvenementSuivant(Planete planete){
+        idProchainEvenement = planete.getIdPremierEvenement();
+        initConfiguration();
+    }
+
+    @Override
+    public void initConfiguration() {
+
     }
 }
