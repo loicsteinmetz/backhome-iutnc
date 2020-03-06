@@ -2,6 +2,10 @@ AnchorPane{
     -fx-background-color: black;
 }
 
+Label{
+    -fx-wrap-text:true;
+}
+
 GridPane{
     -fx-alignment:center;
     -fx-min-width:800;
@@ -49,4 +53,5 @@ HBox{
     -fx-max-width:800;
     -fx-max-height:600;
     -fx-opacity:0;
+    -fx-padding: 0 100px;
 }

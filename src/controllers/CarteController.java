@@ -104,6 +104,7 @@ public class CarteController extends Application {
             box.setOpacity(0);
             box.getStyleClass().add("planete");
             Label nom = new Label();
+            nom.getStyleClass().add("nomPlanete");
             nom.setText(p.getNom());
             Label desc = new Label();
             desc.getStyleClass().add("descriptionPlanete");

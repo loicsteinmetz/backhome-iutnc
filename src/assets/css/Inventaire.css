@@ -2,6 +2,10 @@ AnchorPane{
     -fx-background-color: black;
 }
 
+Label{
+    -fx-wrap-text:true;
+}
+
 #titreBox{
     -fx-alignment:center;
     -fx-padding:0 0 10px 0;
