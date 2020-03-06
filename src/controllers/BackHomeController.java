@@ -64,31 +64,12 @@ public class BackHomeController extends Application {
     }
 
     /**
-     * Initialisation de la vue
+     * Initialisation de la vue et du modèle
      */
     @FXML
     private void initialize(){
         MODELE = new BackHome();
-        animeBg();
-    }
-
-    /**
-     * Anime l'image d'arrière-plan de l'écran d'accueil
-     */
-    @FXML
-    private void animeBg() {
-        TranslateTransition tt1 = new TranslateTransition(Duration.seconds(1.5), starsBg1);
-        tt1.setFromY(-600);
-        tt1.setToY(0);
-        tt1.setCycleCount( Timeline.INDEFINITE);
-        tt1.setInterpolator(Interpolator.LINEAR);
-        tt1.play();
-        TranslateTransition tt2 = new TranslateTransition(Duration.seconds(1.5), starsBg2);
-        tt2.setFromY(0);
-        tt2.setToY(600);
-        tt2.setCycleCount(Timeline.INDEFINITE);
-        tt2.setInterpolator(Interpolator.LINEAR);
-        tt2.play();
+        EffetsJavaFx.defilementBg(starsBg1, starsBg2);
     }
 
     /**

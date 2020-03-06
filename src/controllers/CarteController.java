@@ -64,7 +64,7 @@ public class CarteController extends Application {
     }
 
     /**
-     * Initialisation de la vue
+     * Initialisation de la vue et du modèle
      */
     @FXML
     private void initialize(){

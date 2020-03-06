@@ -1,6 +1,5 @@
 package controllers;
 
-import javafx.animation.PauseTransition;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,13 +7,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 import models.Decision;
-import models.Situation;
 import utils.ViewLoader;
 
-import static models.Carte.getCarte;
-import static models.Heros.getHeros;
 import static models.Quete.getQuete;
 
 /**
@@ -56,6 +51,9 @@ public class DecisionController extends Application {
         stage.setScene(scene);
     }
 
+    /**
+     * Initialisation de la vue et du modèle
+     */
     @FXML
     public void initialize(){
         MODELE = (Decision) getQuete().getProchainEvenement();

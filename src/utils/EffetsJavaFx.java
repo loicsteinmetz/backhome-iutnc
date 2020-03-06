@@ -1,9 +1,10 @@
 package utils;
 
-import javafx.animation.FadeTransition;
-import javafx.animation.Transition;
+import javafx.animation.*;
 import javafx.scene.Node;
 import javafx.util.Duration;
+
+import javax.swing.text.html.ImageView;
 
 /**
  * Classe utilitaire de gestion de fontionnalités JavaFx
@@ -40,5 +41,25 @@ public class EffetsJavaFx {
         ft.setDelay(Duration.seconds(delaySec));
         ft.play();
         return ft;
+    }
+
+    /**
+     * Anime l'arrière plan, composé de deux images
+     * @param img1 première image
+     * @param img2 image identique
+     */
+    public static void defilementBg(Node img1, Node img2) {
+        TranslateTransition tt1 = new TranslateTransition(Duration.seconds(1.5), img1);
+        tt1.setFromY(-600);
+        tt1.setToY(0);
+        tt1.setCycleCount( Timeline.INDEFINITE);
+        tt1.setInterpolator(Interpolator.LINEAR);
+        TranslateTransition tt2 = new TranslateTransition(Duration.seconds(1.5), img2);
+        tt2.setFromY(0);
+        tt2.setToY(600);
+        tt2.setCycleCount(Timeline.INDEFINITE);
+        tt2.setInterpolator(Interpolator.LINEAR);
+        tt1.play();
+        tt2.play();
     }
 }

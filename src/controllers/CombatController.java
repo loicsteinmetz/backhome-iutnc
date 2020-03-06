@@ -53,6 +53,9 @@ public class CombatController extends Application {
         stage.setScene(scene);
     }
 
+    /**
+     * Initialisation de la vue et du modèle
+     */
     @FXML
     public void initialize(){
         MODELE = (Combat) getQuete().getProchainEvenement();

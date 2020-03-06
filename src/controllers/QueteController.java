@@ -57,15 +57,22 @@ public class QueteController extends Application {
         stage.setScene(scene);
     }
 
+    /**
+     * Retourne la vue associée au controller
+     * @return chemin de la vue
+     */
     @Controller
     public static String getView(){
         return VIEW;
     }
 
+    /**
+     * Initialisation de la vue et du modèle
+     */
     @FXML
     public void initialize(){
         MODELE = getQuete();
-        animeBg();
+        EffetsJavaFx.defilementBg(starsBg1, starsBg2);
         nomPlanete.setText(getHeros().getLocalisation().getNom());
         Transition t = EffetsJavaFx.fadeIn(starsBg1, 2, 0);
         EffetsJavaFx.fadeIn(starsBg2, 2, 0);
@@ -90,22 +97,4 @@ public class QueteController extends Application {
         }
     }
 
-    /**
-     * Anime l'image d'arrière-plan de l'écran d'accueil
-     */
-    @FXML
-    private void animeBg() {
-        TranslateTransition tt1 = new TranslateTransition(Duration.seconds(1.5), starsBg1);
-        tt1.setFromY(-600);
-        tt1.setToY(0);
-        tt1.setCycleCount( Timeline.INDEFINITE);
-        tt1.setInterpolator(Interpolator.LINEAR);
-        TranslateTransition tt2 = new TranslateTransition(Duration.seconds(1.5), starsBg2);
-        tt2.setFromY(0);
-        tt2.setToY(600);
-        tt2.setCycleCount(Timeline.INDEFINITE);
-        tt2.setInterpolator(Interpolator.LINEAR);
-        tt1.play();
-        tt2.play();
-    }
 }
