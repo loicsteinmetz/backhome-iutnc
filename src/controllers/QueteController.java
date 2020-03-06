@@ -9,7 +9,9 @@ import models.Quete;
 
 import static models.Quete.getQuete;
 
-
+/**
+ * Controller de la quête
+ */
 public class QueteController extends Application {
 
     @Controller
@@ -19,6 +21,11 @@ public class QueteController extends Application {
     @Controller
     private Quete MODELE;
 
+    /**
+     * Génère l'interface de quête
+     * @param stage primaryStage
+     * @throws Exception chargement de la vue
+     */
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource(VIEW));

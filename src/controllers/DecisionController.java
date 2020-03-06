@@ -9,6 +9,9 @@ import models.Decision;
 
 import static models.Quete.getQuete;
 
+/**
+ * Controller des décisions
+ */
 public class DecisionController extends Application {
 
     @Controller

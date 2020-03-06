@@ -10,6 +10,9 @@ import models.Decision;
 
 import static models.Quete.getQuete;
 
+/**
+ * Controller des combats
+ */
 public class CombatController extends Application {
 
     @Controller
