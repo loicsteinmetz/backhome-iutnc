@@ -34,4 +34,9 @@ public class QueteController extends Application {
         scene.getStylesheets().add(STYLE);
         stage.setScene(scene);
     }
+
+    @Controller
+    public static String getView(){
+        return VIEW;
+    }
 }

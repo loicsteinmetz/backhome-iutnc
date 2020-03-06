@@ -126,7 +126,7 @@ public class BackHomeController extends Application {
         } else if (index == MODELE.getScenario().length) {
             label.setDisable(true);
             label.setVisible(false);
-            new ViewLoader().switchTo(CarteController.getView(), event, 2);
+            new ViewLoader().switchTo(QueteController.getView(), event, 2);
         }
     }
 }
