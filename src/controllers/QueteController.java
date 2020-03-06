@@ -1,9 +1,6 @@
 package controllers;
 
-import javafx.animation.Interpolator;
-import javafx.animation.Timeline;
 import javafx.animation.Transition;
-import javafx.animation.TranslateTransition;
 import javafx.application.Application;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -14,7 +11,6 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 import models.Decision;
 import models.Quete;
 import models.Situation;
@@ -73,7 +69,7 @@ public class QueteController extends Application {
     public void initialize(){
         MODELE = getQuete();
         EffetsJavaFx.defilementBg(starsBg1, starsBg2);
-        nomPlanete.setText(getHeros().getLocalisation().getNom());
+        nomPlanete.setText(getHeros().getLocalisation().getNom().toUpperCase());
         Transition t = EffetsJavaFx.fadeIn(starsBg1, 2, 0);
         EffetsJavaFx.fadeIn(starsBg2, 2, 0);
         EffetsJavaFx.fadeIn(nomPlanete, 2, 1);
