@@ -7,7 +7,7 @@ public class Quete implements Configurable {
     private int idProchainEvenement;
 
     private Quete(){
-
+        prochainEvenement = new Decision(1); // todo : test
     }
 
     /**
@@ -34,5 +34,9 @@ public class Quete implements Configurable {
     @Override
     public void initConfiguration() {
 
+    }
+
+    public Evenement getProchainEvenement() {
+        return prochainEvenement;
     }
 }

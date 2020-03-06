@@ -56,7 +56,6 @@ public class InventaireController extends Application {
      */
     @Override
     public void start(Stage stage) throws Exception{
-        MODELE = getInventaire();
         Parent root = FXMLLoader.load(getClass().getResource(VIEW));
         Scene scene = new Scene(root, 800, 600);
         scene.getStylesheets().add(STYLE);
@@ -68,6 +67,7 @@ public class InventaireController extends Application {
      */
     @FXML
     private void initialize(){
+        MODELE = getInventaire();
         armeCacNom.setText(MODELE.getArmeCac().getNom());
         armeCacDesc.setText("DEGATS  :  " + MODELE.getArmeCac().getDegats());
         armeDistNom.setText(MODELE.getArmeDist().getNom());

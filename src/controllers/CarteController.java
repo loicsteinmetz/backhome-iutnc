@@ -57,7 +57,6 @@ public class CarteController extends Application {
      */
     @Override
     public void start(Stage stage) throws Exception{
-        MODELE = getCarte();
         Parent root = FXMLLoader.load(getClass().getResource(VIEW));
         Scene scene = new Scene(root, 800, 600);
         scene.getStylesheets().add(STYLE);
@@ -69,6 +68,7 @@ public class CarteController extends Application {
      */
     @FXML
     private void initialize(){
+        MODELE = getCarte();
         chargeElementsInterface();
         chargeLocalisation();
         chargePlanetesDisponibles();

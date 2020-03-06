@@ -6,7 +6,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml"
+<AnchorPane fx:id="pane"
+            xmlns:fx="http://javafx.com/fxml"
             fx:controller="controllers.DecisionController">
 
 </AnchorPane>

@@ -47,4 +47,11 @@ public class Heros extends Personnage {
         this.localisation = localisation;
     }
 
+    public Situation getSituation() {
+        return situation;
+    }
+
+    public void setSituation(Situation situation) {
+        this.situation = situation;
+    }
 }

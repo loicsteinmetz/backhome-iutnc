@@ -57,7 +57,6 @@ public class BackHomeController extends Application {
      */
     @Override
     public void start(Stage stage) throws Exception{
-        MODELE = new BackHome();
         Parent root = FXMLLoader.load(getClass().getResource(VIEW));
         Scene scene = new Scene(root, 800, 600);
         scene.getStylesheets().add(STYLE);
@@ -69,6 +68,7 @@ public class BackHomeController extends Application {
      */
     @FXML
     private void initialize(){
+        MODELE = new BackHome();
         animeBg();
     }
 

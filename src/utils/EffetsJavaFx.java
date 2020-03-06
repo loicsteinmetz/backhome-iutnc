@@ -19,7 +19,7 @@ public class EffetsJavaFx {
      */
     public static Transition fadeOut(Node node, double dureeSec, double delaySec){
         FadeTransition ft = new FadeTransition(Duration.seconds(dureeSec), node);
-        ft.setFromValue(node.getOpacity());
+        ft.setFromValue(1);
         ft.setToValue(0.0);
         ft.setDelay(Duration.seconds(delaySec));
         ft.play();
@@ -35,7 +35,7 @@ public class EffetsJavaFx {
      */
     public static Transition fadeIn(Node node, double dureeSec, double delaySec){
         FadeTransition ft = new FadeTransition(Duration.seconds(dureeSec), node);
-        ft.setFromValue(node.getOpacity());
+        ft.setFromValue(0);
         ft.setToValue(1.0);
         ft.setDelay(Duration.seconds(delaySec));
         ft.play();

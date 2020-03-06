@@ -1,0 +1,19 @@
+AnchorPane{
+    -fx-background-color: black;
+}
+
+ImageView{
+    -fx-opacity:0;
+}
+
+Label{
+    -fx-text-fill: white;
+    -fx-font-size: 30px;
+    -fx-font-family: "Roboto Slab";
+    -fx-opacity:0;
+    -fx-max-width:800px;
+    -fx-min-width:800px;
+    -fx-max-height:600px;
+    -fx-min-height:600px;
+    -fx-alignment:center;
+}
