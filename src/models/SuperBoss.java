@@ -1,6 +1,9 @@
 package models;
 
-public class SuperBoss extends Ennemi {
+/**
+ * Modélisation d'un pnj étant de type "Superboss" au combat
+ */
+public class SuperBoss extends Boss {
 
     private Arme armeLegendaire;
 
