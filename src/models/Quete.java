@@ -7,7 +7,7 @@ public class Quete implements Configurable {
     private int idProchainEvenement;
 
     private Quete(){
-        prochainEvenement = new Decision(1); // todo : test
+        prochainEvenement = new Combat(1); // todo : test
     }
 
     /**

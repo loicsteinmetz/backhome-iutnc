@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane fx:id="pane"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="controllers.CombatController">
+
+    <ImageView fitHeight="700" fitWidth="800" fx:id="bg">
+        <Image url="/assets/img/fog.png"/>
+    </ImageView>
 
 </AnchorPane>

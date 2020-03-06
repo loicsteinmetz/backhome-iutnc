@@ -1,0 +1,7 @@
+AnchorPane{
+    -fx-background-color:black;
+}
+
+ImageView{
+    -fx-opacity:0;
+}

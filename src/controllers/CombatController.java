@@ -1,15 +1,16 @@
 package controllers;
 
+import javafx.animation.Transition;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import models.Combat;
-import models.Decision;
-import models.Quete;
+import utils.EffetsJavaFx;
 import utils.ViewLoader;
 
 import static models.Quete.getQuete;
@@ -28,6 +29,8 @@ public class CombatController extends Application {
 
     @FXML
     private AnchorPane pane;
+    @FXML
+    private ImageView bg;
 
     /**
      * Retourne la vue associée au controller
@@ -59,6 +62,10 @@ public class CombatController extends Application {
     @FXML
     public void initialize(){
         MODELE = (Combat) getQuete().getProchainEvenement();
+        Transition t = EffetsJavaFx.fade(bg, 4, 0, 0.3);
+        t.setOnFinished((e)->{
+            EffetsJavaFx.vibrance(bg, 6, 0.3, 0.2);
+        });
         pane.setOnMouseClicked((e)->{
             new ViewLoader().switchTo(CarteController.getView(), e);
         });
