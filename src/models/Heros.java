@@ -9,13 +9,15 @@ public class Heros extends Personnage {
 
     private static Heros HEROS = new Heros();
     private Planete localisation;
+    private Situation situation;
 
     /**
      * Constructeur privé
      */
     private Heros(){
         super();
-        this.localisation = getCarte().getPlaneteParNom("utopia");
+        localisation = getCarte().getPlaneteParNom("utopia");
+        situation = Situation.DEBUT;
     }
 
     /**
