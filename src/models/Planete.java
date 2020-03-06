@@ -11,6 +11,10 @@ public class Planete {
     private int niveau;
     private ArrayList<Planete> planetesVoisines = new ArrayList<>();
     private String description;
+    private int idPremierEvenement;
+    private int idRecompenseArmeCac;
+    private int getIdRecompenseDistance;
+    private int idRecompenseArmure;
 
     /**
      * Constructeur
