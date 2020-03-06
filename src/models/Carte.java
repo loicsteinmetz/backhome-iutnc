@@ -62,7 +62,7 @@ public class Carte implements Configurable {
      * Récupère les données de configuration de la carte
      */
     public void initConfiguration() {
-        String cheminConf = "/assets/config/carte.json";
+        String cheminConf = "/data/carte.json";
         String cle = "planetes";
         JSONObject[] pl = null;
         try {
