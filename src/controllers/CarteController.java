@@ -17,6 +17,7 @@ import models.Planete;
 import utils.EffetsJavaFx;
 import utils.ViewLoader;
 
+import static models.Carte.getCarte;
 import static models.Heros.getHeros;
 
 /**
@@ -29,7 +30,7 @@ public class CarteController extends Application {
     @Controller
     private static final String STYLE = "/assets/css/Carte.css";
     @Controller
-    private static final Carte MODELE = Carte.getCarte();
+    private Carte MODELE;
 
     @FXML
     private ImageView hud;
@@ -60,6 +61,17 @@ public class CarteController extends Application {
         Scene scene = new Scene(root, 800, 600);
         scene.getStylesheets().add(STYLE);
         stage.setScene(scene);
+    }
+
+    /**
+     * Initialise le controller :
+     * Charge le modèle
+     * @throws Exception
+     */
+    @Override
+    public void init() throws Exception {
+        MODELE = getCarte();
+        super.init();
     }
 
     /**

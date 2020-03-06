@@ -30,7 +30,7 @@ public class BackHomeController extends Application {
     @Controller
     private static final String STYLE = "/assets/css/BackHome.css";
     @Controller
-    private static final BackHome MODELE = new BackHome();
+    private BackHome MODELE;
 
     @FXML
     private AnchorPane pane;

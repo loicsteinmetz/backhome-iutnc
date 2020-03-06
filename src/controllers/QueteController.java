@@ -17,7 +17,7 @@ public class QueteController extends Application {
     @Controller
     private static final String STYLE = "/assets/css/Quete.css";
     @Controller
-    private static final Quete MODELE = getQuete();
+    private Quete MODELE;
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -25,5 +25,16 @@ public class QueteController extends Application {
         Scene scene = new Scene(root, 800, 600);
         scene.getStylesheets().add(STYLE);
         stage.setScene(scene);
+    }
+
+    /**
+     * Initialise le controller :
+     * Charge le modèle
+     * @throws Exception
+     */
+    @Override
+    public void init() throws Exception {
+        MODELE = getQuete();
+        super.init();
     }
 }

@@ -38,7 +38,7 @@ public class InventaireController extends Application {
     @Controller
     private static final String STYLE = "/assets/css/Inventaire.css";
     @Controller
-    private static final Inventaire MODELE = getInventaire();
+    private Inventaire MODELE;
 
     /**
      * Retourne la vue associée au controller
@@ -60,6 +60,17 @@ public class InventaireController extends Application {
         Scene scene = new Scene(root, 800, 600);
         scene.getStylesheets().add(STYLE);
         stage.setScene(scene);
+    }
+
+    /**
+     * Initialise le controller :
+     * Charge le modèle
+     * @throws Exception
+     */
+    @Override
+    public void init() throws Exception {
+        MODELE = getInventaire();
+        super.init();
     }
 
     /**

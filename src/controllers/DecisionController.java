@@ -16,13 +16,38 @@ public class DecisionController extends Application {
     @Controller
     private static final String STYLE = "/assets/css/Decision.css";
     @Controller
-    private static final Decision MODELE = (Decision) getQuete().getProchainEvenement();
+    private Decision MODELE;
 
+    /**
+     * Retourne la vue associée au controller
+     * @return chemin de la vue
+     */
+    @Controller
+    public static String getView(){
+        return VIEW;
+    }
+
+    /**
+     * Génère l'interface de prise de décision
+     * @param stage primaryStage
+     * @throws Exception chargement de la vue
+     */
     @Override
     public void start(Stage stage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource(VIEW));
         Scene scene = new Scene(root, 800, 600);
         scene.getStylesheets().add(STYLE);
         stage.setScene(scene);
+    }
+
+    /**
+     * Initialise le controller :
+     * Charge le modèle
+     * @throws Exception
+     */
+    @Override
+    public void init() throws Exception {
+        MODELE = (Decision) getQuete().getProchainEvenement();
+        super.init();
     }
 }
