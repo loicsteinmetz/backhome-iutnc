@@ -8,6 +8,7 @@ public class Armure {
 	
 	private int resistance;
 	private String nom;
+	private int id;
 
 	/**
 	 * Constructeur d'armure

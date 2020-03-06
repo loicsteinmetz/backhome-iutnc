@@ -1,9 +1,19 @@
 package models;
 
-public abstract class Ennemi extends Personnage {
+public abstract class Ennemi extends Personnage implements Configurable {
 
     private String description;
     private Arme arme;
+    private int id;
+
+    /**
+     * Constructeur
+     * @param id l'id de l'ennemi
+     */
+    public Ennemi(int id){
+        this.id = id;
+        this.initConfiguration();
+    }
 
     /**
      * Getter
@@ -20,4 +30,10 @@ public abstract class Ennemi extends Personnage {
     public Arme getArme() {
         return arme;
     }
+
+    @Override
+    public void initConfiguration() {
+
+    }
+
 }

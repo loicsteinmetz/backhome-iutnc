@@ -5,4 +5,8 @@ package models;
  */
 public class Brute extends Ennemi {
 
+    public Brute(int id){
+        super(id);
+    }
+
 }

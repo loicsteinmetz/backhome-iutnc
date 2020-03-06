@@ -8,6 +8,7 @@ public class Arme {
 
     private int degats;
     private String nom;
+    private int id;
 
     /**
      * Constructeur d'arme générique

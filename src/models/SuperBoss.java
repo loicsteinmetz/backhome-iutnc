@@ -7,6 +7,10 @@ public class SuperBoss extends Boss {
 
     private Arme armeLegendaire;
 
+    public SuperBoss(int id){
+        super(id);
+    }
+
     /**
      * Getter
      * @return l'arme légendaire du superboss
@@ -15,4 +19,8 @@ public class SuperBoss extends Boss {
         return armeLegendaire;
     }
 
+    @Override
+    public void initConfiguration() {
+
+    }
 }
