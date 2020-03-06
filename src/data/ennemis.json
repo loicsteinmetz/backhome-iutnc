@@ -1,0 +1,9 @@
+{
+  "2":{
+    "type": "brute",
+    "nom": "Galdur",
+    "description": "un orc",
+    "idArme": "2",
+    "pv": 100
+  }
+}

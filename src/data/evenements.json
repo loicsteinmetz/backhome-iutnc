@@ -1,0 +1,25 @@
+{
+  "2": {
+    "type": "decision",
+    "scenario": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+    ],
+    "choix": "Vous arrivez à une intersection",
+    "optionA": "Prendre le chemin de gauche",
+    "optionB": "Prendre le chemin de droite",
+    "idIssueA": "VAISSEAU",
+    "idIssueB": "6"
+  },
+  "4": {
+    "type": "combat",
+    "scenario": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+    ],
+    "idEnnemi": "2",
+    "idIssue": "8"
+  }
+}

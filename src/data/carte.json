@@ -3,42 +3,46 @@
     "nom":"Utopia",
     "niveau":"0",
     "planetesVoisines": ["ienos","zéphyr","hermès"],
-    "description": "P1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed\ndo eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    "description": "P1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "idPremierEvenement": "2",
+    "idRecompenseArmeCac": null,
+    "idRecompenseDistance": null,
+    "idRecompenseArmure": null
   },
   {
     "nom":"Ienos",
     "niveau":"1",
     "planetesVoisines": ["zéphyr","hermès","lumini","tremor"],
-    "description": "P2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed\ndo eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    "description": "P2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   },
   {
     "nom":"Zéphyr",
     "niveau":"1",
     "planetesVoisines": ["ienos","hermès","lumini","tremor"],
-    "description": "P3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed\ndo eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    "description": "P3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   },
   {
     "nom":"Hermès",
     "niveau":"1",
     "planetesVoisines": ["ienos","zéphyr","lumini","tremor"],
-    "description": "P4 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed\ndo eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    "description": "P4 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   },
   {
     "nom":"Lumini",
     "niveau":"2",
     "planetesVoisines": ["calypso"],
-    "description": "P5 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed\ndo eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    "description": "P5 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   },
   {
     "nom":"Tremor",
     "niveau":"2",
     "planetesVoisines": ["calypso"],
-    "description": "P6 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed\ndo eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    "description": "P6 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   },
   {
     "nom":"Calypso",
     "niveau":"3",
     "planetesVoisines": [],
-    "description": "P7 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed\ndo eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    "description": "P7 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   }
 ]}
