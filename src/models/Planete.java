@@ -13,7 +13,7 @@ public class Planete {
     private String description;
     private int idPremierEvenement;
     private int idRecompenseArmeCac;
-    private int getIdRecompenseDistance;
+    private int idRecompenseDistance;
     private int idRecompenseArmure;
 
     /**
@@ -65,5 +65,13 @@ public class Planete {
      */
     public void nouvellePlaneteVoisine(Planete p) {
         this.planetesVoisines.add(p);
+    }
+
+    /**
+     * Getter
+     * @return l'id du premier événement de la planète
+     */
+    public int getIdPremierEvenement() {
+        return idPremierEvenement;
     }
 }
