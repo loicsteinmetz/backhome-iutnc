@@ -84,7 +84,11 @@ public class Carte implements Configurable {
             this.nouvellePlanete(new Planete(
                     p.get("nom").toString(),
                     Integer.parseInt(p.get("niveau").toString()),
-                    p.get("description").toString()
+                    p.get("description").toString(),
+                    Integer.parseInt(p.get("idPremierEvenement").toString()),
+                    Integer.parseInt(p.get("idRecompenseCac").toString()),
+                    Integer.parseInt(p.get("idRecompenseDistance").toString()),
+                    Integer.parseInt(p.get("idRecompenseArmure").toString())
             ));
         }
     }

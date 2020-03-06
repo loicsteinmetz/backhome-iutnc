@@ -38,20 +38,10 @@ public class CombatController extends Application {
      */
     @Override
     public void start(Stage stage) throws Exception{
+        //MODELE = (Combat) getQuete().getProchainEvenement();
         Parent root = FXMLLoader.load(getClass().getResource(VIEW));
         Scene scene = new Scene(root, 800, 600);
         scene.getStylesheets().add(STYLE);
         stage.setScene(scene);
-    }
-
-    /**
-     * Initialise le controller :
-     * Charge le modèle
-     * @throws Exception
-     */
-    @Override
-    public void init() throws Exception {
-        MODELE = (Combat) getQuete().getProchainEvenement()
-        super.init();
     }
 }

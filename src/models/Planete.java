@@ -11,16 +11,24 @@ public class Planete {
     private int niveau;
     private ArrayList<Planete> planetesVoisines = new ArrayList<>();
     private String description;
+    private int idPremierEvenement;
+    private int idRecompenseArmeCac;
+    private int getIdRecompenseDistance;
+    private int idRecompenseArmure;
 
     /**
      * Constructeur
      * @param nom nom de la planète
      * @param niveau niveau d'accès requis
      */
-    public Planete(String nom, int niveau, String description) {
+    public Planete(String nom, int niveau, String description, int idPremierEvenement, int idRecompenseArmeCac, int idRecompenseDistance, int idRecompenseArmure) {
         this.nom = nom;
         this.niveau = niveau;
         this.description = description;
+        this.idPremierEvenement = idPremierEvenement;
+        this.idRecompenseArmeCac = idRecompenseArmeCac;
+        this.getIdRecompenseDistance = idRecompenseDistance;
+        this.idRecompenseArmure = idRecompenseArmure;
     }
 
     /**

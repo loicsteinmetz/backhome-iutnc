@@ -30,7 +30,7 @@ public class BackHomeController extends Application {
     @Controller
     private static final String STYLE = "/assets/css/BackHome.css";
     @Controller
-    private BackHome MODELE;
+    private static BackHome MODELE;
 
     @FXML
     private AnchorPane pane;
@@ -57,6 +57,7 @@ public class BackHomeController extends Application {
      */
     @Override
     public void start(Stage stage) throws Exception{
+        MODELE = new BackHome();
         Parent root = FXMLLoader.load(getClass().getResource(VIEW));
         Scene scene = new Scene(root, 800, 600);
         scene.getStylesheets().add(STYLE);

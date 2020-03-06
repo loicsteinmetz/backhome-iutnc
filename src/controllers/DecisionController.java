@@ -37,20 +37,10 @@ public class DecisionController extends Application {
      */
     @Override
     public void start(Stage stage) throws Exception{
+        //MODELE = (Decision) getQuete().getProchainEvenement();
         Parent root = FXMLLoader.load(getClass().getResource(VIEW));
         Scene scene = new Scene(root, 800, 600);
         scene.getStylesheets().add(STYLE);
         stage.setScene(scene);
-    }
-
-    /**
-     * Initialise le controller :
-     * Charge le modèle
-     * @throws Exception
-     */
-    @Override
-    public void init() throws Exception {
-        MODELE = (Decision) getQuete().getProchainEvenement();
-        super.init();
     }
 }

@@ -30,7 +30,7 @@ public class CarteController extends Application {
     @Controller
     private static final String STYLE = "/assets/css/Carte.css";
     @Controller
-    private Carte MODELE;
+    private static Carte MODELE;
 
     @FXML
     private ImageView hud;
@@ -57,21 +57,11 @@ public class CarteController extends Application {
      */
     @Override
     public void start(Stage stage) throws Exception{
+        MODELE = getCarte();
         Parent root = FXMLLoader.load(getClass().getResource(VIEW));
         Scene scene = new Scene(root, 800, 600);
         scene.getStylesheets().add(STYLE);
         stage.setScene(scene);
-    }
-
-    /**
-     * Initialise le controller :
-     * Charge le modèle
-     * @throws Exception
-     */
-    @Override
-    public void init() throws Exception {
-        MODELE = getCarte();
-        super.init();
     }
 
     /**
