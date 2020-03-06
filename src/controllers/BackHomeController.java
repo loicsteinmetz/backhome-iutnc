@@ -1,9 +1,6 @@
 package controllers;
 
-import javafx.animation.Interpolator;
-import javafx.animation.Timeline;
 import javafx.animation.Transition;
-import javafx.animation.TranslateTransition;
 import javafx.application.Application;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -15,7 +12,6 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 import models.BackHome;
 import utils.EffetsJavaFx;
 import utils.ViewLoader;

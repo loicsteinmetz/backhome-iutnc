@@ -44,6 +44,33 @@ public class EffetsJavaFx {
     }
 
     /**
+     * Lance une animation de fondu sur un élément
+     * @param node élément
+     * @param dureeSec durée de l'animation
+     * @param opStart opacité de départ
+     * @param opEnd opacité d'arrivée
+     * @return transition générée
+     */
+    public static Transition fade(Node node, double dureeSec, double opStart, double opEnd){
+        FadeTransition ft = new FadeTransition(Duration.seconds(dureeSec), node);
+        ft.setFromValue(opStart);
+        ft.setToValue(opEnd);
+        ft.play();
+        return ft;
+    }
+
+    public static Timeline vibrance(Node node, double dureeSec, double opStart, double opEnd){
+        Timeline tl = new Timeline(
+                new KeyFrame(Duration.ZERO, new KeyValue(node.opacityProperty(), opStart)),
+                new KeyFrame(Duration.seconds(dureeSec/2), new KeyValue(node.opacityProperty(), opEnd)),
+                new KeyFrame(Duration.seconds(dureeSec), new KeyValue(node.opacityProperty(), opStart))
+        );
+        tl.setCycleCount(Timeline.INDEFINITE);
+        tl.play();
+        return tl;
+    }
+
+    /**
      * Anime l'arrière plan, composé de deux images
      * @param img1 première image
      * @param img2 image identique

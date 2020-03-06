@@ -6,8 +6,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <AnchorPane fx:id="pane"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="controllers.DecisionController">
+
+    <ImageView fitHeight="600" fitWidth="800" fx:id="bg">
+        <Image url="/assets/img/landscape.png"/>
+    </ImageView>
 
 </AnchorPane>
