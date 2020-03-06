@@ -4,18 +4,14 @@ package models;
  * Modélisation d'une arme générique
  * (utilisées pour les pnj)
  */
-public class Arme {
+public class Arme extends Item implements Configurable {
 
-    private int degats;
-    private String nom;
-    private int id;
+    protected int degats;
 
-    /**
-     * Constructeur d'arme générique
-     * @param puissance puissance de l'arme
-     */
-    public Arme(int puissance){
-        degats = puissance;
+
+    public Arme(int id){
+        super(id);
+        this.initConfiguration();
     }
 
     /**
@@ -48,5 +44,10 @@ public class Arme {
      */
     public void setNom(String nom) {
         this.nom = nom;
+    }
+
+    @Override
+    public void initConfiguration() {
+
     }
 }

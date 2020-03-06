@@ -2,9 +2,9 @@ package models;
 
 public abstract class Ennemi extends Personnage implements Configurable {
 
-    private String description;
-    private Arme arme;
-    private int id;
+    protected String description;
+    protected Arme arme;
+    protected int id;
 
     /**
      * Constructeur

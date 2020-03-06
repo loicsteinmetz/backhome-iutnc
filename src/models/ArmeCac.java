@@ -6,14 +6,9 @@ package models;
  */
 public class ArmeCac extends Arme {
 
-    /**
-     * Constructeur d'arme au cac
-     * @param puissance puissance de l'arme
-     * @param nom nom de l'arme
-     */
-    public ArmeCac(int puissance, String nom){
-        super(puissance);
-        this.setNom(nom);
+
+    public ArmeCac(int id){
+        super(id);
     }
 
     /**
