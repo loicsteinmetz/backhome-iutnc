@@ -43,7 +43,9 @@ public class JsonParser {
      * @throws ParseException parsing du fichier json
      */
     public JSONObject[] parseObjects(String fichier, String cle) throws IOException, ParseException {
-        JSONObject jsonObject = parseObject(fichier, cle);
+        JSONParser parser = new JSONParser();
+        Object obj = parser.parse(new InputStreamReader(getClass().getResourceAsStream(fichier)));
+        JSONObject jsonObject = (JSONObject) obj;
         JSONArray arr = (JSONArray) jsonObject.get(cle);
         JSONObject[] res = new JSONObject[arr.size()];
         for (int i = 0 ; i < arr.size() ; i++){
@@ -63,6 +65,7 @@ public class JsonParser {
     public JSONObject parseObject(String fichier, String cle) throws IOException, ParseException {
         JSONParser parser = new JSONParser();
         Object obj = parser.parse(new InputStreamReader(getClass().getResourceAsStream(fichier)));
-        return (JSONObject) obj;
+        JSONObject jsonObject = (JSONObject) obj;
+        return (JSONObject) jsonObject.get(cle);
     }
 }
