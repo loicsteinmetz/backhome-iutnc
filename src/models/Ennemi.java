@@ -18,6 +18,7 @@ public abstract class Ennemi extends Personnage implements Configurable {
         this.id = id;
         this.initConfiguration();
     }
+    
 
     /**
      * Getter
@@ -41,6 +42,10 @@ public abstract class Ennemi extends Personnage implements Configurable {
     @Override
     public void initConfiguration() {
 
+    }
+    
+    public String attaque(Personnage heros){
+    	return this.getArme().attaquer(heros);
     }
 
 }

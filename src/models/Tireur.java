@@ -12,5 +12,5 @@ public class Tireur extends Ennemi {
     public Tireur(int id){
         super(id);
     }
-
+    
 }

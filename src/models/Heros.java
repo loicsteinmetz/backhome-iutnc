@@ -1,13 +1,16 @@
 package models;
 
 import static models.Carte.getCarte;
+import static models.Inventaire.getInventaire;
 
 /**
  * Singleton modélisant le héros du jeu
  */
 public class Heros extends Personnage {
 
+    @Singleton
     private static Heros HEROS = new Heros();
+
     private Planete localisation;
     private Situation situation;
 
@@ -24,6 +27,7 @@ public class Heros extends Personnage {
      * Getter de l'instance du héros (singleton)
      * @return l'instance du héros
      */
+    @Singleton
     public static Heros getHeros(){
         if(HEROS == null) {
             HEROS = new Heros();
@@ -45,6 +49,15 @@ public class Heros extends Personnage {
      */
     public void setLocalisation(Planete localisation) {
         this.localisation = localisation;
+    }
+    
+    /**
+     * @Override de la méthode subir attaque
+     * pour prendre en compte l'armure du héros
+     */
+    public String subirAttaque(double dommages){
+        this.modifierPv((int) -(dommages-getInventaire().getArmure().getResistance()));
+        return "Degat subit : "+(dommages-getInventaire().getArmure().getResistance());
     }
 
     public Situation getSituation() {

@@ -21,8 +21,8 @@ public class Arme extends Item implements Configurable {
      * Lance une attaque sur un personnage, avec une arme choisie
      * @param cible victime de l'attaque
      */
-    public void attaquer(Personnage cible){
-        cible.subirAttaque(this.degats);
+    public String attaquer(Personnage cible){
+         return cible.subirAttaque(this.degats);
     }
 
     /**

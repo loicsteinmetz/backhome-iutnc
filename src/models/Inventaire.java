@@ -1,8 +1,10 @@
 package models;
 
 public class Inventaire {
-	
+
+	@Singleton
 	private static Inventaire INVENTAIRE = new Inventaire();
+
 	private int carburant;
 	private ArmeCac armeCac;
 	private ArmeDistance armeDist;
@@ -13,7 +15,7 @@ public class Inventaire {
 	 */
 	private Inventaire(){
 		this.carburant = 400;
-		this.armeCac = new ArmeCac(1); // todo
+		this.armeCac = new ArmeCac(15); // todo
 		this.armeDist = new ArmeDistance(1); // todo
 		this.armure = new Armure(1); // todo
 	}
@@ -22,6 +24,7 @@ public class Inventaire {
 	 * Getter de l'instance de l'inventaire (singleton)
 	 * @return instance de l'inventaire
 	 */
+	@Singleton
 	public static Inventaire getInventaire(){
         if(INVENTAIRE == null) {
             INVENTAIRE = new Inventaire();

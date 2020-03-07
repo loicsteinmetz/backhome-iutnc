@@ -5,3 +5,137 @@ AnchorPane{
 ImageView{
     -fx-opacity:0;
 }
+
+FlowPane{
+    -fx-alignment: center;
+    -fx-min-width:800;
+    -fx-min-height:600;
+    -fx-orientation:vertical;
+    -fx-Vgap:50px;
+}
+
+Label{
+    -fx-font-family: "Roboto Slab";
+}
+
+#titre{
+    -fx-alignment:center;
+}
+
+#titre Label{
+    -fx-font-size: 30px;
+    -fx-font-family: "ZCOOL QingKe HuangYou";
+    -fx-text-fill:white;}
+
+#ennemiBox, #herosBox, #titre{
+    -fx-min-width: 600px;
+    -fx-max-width: 600px;
+}
+
+#infosEnnemiBox{
+    -fx-min-width: 150px;
+    -fx-max-width: 150px;
+}
+
+#ennemiBox Label, #herosBox Label{
+    -fx-text-fill:white;
+    -fx-font-family: "ZCOOL QingKe HuangYou";
+}
+
+#nomEnnemi{
+    -fx-font-size: 25px;
+    -fx-padding: 0 0 5px 0;
+}
+
+#descEnnemi{
+    -fx-font-size: 19px;
+}
+
+#vieEnnemiBox{
+    -fx-padding: 0 0 0 50px;
+    -fx-alignment:center-right;
+    -fx-min-width: 450px;
+    -fx-max-width: 450px;
+}
+
+#vieEnnemi{
+    -fx-border-width: 3px;
+    -fx-border-color: white;
+    -fx-border-radius: 5;
+    -fx-min-width: 300px;
+    -fx-min-height: 25px;
+    -fx-max-height: 25px;
+}
+
+#niveauVieEnnemi, #niveauVieHeros{
+    -fx-min-height: 19px;
+    -fx-max-height: 19px;
+    -fx-background-color: white;
+    -fx-min-width: 100px;
+}
+
+#pvEnnemi, #pvHeros{
+    -fx-padding: 0 0 0 10px;
+    -fx-font-size: 15px;
+}
+
+#printBox{
+
+}
+
+#print {
+    -fx-min-width: 600px;
+    -fx-max-width: 600px;
+    -fx-min-height: 150px;
+    -fx-max-height: 150px;
+    -fx-background-color: #CFCFCF;
+    -fx-border-width: 3px;
+    -fx-border-color: #333333;
+    -fx-border-radius:5;
+    -fx-background-radius:5;
+    -fx-wrap-text:true;
+    -fx-font-size: 16px;
+    -fx-text-fill:#333333;
+    -fx-padding: 20px;
+}
+
+#vieHerosBox, #commandes{
+    -fx-min-width: 300px;
+    -fx-max-width: 300px;
+}
+
+#vieHerosBox{
+    -fx-alignment:center-left;
+}
+
+#commandes{
+    -fx-alignment:center-right;
+    -fx-spacing:25px;
+}
+
+#vieHeros{
+    -fx-border-width: 3px;
+    -fx-border-color: white;
+    -fx-border-radius: 5;
+    -fx-min-width: 200px;
+    -fx-min-height: 25px;
+    -fx-max-height: 25px;
+}
+
+Button{
+    -fx-text-fill: white;
+    -fx-padding:15px;
+    -fx-font-family: "Roboto Slab";
+    -fx-font-size:15px;
+    -fx-background-color: #1F2C2F;
+    -fx-min-width: 136px;
+    -fx-max-width: 136px;
+    -fx-min-height: 50px;
+    -fx-max-height: 50px;
+    -fx-wrap-text:true;
+}
+
+Button:hover{
+    -fx-background-color: #CB4242;
+    -fx-cursor: hand;
+}

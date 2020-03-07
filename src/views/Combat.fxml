@@ -4,6 +4,11 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
 <AnchorPane fx:id="pane"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="controllers.CombatController">
@@ -11,5 +16,50 @@
     <ImageView fitHeight="700" fitWidth="800" fx:id="bg">
         <Image url="/assets/img/fog.png"/>
     </ImageView>
+
+    <FlowPane>
+            <HBox id="titre">
+                <Label text="-  COMBAT  -"/>
+            </HBox>
+            <HBox id="ennemiBox">
+                <VBox id="infosEnnemiBox">
+                    <HBox id="nomEnnemiBox">
+                        <Label id="nomEnnemi" text="AaronMan"/>
+                    </HBox>
+                    <HBox id="descEnnemiBox">
+                        <Label id="descEnnemi" text="Enfant des plaines"/>
+                    </HBox>
+                </VBox>
+                <HBox id="vieEnnemiBox">
+                    <HBox id="vieEnnemi">
+                        <HBox id="niveauVieEnnemi">
+                        </HBox>
+                    </HBox>
+                    <Label id="pvEnnemi" text="100/300 PV"/>
+                </HBox>
+            </HBox>
+            <HBox id="printBox">
+                <Label id="print">
+                    <text>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </text>
+                </Label>
+            </HBox>
+            <HBox id="herosBox">
+                <HBox id="vieHerosBox">
+                    <HBox id="vieHeros">
+                        <HBox id="niveauVieHeros">
+                        </HBox>
+                    </HBox>
+                    <Label id="pvHeros" text="150/300 PV"/>
+                </HBox>
+                <HBox id="commandes">
+                    <Button id="attaqueCac" text="Epee de feu"/>
+                    <Button id="attaqueDist" text="Laser ultime"/>
+                </HBox>
+            </HBox>
+    </FlowPane>
 
 </AnchorPane>
