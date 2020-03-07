@@ -1,28 +1,76 @@
 package models;
 
-import static models.Inventaire.getInventaire;
-import static models.Heros.getHeros;
+import lib.org.json.simple.JSONObject;
+import lib.org.json.simple.parser.ParseException;
+import utils.JsonParser;
+
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
+
+import static models.Heros.getHeros;
+import static models.Inventaire.getInventaire;
 
 public class Combat extends Evenement implements Configurable {
 
     private Ennemi ennemi;
-    private Evenement issue;
+    private int idIssue;
 
-    public Combat(int id){
+	/**
+	 * Constructeur
+	 * @param id l'id du combat
+	 */
+	public Combat(int id){
         super(id);
         initConfiguration();
     }
 
-    @Override
+	/**
+	 * Récupère les données du combat
+	 */
+	@Override
     public void initConfiguration() {
-
+		String chemin = "/data/evenements.json";
+		String cle = Integer.toString(id);
+		JSONObject evenement = null;
+		try {
+			evenement = new JsonParser().parseObject(chemin, cle);
+		} catch (IOException | ParseException e) {
+			e.printStackTrace();
+		}
+		if (evenement != null){
+			//this.configEnnemi(evenement);// todo
+			idIssue = Integer.parseInt(evenement.get("idIssue").toString());
+			scenario = (ArrayList<String>) evenement.get("scenario");
+		}
     }
-	
+
+	/**
+	 * Récupère les données de configuration de l'ennemi du combat
+	 * @param evenement l'événement JSONObject créé dans initConfiguration()
+	 */
+	public void configEnnemi(JSONObject evenement) {
+		int idEnnemi = (Integer.parseInt(evenement.get("idEnnemi").toString()));
+		switch (evenement.get("typeEnnemi").toString()) {
+			case "tireur":
+				ennemi = new Tireur(idEnnemi);
+				break;
+			case "brute":
+				ennemi = new Brute(idEnnemi);
+				break;
+			case "boss":
+				ennemi = new Boss(idEnnemi);
+				break;
+			case "superboss":
+				ennemi = new SuperBoss(idEnnemi);
+				break;
+		}
+	}
+
 	public boolean combattre(Ennemi ennemi) {
 		Heros heros = getHeros();
 		Inventaire Inventaire = getInventaire();
-		Scanner sc = new Scanner(System.in);		
+		Scanner sc = new Scanner(System.in);
 		while(ennemi.enVie() && heros.	enVie())
 		{
 			System.out.println("vous avez "+heros.getPv()+" pv");
@@ -47,5 +95,13 @@ public class Combat extends Evenement implements Configurable {
 			System.out.print("looser");
 			return false;
 		}
+	}
+
+	/**
+	 * Getter
+	 * @return l'id de l'événement suivant
+	 */
+	public int getIdIssue() {
+		return idIssue;
 	}
 }
