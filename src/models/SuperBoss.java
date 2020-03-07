@@ -14,6 +14,7 @@ public class SuperBoss extends Boss {
     public SuperBoss(int id){
         super(id);
     }
+    
 
     /**
      * Getter

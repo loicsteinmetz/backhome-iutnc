@@ -12,5 +12,6 @@ public class Boss extends Ennemi {
     public Boss(int id){
         super(id);
     }
+    
 
 }
