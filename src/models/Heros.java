@@ -25,6 +25,7 @@ public class Heros extends Personnage {
      * Getter de l'instance du héros (singleton)
      * @return l'instance du héros
      */
+    @Singleton
     public static Heros getHeros(){
         if(HEROS == null) {
             HEROS = new Heros();

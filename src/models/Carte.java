@@ -27,6 +27,7 @@ public class Carte implements Configurable {
      * Getter de l'instance de la carte (singleton)
      * @return l'instance de la carte
      */
+    @Singleton
     public static Carte getCarte(){
         if(CARTE == null) {
             CARTE = new Carte();

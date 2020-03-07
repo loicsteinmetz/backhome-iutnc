@@ -14,6 +14,7 @@ public class Quete implements Configurable {
      * Getter de l'instance de Quete (singleton)
      * @return l'instance de quete
      */
+    @Singleton
     public static Quete getQuete(){
         if(QUETE == null) {
             QUETE = new Quete();

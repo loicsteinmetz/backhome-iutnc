@@ -22,6 +22,7 @@ public class Inventaire {
 	 * Getter de l'instance de l'inventaire (singleton)
 	 * @return instance de l'inventaire
 	 */
+	@Singleton
 	public static Inventaire getInventaire(){
         if(INVENTAIRE == null) {
             INVENTAIRE = new Inventaire();
