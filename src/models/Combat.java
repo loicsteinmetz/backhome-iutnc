@@ -26,7 +26,7 @@ public class Combat extends Evenement implements Configurable {
     }
 
 	/**
-	 * Récupère les données du combat
+	 * Récupère les données de configuration du combat
 	 */
 	@Override
     public void initConfiguration() {

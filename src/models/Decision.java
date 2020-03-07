@@ -5,25 +5,27 @@ import lib.org.json.simple.parser.ParseException;
 import utils.JsonParser;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Decision extends Evenement implements Configurable {
 
     private int idIssueA;
     private int idIssueB;
+    private String optionA;
+    private String optionB;
 
+    /**
+     * Constructeur
+     * @param id l'id de la décision
+     */
     public Decision(int id){
         super(id);
         initConfiguration();
     }
 
-    public int getIssueA() {
-        return idIssueA;
-    }
-
-    public int getIssueB() {
-        return idIssueB;
-    }
-
+    /**
+     * Récupère les données de configuration de la décision
+     */
     @Override
     public void initConfiguration() {
         String chemin = "/data/evenements.json";
@@ -35,8 +37,44 @@ public class Decision extends Evenement implements Configurable {
             e.printStackTrace();
         }
         if (evenement != null){
-            idIssueA = (int)(long) evenement.get("idIssueA");
-            idIssueB = (int)(long) evenement.get("idIssueB");
+            //this.configEnnemi(evenement);// todo
+            idIssueA = Integer.parseInt(evenement.get("idIssueA").toString());
+            idIssueB = Integer.parseInt(evenement.get("idIssueB").toString());
+            optionA = evenement.get("optionA").toString();
+            optionB = evenement.get("optionB").toString();
+            scenario = (ArrayList<String>) evenement.get("scenario");
         }
+    }
+
+    /**
+     * Getter
+     * @return l'id de l'issue A
+     */
+    public int getIdIssueA() {
+        return idIssueA;
+    }
+
+    /**
+     * Getter
+     * @return l'id de l'issue B
+     */
+    public int getIdIssueB() {
+        return idIssueB;
+    }
+
+    /**
+     * Getter
+     * @return le texte de l'option A
+     */
+    public String getOptionA() {
+        return optionA;
+    }
+
+    /**
+     * Getter
+     * @return le texte de l'option B
+     */
+    public String getOptionB() {
+        return optionB;
     }
 }
