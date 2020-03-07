@@ -1,7 +1,61 @@
 {
+  "1": {
+    "type": "generique",
+    "nom": "Epée Toche",
+    "degats": 10
+  },
+
   "2": {
     "type": "generique",
     "nom": "Epée de feu",
     "degats": 5
+  },
+
+  "3": {
+    "type": "generique",
+    "nom": "Dark Repulser",
+    "degats": 20
+  },
+
+  "5": {
+    "type": "cac",
+    "nom": "Dark Repulser",
+    "degats": 25
+  },
+
+  "7": {
+    "type": "generique",
+    "nom": "Procyon SL",
+    "degats": 10
+  },
+
+  "9": {
+    "type": "generique",
+    "nom": "Elucidator",
+    "degats": 20
+  },
+
+  "11": {
+    "type": "generique",
+    "nom": "Sabre de Ben Le Ripate",
+    "degats": 10
+  },
+
+  "13": {
+    "type": "generique",
+    "nom": "Glaive Icération",
+    "degats": 15
+  },
+
+  "15": {
+    "type": "generique",
+    "nom": "XM29",
+    "degats": 20
+  },
+
+  "17": {
+    "type": "distance",
+    "nom": "PGM Ultima Ratio Hecate II",
+    "degats": 25
   }
 }

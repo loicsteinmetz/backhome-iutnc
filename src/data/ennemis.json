@@ -1,9 +1,65 @@
 {
+  "1":{
+    "type": "brute",
+    "nom": "Ozen le sage",
+    "description": "un petit goblin ",
+    "idArme": "1",
+    "pv": 50
+  },
+
   "2":{
     "type": "brute",
     "nom": "Galdur",
     "description": "un orc",
     "idArme": "2",
     "pv": 100
+  },
+
+  "3":{
+    "type": "boss",
+    "nom": "Captaine Banwana",
+    "description": "le roi gorille",
+    "idArme": "3",
+    "pv": 150
+  },
+
+  "5":{
+    "type": "tireur",
+    "nom": "Tink Berval",
+    "description": "Le Rebelle de la ville",
+    "idArme": "7",
+    "pv": 100
+  },
+
+  "7":{
+    "type": "boss",
+    "nom": "Chô Peleux",
+    "description": "un orc",
+    "idArme": "9",
+    "pv": 150
+  },
+
+  "9":{
+    "type": "brute",
+    "nom": "Jul'Tarv",
+    "description": "un gnome alcoolisé",
+    "idArme": "11",
+    "pv": 100
+  },
+
+  "11":{
+    "type": "brute",
+    "nom": "Loudmerawa Le Marin",
+    "description": "Le moussaillon",
+    "idArme": "13",
+    "pv": 100
+  },
+
+  "13":{
+    "type": "boss",
+    "nom": "Gaï D.Ace",
+    "description": "le puissant pirate",
+    "idArme": "15",
+    "pv": 150
   }
 }
