@@ -5,12 +5,13 @@
   },
 
   "2": {
-    "nom": "Tunique sacrée de Saturnus"
+    "nom": "Tunique sacrée de Saturnus",
+    "resistance": 40
   },
 
   "4": {
-    "nom": "Armure légendaire d'Agarothi"
+    "nom": "Armure légendaire d'Agarothi",
+    "resistance": 40
   }
-
 
 }
