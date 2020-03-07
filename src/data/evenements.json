@@ -51,6 +51,133 @@
   },
 
   "5": {
+    "type": "decision",
+    "scenario": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+    ],
+    "choix": "Retourner dans le vaisseau.",
+    "optionA": null ,
+    "optionB": null ,
+    "idIssueA": "VAISSEAU",
+    "idIssueB": null
+  },
 
+  "7": {
+    "type": "decision",
+    "scenario": [
+      "Vous venez d'arriver sur Ienos. Vous descendez du vaisseau.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      "Dialogue avec des pnj"
+    ],
+    "choix": "Vous pouvez choisir de sortir depuis la porte EST ou OUEST",
+    "optionA": "Prendre la porte EST",
+    "optionB": "Prendre la porte OUEST",
+    "idIssueA": "9",
+    "idIssueB": "9"
+  },
+
+  "9": {
+    "type": "combat",
+    "scenario" : [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      "Dialogue du Rebelle"
+    ],
+    "idEnnemi" : "5",
+    "idIssue" : "11"
+  },
+
+  "11": {
+    "type": "decision",
+    "scenario": [
+      "Lorem ipsum dolor sit amet",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      "Dialogue avec des pnj"
+    ],
+    "choix": "La fuite ou l'attaque",
+    "optionA": "Vous prenez la fuite, comme un lache",
+    "optionB": "Vous faites une attaque surprise",
+    "idIssueA": "13",
+    "idIssueB": "13"
+  },
+
+  "13": {
+    "type": "combat",
+    "scenario" : [
+      "Vous êtes tellement indiscret que vous vous faites repérer",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      "Dialogue d'un Bip-Bip Venère"
+    ],
+    "idEnnemi" : "7",
+    "idIssue" : "15"
+  },
+
+  "15":{
+    "type": "decision",
+    "scenario": [
+      "Retourne en ville pour valider la quête et recevoir une récompense",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "Recupere la récompense",
+      "Dialogue"
+    ],
+    "choix": "Retourner dans le vaisseau.",
+    "optionA": null ,
+    "optionB": null ,
+    "idIssueA": "VAISSEAU",
+    "idIssueB": null
+  },
+
+  "17": {
+    "type": "combat",
+    "scenario": [
+      "Vous venez d'arriver sur Zéphyr. Vous descendez du vaisseau.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      "Dialogue avec un gosse"
+    ],
+    "idEnnemi" : "9",
+    "idIssue" : "19"
+  },
+
+  "19": {
+    "type" : "combat",
+    "scenario": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+    ],
+    "idEnnemi" : "11",
+    "IdIssue" : "21"
+  },
+
+  "21": {
+    "type" : "combat",
+    "scenario": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      "Chef des pirates"
+    ],
+    "idEnnemi" : "13",
+    "IdIssue" : "23"
+  },
+
+  "23": {
+    "type": "decision",
+    "scenario": [
+      "Retourne en ville pour valider la quête et recevoir une récompense",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "Recupere la récompense",
+      "Dialogue"
+    ],
+    "choix": "Retourner dans le vaisseau.",
+    "optionA": null ,
+    "optionB": null ,
+    "idIssueA": "VAISSEAU",
+    "idIssueB": null
   }
 }
