@@ -6,6 +6,8 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import utils.FontsLoader;
 import utils.ViewLoader;
+import models.*;
+
 
 /**
  * Classe principale du programme
@@ -37,5 +39,10 @@ public class Main extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+    	ArmeCac a = new ArmeCac(5,"eppe");
+    	Brute ennemi = new Brute("jil",20,a);
+        Combat c =new Combat();
+        c.combattre(ennemi);
+        
     }
 }

@@ -76,4 +76,11 @@ public abstract class Personnage {
     public void subirAttaque(double dommages){
         this.modifierPv((int) -dommages);
     }
+    
+    /**
+     *  @return true si pv<=0 @return false sinon
+     */
+    public boolean enVie() {
+    	return this.pv<=0;
+    }
 }
