@@ -34,6 +34,7 @@
       " \" Hé toi ! Sale gobelin prépare toi a mourir face a ma force ! \""
     ],
     "idEnnemi": "1",
+    "typeEnnemi": "brute",
     "idIssue" : "3"
   },
 
@@ -47,6 +48,7 @@
       " \" C'est ce que tu penses sale macaque ! Je vais te montrais, c'est qui ' Avorton ' ! \" "
     ],
     "idEnnemi" : "3",
+    "typeEnnemi": "boss",
     "optionA": "Prendre le chemin pour la ville.",
     "optionB": "Retourner dans le vaisseau.",
     "idIssueA" : "5",
@@ -94,6 +96,7 @@
       "\" Je préfère me battre que de me laisser voler comme ca ! Ramène-toi ! Je t'attends. \""
     ],
     "idEnnemi" : "5",
+    "typeEnnemi": "tireur",
     "idIssue" : "11"
   },
 
@@ -119,6 +122,7 @@
       "Chô Peleux : \" Comment oses-tu venir dans ma demeure ! Ton odeur est tellement différente que ceux de cette planète que j'ai pu te repérer. Mais c'est dommage pour toi, maintenant, tu vas mourir pour avoir pénétré ma demeure ! \""
     ],
     "idEnnemi" : "7",
+    "typeEnnemi": "boss",
     "idIssue" : "15"
   },
 
@@ -148,6 +152,7 @@
       "Vous regardez l'enfant... Et vous acceptez de l'aider ! Vous commencez a le suivre...\n Vous arrivez devant le bar et il vous montre la personne. Et vous vous dirigez vers celle-ci pour vous battre et récupérer l'objet de l'enfant."
     ],
     "idEnnemi" : "9",
+    "typeEnnemi": "brute",
     "idIssue" : "19"
   },
 
@@ -159,6 +164,7 @@
       "Moussaillon : \" Vous ! N'y penser pas ! Vous ne passerez pas tant que je suis là ! \" Du coup, vous chargez sur le moussaillon pouvoir passer ! "
     ],
     "idEnnemi" : "11",
+    "typeEnnemi": "brute",
     "IdIssue" : "21"
   },
 
@@ -170,6 +176,7 @@
       "Oshar Marif, le chef des pirates : \" Toi ! Comment oses-tu monter dans mon navire et me voler mon trésor ! Tu te crois pour qui ?! Je suis OSHAR MARIF ! En garde ! Je vais te montrer ce que fais a ceux qui ose me voler ! \" "
     ],
     "idEnnemi" : "13",
+    "typeEnnemi": "boss",
     "IdIssue" : "23"
   },
 

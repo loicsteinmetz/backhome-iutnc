@@ -1,6 +1,5 @@
 {
   "1":{
-    "type": "brute",
     "nom": "Ozen le sage",
     "description": "un petit gobelin ",
     "idArme": "1",
@@ -8,7 +7,6 @@
   },
 
   "2":{
-    "type": "brute",
     "nom": "Galdur",
     "description": "un orc",
     "idArme": "2",
@@ -16,7 +14,6 @@
   },
 
   "3":{
-    "type": "boss",
     "nom": "Captaine Banwana",
     "description": "le roi gorille",
     "idArme": "3",
@@ -24,7 +21,6 @@
   },
 
   "5":{
-    "type": "tireur",
     "nom": "Tink Berval",
     "description": "Le Rebelle de la ville",
     "idArme": "7",
@@ -32,7 +28,6 @@
   },
 
   "7":{
-    "type": "boss",
     "nom": "Chô Peleux",
     "description": "Un Bip-Bip venère ",
     "idArme": "9",
@@ -40,7 +35,6 @@
   },
 
   "9":{
-    "type": "brute",
     "nom": "Jul'Tarv",
     "description": "un gnome alcoolisé",
     "idArme": "11",
@@ -48,7 +42,6 @@
   },
 
   "11":{
-    "type": "brute",
     "nom": "Loudmerawa Le Marin",
     "description": "Le moussaillon",
     "idArme": "13",
@@ -56,7 +49,6 @@
   },
 
   "13":{
-    "type": "boss",
     "nom": "Oshar Marif",
     "description": "le chef des pirates",
     "idArme": "15",
