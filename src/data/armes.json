@@ -7,7 +7,7 @@
 
   "2": {
     "type": "generique",
-    "nom": "Epée de feu",
+    "nom": "Epée en fer",
     "degats": 5
   },
 
@@ -57,5 +57,17 @@
     "type": "distance",
     "nom": "PGM Ultima Ratio Hecate II",
     "degats": 25
+  },
+
+  "4": {
+    "type":"generique",
+    "nom": "Revolver XA-42",
+    "degats": 5
+  },
+
+  "6": {
+    "type": "generique",
+    "nom": "Masse d'arme à plasma",
+    "degats": 15
   }
 }

@@ -61,5 +61,21 @@
     "description": "le chef des pirates",
     "idArme": "15",
     "pv": 150
+  },
+
+  "4": {
+    "type": "tireur",
+    "nom": "Rator",
+    "description": "un gobelin",
+    "idArme": "4",
+    "pv": 100
+  },
+
+  "6": {
+    "type": "boss",
+    "nom": "Chef de guerre Kalimodor",
+    "description": "un hybride orc/gobelin",
+    "idArme": "6",
+    "pv":300
   }
 }

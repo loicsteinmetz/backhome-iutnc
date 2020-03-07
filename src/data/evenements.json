@@ -2,21 +2,22 @@
   "2": {
     "type": "decision",
     "scenario": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+      "Vous sortez de la maison. Le moment est venu de faire votre premier choix...",
+      "Souhaitez-vous aller à gauche ou à droite? Ces deux chemins peuvent mener à la concession..."
     ],
     "optionA": "Prendre le chemin de gauche",
     "optionB": "Prendre le chemin de droite",
-    "idIssueA": "VAISSEAU",
+    "idIssueA": "4",
     "idIssueB": "6"
   },
   "4": {
     "type": "combat",
     "scenario": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+      "Vous marchez en observant toute cette désolation environnante",
+      "De nombreux corps sans vie gisent sur la route",
+      "Vous entendez des voix au loin. Vous ralentissez le pas et vous cachez",
+      "A proximité, deux silhouettes. L'une d'entre elle dit :<<Si je croise encore un humain vivant, je lui tranche la tête! Le massacre d'hier ne m'a pas suffit>>",
+      "Malheureusement, vous entendez derrière vous une autre voix. Vous vous retournez: un Orc courir vers vous <<Il en reste un! Tuons-le!>> "
     ],
     "idEnnemi": "2",
     "idIssue": "8"
@@ -169,8 +170,62 @@
       "Recupere la récompense",
       "Dialogue"
     ],
-    "optionA": null ,
-    "optionB": null ,
+    "optionA": null,
+    "optionB": null
+  },
+
+  "6": {
+    "type": "combat",
+    "scenario": [
+      "Vous avez gagné le combat!",
+      "Vous marchez en observant toute cette désolation environnante",
+      "De nombreux corps sans vie gisent sur la route",
+      "Vous apercevez au loin trois silhouettes. Vous vous rapprochez doucement jusqu'à comprendre que ces dernières sont  en train de dévorer un cadavre humain...",
+      "Devant vous, un arbre. Vous courez pour vous cacher derrière. Malheureusement, vous glissez sur une flaque de sang et renversez un baril en feu. Le bruit alerte les ennemis: <<Un humain, tuons-le!>>"
+    ],
+    "idEnnemi": "4",
+    "idIssue": "8"
+  },
+
+  "8": {
+    "type": "combat",
+    "scenario": [
+      "Vous avez gagné le combat!",
+      "Vous reprenez la route vers le concessionnaire",
+      "Après une centaine de mètres, vous voyez un panneau publicitaire concernant le concessionnaire de vaisseaux. Vous êtes sur la bonne voie...",
+      "Vous arrivez devant un pont. Malheureusement, celui-ci est détruit. En contrebas, un ravin.",
+      "Ne connaissant d'autres route et vu le risque encouru à faire un détour, vous décidez de descendre dans le ravin puis de l'escalader",
+      "Arrivé en bas, vous entendez <<Le repas est servi!>>. Un ennemi court vers vous, impossible de fuir..."
+    ],
+    "idEnnemi": "2",
+    "idIssue": "10"
+  },
+
+  "10":{
+    "type":"combat",
+    "scenario": [
+      "Vous avez gagné le combat!",
+      "Vous reprenez la route vers le concessionnaire...",
+      "Vous arrivez enfin devant le concessionnaire. Une partie de la structure s'est effondrée, seul le hangar est intact. En revanche c'est calme, trop calme...",
+      "Vous entrez. Immédiatement, vous tombez nez à nez avec un ennemi. Derrière-lui, un chef de guerre en armure armé d'une masse d'arme impressionnante. Un de ses sbires semble réparer un vaisseau...",
+      "Le chef de guerre s'exclame: <<Laissez le moi, j'ai besoin deme dégourdir les jambes!"
+    ],
+    "idEnnemi": "6",
+    "idIssue": "12"
+  },
+
+  "12": {
+    "type": "decison",
+    "scenario": [
+      "Vous avez gagné le combat!",
+      "A la fin de ce combat, vous apercevez un sbire de chef de guerre mettre le feu au hangar. Vous ne voyez qu'un seul vaisseau. Un <<Nostromo>>, modèle qui permet les voyages interstellaires. Une aubaine... Mais il faut vite partir",
+      "Vous montez à bord et mettez le contact. Bonne nouvelle, tous les voyants sont au vert! Malheureusement, un ne l'est pas: celui du carburant.",
+      "Vous descendez du vaisseau et par chance, un baril,25 de carburant se trouve à quelques mètres du vaisseaux. Vous faites donc le plein...",
+      " Vous remontez à bord du Nostromo et décollez en catastrophe.",
+      " Une fois en sécurité, vous scannez votre carte stellaire, et remarquez qu'un baril d'essence seront nécessaires pour accéder aux trois planètes les plus proches, 2 barils pour celles plus lointaines et 3 pour Calypso, votre planète natale..."
+    ],
+    "optionA": null,
+    "optionB": null,
     "idIssueA": "VAISSEAU",
     "idIssueB": null
   }

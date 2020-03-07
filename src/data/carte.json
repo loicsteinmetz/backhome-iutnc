@@ -3,7 +3,7 @@
     "nom":"Utopia",
     "niveau":"0",
     "planetesVoisines": ["ienos","zéphyr","hermès"],
-    "description": "P1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "C'est ici que débute votre aventure. ",
     "idPremierEvenement": "2",
     "idRecompenseArmeCac": null,
     "idRecompenseDistance": null,
@@ -43,21 +43,21 @@
     "nom":"Lumini",
     "niveau":"2",
     "planetesVoisines": ["calypso"],
-    "description": "P5 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     "idPremierEvenement": "2",
     "idRecompenseArmeCac": null,
     "idRecompenseDistance": null,
-    "idRecompenseArmure": null
+    "idRecompenseArmure": null,
+    "description": "Une planète prospère dont le comportement des habitants est intriguant..."
   },
   {
     "nom":"Tremor",
     "niveau":"2",
     "planetesVoisines": ["calypso"],
-    "description": "P6 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     "idPremierEvenement": "2",
     "idRecompenseArmeCac": null,
     "idRecompenseDistance": null,
-    "idRecompenseArmure": null
+    "idRecompenseArmure": null,
+    "description": "Une planète devastée et dirigée par un tyran à la main de fer..."
   },
   {
     "nom":"Calypso",
