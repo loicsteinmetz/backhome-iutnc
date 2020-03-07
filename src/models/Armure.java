@@ -33,7 +33,7 @@ public class Armure extends Item implements Configurable {
 	}
 
 	/**
-	 * Récupère les données de configuration de la carte
+	 * Récupère les données de configuration de l'armure
 	 */
 	@Override
 	public void initConfiguration() {

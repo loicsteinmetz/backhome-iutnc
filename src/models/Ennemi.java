@@ -1,5 +1,11 @@
 package models;
 
+import lib.org.json.simple.JSONObject;
+import lib.org.json.simple.parser.ParseException;
+import utils.JsonParser;
+
+import java.io.IOException;
+
 /**
  * Modélisation d'un ennemi
  * (pnj pouvant être combattu)
@@ -37,11 +43,33 @@ public abstract class Ennemi extends Personnage implements Configurable {
     }
 
     /**
-     * Initialise les tireurs, brutes, et boss
+     * Récupère les données de configuration de l'ennemi
      */
     @Override
     public void initConfiguration() {
+        String chemin = "/data/ennemis.json";
+        String cle = Integer.toString(id);
+        JSONObject ennemi = null;
+        try {
+            ennemi = new JsonParser().parseObject(chemin, cle);
+        } catch (IOException | ParseException e) {
+            e.printStackTrace();
+        }
+        if (ennemi != null){
+            nom = ennemi.get("nom").toString();
+            description = ennemi.get("description").toString();
+            pv = (int) (long) ennemi.get("pv");
+            int idArme = (Integer.parseInt(ennemi.get("idArme").toString()));
+            arme = new Arme(idArme);
+        }
+    }
 
+
+    public static void main (String[] args){
+        Brute a = new Brute(2);
+        Boss b = new Boss(3);
+        System.out.println(a.getNom() + ", " + a.getDescription() + ", "+ a.getPv() + ", " + a.getArme());
+        System.out.println(b.getNom() + ", " + b.getDescription() + ", "+ b.getPv() + ", " + b.getArme());
     }
     
     public String attaque(Personnage heros){
