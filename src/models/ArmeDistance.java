@@ -7,6 +7,10 @@ package models;
 public class ArmeDistance extends Arme {
 
 
+    /**
+     * Constructeur
+     * @param id l'id de l'arme
+     */
     public ArmeDistance(int id){
         super(id);
     }

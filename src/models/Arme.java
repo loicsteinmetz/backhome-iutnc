@@ -8,7 +8,10 @@ public class Arme extends Item implements Configurable {
 
     protected int degats;
 
-
+    /**
+     * Constructeur
+     * @param id id de l'arme
+     */
     public Arme(int id){
         super(id);
         this.initConfiguration();
@@ -46,6 +49,9 @@ public class Arme extends Item implements Configurable {
         this.nom = nom;
     }
 
+    /**
+     * Initialise les armes
+     */
     @Override
     public void initConfiguration() {
 

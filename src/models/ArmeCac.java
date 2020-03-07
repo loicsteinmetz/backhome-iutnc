@@ -6,7 +6,10 @@ package models;
  */
 public class ArmeCac extends Arme {
 
-
+    /**
+     * Constructeur
+     * @param id l'id de l'arme
+     */
     public ArmeCac(int id){
         super(id);
     }

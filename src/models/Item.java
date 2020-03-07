@@ -1,5 +1,8 @@
 package models;
 
+/**
+ * Modélisation d'un item
+ */
 public abstract class Item {
 
     protected String nom;
