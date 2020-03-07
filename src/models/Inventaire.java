@@ -13,7 +13,7 @@ public class Inventaire {
 	 */
 	private Inventaire(){
 		this.carburant = 400;
-		this.armeCac = new ArmeCac(1); // todo
+		this.armeCac = new ArmeCac(15); // todo
 		this.armeDist = new ArmeDistance(1); // todo
 		this.armure = new Armure(1); // todo
 	}

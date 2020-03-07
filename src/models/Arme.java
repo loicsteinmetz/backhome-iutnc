@@ -12,11 +12,16 @@ public class Arme extends Item implements Configurable {
      * Constructeur
      * @param id id de l'arme
      */
-    public Arme(int id){
+    /*public Arme(int id){
         super(id);
         this.initConfiguration();
-    }
+    }*/
 
+    public Arme(int id) {
+    	super(id);
+    	this.degats=id;
+    }
+    
     /**
      * Lance une attaque sur un personnage, avec une arme choisie
      * @param cible victime de l'attaque

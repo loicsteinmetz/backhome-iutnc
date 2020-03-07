@@ -26,6 +26,9 @@ public class ArmeCac extends Arme {
         if (cible instanceof Tireur){
             cible.subirAttaque(this.getDegats() * 1.5);
         }
+        if(cible instanceof Heros) {
+        	cible.subirAttaque(this.getDegats());
+        }
     }
 
 }

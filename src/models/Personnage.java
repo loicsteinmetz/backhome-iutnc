@@ -81,6 +81,6 @@ public abstract class Personnage {
      *  @return true si pv<=0 @return false sinon
      */
     public boolean enVie() {
-    	return this.pv<=0;
+    	return 0<=this.pv;
     }
 }
