@@ -60,7 +60,7 @@
       "Et là ! Dans le dernier bâtiment au dernier étage, vous trouvez une pièce remplir de documents sur les planètes au alentour. Et un indice sur Calypso !  ",
       " \" Cette pièce devait appartenir à une personne venue de Calypso ou une des planètes qui est proche de celle-ci. \" \n \" Félicitation pour cet indice ! Continue comme çà \" \n  ",
       "Cette journée a été très rude pour toi, il est l’heure pour toi de partir de cette planète afin de pouvoir continuer ta destiné ! ",
-      " \n Faut que ..... \n"
+      " \n Je suis dans mon vaisseau  sauf que je me ve-sau. \n"
     ],
     "optionA": null ,
     "optionB": null ,
@@ -71,10 +71,13 @@
   "7": {
     "type": "decision",
     "scenario": [
-      "Vous venez d'arriver sur Ienos. Vous descendez du vaisseau.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      "Dialogue avec des pnj"
+      "\n BIENVENUE sur Ienos, des terres de feu \n",
+      "Elle est considérée comme l’une des planètes les plus hostile du système. L’espèce a dû reculer sous les terres pour fuir cette aridité pour y construire leurs villes. La planète Ienos est principalement constituée de sable et de roches volcaniques de couleur rouges.",
+      "Avant votre arrivée à la station de « Nowso », vous apercevez un paysage désertique d’une couleur rouge sang, l’aventure  sur cette planète va être difficile. ",
+      "Vous avez atterri à la station « Nowso », la plus grande station pour vaisseaux. Lors de la sortie de ton vaisseau, vous regardez aux alentours et vous voyez la sortie de la station.",
+      "Vous y dirigez vers la sortie, un groupe d’hommes criant \" On cherche une personne pour nous aider à faire une quête importante ! \" Vous vous rapprochez d'eux pour les questionner sur cette quête et la récompense. ",
+      "Le chef du groupe : \" La quête consiste juste à ramener l’arme d’un grand boss, mais pas n’importe laquelle ! Celle de Chô Peleux un grand monstre que mon groupe et moi redoutons. La récompense sera un équipement unique et aussi de l’essence parce qu’ici, il est difficile d’en avoir. \"",
+      "Vous acceptez directement la quête, car vous n'avez peur de rien, mais vous avez besoin d'équipement aussi."
     ],
     "optionA": "Prendre la porte EST",
     "optionB": "Prendre la porte OUEST",
@@ -85,10 +88,10 @@
   "9": {
     "type": "combat",
     "scenario" : [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      "Dialogue du Rebelle"
+      "Vous acceptez et vous vous mettez en route, vous vous dirigez donc en dehors de la ville vers la destination de la quête. ",
+      "Quelques mètres après la sortie, vous vous faites interpeller par le rebelle ville. Il a aperçu vous êtes un étranger et donc c'est pour cela qui veut vous volez vos équipements.",
+      "Le Bebelle: \" Hé toi ! Petit étranger ! Viens me voir ! Tu m'a l'air riche et bien équipé ! Viens donc me donner tout ce que tu as ! Sinon la mort t'arrivera !  \"  ",
+      "\" Je préfère me battre que de me laisser voler comme ca ! Ramène-toi ! Je t'attends. \""
     ],
     "idEnnemi" : "5",
     "idIssue" : "11"
@@ -97,10 +100,10 @@
   "11": {
     "type": "decision",
     "scenario": [
-      "Lorem ipsum dolor sit amet",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      "Dialogue avec des pnj"
+      "Après votre combat contre Tink Berval, vous vous diriez vers l'endroit indiqué par le groupe. ",
+      "Vous continuez votre chemin jusqu'à la grotte, une pancarte se trouve devant celle-ci. Dessus est écris « Garde à vous aventurier ! N’essayer pas d’entrer dans cette grotte ou la mort vous attendras ». Mais vus, que c’est écrit dans une langue que vous ne comprendrez pas, vous continuerez votre route sans y faire attention. ",
+      "Vous arrivez bientôt au bout de cette grotte, vous vous êtes caché derrière une grosse pierre pour analyser la situation. Vous apercevez Chô Peleux le boss que vous devez tuer pour accomplir cette quête. ",
+      "Chô Peleux :  \" Je suis tellement bien dans cette grotte ! Tout le monde a peur de moi, tellement que je suis fort. Je dois aménager cette grotte à mon goût pour montrer ma puissance et ma richesse au monde ! \" "
     ],
     "optionA": "Vous prenez la fuite, comme un lache",
     "optionB": "Vous faites une attaque surprise",
@@ -111,10 +114,9 @@
   "13": {
     "type": "combat",
     "scenario" : [
-      "Vous êtes tellement indiscret que vous vous faites repérer",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      "Dialogue d'un Bip-Bip Venère"
+      "Vous êtes tellement indiscret que vous vous faites repérer par Chô Peleux ! Cela est du a votre odeur corporelle...",
+      "Dommage pour vous, maintenant vous avez plus le choix. Préparez-vous au combat.",
+      "Chô Peleux : \" Comment oses-tu venir dans ma demeure ! Ton odeur est tellement différente que ceux de cette planète que j'ai pu te repérer. Mais c'est dommage pour toi, maintenant, tu vas mourir pour avoir pénétré ma demeure ! \""
     ],
     "idEnnemi" : "7",
     "idIssue" : "15"
@@ -124,9 +126,10 @@
     "type": "decision",
     "scenario": [
       "Retourne en ville pour valider la quête et recevoir une récompense",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-      "Recupere la récompense",
-      "Dialogue"
+      "Lors de votre arrivée à « Noswo », vous vous rendez au point de rendez-vous, le groupe d’hommes arrivent peu après vous. Tu leur donnes l'objet de la quête en échange de l'équipement et de l’essence. ",
+      "\n vous avez reçu Plastron Credo de la gloire ! \n",
+      "En plus, vous avez pu trouver un indice sur Calypso grâce à l'armure qui est Made in Calypso.",
+      "Chef de groupe : \" voilà, nous avons finis avec toi ! Merci encore et je te souhaite Bonne chance et Courage. Salut \" Le groupe disparaît dans une ruelle... "
     ],
     "optionA": null ,
     "optionB": null ,
