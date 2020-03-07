@@ -1,5 +1,11 @@
 package models;
 
+import lib.org.json.simple.JSONObject;
+import lib.org.json.simple.parser.ParseException;
+import utils.JsonParser;
+
+import java.io.IOException;
+
 /**
  * Modélisation d'une armure
  * (utilisée par le héros)
@@ -27,10 +33,21 @@ public class Armure extends Item implements Configurable {
 	}
 
 	/**
-	 * Initialise les armures
+	 * Récupère les données de configuration de la carte
 	 */
 	@Override
 	public void initConfiguration() {
-
+		String chemin = "/data/armures.json";
+		String cle = Integer.toString(id);
+		JSONObject armure = null;
+		try {
+			armure = new JsonParser().parseObject(chemin, cle);
+		} catch (IOException | ParseException e) {
+			e.printStackTrace();
+		}
+		if (armure != null){
+			nom = armure.get("nom").toString();
+			resistance = (int) (long) armure.get("resistance");
+		}
 	}
 }
