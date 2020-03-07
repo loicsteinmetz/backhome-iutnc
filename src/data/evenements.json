@@ -21,5 +21,36 @@
     ],
     "idEnnemi": "2",
     "idIssue": "8"
+  },
+
+  "1": {
+    "type": "combat",
+    "scenario" : [
+      "Vous venez d'arriver sur Hermès. Vous descendez du vaisseau.",
+      "Un monstre au loin",
+      "Vous commencez à courir vers lui pour lui voler son butin.",
+      "Dialogue du goblin"
+    ],
+    "idEnnemi": "1",
+    "idIssue" : "3"
+  },
+
+  "3": {
+    "type": "combat",
+    "scenario" : [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      "Dialogue du Gorille"
+    ],
+    "idEnnemi" : "3",
+    "optionA": "Prendre le chemin pour la ville.",
+    "optionB": "Retourner dans le vaisseau.",
+    "idIssueA" : "5",
+    "idIssueB" : "VAISSEAU"
+  },
+
+  "5": {
+
   }
 }
