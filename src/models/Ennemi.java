@@ -1,5 +1,9 @@
 package models;
 
+/**
+ * Modélisation d'un ennemi
+ * (pnj pouvant être combattu)
+ */
 public abstract class Ennemi extends Personnage implements Configurable {
 
     protected String description;
@@ -31,6 +35,9 @@ public abstract class Ennemi extends Personnage implements Configurable {
         return arme;
     }
 
+    /**
+     * Initialise les tireurs, brutes, et boss
+     */
     @Override
     public void initConfiguration() {
 

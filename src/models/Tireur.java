@@ -5,6 +5,10 @@ package models;
  */
 public class Tireur extends Ennemi {
 
+    /**
+     * Constructeur
+     * @param id l'id du tireur
+     */
     public Tireur(int id){
         super(id);
     }

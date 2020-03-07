@@ -7,6 +7,10 @@ public class SuperBoss extends Boss {
 
     private Arme armeLegendaire;
 
+    /**
+     * Constructeur
+     * @param id l'id du superboss
+     */
     public SuperBoss(int id){
         super(id);
     }
@@ -19,6 +23,9 @@ public class SuperBoss extends Boss {
         return armeLegendaire;
     }
 
+    /**
+     * Initialise les superboss
+     */
     @Override
     public void initConfiguration() {
 
