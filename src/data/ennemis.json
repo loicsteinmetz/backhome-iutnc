@@ -2,7 +2,7 @@
   "1":{
     "type": "brute",
     "nom": "Ozen le sage",
-    "description": "un petit goblin ",
+    "description": "un petit gobelin ",
     "idArme": "1",
     "pv": 50
   },

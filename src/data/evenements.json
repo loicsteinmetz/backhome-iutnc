@@ -26,10 +26,12 @@
   "1": {
     "type": "combat",
     "scenario" : [
-      "Vous venez d'arriver sur Hermès. Vous descendez du vaisseau.",
-      "Un monstre au loin",
-      "Vous commencez à courir vers lui pour lui voler son butin.",
-      "Dialogue du goblin"
+      "\n BIENVENUE sur Hermès, aux terres promises \n",
+      "Cette planète a été abandonnée par l'espèce humaine,en laissant tout sur leur passage… Cette planète a pu renaître de ses cendres, suite à ses dégâts…. Et la nature a pu reprendre tous ces droits..",
+      "Bonne Chance sur cette planète.",
+      "Vous descendez du vaisseau. Et a ce moment la, vous etes émerveiller du paysage verdoyant...  ",
+      "Au loin, vous apercevez un gobelin qui semble faibles et faciles à tuer. Vous commencez à courir vers lui pour l'affronter. ",
+      " \" Hé toi ! Sale gobelin prépare toi a mourir face a ma force ! \""
     ],
     "idEnnemi": "1",
     "idIssue" : "3"
@@ -38,10 +40,11 @@
   "3": {
     "type": "combat",
     "scenario" : [
+      "Vous entendez des bruits qui proviennent d'un buisson. Vous vous retournez est là ! Un Gorille surgit du buisson et semble vouloir ta peau ! ",
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      "Dialogue du Gorille"
+      "Essaie de le vaincre afin de lui soutirer son arme ! ",
+      "Le Gorille commença à crier : \" Je vais te tuer ! Ahah ! Ramène-toi, je vais te faire subir la même chose que tu as fait au gobelin ! Petit avorton !\" ",
+      " \" C'est ce que tu penses sale macaque ! Je vais te montrais, c'est qui ' Avorton ' ! \" "
     ],
     "idEnnemi" : "3",
     "optionA": "Prendre le chemin pour la ville.",
@@ -53,9 +56,11 @@
   "5": {
     "type": "decision",
     "scenario": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+      "Après de longues heures de recherche, tu trouves une ville ravagée et tu te mets à chercher des indices.",
+      "Et là ! Dans le dernier bâtiment au dernier étage, vous trouvez une pièce remplir de documents sur les planètes au alentour. Et un indice sur Calypso !  ",
+      " \" Cette pièce devait appartenir à une personne venue de Calypso ou une des planètes qui est proche de celle-ci. \" \n \" Félicitation pour cet indice ! Continue comme çà \" \n  ",
+      "Cette journée a été très rude pour toi, il est l’heure pour toi de partir de cette planète afin de pouvoir continuer ta destiné ! ",
+      " \n Faut que ..... \n"
     ],
     "optionA": null ,
     "optionB": null ,
