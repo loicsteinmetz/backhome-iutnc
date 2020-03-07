@@ -62,9 +62,9 @@ public class CombatController extends Application {
     @FXML
     public void initialize(){
         MODELE = (Combat) getQuete().getProchainEvenement();
-        Transition t = EffetsJavaFx.fade(bg, 4, 0, 0.3);
+        Transition t = EffetsJavaFx.fade(bg, 4, 0, 0.6);
         t.setOnFinished((e)->{
-            EffetsJavaFx.vibrance(bg, 6, 0.3, 0.2);
+            EffetsJavaFx.vibrance(bg, 4, 0.6, 0.4);
         });
         pane.setOnMouseClicked((e)->{
             new ViewLoader().switchTo(CarteController.getView(), e);
