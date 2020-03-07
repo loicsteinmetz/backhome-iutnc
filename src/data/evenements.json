@@ -125,7 +125,7 @@
   "15":{
     "type": "decision",
     "scenario": [
-      "Retourne en ville pour valider la quête et recevoir une récompense",
+      "Vous faite le chemin de retour à Noswo pour valider votre quête",
       "Lors de votre arrivée à « Noswo », vous vous rendez au point de rendez-vous, le groupe d’hommes arrivent peu après vous. Tu leur donnes l'objet de la quête en échange de l'équipement et de l’essence. ",
       "\n vous avez reçu Plastron Credo de la gloire ! \n",
       "En plus, vous avez pu trouver un indice sur Calypso grâce à l'armure qui est Made in Calypso.",
@@ -140,10 +140,12 @@
   "17": {
     "type": "combat",
     "scenario": [
-      "Vous venez d'arriver sur Zéphyr. Vous descendez du vaisseau.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      "Dialogue avec un gosse"
+      "\n BIENVENUE sur Zéphyr, du vent de l'ouest \n ",
+      "Elle constituée principalement de mer. Mais le problème, c’est qu’elle est difficile d’accès dû aux satellites qui tourne autour d’elle. De plus, cette planète est paradisiaque : eau turquoise, terre verdoyante, montagne bien enneigé, Forêt avec une multitude d’arbres différents. Elle est l'une des planètes les plus belles du système. \n\nZéphyr a amené Fortune, Gloire et Pouvoir, un homme avait amassé toutes les richesses du monde, son nom God Roger, Roi des pirates, ces dernières paroles incitaient tous les hommes de la planète à s’aventurer en mer.",
+      "God Roger  : \n \" Mon trésor ? Je vous le laisse si vous le voulez : TROUVER LE ! Je l'ai laissé quelque part dans ce monde. \" \n Tous se lancèrent sur la route de Zéphyr dans l’espoir de mettre la main sur ce fameux trésor ! Le monde entier connut alors une grande vague de piraterie.",
+      "Tous se lancèrent sur la route de Zéphyr dans l’espoir de mettre la main sur ce fameux trésor ! Le monde entier connut alors une grande vague de piraterie.\nVous venez d'atterrir à la capital REDLINE. Vous vous promenez dans la ville à la recherche de quête à faire. Vous arrivez devant un tableau avec plus de quête, vous consultez les quêtes qui pourraient être bien pour vous.\nVous sentez quelqu'un, vous touchez le dos... Vous vous retournez et un enfant trouve derrière vous. L'enfant vous demande de l'aide, car il a un souci. ",
+      "L'enfant : \" Un monsieur m'a voler mon pendentif qui appartenait a mon père... Et j'aimerais le recupérer pouvez vous m'aider s'il vous plaint ! \" ",
+      "Vous regardez l'enfant... Et vous acceptez de l'aider ! Vous commencez a le suivre...\n Vous arrivez devant le bar et il vous montre la personne. Et vous vous dirigez vers celle-ci pour vous battre et récupérer l'objet de l'enfant."
     ],
     "idEnnemi" : "9",
     "idIssue" : "19"
@@ -152,8 +154,9 @@
   "19": {
     "type" : "combat",
     "scenario": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+      "Vous avez battu Jul'Tarv, mais aucun objet pour l'enfant. Vous retournez le voir et il vous explique que c'était un test ! Il vous ramène au port. Il vous montre un bateau, il vous explique que son pendentif est dans ce bateau. ",
+      "Vous dirigez vers ce bateau, mais un moussaillon vous interpelle et vous attaque, car il a entendu la conversion que vous avez eu avec l'enfant. ",
+      "Moussaillon : \" Vous ! N'y penser pas ! Vous ne passerez pas tant que je suis là ! \" Du coup, vous chargez sur le moussaillon pouvoir passer ! "
     ],
     "idEnnemi" : "11",
     "IdIssue" : "21"
@@ -162,9 +165,9 @@
   "21": {
     "type" : "combat",
     "scenario": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      "Chef des pirates"
+      "Vous avez réussi à vaincre Loudmerawa Le Marin. Vous montez à bord du bateau et vous le fouiller. Vous avez trouvé le pendentif de l'enfant et vous le récupérer.... ",
+      " \n Sauf que le capitaine du navire, vous surprendre ! \n ",
+      "Oshar Marif, le chef des pirates : \" Toi ! Comment oses-tu monter dans mon navire et me voler mon trésor ! Tu te crois pour qui ?! Je suis OSHAR MARIF ! En garde ! Je vais te montrer ce que fais a ceux qui ose me voler ! \" "
     ],
     "idEnnemi" : "13",
     "IdIssue" : "23"
@@ -173,10 +176,10 @@
   "23": {
     "type": "decision",
     "scenario": [
-      "Retourne en ville pour valider la quête et recevoir une récompense",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-      "Recupere la récompense",
-      "Dialogue"
+      "Vous retournez voir l'enfant, cacher derrière une caisse pour ne pas se faire attraper par les pirates. ",
+      " \" Voilà mon enfant, je te redonne le pendentif de ton père. Garde le précieusement et ne le perds plus. \" ",
+      "L'enfant le récupère est vous remercie. Et vous remet la récompense qu'il vous avait promis. Il s'agit d'une PGM Ultima Ratio Hecate II, une arme à distance assez rare. L'enfant retourna chez lui, en ayant les larmes aux yeux. ",
+      "\n Je suis dans mon vaisseau  sauf que je me ve-sau. \n"
     ],
     "optionA": null,
     "optionB": null
