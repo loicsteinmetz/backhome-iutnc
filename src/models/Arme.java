@@ -1,5 +1,11 @@
 package models;
 
+import lib.org.json.simple.JSONObject;
+import lib.org.json.simple.parser.ParseException;
+import utils.JsonParser;
+
+import java.io.IOException;
+
 /**
  * Modélisation d'une arme générique
  * (utilisées pour les pnj)
@@ -50,10 +56,21 @@ public class Arme extends Item implements Configurable {
     }
 
     /**
-     * Initialise les armes
+     * Récupère les données de configuration de la carte
      */
     @Override
     public void initConfiguration() {
-
+        String chemin = "/data/armes.json";
+        String cle = Integer.toString(id);
+        JSONObject arme = null;
+        try {
+            arme = new JsonParser().parseObject(chemin, cle);
+        } catch (IOException | ParseException e) {
+            e.printStackTrace();
+        }
+        if (arme != null){
+            nom = arme.get("nom").toString();
+            degats = (int) (long) arme.get("degats");
+        }
     }
 }
