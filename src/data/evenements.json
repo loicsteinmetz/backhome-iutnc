@@ -6,7 +6,6 @@
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
     ],
-    "choix": "Vous arrivez à une intersection",
     "optionA": "Prendre le chemin de gauche",
     "optionB": "Prendre le chemin de droite",
     "idIssueA": "VAISSEAU",
@@ -57,7 +56,6 @@
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
     ],
-    "choix": "Retourner dans le vaisseau.",
     "optionA": null ,
     "optionB": null ,
     "idIssueA": "VAISSEAU",
@@ -72,7 +70,6 @@
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
       "Dialogue avec des pnj"
     ],
-    "choix": "Vous pouvez choisir de sortir depuis la porte EST ou OUEST",
     "optionA": "Prendre la porte EST",
     "optionB": "Prendre la porte OUEST",
     "idIssueA": "9",
@@ -99,7 +96,6 @@
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
       "Dialogue avec des pnj"
     ],
-    "choix": "La fuite ou l'attaque",
     "optionA": "Vous prenez la fuite, comme un lache",
     "optionB": "Vous faites une attaque surprise",
     "idIssueA": "13",
@@ -126,7 +122,6 @@
       "Recupere la récompense",
       "Dialogue"
     ],
-    "choix": "Retourner dans le vaisseau.",
     "optionA": null ,
     "optionB": null ,
     "idIssueA": "VAISSEAU",
@@ -174,7 +169,6 @@
       "Recupere la récompense",
       "Dialogue"
     ],
-    "choix": "Retourner dans le vaisseau.",
     "optionA": null ,
     "optionB": null ,
     "idIssueA": "VAISSEAU",
