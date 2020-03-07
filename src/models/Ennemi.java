@@ -49,8 +49,8 @@ public abstract class Ennemi extends Personnage implements Configurable {
 
     }
     
-    public void attaque(Personnage heros){
-    	this.getArme().attaquer(heros);
+    public String attaque(Personnage heros){
+    	return this.getArme().attaquer(heros);
     }
 
 }

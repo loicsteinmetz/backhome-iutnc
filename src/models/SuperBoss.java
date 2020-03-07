@@ -14,6 +14,11 @@ public class SuperBoss extends Boss {
     public SuperBoss(int id){
         super(id);
     }
+    
+    //todo
+    public SuperBoss(String nom,int pv,ArmeDistance a) {
+    	super(nom,pv,a);
+    }
 
     /**
      * Getter

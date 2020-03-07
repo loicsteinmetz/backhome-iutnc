@@ -65,22 +65,23 @@ public abstract class Personnage {
      * @param cible victime de l'attaque
      * @param a arme utilisée
      */
-    public void attaquer(Personnage cible, Arme a){
-        a.attaquer(cible);
+    public String attaquer(Personnage cible, Arme a){
+        return a.attaquer(cible);
     }
 
     /**
      * Gère les effets d'une attaque sur un personnage
      * @param dommages les pv perdus par le personnage
      */
-    public void subirAttaque(double dommages){
+    public String subirAttaque(double dommages){
         this.modifierPv((int) -dommages);
+        return "Degat subit : "+((int)dommages);
     }
     
     /**
      *  @return true si pv<=0 @return false sinon
      */
     public boolean enVie() {
-    	return 0<=this.pv;
+    	return 0<this.pv;
     }
 }

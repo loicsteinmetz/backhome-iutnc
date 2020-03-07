@@ -14,6 +14,7 @@ public class Brute extends Ennemi {
     }
     
     public Brute(String nom,int pv,ArmeCac a) {
+    	//todo
     	super(nom,pv,a);
     }
 

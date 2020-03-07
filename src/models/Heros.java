@@ -52,8 +52,9 @@ public class Heros extends Personnage {
      * @Override de la méthode subir attaque
      * pour prendre en compte l'armure du héros
      */
-    public void subirAttaque(double dommages){
+    public String subirAttaque(double dommages){
         this.modifierPv((int) -(dommages-getInventaire().getArmure().getResistance()));
+        return "Degat subit : "+(dommages-getInventaire().getArmure().getResistance());
     }
 
     public Situation getSituation() {
