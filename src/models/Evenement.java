@@ -14,13 +14,17 @@ public class Evenement {
 
     /**
      * Constructeur
-     *
      * @param id l'id de l'événement
      */
     public Evenement(int id) {
         this.id = id;
     }
 
+    /**
+     * Configure l'événement suivant
+     * @param id l'idIssue de l'événement en cours
+     * @return l'événement suivant
+     */
     public Evenement configIssue(int id){
         String chemin = "/data/evenements.json";
         String cle = Integer.toString(id);
