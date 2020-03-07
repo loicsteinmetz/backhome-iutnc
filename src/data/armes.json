@@ -69,5 +69,53 @@
     "type": "generique",
     "nom": "Masse d'arme à plasma",
     "degats": 15
+  },
+
+  "8": {
+    "type": "generique",
+    "nom": "Fusil d'assaut KV-666 ",
+    "degats": 20
+  },
+
+  "10": {
+    "type": "generique",
+    "nom": "Epée à impulsion",
+    "degats": 20
+  },
+
+  "12": {
+    "type": "generique",
+    "nom": "Excelia",
+    "degats": 35
+  },
+
+  "14": {
+    "type": "generique",
+    "nom": "Revolver d'Iroshi",
+    "degats": 35
+  },
+
+  "16": {
+    "type": "generique",
+    "nom": "Epée lourde organique",
+    "degats": 20
+  },
+
+  "18": {
+    "type": "generique",
+    "nom": "Fusil organique",
+    "degats": 20
+  },
+
+  "20": {
+  "type": "generique",
+  "nom": "Meteora Divinus",
+  "degats": 35
+},
+
+  "22": {
+    "type": "generique",
+    "nom": "Gatling AZ-1",
+    "degats": 35
   }
 }

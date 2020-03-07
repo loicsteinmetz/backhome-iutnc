@@ -221,12 +221,140 @@
       "A la fin de ce combat, vous apercevez un sbire de chef de guerre mettre le feu au hangar. Vous ne voyez qu'un seul vaisseau. Un <<Nostromo>>, modèle qui permet les voyages interstellaires. Une aubaine... Mais il faut vite partir",
       "Vous montez à bord et mettez le contact. Bonne nouvelle, tous les voyants sont au vert! Malheureusement, un ne l'est pas: celui du carburant.",
       "Vous descendez du vaisseau et par chance, un baril,25 de carburant se trouve à quelques mètres du vaisseaux. Vous faites donc le plein...",
-      " Vous remontez à bord du Nostromo et décollez en catastrophe.",
-      " Une fois en sécurité, vous scannez votre carte stellaire, et remarquez qu'un baril d'essence seront nécessaires pour accéder aux trois planètes les plus proches, 2 barils pour celles plus lointaines et 3 pour Calypso, votre planète natale..."
+      "Vous remontez à bord du Nostromo et décollez en catastrophe.",
+      "Une fois en sécurité, vous scannez votre carte stellaire, et remarquez qu'un baril d'essence seront nécessaires pour accéder aux trois planètes les plus proches, 2 barils pour celles plus lointaines et 3 pour Calypso, votre planète natale..."
+    ],
+    "optionA": null,
+    "optionB": null,
+    "idIssueA": "VAISSEAU",
+    "idIssueB": null
+  },
+
+
+  "14":{
+    "type":"combat",
+    "scenario": [
+      "Vous atterrissez sur Lumini.",
+      "Vous savez qu'il s'agit de la dernière étape avec de rentrer à la maison",
+      "Tout semble paisible sur cette planète. Vous vous trouvez dans une ville moderne ou buildings et nature coexistent de façon harmonieuse. Tout est si lumineux...",
+      "La population est dense. Vous croisez de nombreuses personnes, toutes vous saluent, sourient, vous demande si vous avez besoin d'aide sans que vous ne demandiez rien. En revanche vous remarquez quelque chose de troublant: toutes ces personnes ont les violets avec une spirale à leur centre. Etrange...",
+      "Afin d'obtenir la dernière coordonnées pour votre planète, vous devez trouver le mal caché qui ronge cette cité...",
+      "Midi sonne. Tout le monde marche et se dirige vers la même direction. Vous suivez la foule...",
+      "Vous arrivez devant une majestueuse cathédrale. Apparait en haut des marches de cette dernière une femme. Elle est vêtue d'une tunique violette dont une capuche cache son visage...",
+      "Après quelques secondes de silence, elle récite ce qui semble être une formule dans un dialecte inconnu. Subitement, elle s'interrompt et dit <<Un intrus est présent>>. Elle  vous désigne du doigt. La foule s'écarte et forme un cercle autour de vous. Deux gardes et deux fusiliers impériaux vous encerclent : <<On ne sait pas qui tu es ni d'où tu viens mais c'est ici que ta vie va prendre fin>>"
+    ],
+    "idEnnemi": "8",
+    "idIssue": "16"
+  },
+
+  "16": {
+    "type":"combat",
+    "scenario": [
+      "Vous avez gagné le combat!",
+      "La femme mystérieuse, escortée par deux géants impériaux, se réfugie dans la cathédrale. La foule reste immobile, silencieuse. Vous décidez de la poursuivre",
+      "Les portes de la cathédrale sont fermées. Vous les détruisez avec votre pistolet laser. A l'intérieure, la femme mystérieuse est absente. En revanche, un garde impérial vous attend..."
+    ],
+    "idEnnemi": "10",
+    "idIssue": "18"
+  },
+
+  "18": {
+    "type": "combat",
+    "scenario": [
+      "Vous avez gagné le combat!",
+      "Vous décidez d'accéder à la tour principale de la cathédrale. Après avoir gravi ses innombrables marches, vous voilà au sommet...",
+      "Devant vous, la femme mystérieuse et sa garde rapprochée. Vous lui demandez ce qu'il se passe dans cette ville",
+      "Elle retire sa capuche. Sous cette capuche une femme au visage angélique. <<En temps normal je n'aurai bien évidemment rien répondu mais comme tu vis tes derniers instants, je vais t'accorder une réponse. J'ai développé un pouvoir très puissant qui me permet de manipuler la population. Ainsi, j'évite tout conflit et instaure une paix inébranlable.>>",
+      "Vous répondez qu'il est indigne de pratiquer ce genre de magie noire. Son visage se métamorphose et devient d'une monstruosité absolue <<Quiconque se trouvant sur mon chemin périra dans la douleur!>>"
+    ],
+    "idEnnemi": "12",
+    "idIssue": "20"
+  },
+
+  "20": {
+    "type": "decison",
+    "scenario": [
+      "Vous avez gagné le combat!",
+      "Du haut de la tour, vous constatez que toute la population reprend ses esprits et vous acclame. Vous avez sauvé des ténèbres toute la ville!",
+      "Apparait devant vous, dans un halo de lumière, la dernière coordonnée nécessaire de Calypso. De plus, vous sentez qu'un pouvoir vous envahi: c'est celui de la femme mystérieuse! Comment l'utiliserez-vous?...",
+      "Vous récupérez l'ensemble de son équipement",
+      "Vous retournez sans plus attendre vers le Nostromo. Sur le chemin, deux barils de carburant! Vous avec donc en votre possession 3 barils de carburant. Plus rien ne vous empêche de rentrer chez vous!",
+      "Une fois à bord du Nostromo, vous faites le plein, entrez les coordonnées puis décollez..."
+    ],
+    "optionA": null,
+    "optionB": null,
+    "idIssueA": "VAISSEAU",
+    "idIssueB": null
+  },
+
+  "22": {
+    "type": "decision",
+    "scenario": [
+      "Vous atterrissez sur Tremor.",
+      "Vous savez qu'il s'agit de la dernière étape avec de rentrer à la maison...",
+      "Cette planète est dévastée. Elle vous rappelle Utopia",
+      "Vous descendez de votre vaisseau. Rapidement, plusieurs personnes viennent à votre rencontre: << Vous devez nous aider étranger. Vous êtes notre dernier espoir! >>" ,
+      "Après discussion, vous comprenez qu'un tyran dirige d'une main de fer cette planète. On vous indique où le trouver, deux chemins sont possibles. Le premier, le moins sûr, sera semé d'embuches mais vous permettra de débarrasser les sbires du tyran de cette planète . Le second, est un passage secret souterrain qui vous permettra d'accéder au tyran en peu de temps...",
+      "Que choisissez-vous?"
+    ],
+    "optionA": "Venger les habitants",
+    "optionB": "Accéder au tyran via le passage secret?",
+    "idIssueA": "24",
+    "idIssueB": "28"
+  },
+
+  "24": {
+    "type": "combat",
+    "scenario": [
+      "Vous ne choisissez pas la simplicité mais les habitants vous en seront d'avantage redevable.",
+      "Après une heure de marche, vous arrivez aux porte d'une forteresse. Une voix vous interpelle: <<Dégage d'ici misérable>>. Vous levez la tête et défiez du regard la personne d'où provient cette voix.",
+      "La porte de la forteresse s'ouvre: un ennemi vient dans votre direction. Il veut en découdre..."
+    ],
+    "idEnnemi": "14",
+    "idIssue": "26"
+  },
+
+  "26": {
+    "type": "combat",
+    "scenario": [
+      "Vous avez gagné le combat!",
+      "Vous pénétrez dans la forteresses. Elle est magnifique, dans un état irréprochable. Très différent ce que vous avez pu voir avant...",
+      "Vous surprenez un sbire du tyran pleureur: << Ce monstre est indigne de nous diriger>> . Vous vous approchez  lui les mains en l'air et lui demandez pourquoi: <<Cela fait des années que je le sers. J'ai commis des actes terribles pour lui et hier, il a ordonné un raid dans mon village car il était sûr que des opposants s'y trouvaient. Il n'en était rien, toute ma famille est morte... Je me vengerai! >>",
+      "Vous lui dites alors que vous êtes en mesure de l'aider: << Etranger, des centaines de soldates occupent cette forteresse. Ce que je peux faire c'est lancer une alerte afin de créer une diversion. Si vous parvenez à tuer le tyran, ses sbires et moi compris vous obéiront. Vous semblez être quelqu'un de bien... Au fait, je m'appelle Kaison! >> Vous acceptez.",
+      "Une alarme retenti. Vous vous dirigez vers l'endroit où se trouve le tyran",
+      "Dans un couloir, vous tombez sur un ennemi: <<C'est une diversion! Il y a un traître parmi nous!>>. Vous devez vite le réduire au silence avant que votre plan ne tombe à l'eau..."
+    ],
+    "idEnnemi": "16",
+    "idIssue": "28"
+  },
+
+  "28": {
+    "type" : "combat",
+    "scenario": [
+      "Vous voilà devant l'entrée du donjon du tyran. Vous entrez...",
+      "Une voix retenti <<Quel agitateur ose pénétrer dans mon royaume?>>. Vous restez silencieux, déterminé à mettre un terme à cette tyrannie",
+      "<<Comment osez-vous perturber l'harmonie de cette planète?>>. Vous lui répondez que l'harmonie est étrangère à ces terres et que le temps est venu de libérer le peuple. <<L'ordre et le pouvoir s'obtiennent par le sang. Pour les conserver, il en sera de même!>>. Il sort de sa poche un diamant, le serre fort. Un halo de lumière enveloppe le tyran pendant quelques secondes. Le halo se dissipe et laisse apparaitre un jeune homme au physique imposant: <<Voyons ce que tu as dans le ventre!>>"
+    ],
+    "idEnnemi": "18",
+    "idIssue": "30"
+  },
+
+  "30": {
+    "type": "decison",
+    "scenario": [
+      "Vous avez gagné le combat!",
+      "Apparait devant vous, dans un halo de lumière, la dernière coordonnée nécessaire de Calypso. A vos pieds, le diamant qu'a utilisé le tyran. Comment l'utiliserez-vous?...",
+      "Vous récupérez l'ensemble de son équipement",
+      "Vous descendez du donjon. Dans la cour de la forteresse, tous les sbires du tyran sont à genoux. Ils vous regardent et attendent vos ordres. Que faire? Remplacer le tyran ou laisser Kaison prendre ce rôle?",
+      "Vous appelez Kaison et lui proposez ce rôle. Il accepte :<<Soyez sûr que les choses vont changer!>>",
+      "Avant de vous diriger vers le Nostromo, vous récupérez deux barils de carburant dans la forteresse. Kaison vous aide à les porter jusqu'à votre vaisseau.",
+      "Merci! Tu seras toujours le bienvenu ici!",
+      "Une fois à bord du Nostromo vous faites le plein, entrez les coordonnées puis décollez..."
     ],
     "optionA": null,
     "optionB": null,
     "idIssueA": "VAISSEAU",
     "idIssueB": null
   }
+
 }

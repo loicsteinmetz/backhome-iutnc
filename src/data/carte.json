@@ -44,9 +44,9 @@
     "niveau":"2",
     "planetesVoisines": ["calypso"],
     "idPremierEvenement": "2",
-    "idRecompenseArmeCac": null,
-    "idRecompenseDistance": null,
-    "idRecompenseArmure": null,
+    "idRecompenseArmeCac": "12",
+    "idRecompenseDistance": "14",
+    "idRecompenseArmure": "2",
     "description": "Une planète prospère dont le comportement des habitants est intriguant..."
   },
   {
@@ -54,9 +54,9 @@
     "niveau":"2",
     "planetesVoisines": ["calypso"],
     "idPremierEvenement": "2",
-    "idRecompenseArmeCac": null,
-    "idRecompenseDistance": null,
-    "idRecompenseArmure": null,
+    "idRecompenseArmeCac": "20",
+    "idRecompenseDistance": "22",
+    "idRecompenseArmure": "4",
     "description": "Une planète devastée et dirigée par un tyran à la main de fer..."
   },
   {
