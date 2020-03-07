@@ -48,18 +48,4 @@ public class Combat extends Evenement implements Configurable {
 			return false;
 		}
 	}
-	
-	 public static void main(String[] args) {
-		Combat c = new Combat(1);
-		ArmeCac a = new ArmeCac(5);
-		ArmeDistance ad = new ArmeDistance(7);
-		Brute goblin = new Brute("goblin",15,a);
-		Tireur tir = new Tireur("tir",15,ad);
-		Boss boss = new Boss("le malefique",15,a);
-		SuperBoss Sb = new SuperBoss("tavernier",20,ad);
-		c.combattre(goblin);
-		c.combattre(tir);
-		c.combattre(boss);
-		c.combattre(Sb);
-	 }
 }

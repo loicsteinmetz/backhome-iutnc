@@ -13,9 +13,4 @@ public class Tireur extends Ennemi {
         super(id);
     }
     
-    //todo
-    public Tireur(String nom,int pv,ArmeDistance a) {
-    	super(nom,pv,a);
-    }
-
 }

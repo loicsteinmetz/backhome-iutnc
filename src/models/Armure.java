@@ -14,8 +14,6 @@ public class Armure extends Item implements Configurable {
 	 */
 	public Armure(int id) {
 		super(id);
-		//todo
-		this.resistance=id;
 		this.initConfiguration();
 	}
 

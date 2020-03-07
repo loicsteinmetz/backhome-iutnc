@@ -19,11 +19,6 @@ public abstract class Ennemi extends Personnage implements Configurable {
         this.initConfiguration();
     }
     
-    public Ennemi(String nom,int pv,Arme a) {
-    	//todo
-    	super(nom,pv);
-    	this.arme=a;
-    }
 
     /**
      * Getter

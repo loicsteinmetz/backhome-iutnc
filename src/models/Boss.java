@@ -13,9 +13,5 @@ public class Boss extends Ennemi {
         super(id);
     }
     
-    //todo
-    public Boss(String nom,int pv,Arme a) {
-    	super(nom,pv,a);
-    }
 
 }
