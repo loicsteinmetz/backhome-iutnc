@@ -2,7 +2,9 @@ package models;
 
 public class Quete implements Configurable {
 
+    @Singleton
     private static Quete QUETE = new Quete();
+
     private Evenement prochainEvenement;
     private int idProchainEvenement;
 

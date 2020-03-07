@@ -13,7 +13,9 @@ import java.util.ArrayList;
  */
 public class Carte implements Configurable {
 
+    @Singleton
     private static Carte CARTE = new Carte();
+
     private ArrayList<Planete> planetes = new ArrayList<>();
 
     /**

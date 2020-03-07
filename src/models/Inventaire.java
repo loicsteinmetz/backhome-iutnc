@@ -1,8 +1,10 @@
 package models;
 
 public class Inventaire {
-	
+
+	@Singleton
 	private static Inventaire INVENTAIRE = new Inventaire();
+
 	private int carburant;
 	private ArmeCac armeCac;
 	private ArmeDistance armeDist;

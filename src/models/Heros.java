@@ -8,7 +8,9 @@ import static models.Inventaire.getInventaire;
  */
 public class Heros extends Personnage {
 
+    @Singleton
     private static Heros HEROS = new Heros();
+
     private Planete localisation;
     private Situation situation;
 
