@@ -269,12 +269,22 @@ public class CombatController extends Application {
     private void finCombat(Event event){
         ViewLoader vl = new ViewLoader();
         pane.setOnMouseClicked((e)->{
-            if (getHeros().getLocalisation() == getCarte().getPlaneteParNom("utopia")){
-                getHeros().setSituation(Situation.DEBUT);
-                vl.switchTo(QueteController.getView(), event);
+            if (getHeros().enVie()){
+                if (MODELE.getIdIssue() == 0){
+                    getHeros().setSituation(Situation.VAISSEAU);
+                    vl.switchTo(CarteController.getView(), event);
+                } else {
+                    getQuete().prochainEvenement(MODELE.getIdIssue());
+                    vl.switchTo(QueteController.getView(), event);
+                }
             } else {
-                getHeros().setSituation(Situation.VAISSEAU);
-                vl.switchTo(CarteController.getView(), event);
+                if (getHeros().getLocalisation() == getCarte().getPlaneteParNom("utopia")){
+                    getHeros().setSituation(Situation.DEBUT);
+                    vl.switchTo(QueteController.getView(), event);
+                } else {
+                    getHeros().setSituation(Situation.VAISSEAU);
+                    vl.switchTo(CarteController.getView(), event);
+                }
             }
         });
     }

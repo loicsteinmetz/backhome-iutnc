@@ -62,9 +62,9 @@
     "scenario": [
       "Après de longues heures de recherche, tu trouves une ville ravagée et tu te mets à chercher des indices.",
       "Et là ! Dans le dernier bâtiment au dernier étage, vous trouvez une pièce remplir de documents sur les planètes au alentour. Et un indice sur Calypso !  ",
-      " \" Cette pièce devait appartenir à une personne venue de Calypso ou une des planètes qui est proche de celle-ci. \" \n \" Félicitation pour cet indice ! Continue comme çà \" \n  ",
+      " \"Cette pièce devait appartenir à une personne venue de Calypso ou une des planètes qui est proche de celle-ci. \" \n \" Félicitation pour cet indice ! Continue comme çà\"\n  ",
       "Cette journée a été très rude pour toi, il est l’heure pour toi de partir de cette planète afin de pouvoir continuer ta destiné ! ",
-      " \n Je suis dans mon vaisseau  sauf que je me ve-sau. \n"
+      "Je suis dans mon vaisseau  sauf que je me ve-sau."
     ],
     "optionA": null ,
     "optionB": null ,
@@ -191,7 +191,9 @@
       "\n Je suis dans mon vaisseau  sauf que je me ve-sau. \n"
     ],
     "optionA": null,
-    "optionB": null
+    "optionB": null,
+    "idIssueA": "VAISSEAU",
+    "idIssueB": null
   },
 
   "6": {

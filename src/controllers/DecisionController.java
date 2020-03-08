@@ -14,6 +14,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import models.Decision;
+import models.Quete;
 import utils.EffetsJavaFx;
 import utils.ViewLoader;
 
@@ -88,19 +89,36 @@ public class DecisionController extends Application {
         EffetsJavaFx.fadeIn(ecran, 2, 0);
         ecran.setUserData(index);
         if (index == MODELE.getScenario().size() - 1){
-            EffetsJavaFx.fadeIn(issueA, 2, 0);
-            EffetsJavaFx.fadeIn(issueB, 2, 0);
-            btnBox.setLayoutY(450);
-            issueA.setText(MODELE.getOptionA());
-            issueB.setText(MODELE.getOptionB());
+            if (MODELE.getIdIssueA() != -1 && MODELE.getIdIssueB() != -1){
+                ecran.setDisable(true);
+                EffetsJavaFx.fadeIn(issueA, 2, 0);
+                EffetsJavaFx.fadeIn(issueB, 2, 0);
+                btnBox.setLayoutY(450);
+                issueA.setText(MODELE.getOptionA());
+                issueB.setText(MODELE.getOptionB());
+            } else if (MODELE.getIdIssueA() == 0){
+                ecran.setDisable(true);
+                EffetsJavaFx.fadeIn(issueA, 2, 0);
+                btnBox.getChildren().remove(1);
+                btnBox.setLayoutY(450);
+                issueA.setText("Retourner au vaisseau");
+            } else {
+                ecran.setOnMouseClicked((e)->{
+                    new ViewLoader().switchTo(QueteController.getView(), event);
+                });
+            }
         }
-        ecran.setDisable(true);
     }
 
     @FXML
     private void issueA(Event e){
-        getQuete().prochainEvenement(MODELE.getIdIssueA());
-        new ViewLoader().switchTo(QueteController.getView(), e);
+        ViewLoader vl = new ViewLoader();
+        if (MODELE.getIdIssueA() == 0){
+            vl.switchTo(CarteController.getView(), e);
+        } else {
+            getQuete().prochainEvenement(MODELE.getIdIssueA());
+            new ViewLoader().switchTo(QueteController.getView(), e);
+        }
     }
 
     @FXML
