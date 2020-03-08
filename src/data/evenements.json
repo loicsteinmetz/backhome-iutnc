@@ -10,6 +10,7 @@
     "idIssueA": "4",
     "idIssueB": "6"
   },
+
   "4": {
     "type": "combat",
     "scenario": [
@@ -20,6 +21,7 @@
       "Malheureusement, vous entendez derrière vous une autre voix. Vous vous retournez: un Orc courir vers vous <<Il en reste un! Tuons-le!>> "
     ],
     "idEnnemi": "2",
+    "typeEnnemi": "brute",
     "idIssue": "8"
   },
 
@@ -217,6 +219,7 @@
       "Arrivé en bas, vous entendez <<Le repas est servi!>>. Un ennemi court vers vous, impossible de fuir..."
     ],
     "idEnnemi": "2",
+    "typeEnnemi": "brute",
     "idIssue": "10"
   },
 
