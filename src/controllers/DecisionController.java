@@ -2,10 +2,13 @@ package controllers;
 
 import javafx.animation.Transition;
 import javafx.application.Application;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -31,6 +34,10 @@ public class DecisionController extends Application {
     private AnchorPane pane;
     @FXML
     private ImageView bg;
+    @FXML
+    private Button issueA, issueB;
+    @FXML
+    private Label ecran;
 
     /**
      * Retourne la vue associée au controller
@@ -64,8 +71,44 @@ public class DecisionController extends Application {
         t.setOnFinished((e)->{
             EffetsJavaFx.vibrance(bg, 6, 0.15, 0.05);
         });
-        pane.setOnMouseClicked((e)->{
-            new ViewLoader().switchTo(CarteController.getView(), e);
-        });
+        ecran.setText(MODELE.getScenario().get(0));
+        ecran.setUserData(0);
+        ecran.setOnMouseClicked(this::passeTexte);
+        EffetsJavaFx.fadeIn(ecran, 2.0, 1);
+        issueA.setDisable(true);
+        issueB.setDisable(true);
+        issueA.setOpacity(0);
+        issueB.setOpacity(0);
+    }
+
+    @FXML
+    private void passeTexte(Event event){
+        Label label = (Label) event.getSource();
+        int index = (int) label.getUserData() + 1;
+        label.setOpacity(0);
+        label.setText(MODELE.getScenario().get(index));
+        EffetsJavaFx.fadeIn(label, 2, 0);
+        label.setUserData(index);
+        if (index == MODELE.getScenario().size() - 1){
+            EffetsJavaFx.fadeIn(issueA, 2, 0);
+            EffetsJavaFx.fadeIn(issueB, 2, 0);
+            issueA.setDisable(false);
+            issueB.setDisable(false);
+            issueA.setText(MODELE.getOptionA());
+            issueB.setText(MODELE.getOptionB());
+            ecran.setDisable(true);
+        }
+    }
+
+    @FXML
+    private void issueA(Event e){
+        getQuete().prochainEvenement(MODELE.getIdIssueA());
+        new ViewLoader().switchTo(QueteController.getView(), e);
+    }
+
+    @FXML
+    private void issueB(Event e){
+        getQuete().prochainEvenement(MODELE.getIdIssueB());
+        new ViewLoader().switchTo(QueteController.getView(), e);
     }
 }

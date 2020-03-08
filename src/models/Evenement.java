@@ -48,4 +48,8 @@ public class Evenement {
         }
         return issue;
     }
+
+    public ArrayList<String> getScenario() {
+        return scenario;
+    }
 }

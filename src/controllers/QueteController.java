@@ -1,8 +1,11 @@
 package controllers;
 
+import com.sun.javafx.event.RedirectedEvent;
+import javafx.animation.PauseTransition;
 import javafx.animation.Transition;
 import javafx.application.Application;
 import javafx.event.Event;
+import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,7 +14,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import models.Combat;
 import models.Decision;
 import models.Quete;
@@ -40,7 +46,7 @@ public class QueteController extends Application {
     @FXML
     private AnchorPane pane;
     @FXML
-    private Label nomPlanete;
+    private Label nomPlanete, cliquer;
     @FXML
     private Button startBtn;
 
@@ -73,14 +79,20 @@ public class QueteController extends Application {
     public void initialize(){
         MODELE = getQuete();
         startBtn.setVisible(false);
-        EffetsJavaFx.defilementBg(starsBg1, starsBg2);
-        nomPlanete.setText(getHeros().getLocalisation().getNom().toUpperCase());
-        EffetsJavaFx.fadeIn(starsBg1, 2, 0);
-        EffetsJavaFx.fadeIn(starsBg2, 2, 0);
-        Transition t = EffetsJavaFx.fadeIn(nomPlanete, 2, 1.5);
-        t.setOnFinished((e)->{
-            startBtn.setVisible(true);
-        });
+        if (getHeros().getSituation() != Situation.EVENEMENT){
+            EffetsJavaFx.defilementBg(starsBg1, starsBg2);
+            nomPlanete.setText(getHeros().getLocalisation().getNom().toUpperCase());
+            EffetsJavaFx.fadeIn(starsBg1, 2, 0);
+            EffetsJavaFx.fadeIn(starsBg2, 2, 0);
+            Transition t = EffetsJavaFx.fadeIn(nomPlanete, 2, 1.5);
+            t.setOnFinished((e)->{
+                startBtn.setVisible(true);
+            });
+        } else {
+            nomPlanete.setText("Cliquer pour continuer...");
+            EffetsJavaFx.fadeIn(nomPlanete, 0.5, 0.5);
+            pane.setOnMouseClicked(this::switchType);
+        }
     }
 
     @FXML
@@ -95,9 +107,9 @@ public class QueteController extends Application {
                 break;
             case VAISSEAU:
                 MODELE.nouvellePlanete(getHeros().getLocalisation());
-                getHeros().setSituation(Situation.EVENEMENT);
                 break;
         }
+        getHeros().setSituation(Situation.EVENEMENT);
         ViewLoader vl = new ViewLoader();
         if (MODELE.getProchainEvenement() instanceof Decision){
             vl.switchTo(DecisionController.getView(), e);
