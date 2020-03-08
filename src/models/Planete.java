@@ -21,10 +21,16 @@ public class Planete {
      * @param nom nom de la planète
      * @param niveau niveau d'accès requis
      */
-    public Planete(String nom, int niveau, String description) {
+    public Planete(String nom, int niveau, String description,
+                   int idPremierEvenement, int idRecompenseArmeCac,
+                   int idRecompenseDistance, int idRecompenseArmure) {
         this.nom = nom;
         this.niveau = niveau;
         this.description = description;
+        this.idPremierEvenement = idPremierEvenement;
+        this.idRecompenseArmeCac = idRecompenseArmeCac;
+        this.idRecompenseDistance = idRecompenseDistance;
+        this.idRecompenseArmure = idRecompenseArmure;
     }
 
     /**

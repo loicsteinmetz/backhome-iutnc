@@ -141,5 +141,15 @@
     "type": "distance",
     "nom": "Gatling AZ-1",
     "degats": 35
+  },
+  "100": {
+    "type": "cac",
+    "nom": "Epee",
+    "degats": 10
+  },
+  "101": {
+    "type": "distance",
+    "nom": "Pistolet",
+    "degats": 10
   }
 }

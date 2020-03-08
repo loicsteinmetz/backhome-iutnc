@@ -84,11 +84,25 @@ public class Carte implements Configurable {
      */
     private void initialiserPlanetes(JSONObject[] planetes) {
         for (JSONObject p : planetes){
+
+            Object pe = p.get("idPremierEvenement");
+            int peInt = pe == null ? -1 : Integer.parseInt(p.get("idPremierEvenement").toString());
+            Object rcac = p.get("idRecompenseArmeCac");
+            int rcacInt = rcac == null ? -1 : Integer.parseInt(p.get("idRecompenseArmeCac").toString());
+            Object rdist = p.get("idRecompenseDistance");
+            int rdistInt = rdist == null ? -1 : Integer.parseInt(p.get("idRecompenseDistance").toString());
+            Object rarm = p.get("idRecompenseArmure");
+            int rarmInt = rarm == null ? -1 : Integer.parseInt(p.get("idRecompenseArmure").toString());
+
             this.nouvellePlanete(new Planete(
                     p.get("nom").toString(),
                     Integer.parseInt(p.get("niveau").toString()),
-                    p.get("description").toString()
-            ));
+                    p.get("description").toString(),
+                    peInt,
+                    rcacInt,
+                    rdistInt,
+                    rarmInt)
+            );
         }
     }
 

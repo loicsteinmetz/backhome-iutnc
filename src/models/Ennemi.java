@@ -63,14 +63,6 @@ public abstract class Ennemi extends Personnage implements Configurable {
             arme = new Arme(idArme);
         }
     }
-
-
-    public static void main (String[] args){
-        Brute a = new Brute(2);
-        Boss b = new Boss(3);
-        System.out.println(a.getNom() + ", " + a.getDescription() + ", "+ a.getPv() + ", " + a.getArme());
-        System.out.println(b.getNom() + ", " + b.getDescription() + ", "+ b.getPv() + ", " + b.getArme());
-    }
     
     public String attaque(Personnage heros){
     	return this.getArme().attaquer(heros);

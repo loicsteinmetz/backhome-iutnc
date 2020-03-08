@@ -48,8 +48,6 @@ public class DecisionController extends Application {
      */
     @Override
     public void start(Stage stage) throws Exception{
-        System.out.println("Passage par DecisionController"); // todo : test
-        if (MODELE != null) System.out.println("Modèle initialisé"); // todo : test
         Parent root = FXMLLoader.load(getClass().getResource(VIEW));
         Scene scene = new Scene(root, 800, 600);
         scene.getStylesheets().add(STYLE);

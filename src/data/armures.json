@@ -12,6 +12,9 @@
   "4": {
     "nom": "Armure légendaire d'Agarothi",
     "resistance": 40
+  },
+  "100": {
+    "nom": "Veste renforcée",
+    "resistance": 0
   }
-
 }

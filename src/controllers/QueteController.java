@@ -12,12 +12,14 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import models.Combat;
 import models.Decision;
 import models.Quete;
 import models.Situation;
 import utils.EffetsJavaFx;
 import utils.ViewLoader;
 
+import static models.Carte.getCarte;
 import static models.Heros.getHeros;
 import static models.Quete.getQuete;
 
@@ -49,7 +51,6 @@ public class QueteController extends Application {
      */
     @Override
     public void start(Stage stage) throws Exception {
-        System.out.println("Passage par QueteController"); // todo : test
         Parent root = FXMLLoader.load(getClass().getResource(VIEW));
         Scene scene = new Scene(root, 800, 600);
         scene.getStylesheets().add(STYLE);
@@ -89,6 +90,9 @@ public class QueteController extends Application {
 
     private void switchType(Event e){
         switch (getHeros().getSituation()){
+            case DEBUT:
+                MODELE.nouvellePlanete(getCarte().getPlaneteParNom("utopia"));
+                break;
             case VAISSEAU:
                 MODELE.nouvellePlanete(getHeros().getLocalisation());
                 getHeros().setSituation(Situation.EVENEMENT);
