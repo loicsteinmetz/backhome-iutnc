@@ -28,6 +28,8 @@ AnchorPane{
     -fx-background-radius:5;
     -fx-min-width: 650px;
     -fx-max-width: 650px;
+    -fx-min-height: 90px;
+    -fx-max-height: 90px;
     -fx-padding:20 30;
     -fx-alignment:center;
     -fx-spacing: 40px;
