@@ -56,7 +56,6 @@
   },
 
   "4": {
-    "type": "tireur",
     "nom": "Rator",
     "description": "une balle, un mort",
     "idArme": "4",
@@ -64,7 +63,6 @@
   },
 
   "6": {
-    "type": "boss",
     "nom": "Goroth",
     "description": "chef de guerre",
     "idArme": "6",
@@ -72,7 +70,6 @@
   },
 
   "8": {
-    "type": "tireur",
     "nom": "Troye",
     "description": "balle filante",
     "idArme": "8",
@@ -80,24 +77,21 @@
   },
 
   "10": {
-    "type": "brute",
     "nom": "Gareth",
     "description": "le fou",
     "idArme": "10",
-    "pv" 250
+    "pv":250
   },
 
   "12": {
-    "type": "superBoss",
     "nom": "Celesta",
-    "description": "Impératrice de Lumini"
+    "description": "Impératrice de Lumini",
     "idArme": "12",
-    "idArme": "14",
+    "idArmeLegendaire": "14",
     "pv": 400
   },
 
   "14": {
-    "type":"brute",
     "nom": "Katorus",
     "description": "lieutenant Xénomorphe",
     "idArme": "16",
@@ -105,7 +99,6 @@
   },
 
   "16": {
-    "type": "tireur",
     "nom": "Viramar",
     "description": "tireur d'exception",
     "idArme": "18",
@@ -113,11 +106,10 @@
 },
 
   "18": {
-    "type": "superBoss",
     "nom": "Lazarus",
     "description": "tyran de Tremor",
     "idArme": "20",
-    "idArme": "22",
+    "idArmeLegendaire": "22",
     "pv": 400
   }
 }

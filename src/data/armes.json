@@ -117,5 +117,29 @@
     "type": "generique",
     "nom": "Gatling AZ-1",
     "degats": 35
+  },
+
+  "24": {
+    "type": "cac",
+    "nom": "Excelia",
+    "degats": 35
+  },
+
+  "26": {
+    "type": "distance",
+    "nom": "Revolver d'Iroshi",
+    "degats": 35
+  },
+
+  "28": {
+    "type": "cac",
+    "nom": "Meteora Divinus",
+    "degats": 35
+  },
+
+  "30": {
+    "type": "distance",
+    "nom": "Gatling AZ-1",
+    "degats": 35
   }
 }

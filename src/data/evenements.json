@@ -202,6 +202,7 @@
       "Devant vous, un arbre. Vous courez pour vous cacher derrière. Malheureusement, vous glissez sur une flaque de sang et renversez un baril en feu. Le bruit alerte les ennemis: <<Un humain, tuons-le!>>"
     ],
     "idEnnemi": "4",
+    "typeEnnemi": "tireur",
     "idIssue": "8"
   },
 
@@ -229,6 +230,7 @@
       "Le chef de guerre s'exclame: <<Laissez le moi, j'ai besoin deme dégourdir les jambes!"
     ],
     "idEnnemi": "6",
+    "typeEnnemi": "boss",
     "idIssue": "12"
   },
 
@@ -262,6 +264,7 @@
       "Après quelques secondes de silence, elle récite ce qui semble être une formule dans un dialecte inconnu. Subitement, elle s'interrompt et dit <<Un intrus est présent>>. Elle  vous désigne du doigt. La foule s'écarte et forme un cercle autour de vous. Deux gardes et deux fusiliers impériaux vous encerclent : <<On ne sait pas qui tu es ni d'où tu viens mais c'est ici que ta vie va prendre fin>>"
     ],
     "idEnnemi": "8",
+    "typeEnnemi": "tireur",
     "idIssue": "16"
   },
 
@@ -273,6 +276,7 @@
       "Les portes de la cathédrale sont fermées. Vous les détruisez avec votre pistolet laser. A l'intérieure, la femme mystérieuse est absente. En revanche, un garde impérial vous attend..."
     ],
     "idEnnemi": "10",
+    "typeEnnemi": "brute",
     "idIssue": "18"
   },
 
@@ -286,6 +290,7 @@
       "Vous répondez qu'il est indigne de pratiquer ce genre de magie noire. Son visage se métamorphose et devient d'une monstruosité absolue <<Quiconque se trouvant sur mon chemin périra dans la douleur!>>"
     ],
     "idEnnemi": "12",
+    "typeEnnemi": "superBoss",
     "idIssue": "20"
   },
 
@@ -329,6 +334,7 @@
       "La porte de la forteresse s'ouvre: un ennemi vient dans votre direction. Il veut en découdre..."
     ],
     "idEnnemi": "14",
+    "typeEnnemi":"brute",
     "idIssue": "26"
   },
 
@@ -343,6 +349,7 @@
       "Dans un couloir, vous tombez sur un ennemi: <<C'est une diversion! Il y a un traître parmi nous!>>. Vous devez vite le réduire au silence avant que votre plan ne tombe à l'eau..."
     ],
     "idEnnemi": "16",
+    "typeEnnemi": "tireur",
     "idIssue": "28"
   },
 
@@ -354,6 +361,7 @@
       "<<Comment osez-vous perturber l'harmonie de cette planète?>>. Vous lui répondez que l'harmonie est étrangère à ces terres et que le temps est venu de libérer le peuple. <<L'ordre et le pouvoir s'obtiennent par le sang. Pour les conserver, il en sera de même!>>. Il sort de sa poche un diamant, le serre fort. Un halo de lumière enveloppe le tyran pendant quelques secondes. Le halo se dissipe et laisse apparaitre un jeune homme au physique imposant: <<Voyons ce que tu as dans le ventre!>>"
     ],
     "idEnnemi": "18",
+    "type": "superBoss",
     "idIssue": "30"
   },
 
