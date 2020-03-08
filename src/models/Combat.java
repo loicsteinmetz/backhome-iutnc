@@ -42,6 +42,7 @@ public class Combat extends Evenement implements Configurable {
 			//this.configEnnemi(evenement);// todo
 			idIssue = Integer.parseInt(evenement.get("idIssue").toString());
 			scenario = (ArrayList<String>) evenement.get("scenario");
+			configEnnemi(evenement);
 		}
     }
 
@@ -50,7 +51,7 @@ public class Combat extends Evenement implements Configurable {
 	 * @param evenement l'événement JSONObject créé dans initConfiguration()
 	 */
 	public void configEnnemi(JSONObject evenement) {
-		int idEnnemi = (Integer.parseInt(evenement.get("idEnnemi").toString()));
+		int idEnnemi = Integer.parseInt(evenement.get("idEnnemi").toString());
 		switch (evenement.get("typeEnnemi").toString()) {
 			case "tireur":
 				ennemi = new Tireur(idEnnemi);
@@ -61,7 +62,7 @@ public class Combat extends Evenement implements Configurable {
 			case "boss":
 				ennemi = new Boss(idEnnemi);
 				break;
-			case "superboss":
+			case "superBoss":
 				ennemi = new SuperBoss(idEnnemi);
 				break;
 		}

@@ -361,7 +361,7 @@
       "<<Comment osez-vous perturber l'harmonie de cette planète?>>. Vous lui répondez que l'harmonie est étrangère à ces terres et que le temps est venu de libérer le peuple. <<L'ordre et le pouvoir s'obtiennent par le sang. Pour les conserver, il en sera de même!>>. Il sort de sa poche un diamant, le serre fort. Un halo de lumière enveloppe le tyran pendant quelques secondes. Le halo se dissipe et laisse apparaitre un jeune homme au physique imposant: <<Voyons ce que tu as dans le ventre!>>"
     ],
     "idEnnemi": "18",
-    "type": "superBoss",
+    "typeEnnemi": "superBoss",
     "idIssue": "30"
   },
 
