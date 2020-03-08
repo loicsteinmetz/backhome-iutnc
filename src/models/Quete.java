@@ -18,7 +18,6 @@ public class Quete implements Configurable {
     private int idProchainEvenement;
 
     private Quete(){
-        prochainEvenement = new Combat(1); // todo : test
     }
 
     /**
@@ -64,7 +63,8 @@ public class Quete implements Configurable {
         return prochainEvenement;
     }
 
-    public void setProchainEvenement(Evenement e){
-        prochainEvenement = e;
+    public void prochainEvenement(int id){
+        idProchainEvenement = id;
+        initConfiguration();
     }
 }
