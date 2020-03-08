@@ -37,12 +37,39 @@ public class Decision extends Evenement implements Configurable {
             e.printStackTrace();
         }
         if (evenement != null){
-            //this.configEnnemi(evenement);// todo
-            idIssueA = Integer.parseInt(evenement.get("idIssueA").toString());
-            idIssueB = Integer.parseInt(evenement.get("idIssueB").toString());
-            optionA = evenement.get("optionA").toString();
-            optionB = evenement.get("optionB").toString();
+            initIdIssues(evenement);
+            initChoix(evenement);
             scenario = (ArrayList<String>) evenement.get("scenario");
+        }
+    }
+
+    private void initIdIssues(JSONObject evenement){
+        if (evenement.get("idIssueA") == null){
+            idIssueA = -1;
+        } else if (evenement.get("idIssueA").toString().equals("VAISSEAU")){
+            idIssueA = 0;
+        } else {
+            idIssueA = Integer.parseInt(evenement.get("idIssueA").toString());
+        }
+        if (evenement.get("idIssueB") == null){
+            idIssueB = -1;
+        } else if (evenement.get("idIssueB").toString().equals("VAISSEAU")){
+            idIssueB = 0;
+        } else {
+            idIssueB = Integer.parseInt(evenement.get("idIssueB").toString());
+        }
+    }
+
+    private void initChoix(JSONObject evenement){
+        if (evenement.get("optionA") != null){
+            optionA = evenement.get("optionA").toString();
+        } else {
+            optionA = null;
+        }
+        if (evenement.get("optionB") != null){
+            optionB = evenement.get("optionB").toString();
+        } else {
+            optionB = null;
         }
     }
 
