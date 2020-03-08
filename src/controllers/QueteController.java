@@ -90,7 +90,7 @@ public class QueteController extends Application {
     private void switchType(Event e){
         switch (getHeros().getSituation()){
             case VAISSEAU:
-                MODELE.initEvenementSuivant(getHeros().getLocalisation());
+                MODELE.nouvellePlanete(getHeros().getLocalisation());
                 getHeros().setSituation(Situation.EVENEMENT);
                 break;
         }
