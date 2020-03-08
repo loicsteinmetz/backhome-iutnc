@@ -20,6 +20,7 @@ Label{
 
 #titre{
     -fx-alignment:center;
+    -fx-opacity:0;
 }
 
 #titre Label{
@@ -60,7 +61,7 @@ Label{
 
 #vieEnnemi{
     -fx-border-width: 3px;
-    -fx-border-color: white;
+    -fx-border-color: grey;
     -fx-border-radius: 5;
     -fx-min-width: 300px;
     -fx-min-height: 25px;
@@ -71,7 +72,15 @@ Label{
     -fx-min-height: 19px;
     -fx-max-height: 19px;
     -fx-background-color: white;
-    -fx-min-width: 100px;
+    -fx-background-radius:5;
+}
+
+#niveauVieEnnemi{
+    -fx-min-width: 300px;
+}
+
+#niveauVieHeros{
+    -fx-min-width: 200px;
 }
 
 #pvEnnemi, #pvHeros{
@@ -80,7 +89,7 @@ Label{
 }
 
 #printBox{
-
+    -fx-opacity:0;
 }
 
 #print {
@@ -115,11 +124,11 @@ Label{
 
 #vieHeros{
     -fx-border-width: 3px;
-    -fx-border-color: white;
     -fx-border-radius: 5;
     -fx-min-width: 200px;
     -fx-min-height: 25px;
     -fx-max-height: 25px;
+    -fx-border-color: grey;
 }
 
 Button{

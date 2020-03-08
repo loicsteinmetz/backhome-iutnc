@@ -18,46 +18,40 @@
     </ImageView>
 
     <FlowPane>
-            <HBox id="titre">
+            <HBox fx:id="titre">
                 <Label text="-  COMBAT  -"/>
             </HBox>
-            <HBox id="ennemiBox">
+            <HBox fx:id="ennemiBox">
                 <VBox id="infosEnnemiBox">
                     <HBox id="nomEnnemiBox">
-                        <Label id="nomEnnemi" text="AaronMan"/>
+                        <Label fx:id="nomEnnemi" text="AaronMan"/>
                     </HBox>
                     <HBox id="descEnnemiBox">
-                        <Label id="descEnnemi" text="Enfant des plaines"/>
+                        <Label fx:id="descEnnemi" text="Enfant des plaines"/>
                     </HBox>
                 </VBox>
                 <HBox id="vieEnnemiBox">
                     <HBox id="vieEnnemi">
-                        <HBox id="niveauVieEnnemi">
+                        <HBox fx:id="niveauVieEnnemi">
                         </HBox>
                     </HBox>
-                    <Label id="pvEnnemi" text="100/300 PV"/>
+                    <Label fx:id="pvEnnemi" text="100/300 PV"/>
                 </HBox>
             </HBox>
-            <HBox id="printBox">
-                <Label id="print">
-                    <text>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </text>
-                </Label>
+            <HBox fx:id="printBox">
+                <Label fx:id="print"/>
             </HBox>
-            <HBox id="herosBox">
+            <HBox fx:id="herosBox">
                 <HBox id="vieHerosBox">
                     <HBox id="vieHeros">
-                        <HBox id="niveauVieHeros">
+                        <HBox fx:id="niveauVieHeros">
                         </HBox>
                     </HBox>
-                    <Label id="pvHeros" text="150/300 PV"/>
+                    <Label fx:id="pvHeros" text="150/300 PV"/>
                 </HBox>
                 <HBox id="commandes">
-                    <Button id="attaqueCac" text="Epee de feu"/>
-                    <Button id="attaqueDist" text="Laser ultime"/>
+                    <Button fx:id="attaqueCac" text="Epee de feu"/>
+                    <Button fx:id="attaqueDist" text="Laser ultime"/>
                 </HBox>
             </HBox>
     </FlowPane>

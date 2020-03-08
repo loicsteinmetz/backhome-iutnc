@@ -89,4 +89,14 @@ public class EffetsJavaFx {
         tt1.play();
         tt2.play();
     }
+
+    public static Timeline translationX(Node node, int x1, int x2, double dureeSec, double delaiSec){
+        Timeline tl = new Timeline(
+                new KeyFrame(Duration.ZERO, new KeyValue(node.translateXProperty(), x1)),
+                new KeyFrame(Duration.seconds(dureeSec), new KeyValue(node.translateXProperty(), x2))
+        );
+        tl.setDelay(Duration.seconds(delaiSec));
+        tl.play();
+        return tl;
+    }
 }

@@ -104,4 +104,8 @@ public class Combat extends Evenement implements Configurable {
 	public int getIdIssue() {
 		return idIssue;
 	}
+
+	public Ennemi getEnnemi() {
+		return ennemi;
+	}
 }
