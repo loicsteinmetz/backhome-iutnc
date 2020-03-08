@@ -75,8 +75,8 @@ public class DecisionController extends Application {
         ecran.setUserData(0);
         ecran.setOnMouseClicked(this::passeTexte);
         EffetsJavaFx.fadeIn(ecran, 2.0, 1);
-        issueA.setDisable(true);
-        issueB.setDisable(true);
+        issueA.setVisible(false);
+        issueB.setVisible(false);
         issueA.setOpacity(0);
         issueB.setOpacity(0);
     }
@@ -92,8 +92,8 @@ public class DecisionController extends Application {
         if (index == MODELE.getScenario().size() - 1){
             EffetsJavaFx.fadeIn(issueA, 2, 0);
             EffetsJavaFx.fadeIn(issueB, 2, 0);
-            issueA.setDisable(false);
-            issueB.setDisable(false);
+            issueA.setVisible(true);
+            issueB.setVisible(true);
             issueA.setText(MODELE.getOptionA());
             issueB.setText(MODELE.getOptionB());
             ecran.setDisable(true);
