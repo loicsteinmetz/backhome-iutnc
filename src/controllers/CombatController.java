@@ -2,6 +2,7 @@ package controllers;
 
 import javafx.animation.*;
 import javafx.application.Application;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -34,13 +36,13 @@ public class CombatController extends Application {
     private Combat MODELE;
 
     @FXML
-    private AnchorPane pane;
+    private FlowPane flow;
     @FXML
     private ImageView bg;
     @FXML
     private HBox niveauVieEnnemi, niveauVieHeros, ennemiBox, herosBox, printBox, titre;
     @FXML
-    private Label pvEnnemi, pvHeros, nomEnnemi, descEnnemi, print;
+    private Label pvEnnemi, pvHeros, nomEnnemi, descEnnemi, print, ecran;
     @FXML
     private Button attaqueCac, attaqueDist;
 
@@ -72,18 +74,17 @@ public class CombatController extends Application {
     @FXML
     private void initialize(){
         MODELE = (Combat) getQuete().getProchainEvenement();
+        flow.setVisible(false);
         chargeBg();
-        ennemiBox.setVisible(false);
-        herosBox.setVisible(false);
-        printBox.setVisible(false);
-        chargeCombat();
+        ecran.setText(MODELE.getScenario().get(0));
+        ecran.setUserData(0);
+        ecran.setOnMouseClicked(this::passeTexte);
+        EffetsJavaFx.fadeIn(ecran, 2.0, 1);
     }
 
     @FXML
     private void chargeCombat(){
-        ennemiBox.setVisible(true);
-        herosBox.setVisible(true);
-        printBox.setVisible(true);
+        flow.setVisible(true);
         chargeEnnemi();
         chargeHeros();
         chargePrint();
@@ -121,5 +122,25 @@ public class CombatController extends Application {
     private void chargePrint(){
         String ennemi = MODELE.getEnnemi().getNom();
         print.setText(ennemi + " vous menace !\nChoisissez bien votre option d'attaque...");
+    }
+
+    @FXML
+    private void passeTexte(Event event){
+        Label label = (Label) event.getSource();
+        int index = (int) label.getUserData() + 1;
+        if (index < MODELE.getScenario().size()){
+            label.setOpacity(0);
+            label.setText(MODELE.getScenario().get(index));
+            EffetsJavaFx.fadeIn(label, 2, 0);
+            label.setUserData(index);
+        } else if (index == MODELE.getScenario().size()) {
+            label.setDisable(true);
+            label.setVisible(false);
+            Transition t = new PauseTransition(Duration.seconds(1));
+            t.setOnFinished((e)->{
+                chargeCombat();
+            });
+            t.play();
+        }
     }
 }

@@ -2,6 +2,25 @@ AnchorPane{
     -fx-background-color:black;
 }
 
+#ecran{
+    -fx-font-size:25;
+    -fx-text-fill:white;
+    -fx-font-family: "Roboto Slab";
+    -fx-text-alignment: center;
+    -fx-line-spacing: 0.8em;
+    -fx-alignment:center;
+    -fx-min-width:800;
+    -fx-min-height:600;
+    -fx-max-width:800;
+    -fx-max-height:600;
+    -fx-opacity:0;
+    -fx-padding: 0 100px;
+}
+
+#ecran Label{
+    -fx-wrap-text:true;
+}
+
 ImageView{
     -fx-opacity:0;
 }

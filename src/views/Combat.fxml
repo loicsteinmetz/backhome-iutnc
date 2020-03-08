@@ -17,7 +17,9 @@
         <Image url="/assets/img/fog.png"/>
     </ImageView>
 
-    <FlowPane>
+    <Label fx:id="ecran"/>
+
+    <FlowPane fx:id="flow">
             <HBox fx:id="titre">
                 <Label text="-  COMBAT  -"/>
             </HBox>
