@@ -39,10 +39,9 @@ public class Combat extends Evenement implements Configurable {
 			e.printStackTrace();
 		}
 		if (evenement != null){
-			//this.configEnnemi(evenement);// todo
 			idIssue = Integer.parseInt(evenement.get("idIssue").toString());
 			scenario = (ArrayList<String>) evenement.get("scenario");
-			configEnnemi(evenement);
+			this.configEnnemi(evenement);
 		}
     }
 
