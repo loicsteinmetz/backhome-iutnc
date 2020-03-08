@@ -22,23 +22,23 @@ public class ArmeCac extends Arme {
 	 * @param cible victime de l'attaque
 	 */
 	@Override
-	public String attaquer(Personnage cible) {
+	public int attaquer(Personnage cible) {
 		if (cible instanceof Brute) {
 			cible.subirAttaque(this.getDegats() * 0.75);
-			return("degat :"+((int)this.getDegats() * 0.75)+"\n");
+			return (int)(this.getDegats() * 0.75);
 		} else {
 			if (cible instanceof Tireur) {
 				cible.subirAttaque(this.getDegats() * 1.5);
-				return("degat :"+((int)this.getDegats() * 1.5)+"\n");
+				return(int)(this.getDegats() * 1.5);
 			}
 			else {
 				if(cible instanceof Heros){
 					cible.subirAttaque(this.getDegats());
-					return("degat : "+(this.getDegats()-getInventaire().getArmure().getResistance())+"\n");
+					return this.getDegats()-getInventaire().getArmure().getResistance();
 				}
 				else{
 					cible.subirAttaque(this.getDegats());
-					return("degat :"+this.getDegats()+"\n");
+					return this.getDegats();
 				}				
 			}
 		}

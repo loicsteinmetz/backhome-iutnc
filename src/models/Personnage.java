@@ -8,26 +8,6 @@ public abstract class Personnage {
     protected String nom;
     protected int pv;
 
-    private static final int PV = 100;
-
-    /**
-     * Constructeur avec paramètres par défaut
-     */
-    public Personnage(){
-        // ajout initialisation planète //
-        this.pv = PV;
-    }
-
-    /**
-     * Constructeur paramétrable
-     * @param nom nom du personnage
-     * @param pv points de vie du personnage
-     */
-    public Personnage(String nom, int pv) {
-        this.nom = nom;
-        this.pv = pv;
-    }
-
     /**
      * Getter
      * @return nom du personnage
@@ -65,7 +45,7 @@ public abstract class Personnage {
      * @param cible victime de l'attaque
      * @param a arme utilisée
      */
-    public String attaquer(Personnage cible, Arme a){
+    public int attaquer(Personnage cible, Arme a){
         return a.attaquer(cible);
     }
 
@@ -73,9 +53,9 @@ public abstract class Personnage {
      * Gère les effets d'une attaque sur un personnage
      * @param dommages les pv perdus par le personnage
      */
-    public String subirAttaque(double dommages){
-        this.modifierPv((int) -dommages);
-        return "Degat subit : "+((int)dommages);
+    public int subirAttaque(double dommages){
+        this.modifierPv((int) - dommages);
+        return (int)dommages;
     }
     
     /**

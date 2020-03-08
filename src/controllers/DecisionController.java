@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import models.Decision;
 import utils.EffetsJavaFx;
@@ -31,13 +32,13 @@ public class DecisionController extends Application {
     private Decision MODELE;
 
     @FXML
-    private AnchorPane pane;
-    @FXML
     private ImageView bg;
     @FXML
     private Button issueA, issueB;
     @FXML
     private Label ecran;
+    @FXML
+    private HBox btnBox;
 
     /**
      * Retourne la vue associée au controller
@@ -75,29 +76,25 @@ public class DecisionController extends Application {
         ecran.setUserData(0);
         ecran.setOnMouseClicked(this::passeTexte);
         EffetsJavaFx.fadeIn(ecran, 2.0, 1);
-        issueA.setVisible(false);
-        issueB.setVisible(false);
         issueA.setOpacity(0);
         issueB.setOpacity(0);
     }
 
     @FXML
     private void passeTexte(Event event){
-        Label label = (Label) event.getSource();
-        int index = (int) label.getUserData() + 1;
-        label.setOpacity(0);
-        label.setText(MODELE.getScenario().get(index));
-        EffetsJavaFx.fadeIn(label, 2, 0);
-        label.setUserData(index);
+        int index = (int) ecran.getUserData() + 1;
+        ecran.setOpacity(0);
+        ecran.setText(MODELE.getScenario().get(index));
+        EffetsJavaFx.fadeIn(ecran, 2, 0);
+        ecran.setUserData(index);
         if (index == MODELE.getScenario().size() - 1){
             EffetsJavaFx.fadeIn(issueA, 2, 0);
             EffetsJavaFx.fadeIn(issueB, 2, 0);
-            issueA.setVisible(true);
-            issueB.setVisible(true);
+            btnBox.setLayoutY(450);
             issueA.setText(MODELE.getOptionA());
             issueB.setText(MODELE.getOptionB());
-            ecran.setDisable(true);
         }
+        ecran.setDisable(true);
     }
 
     @FXML

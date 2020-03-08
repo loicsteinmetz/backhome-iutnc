@@ -14,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
@@ -46,7 +47,7 @@ public class QueteController extends Application {
     @FXML
     private AnchorPane pane;
     @FXML
-    private Label nomPlanete, cliquer;
+    private Label nomPlanete;
     @FXML
     private Button startBtn;
 

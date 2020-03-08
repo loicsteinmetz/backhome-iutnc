@@ -18,7 +18,7 @@ public class Heros extends Personnage {
      * Constructeur privé
      */
     private Heros(){
-        super();
+        pv = 100;
         localisation = getCarte().getPlaneteParNom("utopia");
         situation = Situation.DEBUT;
     }
@@ -55,9 +55,9 @@ public class Heros extends Personnage {
      * @Override de la méthode subir attaque
      * pour prendre en compte l'armure du héros
      */
-    public String subirAttaque(double dommages){
+    public int subirAttaque(double dommages){
         this.modifierPv((int) -(dommages-getInventaire().getArmure().getResistance()));
-        return "Degat subit : "+(dommages-getInventaire().getArmure().getResistance());
+        return (int) (dommages-getInventaire().getArmure().getResistance());
     }
 
     public Situation getSituation() {

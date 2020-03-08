@@ -17,7 +17,7 @@
 
     <Label fx:id="ecran"/>
 
-    <HBox layoutY="450">
+    <HBox fx:id="btnBox" layoutY="600">
         <Button fx:id="issueA" text="issueA" styleClass="choix" onAction="#issueA"/>
         <Button fx:id="issueB" text="issueB" styleClass="choix" onAction="#issueB"/>
     </HBox>

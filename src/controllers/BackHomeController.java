@@ -72,18 +72,20 @@ public class BackHomeController extends Application {
      * Lance le jeu lors du clic sur le boutton dédié
      */
     @FXML
-    private void bouttonJouer() {
+    private void bouttonJouer(Event event) {
         startBtn.setVisible(false);
         titre.setVisible(false);
         Transition fadeOut = EffetsJavaFx.fadeOut(vaisseau, 1.5, 0);
         fadeOut.setOnFinished((e) -> {
-            Label label = new Label(MODELE.getScenario()[0]);
+            // todo : test
+            new ViewLoader().switchTo(QueteController.getView(), event);
+            /*Label label = new Label(MODELE.getScenario()[0]);
             label.setId("ecran");
             label.setOpacity(0);
             label.setUserData(0);
             label.setOnMouseClicked(this::passeTexte);
             pane.getChildren().add(label);
-            EffetsJavaFx.fadeIn(label, 2.0, 1.5);
+            EffetsJavaFx.fadeIn(label, 2.0, 1.5);*/
         });
     }
 

@@ -52,8 +52,8 @@
                     <Label fx:id="pvHeros" text="150/300 PV"/>
                 </HBox>
                 <HBox id="commandes">
-                    <Button fx:id="attaqueCac" text="Epee de feu"/>
-                    <Button fx:id="attaqueDist" text="Laser ultime"/>
+                    <Button fx:id="attaqueCac" text="Epee de feu" onAction="#attaqueCac"/>
+                    <Button fx:id="attaqueDist" text="Laser ultime" onAction="#attaqueDist"/>
                 </HBox>
             </HBox>
     </FlowPane>
