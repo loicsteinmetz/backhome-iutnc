@@ -14,6 +14,7 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import models.Carte;
 import models.Planete;
+import models.Situation;
 import utils.EffetsJavaFx;
 import utils.ViewLoader;
 
@@ -69,6 +70,7 @@ public class CarteController extends Application {
     @FXML
     private void initialize(){
         MODELE = getCarte();
+        getHeros().setSituation(Situation.VAISSEAU);
         chargeElementsInterface();
         chargeLocalisation();
         chargePlanetesDisponibles();
@@ -125,7 +127,7 @@ public class CarteController extends Application {
         HBox box = (HBox) e.getSource();
         Planete nouvellePlanete = MODELE.getPlaneteParNom((String) box.getUserData());
         getHeros().setLocalisation(nouvellePlanete);
-        new ViewLoader().switchTo(VIEW, e, 0.5);
+        new ViewLoader().switchTo(QueteController.getView(), e, 0.5);
     }
 
     /**
