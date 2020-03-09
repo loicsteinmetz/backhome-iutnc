@@ -5,10 +5,10 @@ import lib.org.json.simple.parser.ParseException;
 import utils.JsonParser;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
-import static models.Carte.getCarte;
-
+/**
+ * Modélise la quête du jeu et sa succession d'événements
+ */
 public class Quete implements Configurable {
 
     @Singleton
@@ -32,11 +32,18 @@ public class Quete implements Configurable {
         return QUETE;
     }
 
+    /**
+     * Récupère le prochain événement lors de l'arrivée sur une nouvelle planète
+     * @param planete nouvelle planète explorée
+     */
     public void nouvellePlanete(Planete planete){
         idProchainEvenement = planete.getIdPremierEvenement();
         initConfiguration();
     }
 
+    /**
+     * Récupère les données de configuration de la quête
+     */
     @Override
     public void initConfiguration() {
         String chemin = "/data/evenements.json";
@@ -59,10 +66,18 @@ public class Quete implements Configurable {
         }
     }
 
+    /**
+     * Getter
+     * @return événement à venir
+     */
     public Evenement getProchainEvenement() {
         return prochainEvenement;
     }
 
+    /**
+     * Récupère le prochain événement à partir de son id
+     * @param id id de l'événement
+     */
     public void prochainEvenement(int id){
         idProchainEvenement = id;
         initConfiguration();

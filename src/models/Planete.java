@@ -85,6 +85,9 @@ public class Planete {
         return idPremierEvenement;
     }
 
+    /**
+     * Récupère les récompenses de la planète dans l'inventaire
+     */
     public void recompenses(){
         if (idRecompenseArmeCac != -1){
             getInventaire().setArmeCac(new ArmeCac(idRecompenseArmeCac));
@@ -97,10 +100,17 @@ public class Planete {
         }
     }
 
+    /**
+     * Indique si le joueur dispose de l'option de soin
+     * @return true si option disponible
+     */
     public boolean soinDisponible(){
         return soinDisponible;
     }
 
+    /**
+     * Consomme le soin disponible pour la planète
+     */
     public void consommerSoin(){
         soinDisponible = false;
     }

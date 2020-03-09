@@ -10,11 +10,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import models.Decision;
-import models.Quete;
 import utils.EffetsJavaFx;
 import utils.ViewLoader;
 
@@ -83,6 +81,10 @@ public class DecisionController extends Application {
         issueB.setOpacity(0);
     }
 
+    /**
+     * Charge le scenario et ses débouchés
+     * @param event clic
+     */
     @FXML
     private void passeTexte(Event event){
         int index = (int) ecran.getUserData() + 1;
@@ -112,6 +114,10 @@ public class DecisionController extends Application {
         }
     }
 
+    /**
+     * Traite le choix de l'issue A
+     * @param e clic sur l'issue A
+     */
     @FXML
     private void issueA(Event e){
         ViewLoader vl = new ViewLoader();
@@ -125,6 +131,10 @@ public class DecisionController extends Application {
         }
     }
 
+    /**
+     * Traite le choix de l'issue B
+     * @param e clic sur l'issue B
+     */
     @FXML
     private void issueB(Event e){
         getQuete().prochainEvenement(MODELE.getIdIssueB());

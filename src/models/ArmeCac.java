@@ -18,7 +18,6 @@ public class ArmeCac extends Arme {
 
 	/**
 	 * Lance une attaque sur un personnage
-	 * 
 	 * @param cible victime de l'attaque
 	 */
 	@Override

@@ -9,7 +9,6 @@ public class ArmeDistance extends Arme {
 
 	/**
 	 * Constructeur
-	 * 
 	 * @param id l'id de l'arme
 	 */
 	public ArmeDistance(int id) {
@@ -18,7 +17,6 @@ public class ArmeDistance extends Arme {
 
 	/**
 	 * Lance une attaque sur un personnage
-	 * 
 	 * @param cible victime de l'attaque
 	 */
 	@Override

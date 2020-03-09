@@ -7,6 +7,9 @@ import utils.JsonParser;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Modèlisation d'une décision
+ */
 public class Decision extends Evenement implements Configurable {
 
     private int idIssueA;
@@ -43,6 +46,10 @@ public class Decision extends Evenement implements Configurable {
         }
     }
 
+    /**
+     * Initialise les issues possibles
+     * @param evenement clic
+     */
     private void initIdIssues(JSONObject evenement){
         if (evenement.get("idIssueA") == null){
             idIssueA = -1;
@@ -60,6 +67,10 @@ public class Decision extends Evenement implements Configurable {
         }
     }
 
+    /**
+     * Génère les boutons de choix
+     * @param evenement clic
+     */
     private void initChoix(JSONObject evenement){
         if (evenement.get("optionA") != null){
             optionA = evenement.get("optionA").toString();

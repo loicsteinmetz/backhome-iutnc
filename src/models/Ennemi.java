@@ -6,6 +6,8 @@ import utils.JsonParser;
 
 import java.io.IOException;
 
+import static models.Heros.getHeros;
+
 /**
  * Modélisation d'un ennemi
  * (pnj pouvant être combattu)
@@ -24,7 +26,6 @@ public abstract class Ennemi extends Personnage implements Configurable {
         this.id = id;
         this.initConfiguration();
     }
-    
 
     /**
      * Getter
@@ -63,9 +64,13 @@ public abstract class Ennemi extends Personnage implements Configurable {
             arme = new Arme(idArme);
         }
     }
-    
-    public int attaque(Personnage heros){
-    	return this.getArme().attaquer(heros);
+
+    /**
+     * Traite l'attaque d'un ennemi sur le héros
+     * @return degats
+     */
+    public int attaque(){
+    	return this.getArme().attaquer(getHeros());
     }
 
 }

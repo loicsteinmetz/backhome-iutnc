@@ -4,8 +4,6 @@ import javafx.animation.*;
 import javafx.scene.Node;
 import javafx.util.Duration;
 
-import javax.swing.text.html.ImageView;
-
 /**
  * Classe utilitaire de gestion de fontionnalités JavaFx
  */
@@ -59,6 +57,14 @@ public class EffetsJavaFx {
         return ft;
     }
 
+    /**
+     * Lance une animation de vibrance sur un élément
+     * @param node élément
+     * @param dureeSec durée de l'animation
+     * @param opStart opacité min
+     * @param opEnd opacité max
+     * @return la timeline générée
+     */
     public static Timeline vibrance(Node node, double dureeSec, double opStart, double opEnd){
         Timeline tl = new Timeline(
                 new KeyFrame(Duration.ZERO, new KeyValue(node.opacityProperty(), opStart)),
@@ -90,6 +96,15 @@ public class EffetsJavaFx {
         tt2.play();
     }
 
+    /**
+     * Lance une animation de translation sur un élément, sur l'axe des abscisses
+     * @param node élément
+     * @param x1 abscisse d'origine
+     * @param x2 abscisse d'arrivée
+     * @param dureeSec durée de l'animation
+     * @param delaiSec délai avant l'animation
+     * @return la timeline générée
+     */
     public static Timeline translationX(Node node, int x1, int x2, double dureeSec, double delaiSec){
         Timeline tl = new Timeline(
                 new KeyFrame(Duration.ZERO, new KeyValue(node.translateXProperty(), x1)),
@@ -100,6 +115,15 @@ public class EffetsJavaFx {
         return tl;
     }
 
+    /**
+     * Lance une animation de translation sur un élément, sur l'axe des ordonnées
+     * @param node élément
+     * @param y1 ordonnée d'origine
+     * @param y2 ordonnée d'arrivée
+     * @param dureeSec durée de l'animation
+     * @param delaiSec délai avant l'animation
+     * @return la timeline générée
+     */
     public static Timeline translationY(Node node, int y1, int y2, double dureeSec, double delaiSec){
         Timeline tl = new Timeline(
                 new KeyFrame(Duration.ZERO, new KeyValue(node.translateYProperty(), y1)),

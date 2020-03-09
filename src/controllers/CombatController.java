@@ -21,8 +21,6 @@ import models.Situation;
 import utils.EffetsJavaFx;
 import utils.ViewLoader;
 
-import java.sql.Time;
-
 import static models.Carte.getCarte;
 import static models.Heros.getHeros;
 import static models.Inventaire.getInventaire;
@@ -33,7 +31,7 @@ import static models.Quete.getQuete;
  */
 public class CombatController extends Application {
 
-    private static int pvInitEnnemi;
+    private int pvInitEnnemi;
 
     @Controller
     private static final String VIEW = "/views/Combat.fxml";
@@ -94,6 +92,9 @@ public class CombatController extends Application {
         EffetsJavaFx.fadeIn(ecran, 2.0, 1);
     }
 
+    /**
+     * Charge l'interface de combat
+     */
     @FXML
     private void chargeCombat(){
         soinPane.setDisable(true);
@@ -118,14 +119,18 @@ public class CombatController extends Application {
         });
     }
 
+    /**
+     * Charge l'arrière plan
+     */
     @FXML
     private void chargeBg(){
         Transition t = EffetsJavaFx.fade(bg, 4, 0, 0.6);
-        t.setOnFinished((e)->{
-            EffetsJavaFx.vibrance(bg, 4, 0.6, 0.4);
-        });
+        t.setOnFinished((e)-> EffetsJavaFx.vibrance(bg, 4, 0.6, 0.4));
     }
 
+    /**
+     * Charge les éléments relatifs à l'ennemi
+     */
     @FXML
     private void chargeEnnemi(){
         int ePv = MODELE.getEnnemi().getPv();
@@ -134,6 +139,9 @@ public class CombatController extends Application {
         descEnnemi.setText(MODELE.getEnnemi().getDescription());
     }
 
+    /**
+     * Charge les éléments relatifs au héros
+     */
     @FXML
     private void chargeHeros(){
         attaqueCac.setText(getInventaire().getArmeCac().getNom());
@@ -143,12 +151,19 @@ public class CombatController extends Application {
         pvHeros.setText(hPv + "/100 PV");
     }
 
+    /**
+     * Charge l'affichage des informations du combat
+     */
     @FXML
     private void chargePrint(){
         String ennemi = MODELE.getEnnemi().getNom();
         print.setText(ennemi + " vous menace !\nChoisissez bien votre option d'attaque...");
     }
 
+    /**
+     * Charge le scenario et ses débouchés
+     * @param event clic
+     */
     @FXML
     private void passeTexte(Event event){
         Label label = (Label) event.getSource();
@@ -173,18 +188,29 @@ public class CombatController extends Application {
         }
     }
 
+    /**
+     * Lance l'attaque cac du joueur
+     * @param event clic sur le bouton d'attaque cac
+     */
     @FXML
     private void attaqueCac(Event event){
         int degatsH = getHeros().attaquer(MODELE.getEnnemi(), getInventaire().getArmeCac());
         lancerAttaque(degatsH, event);
     }
 
+    /**
+     * Lance l'attaque à distance du joueur
+     * @param event clic sur le bouton d'attaque à distance
+     */
     @FXML
     private void attaqueDist(Event event){
         int degatsH = getHeros().attaquer(MODELE.getEnnemi(), getInventaire().getArmeDist());
         lancerAttaque(degatsH, event);
     }
 
+    /**
+     * Génère la boite de dialogue relative à l'option de soin
+     */
     @FXML
     private void optionSoin(){
         EffetsJavaFx.translationY(soinPane, 0, -600, 0.25, 0);
@@ -195,6 +221,9 @@ public class CombatController extends Application {
                         "il ne sera possible de la recharger qu'à la fin de la quête !");
     }
 
+    /**
+     * Gère le soin
+     */
     @FXML
     private void soin(){
         getHeros().soin();
@@ -202,13 +231,19 @@ public class CombatController extends Application {
         chargeCombat();
     }
 
+    /**
+     * Gère le déroulement d'une attaque du joueur
+     * @param degatsH dégats infligés à l'ennemi
+     * @param event clic sur un bouton d'attaque
+     */
+    @FXML
     private void lancerAttaque(int degatsH, Event event){
         attaqueCac.setDisable(true);
         attaqueDist.setDisable(true);
         print.setText("");
-        Timeline t = attaqueHeros(degatsH);
+        attaqueHeros(degatsH);
         if (MODELE.getEnnemi().enVie()){
-            int degatsE = MODELE.getEnnemi().attaque(getHeros());
+            int degatsE = MODELE.getEnnemi().attaque();
             attaqueEnnemi(degatsH, degatsE);
             if (getHeros().enVie()){
                 finAttaque(degatsH, degatsE);
@@ -220,7 +255,12 @@ public class CombatController extends Application {
         }
     }
 
-    private Timeline attaqueHeros(int degats){
+    /**
+     * Traite la partie de l'attque pendant laquelle le héros attaque l'ennemi
+     * @param degats dégats infligés à l'ennemi
+     */
+    @FXML
+    private void attaqueHeros(int degats){
         Timeline tl = new Timeline(
                 new KeyFrame(
                         Duration.ZERO,
@@ -237,9 +277,14 @@ public class CombatController extends Application {
             print.setText("Vous avez infligé " + degats + " points de dégats à " + MODELE.getEnnemi().getNom() + " !");
         });
         tl.play();
-        return tl;
     }
 
+    /**
+     * Traite la partie de l'attaque pendant laquelle l'ennemi contre-attaque
+     * @param degatsH degats infligés à l'ennemi
+     * @param degatsE dégats infligés au héros
+     */
+    @FXML
     private void attaqueEnnemi(int degatsH, int degatsE){
         Transition t = new PauseTransition(Duration.seconds(1.5));
         t.setOnFinished((e)->{
@@ -268,6 +313,11 @@ public class CombatController extends Application {
         t.play();
     }
 
+    /**
+     * Gère la mort de l'ennemi
+     * @param event clic sur un bouton d'attaque
+     */
+    @FXML
     private void ennemiMort(Event event){
         Transition t = new PauseTransition(Duration.seconds(2));
         t.setOnFinished((e)->{
@@ -277,6 +327,11 @@ public class CombatController extends Application {
         t.play();
     }
 
+    /**
+     * Gère la mort du héros
+     * @param event clic sur un bouton d'attaque
+     */
+    @FXML
     private void herosMort(Event event){
         Transition t = new PauseTransition(Duration.seconds(4));
         t.setOnFinished((e)->{
@@ -290,6 +345,12 @@ public class CombatController extends Application {
         t.play();
     }
 
+    /**
+     * Gère la fin du déroulement de l'attaque si aucun des personnage n'est mort
+     * @param degatsH dégats infligés à l'ennemi
+     * @param degatsE dégats infligés au héros
+     */
+    @FXML
     private void finAttaque(int degatsH, int degatsE){
         Transition t = new PauseTransition(Duration.seconds(3.5));
         t.setOnFinished((e)->{
@@ -302,6 +363,11 @@ public class CombatController extends Application {
         t.play();
     }
 
+    /**
+     * Gère la fin du combat
+     * @param event clic sur un bouton d'attaque
+     */
+    @FXML
     private void finCombat(Event event){
         ViewLoader vl = new ViewLoader();
         pane.setOnMouseClicked((e)->{

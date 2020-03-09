@@ -72,7 +72,7 @@ public class BackHomeController extends Application {
      * Lance le jeu lors du clic sur le boutton dédié
      */
     @FXML
-    private void bouttonJouer(Event event) {
+    private void bouttonJouer() {
         startBtn.setVisible(false);
         titre.setVisible(false);
         Transition fadeOut = EffetsJavaFx.fadeOut(vaisseau, 1.5, 0);

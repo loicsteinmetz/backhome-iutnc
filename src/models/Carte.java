@@ -39,14 +39,6 @@ public class Carte implements Configurable {
 
     /**
      * Getter
-     * @return les planètes de la carte
-     */
-    public ArrayList<Planete> getPlanetes(){
-        return this.planetes;
-    }
-
-    /**
-     * Getter
      * @param nom nom de la planète
      * @return la planete de la carte portant le nom saisi
      */

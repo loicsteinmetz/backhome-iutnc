@@ -31,9 +31,7 @@ public class Inventaire {
         }
         return INVENTAIRE;
     }
-	
-	
-	
+
 	/**
 	 * Ajoute du carburant
 	 * @param carburant quantité de carburant

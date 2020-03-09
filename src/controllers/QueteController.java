@@ -1,11 +1,8 @@
 package controllers;
 
-import com.sun.javafx.event.RedirectedEvent;
-import javafx.animation.PauseTransition;
 import javafx.animation.Transition;
 import javafx.application.Application;
 import javafx.event.Event;
-import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,12 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
-import javafx.util.Duration;
-import models.Combat;
 import models.Decision;
 import models.Quete;
 import models.Situation;
@@ -86,9 +78,7 @@ public class QueteController extends Application {
             EffetsJavaFx.fadeIn(starsBg1, 2, 0);
             EffetsJavaFx.fadeIn(starsBg2, 2, 0);
             Transition t = EffetsJavaFx.fadeIn(nomPlanete, 2, 1.5);
-            t.setOnFinished((e)->{
-                startBtn.setVisible(true);
-            });
+            t.setOnFinished((e)-> startBtn.setVisible(true));
         } else {
             nomPlanete.setText("Cliquez pour continuer...");
             EffetsJavaFx.fadeIn(nomPlanete, 0.5, 0.5);
@@ -96,11 +86,21 @@ public class QueteController extends Application {
         }
     }
 
+    /**
+     * Lance le prochain événement
+     * @param e clic
+     */
     @FXML
-    private void lancerQuete(Event e){
+    private void lanceEvenement(Event e){
         switchType(e);
     }
 
+    /**
+     * Déporte la gestion de l'événement vers le controller concerné
+     * @see controllers.CombatController
+     * @see controllers.DecisionController
+     * @param e clic
+     */
     private void switchType(Event e){
         switch (getHeros().getSituation()){
             case DEBUT:

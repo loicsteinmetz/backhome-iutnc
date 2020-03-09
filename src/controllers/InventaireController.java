@@ -14,6 +14,9 @@ import utils.ViewLoader;
 
 import static models.Inventaire.getInventaire;
 
+/**
+ * Controleur de l'inventaire
+ */
 public class InventaireController extends Application {
 
     @FXML
