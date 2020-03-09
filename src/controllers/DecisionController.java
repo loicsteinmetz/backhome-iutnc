@@ -19,6 +19,7 @@ import utils.EffetsJavaFx;
 import utils.ViewLoader;
 
 import static models.Heros.getHeros;
+import static models.Inventaire.getInventaire;
 import static models.Quete.getQuete;
 
 /**
@@ -116,6 +117,7 @@ public class DecisionController extends Application {
         ViewLoader vl = new ViewLoader();
         if (MODELE.getIdIssueA() == 0){
             getHeros().getLocalisation().recompenses();
+            getInventaire().modifierCarburant(125);
             vl.switchTo(CarteController.getView(), e);
         } else {
             getQuete().prochainEvenement(MODELE.getIdIssueA());

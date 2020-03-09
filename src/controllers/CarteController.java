@@ -20,6 +20,7 @@ import utils.ViewLoader;
 
 import static models.Carte.getCarte;
 import static models.Heros.getHeros;
+import static models.Inventaire.getInventaire;
 
 /**
  * Controller de la carte
@@ -128,6 +129,7 @@ public class CarteController extends Application {
         HBox box = (HBox) e.getSource();
         Planete nouvellePlanete = MODELE.getPlaneteParNom((String) box.getUserData());
         getHeros().setLocalisation(nouvellePlanete);
+        getInventaire().modifierCarburant(-100);
         new ViewLoader().switchTo(QueteController.getView(), e, 0.5);
     }
 

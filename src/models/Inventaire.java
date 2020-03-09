@@ -14,7 +14,7 @@ public class Inventaire {
 	 * Constructeur privé
 	 */
 	private Inventaire(){
-		this.carburant = 400;
+		this.carburant = 0;
 		this.armeCac = new ArmeCac(100);
 		this.armeDist = new ArmeDistance(101);
 		this.armure = new Armure(100);

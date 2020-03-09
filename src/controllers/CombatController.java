@@ -279,6 +279,7 @@ public class CombatController extends Application {
                 if (MODELE.getIdIssue() == 0){
                     getHeros().setSituation(Situation.VAISSEAU);
                     getHeros().getLocalisation().recompenses();
+                    getInventaire().modifierCarburant(125);
                     vl.switchTo(CarteController.getView(), event);
                 } else {
                     getQuete().prochainEvenement(MODELE.getIdIssue());

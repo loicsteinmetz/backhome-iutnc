@@ -90,7 +90,7 @@ public class QueteController extends Application {
                 startBtn.setVisible(true);
             });
         } else {
-            nomPlanete.setText("Cliquer pour continuer...");
+            nomPlanete.setText("Cliquez pour continuer...");
             EffetsJavaFx.fadeIn(nomPlanete, 0.5, 0.5);
             pane.setOnMouseClicked(this::switchType);
         }
