@@ -12,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -44,13 +45,15 @@ public class CombatController extends Application {
     @FXML
     private AnchorPane pane;
     @FXML
+    private GridPane soinPane;
+    @FXML
     private FlowPane flow;
     @FXML
     private ImageView bg;
     @FXML
     private HBox niveauVieEnnemi, niveauVieHeros, ennemiBox, herosBox, printBox, titre;
     @FXML
-    private Label pvEnnemi, pvHeros, nomEnnemi, descEnnemi, print, ecran;
+    private Label pvEnnemi, pvHeros, nomEnnemi, descEnnemi, print, ecran, soinTexte;
     @FXML
     private Button attaqueCac, attaqueDist;
 
@@ -93,19 +96,25 @@ public class CombatController extends Application {
 
     @FXML
     private void chargeCombat(){
-        flow.setVisible(true);
-        attaqueDist.setDisable(true);
-        attaqueCac.setDisable(true);
-        chargeEnnemi();
-        chargeHeros();
-        chargePrint();
-        EffetsJavaFx.translationX(ennemiBox, -800, 0, 0.5, 0);
-        EffetsJavaFx.translationX(herosBox, 800, 0, 0.5, 0);
-        EffetsJavaFx.fadeIn(printBox, 2, 0);
-        Transition t = EffetsJavaFx.fadeIn(titre, 2, 0);
+        soinPane.setDisable(true);
+        Transition t = EffetsJavaFx.fadeOut(soinPane, 1, 0);
         t.setOnFinished((e)->{
-            attaqueDist.setDisable(false);
-            attaqueCac.setDisable(false);
+            attaqueDist.setDisable(true);
+            attaqueCac.setDisable(true);
+            chargeEnnemi();
+            chargeHeros();
+            chargePrint();
+            ennemiBox.setTranslateX(-800);
+            herosBox.setTranslateX(800);
+            EffetsJavaFx.translationX(ennemiBox, -800, 0, 0.5, 0);
+            EffetsJavaFx.translationX(herosBox, 800, 0, 0.5, 0);
+            EffetsJavaFx.fadeIn(printBox, 2, 0);
+            flow.setVisible(true);
+            Transition t2 = EffetsJavaFx.fadeIn(titre, 2, 0);
+            t2.setOnFinished((e2)->{
+                attaqueDist.setDisable(false);
+                attaqueCac.setDisable(false);
+            });
         });
     }
 
@@ -154,7 +163,11 @@ public class CombatController extends Application {
             label.setVisible(false);
             Transition t = new PauseTransition(Duration.seconds(1));
             t.setOnFinished((e)->{
-                chargeCombat();
+                if (getHeros().getPv() < 100 && getHeros().getLocalisation().soinDisponible()){
+                    optionSoin();
+                } else {
+                    chargeCombat();
+                }
             });
             t.play();
         }
@@ -170,6 +183,23 @@ public class CombatController extends Application {
     private void attaqueDist(Event event){
         int degatsH = getHeros().attaquer(MODELE.getEnnemi(), getInventaire().getArmeDist());
         lancerAttaque(degatsH, event);
+    }
+
+    @FXML
+    private void optionSoin(){
+        EffetsJavaFx.translationY(soinPane, 0, -600, 0.25, 0);
+        soinTexte.setText("VOS POINTS DE VIE : " + getHeros().getPv() + "/100\n\n" +
+                        "Vous avez la possibilité de régénérer vos points de vie en " +
+                        "consommant une cellule d'énergie. Votre vitalité sera " +
+                        "alors rétablie à son niveau maximum, mais prenez garde : " +
+                        "il ne sera possible de la recharger qu'à la fin de la quête !");
+    }
+
+    @FXML
+    private void soin(){
+        getHeros().soin();
+        getHeros().getLocalisation().consommerSoin();
+        chargeCombat();
     }
 
     private void lancerAttaque(int degatsH, Event event){

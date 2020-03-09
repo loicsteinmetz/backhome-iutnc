@@ -170,3 +170,46 @@ Button:hover{
     -fx-background-color: #CB4242;
     -fx-cursor: hand;
 }
+
+GridPane{
+    -fx-alignment:center;
+    -fx-min-width:800;
+    -fx-min-height:600;
+}
+
+#soinBox{
+    -fx-min-width: 600px;
+    -fx-max-width: 600px;
+    -fx-padding: 25px;
+    -fx-spacing: 50px;
+    -fx-background-color: #207090;
+    -fx-background-radius: 5;
+}
+
+#soinBox VBox{
+    -fx-alignment: center;
+    -fx-spacing: 25px;
+    -fx-min-height: 100%;
+}
+
+#soinBox Label{
+    -fx-text-fill:white;
+}
+
+#soinBox Button{
+    -fx-padding:12 20;
+    -fx-font-size:15;
+    -fx-text-fill:white;
+    -fx-background-color: transparent;
+    -fx-font-family: "Roboto Slab";
+    -fx-border-width:3px;
+    -fx-border-color: white;
+    -fx-border-radius:5;
+    -fx-alignment:center;
+}
+
+#soinBox Button:hover{
+    -fx-background-color: white;
+    -fx-text-fill: #207090;
+    -fx-cursor: hand;
+}

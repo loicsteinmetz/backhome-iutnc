@@ -17,6 +17,7 @@ public class Planete {
     private int idRecompenseArmeCac;
     private int idRecompenseDistance;
     private int idRecompenseArmure;
+    private boolean soinDisponible;
 
     /**
      * Constructeur
@@ -33,6 +34,7 @@ public class Planete {
         this.idRecompenseArmeCac = idRecompenseArmeCac;
         this.idRecompenseDistance = idRecompenseDistance;
         this.idRecompenseArmure = idRecompenseArmure;
+        this.soinDisponible = true;
     }
 
     /**
@@ -93,5 +95,13 @@ public class Planete {
         if (idRecompenseArmure != -1){
             getInventaire().setArmure(new Armure(idRecompenseArmure));
         }
+    }
+
+    public boolean soinDisponible(){
+        return soinDisponible;
+    }
+
+    public void consommerSoin(){
+        soinDisponible = false;
     }
 }
