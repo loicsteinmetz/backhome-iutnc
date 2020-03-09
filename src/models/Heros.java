@@ -56,8 +56,9 @@ public class Heros extends Personnage {
      * pour prendre en compte l'armure du héros
      */
     public int subirAttaque(double dommages){
-        this.modifierPv((int) -(dommages-getInventaire().getArmure().getResistance()));
-        return (int) (dommages-getInventaire().getArmure().getResistance());
+        int modif = Math.max((int)(dommages - getInventaire().getArmure().getResistance()), 0);
+        this.modifierPv(modif);
+        return modif;
     }
 
     public Situation getSituation() {
