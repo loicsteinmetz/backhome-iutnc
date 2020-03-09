@@ -18,6 +18,7 @@ import models.Quete;
 import utils.EffetsJavaFx;
 import utils.ViewLoader;
 
+import static models.Heros.getHeros;
 import static models.Quete.getQuete;
 
 /**
@@ -114,6 +115,7 @@ public class DecisionController extends Application {
     private void issueA(Event e){
         ViewLoader vl = new ViewLoader();
         if (MODELE.getIdIssueA() == 0){
+            getHeros().getLocalisation().recompenses();
             vl.switchTo(CarteController.getView(), e);
         } else {
             getQuete().prochainEvenement(MODELE.getIdIssueA());

@@ -2,6 +2,8 @@ package models;
 
 import java.util.ArrayList;
 
+import static models.Inventaire.getInventaire;
+
 /**
  * Modélisation d'une planète
  */
@@ -79,5 +81,17 @@ public class Planete {
      */
     public int getIdPremierEvenement() {
         return idPremierEvenement;
+    }
+
+    public void recompenses(){
+        if (idRecompenseArmeCac != -1){
+            getInventaire().setArmeCac(new ArmeCac(idRecompenseArmeCac));
+        }
+        if (idRecompenseDistance != -1){
+            getInventaire().setArmeDist(new ArmeDistance(idRecompenseDistance));
+        }
+        if (idRecompenseArmure != -1){
+            getInventaire().setArmure(new Armure(idRecompenseArmure));
+        }
     }
 }
