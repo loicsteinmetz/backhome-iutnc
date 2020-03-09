@@ -129,7 +129,7 @@ public class CarteController extends Application {
         HBox box = (HBox) e.getSource();
         Planete nouvellePlanete = MODELE.getPlaneteParNom((String) box.getUserData());
         getHeros().setLocalisation(nouvellePlanete);
-        getInventaire().modifierCarburant(-100);
+        getInventaire().modifierCarburant(-100 * getHeros().getLocalisation().getNiveau());
         new ViewLoader().switchTo(QueteController.getView(), e, 0.5);
     }
 
