@@ -82,8 +82,8 @@ Label{
     -fx-border-width: 3px;
     -fx-border-color: grey;
     -fx-border-radius: 5;
-    -fx-min-width: 303px;
-    -fx-max-width: 303px;
+    -fx-min-width: 306px;
+    -fx-max-width: 306px;
     -fx-min-height: 25px;
     -fx-max-height: 25px;
     -fx-alignment:center-left;
@@ -146,8 +146,8 @@ Label{
 #vieHeros{
     -fx-border-width: 3px;
     -fx-border-radius: 5;
-    -fx-min-width: 203px;
-    -fx-max-width: 203px;
+    -fx-min-width: 206px;
+    -fx-max-width: 206px;
     -fx-min-height: 25px;
     -fx-max-height: 25px;
     -fx-border-color: grey;

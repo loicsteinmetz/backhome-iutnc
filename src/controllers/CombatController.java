@@ -120,7 +120,7 @@ public class CombatController extends Application {
     @FXML
     private void chargeEnnemi(){
         int ePv = MODELE.getEnnemi().getPv();
-        pvEnnemi.setText(ePv + "/" + ePv + " PV");
+        pvEnnemi.setText(ePv + "/" + pvInitEnnemi + " PV");
         nomEnnemi.setText(MODELE.getEnnemi().getNom());
         descEnnemi.setText(MODELE.getEnnemi().getDescription());
     }
@@ -202,6 +202,8 @@ public class CombatController extends Application {
                                 (double)MODELE.getEnnemi().getPv() / pvInitEnnemi * 300))
         );
         tl.setOnFinished((e)->{
+            int pv = Math.max(MODELE.getEnnemi().getPv(), 0);
+            pvEnnemi.setText(pv + "/" + pvInitEnnemi + " PV");
             print.setText("Vous avez infligé " + degats + " points de dégats à " + MODELE.getEnnemi().getNom() + " !");
         });
         tl.play();
@@ -225,6 +227,10 @@ public class CombatController extends Application {
                                     getHeros().getPv() * 2))
             );
             tp.setOnFinished((e2)->{
+                tl.setOnFinished((e3)->{
+                    int pv = Math.max(getHeros().getPv(), 0);
+                    pvHeros.setText(pv + "/100 PV");
+                });
                 tl.play();
             });
             tp.play();
