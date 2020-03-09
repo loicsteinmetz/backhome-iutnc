@@ -57,7 +57,7 @@ public class Heros extends Personnage {
     @Override
     public int subirAttaque(double dommages){
         int modif = Math.max((int)(dommages - getInventaire().getArmure().getResistance()), 0);
-        this.modifierPv(modif);
+        this.modifierPv(- modif);
         return modif;
     }
 
