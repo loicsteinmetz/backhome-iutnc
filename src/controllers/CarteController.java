@@ -70,6 +70,7 @@ public class CarteController extends Application {
     @FXML
     private void initialize(){
         MODELE = getCarte();
+        getHeros().soin();
         getHeros().setSituation(Situation.VAISSEAU);
         chargeElementsInterface();
         chargeLocalisation();

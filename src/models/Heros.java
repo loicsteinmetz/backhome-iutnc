@@ -67,4 +67,8 @@ public class Heros extends Personnage {
     public void setSituation(Situation situation) {
         this.situation = situation;
     }
+
+    public void soin(){
+        pv = 100;
+    }
 }
