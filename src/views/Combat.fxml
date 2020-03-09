@@ -23,7 +23,7 @@
             <HBox fx:id="titre">
                 <Label text="-  COMBAT  -"/>
             </HBox>
-            <HBox fx:id="ennemiBox">
+            <HBox fx:id="ennemiBox" layoutX="-800">
                 <VBox id="infosEnnemiBox">
                     <HBox id="nomEnnemiBox">
                         <Label fx:id="nomEnnemi" text="AaronMan"/>
@@ -43,7 +43,7 @@
             <HBox fx:id="printBox">
                 <Label fx:id="print"/>
             </HBox>
-            <HBox fx:id="herosBox">
+            <HBox fx:id="herosBox" layoutX="800">
                 <HBox id="vieHerosBox">
                     <HBox id="vieHeros">
                         <HBox fx:id="niveauVieHeros">
