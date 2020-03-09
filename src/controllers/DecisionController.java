@@ -101,7 +101,7 @@ public class DecisionController extends Application {
                 EffetsJavaFx.fadeIn(issueA, 2, 0);
                 btnBox.getChildren().remove(1);
                 btnBox.setLayoutY(450);
-                issueA.setText("Retourner au vaisseau");
+                issueA.setText("Aller au vaisseau");
             } else {
                 ecran.setOnMouseClicked((e)->{
                     new ViewLoader().switchTo(QueteController.getView(), event);

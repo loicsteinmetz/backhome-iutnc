@@ -17,7 +17,7 @@ AnchorPane{
     -fx-padding: 0 100px;
 }
 
-#ecran Label{
+Label{
     -fx-wrap-text:true;
 }
 

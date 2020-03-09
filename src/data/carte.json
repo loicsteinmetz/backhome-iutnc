@@ -4,7 +4,7 @@
     "niveau":"0",
     "planetesVoisines": ["ienos","zéphyr","hermès"],
     "description": "C'est ici que débute votre aventure. ",
-    "idPremierEvenement": "5",
+    "idPremierEvenement": "2",
     "idRecompenseArmeCac": null,
     "idRecompenseDistance": null,
     "idRecompenseArmure": null

@@ -8,7 +8,7 @@
   "2": {
     "type": "generique",
     "nom": "Epée en fer",
-    "degats": 50
+    "degats": 5
   },
 
   "3": {
@@ -145,11 +145,11 @@
   "100": {
     "type": "cac",
     "nom": "Epee",
-    "degats": 10
+    "degats": 100
   },
   "101": {
     "type": "distance",
     "nom": "Pistolet",
-    "degats": 10
+    "degats": 100
   }
 }

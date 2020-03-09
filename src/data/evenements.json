@@ -22,7 +22,7 @@
     ],
     "idEnnemi": "2",
     "typeEnnemi": "brute",
-    "idIssue": "8"
+    "idIssue": "6"
   },
 
   "1": {
@@ -240,7 +240,7 @@
   },
 
   "12": {
-    "type": "decison",
+    "type": "decision",
     "scenario": [
       "Vous avez gagné le combat!",
       "A la fin de ce combat, vous apercevez un sbire de chef de guerre mettre le feu au hangar. Vous ne voyez qu'un seul vaisseau. Un <<Nostromo>>, modèle qui permet les voyages interstellaires. Une aubaine... Mais il faut vite partir",
