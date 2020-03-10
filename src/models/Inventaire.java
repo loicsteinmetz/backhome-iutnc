@@ -1,8 +1,10 @@
 package models;
 
 public class Inventaire {
-	
+
+	@Singleton
 	private static Inventaire INVENTAIRE = new Inventaire();
+
 	private int carburant;
 	private ArmeCac armeCac;
 	private ArmeDistance armeDist;
@@ -12,25 +14,24 @@ public class Inventaire {
 	 * Constructeur privé
 	 */
 	private Inventaire(){
-		this.carburant = 400;
-		this.armeCac = new ArmeCac(10,"Petit Couteau");
-		this.armeDist = new ArmeDistance(15,"Petit Pistolet");
-		this.armure = new Armure(5,"Armure en cuir");
+		this.carburant = 0;
+		this.armeCac = new ArmeCac(100);
+		this.armeDist = new ArmeDistance(101);
+		this.armure = new Armure(100);
 	}
 
 	/**
 	 * Getter de l'instance de l'inventaire (singleton)
 	 * @return instance de l'inventaire
 	 */
+	@Singleton
 	public static Inventaire getInventaire(){
         if(INVENTAIRE == null) {
             INVENTAIRE = new Inventaire();
         }
         return INVENTAIRE;
     }
-	
-	
-	
+
 	/**
 	 * Ajoute du carburant
 	 * @param carburant quantité de carburant

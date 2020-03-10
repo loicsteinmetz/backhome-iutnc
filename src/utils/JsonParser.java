@@ -38,7 +38,7 @@ public class JsonParser {
      * Parse un tableau d'objets json à partir d'un fichier json
      * @param fichier chemin vers le fichier json
      * @param cle la clé de l'objet json
-     * @return l'objet json
+     * @return un tableau d'objet json
      * @throws IOException récupération du fichier json
      * @throws ParseException parsing du fichier json
      */
@@ -52,5 +52,20 @@ public class JsonParser {
             res[i] = (JSONObject) arr.get(i);
         }
         return res;
+    }
+
+    /**
+     * Parse un objet json à partir d'un fichier json
+     * @param fichier chemin vers le fichier json
+     * @param cle la clé de l'objet json
+     * @return l'objet json
+     * @throws IOException récupération du fichier json
+     * @throws ParseException parsing du fichier json
+     */
+    public JSONObject parseObject(String fichier, String cle) throws IOException, ParseException {
+        JSONParser parser = new JSONParser();
+        Object obj = parser.parse(new InputStreamReader(getClass().getResourceAsStream(fichier)));
+        JSONObject jsonObject = (JSONObject) obj;
+        return (JSONObject) jsonObject.get(cle);
     }
 }

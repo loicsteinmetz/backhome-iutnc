@@ -17,7 +17,6 @@ public class ViewLoader {
      */
     public void switchTo(String view, Stage primaryStage){
         try {
-            System.out.println(getClass().getResource(view));
             FXMLLoader loader = new FXMLLoader(getClass().getResource(view));
             loader.load();
             ((Application)loader.getController()).start(primaryStage);

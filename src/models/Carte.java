@@ -11,35 +11,30 @@ import java.util.ArrayList;
 /**
  * Singleton modélisant la carte du jeu
  */
-public class Carte {
+public class Carte implements Configurable {
 
+    @Singleton
     private static Carte CARTE = new Carte();
+
     private ArrayList<Planete> planetes = new ArrayList<>();
 
     /**
      * Constructeur privé
      */
     private Carte(){
-        recupereDonnees();
+        initConfiguration();
     }
 
     /**
      * Getter de l'instance de la carte (singleton)
      * @return l'instance de la carte
      */
+    @Singleton
     public static Carte getCarte(){
         if(CARTE == null) {
             CARTE = new Carte();
         }
         return CARTE;
-    }
-
-    /**
-     * Getter
-     * @return les planètes de la carte
-     */
-    public ArrayList<Planete> getPlanetes(){
-        return this.planetes;
     }
 
     /**
@@ -61,9 +56,8 @@ public class Carte {
     /**
      * Récupère les données de configuration de la carte
      */
-    @Configuration
-    private void recupereDonnees() {
-        String cheminConf = "/assets/config/carte.json";
+    public void initConfiguration() {
+        String cheminConf = "/data/carte.json";
         String cle = "planetes";
         JSONObject[] pl = null;
         try {
@@ -82,11 +76,25 @@ public class Carte {
      */
     private void initialiserPlanetes(JSONObject[] planetes) {
         for (JSONObject p : planetes){
+
+            Object pe = p.get("idPremierEvenement");
+            int peInt = pe == null ? -1 : Integer.parseInt(p.get("idPremierEvenement").toString());
+            Object rcac = p.get("idRecompenseArmeCac");
+            int rcacInt = rcac == null ? -1 : Integer.parseInt(p.get("idRecompenseArmeCac").toString());
+            Object rdist = p.get("idRecompenseDistance");
+            int rdistInt = rdist == null ? -1 : Integer.parseInt(p.get("idRecompenseDistance").toString());
+            Object rarm = p.get("idRecompenseArmure");
+            int rarmInt = rarm == null ? -1 : Integer.parseInt(p.get("idRecompenseArmure").toString());
+
             this.nouvellePlanete(new Planete(
                     p.get("nom").toString(),
                     Integer.parseInt(p.get("niveau").toString()),
-                    p.get("description").toString()
-            ));
+                    p.get("description").toString(),
+                    peInt,
+                    rcacInt,
+                    rdistInt,
+                    rarmInt)
+            );
         }
     }
 

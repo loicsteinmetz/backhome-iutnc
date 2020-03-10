@@ -1,9 +1,6 @@
 package controllers;
 
-import javafx.animation.Interpolator;
-import javafx.animation.Timeline;
 import javafx.animation.Transition;
-import javafx.animation.TranslateTransition;
 import javafx.application.Application;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -15,7 +12,6 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 import models.BackHome;
 import utils.EffetsJavaFx;
 import utils.ViewLoader;
@@ -30,7 +26,7 @@ public class BackHomeController extends Application {
     @Controller
     private static final String STYLE = "/assets/css/BackHome.css";
     @Controller
-    private static final BackHome MODELE = new BackHome();
+    private static BackHome MODELE;
 
     @FXML
     private AnchorPane pane;
@@ -64,30 +60,12 @@ public class BackHomeController extends Application {
     }
 
     /**
-     * Initialisation de la vue
+     * Initialisation de la vue et du modèle
      */
     @FXML
     private void initialize(){
-        animeBg();
-    }
-
-    /**
-     * Anime l'image d'arrière-plan de l'écran d'accueil
-     */
-    @FXML
-    private void animeBg() {
-        TranslateTransition tt1 = new TranslateTransition(Duration.seconds(1.5), starsBg1);
-        tt1.setFromY(-600);
-        tt1.setToY(0);
-        tt1.setCycleCount( Timeline.INDEFINITE);
-        tt1.setInterpolator(Interpolator.LINEAR);
-        tt1.play();
-        TranslateTransition tt2 = new TranslateTransition(Duration.seconds(1.5), starsBg2);
-        tt2.setFromY(0);
-        tt2.setToY(600);
-        tt2.setCycleCount(Timeline.INDEFINITE);
-        tt2.setInterpolator(Interpolator.LINEAR);
-        tt2.play();
+        MODELE = new BackHome();
+        EffetsJavaFx.defilementBg(starsBg1, starsBg2);
     }
 
     /**
@@ -125,7 +103,7 @@ public class BackHomeController extends Application {
         } else if (index == MODELE.getScenario().length) {
             label.setDisable(true);
             label.setVisible(false);
-            new ViewLoader().switchTo(CarteController.getView(), event, 2);
+            new ViewLoader().switchTo(QueteController.getView(), event, 2);
         }
     }
 }

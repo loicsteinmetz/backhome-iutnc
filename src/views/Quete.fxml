@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.QueteController"
+            fx:id="pane">
+
+    <ImageView fx:id="starsBg1">
+        <Image url="/assets/img/stars_bg.png"/>
+    </ImageView>
+    <ImageView fx:id="starsBg2">
+        <Image url="/assets/img/stars_bg.png"/>
+    </ImageView>
+
+    <GridPane>
+        <HBox GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Label fx:id="nomPlanete" text="..."/>
+        </HBox>
+        <HBox GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Button onAction="#lanceEvenement" text="COMMENCER" fx:id="startBtn"/>
+        </HBox>
+    </GridPane>
+
+</AnchorPane>

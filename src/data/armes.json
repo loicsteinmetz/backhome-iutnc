@@ -1,0 +1,155 @@
+{
+  "1": {
+    "type": "generique",
+    "nom": "Epée Toche",
+    "degats": 10
+  },
+
+  "2": {
+    "type": "generique",
+    "nom": "Epée en fer",
+    "degats": 5
+  },
+
+  "3": {
+    "type": "generique",
+    "nom": "Dark Repulser",
+    "degats": 20
+  },
+
+  "5": {
+    "type": "cac",
+    "nom": "Dark Repulser",
+    "degats": 25
+  },
+
+  "7": {
+    "type": "generique",
+    "nom": "Procyon SL",
+    "degats": 10
+  },
+
+  "9": {
+    "type": "generique",
+    "nom": "Elucidator",
+    "degats": 20
+  },
+
+  "11": {
+    "type": "generique",
+    "nom": "Sabre de Ben Le Ripate",
+    "degats": 10
+  },
+
+  "13": {
+    "type": "generique",
+    "nom": "Glaive Icération",
+    "degats": 15
+  },
+
+  "15": {
+    "type": "generique",
+    "nom": "XM29",
+    "degats": 20
+  },
+
+  "17": {
+    "type": "distance",
+    "nom": "PGM Ultima Ratio Hecate II",
+    "degats": 25
+  },
+
+  "4": {
+    "type":"generique",
+    "nom": "Revolver XA-42",
+    "degats": 5
+  },
+
+  "6": {
+    "type": "generique",
+    "nom": "Masse d'arme à plasma",
+    "degats": 15
+  },
+
+  "8": {
+    "type": "generique",
+    "nom": "Fusil d'assaut KV-666 ",
+    "degats": 20
+  },
+
+  "10": {
+    "type": "generique",
+    "nom": "Epée à impulsion",
+    "degats": 20
+  },
+
+  "12": {
+    "type": "generique",
+    "nom": "Excelia",
+    "degats": 35
+  },
+
+  "14": {
+    "type": "generique",
+    "nom": "Revolver d'Iroshi",
+    "degats": 35
+  },
+
+  "16": {
+    "type": "generique",
+    "nom": "Epée lourde organique",
+    "degats": 20
+  },
+
+  "18": {
+    "type": "generique",
+    "nom": "Fusil organique",
+    "degats": 20
+  },
+
+  "20": {
+  "type": "generique",
+  "nom": "Meteora Divinus",
+  "degats": 35
+},
+
+  "22": {
+    "type": "generique",
+    "nom": "Gatling AZ-1",
+    "degats": 35
+  },
+
+  "24": {
+    "type": "cac",
+    "nom": "Excelia",
+    "degats": 35
+  },
+
+  "26": {
+    "type": "distance",
+    "nom": "Revolver d'Iroshi",
+    "degats": 35
+  },
+
+  "28": {
+    "type": "cac",
+    "nom": "Meteora Divinus",
+    "degats": 35
+  },
+
+  "30": {
+    "type": "distance",
+    "nom": "Gatling AZ-1",
+    "degats": 35
+  },
+  "100": {
+    "type": "cac",
+    "nom": "Epee",
+    "degats": 100
+  },
+  "101": {
+    "type": "distance",
+    "nom": "Pistolet",
+    "degats": 100
+  }
+}

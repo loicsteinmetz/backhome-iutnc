@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 import utils.FontsLoader;
 import utils.ViewLoader;
 
+
 /**
  * Classe principale du programme
  */
@@ -37,5 +38,6 @@ public class Main extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+        
     }
 }

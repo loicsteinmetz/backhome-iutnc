@@ -26,7 +26,10 @@ AnchorPane{
 .planete{
     -fx-background-color: #1F2C2F;
     -fx-background-radius:5;
-    -fx-min-width: 500px;
+    -fx-min-width: 650px;
+    -fx-max-width: 650px;
+    -fx-min-height: 90px;
+    -fx-max-height: 90px;
     -fx-padding:20 30;
     -fx-alignment:center;
     -fx-spacing: 40px;
@@ -43,8 +46,14 @@ Label{
     -fx-font-family: "Roboto Slab";
 }
 
+.nomPlanete{
+    -fx-min-width: 100px;
+    -fx-max-width: 100px;
+}
+
 .descriptionPlanete{
     -fx-font-size:15px;
+    -fx-wrap-text:true;
 }
 
 Button{

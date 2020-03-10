@@ -1,0 +1,72 @@
+{"planetes": [
+  {
+    "nom":"Utopia",
+    "niveau":"0",
+    "planetesVoisines": ["ienos","zéphyr","hermès"],
+    "description": "C'est ici que débute votre aventure. ",
+    "idPremierEvenement": "2",
+    "idRecompenseArmeCac": null,
+    "idRecompenseDistance": null,
+    "idRecompenseArmure": null
+  },
+  {
+    "nom":"Ienos",
+    "niveau":"1",
+    "planetesVoisines": ["zéphyr","hermès","lumini","tremor"],
+    "description": "Ienos est considéré comme l’une des planètes les plus hostile du système. L’espèce a dû reculer sous les terres pour fuir cette aridité pour y construire leurs villes. Cette planète recueille beaucoup d'habitants d'autres planètes aux alentour.",
+    "idPremierEvenement": "2",
+    "idRecompenseArmeCac": null,
+    "idRecompenseDistance": null,
+    "idRecompenseArmure": null
+  },
+  {
+    "nom":"Zéphyr",
+    "niveau":"1",
+    "planetesVoisines": ["ienos","hermès","lumini","tremor"],
+    "description": "Zéphyr est une planète constituée principalement de mer. Mais le problème, c’est qu’elle est difficile d’accès dû aux satellites qui tourne autour d’elle. L'un des planètes les plus paradisiaque. Elle est principalement peuplé par des pirates ! Garde a vous moussaillon. ",
+    "idPremierEvenement": "2",
+    "idRecompenseArmeCac": null,
+    "idRecompenseDistance": null,
+    "idRecompenseArmure": null
+  },
+  {
+    "nom":"Hermès",
+    "niveau":"1",
+    "planetesVoisines": ["ienos","zéphyr","lumini","tremor"],
+    "description": "Hermès a été abandonnée par l’espèce humaine, en laissant tout sur leur passage… Elle a pu renaître de ses cendres et la nature a pu reprendre tous ces droits. Vous pourrez trouver d'éventuels indices sur Calypso.",
+    "idPremierEvenement": "2",
+    "idRecompenseArmeCac": null,
+    "idRecompenseDistance": null,
+    "idRecompenseArmure": null
+  },
+  {
+    "nom":"Lumini",
+    "niveau":"2",
+    "planetesVoisines": ["calypso"],
+    "idPremierEvenement": "2",
+    "idRecompenseArmeCac": "24",
+    "idRecompenseDistance": "26",
+    "idRecompenseArmure": "2",
+    "description": "Une planète prospère dont le comportement des habitants est intriguant..."
+  },
+  {
+    "nom":"Tremor",
+    "niveau":"2",
+    "planetesVoisines": ["calypso"],
+    "idPremierEvenement": "2",
+    "idRecompenseArmeCac": "28",
+    "idRecompenseDistance": "30",
+    "idRecompenseArmure": "4",
+    "description": "Une planète devastée et dirigée par un tyran à la main de fer..."
+  },
+  {
+    "nom":"Calypso",
+    "niveau":"3",
+    "planetesVoisines": [],
+    "description": "P7 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "idPremierEvenement": "2",
+    "idRecompenseArmeCac": null,
+    "idRecompenseDistance": null,
+    "idRecompenseArmure": null
+  }
+]}

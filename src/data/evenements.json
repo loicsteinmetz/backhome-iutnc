@@ -1,0 +1,391 @@
+{
+  "2": {
+    "type": "decision",
+    "scenario": [
+      "Vous sortez de la maison. Le moment est venu de faire votre premier choix...",
+      "Souhaitez-vous aller à gauche ou à droite? Ces deux chemins peuvent mener à la concession..."
+    ],
+    "optionA": "Prendre le chemin de gauche",
+    "optionB": "Prendre le chemin de droite",
+    "idIssueA": "4",
+    "idIssueB": "6"
+  },
+
+  "4": {
+    "type": "combat",
+    "scenario": [
+      "Vous marchez en observant toute cette désolation environnante",
+      "De nombreux corps sans vie gisent sur la route",
+      "Vous entendez des voix au loin. Vous ralentissez le pas et vous cachez",
+      "A proximité, deux silhouettes. L'une d'entre elle dit :<<Si je croise encore un humain vivant, je lui tranche la tête! Le massacre d'hier ne m'a pas suffit>>",
+      "Malheureusement, vous entendez derrière vous une autre voix. Vous vous retournez: un Orc courir vers vous <<Il en reste un! Tuons-le!>> "
+    ],
+    "idEnnemi": "2",
+    "typeEnnemi": "brute",
+    "idIssue": "6"
+  },
+
+  "1": {
+    "type": "combat",
+    "scenario" : [
+      "\n BIENVENUE sur Hermès, aux terres promises \n",
+      "Cette planète a été abandonnée par l'espèce humaine,en laissant tout sur leur passage… Cette planète a pu renaître de ses cendres, suite à ses dégâts…. Et la nature a pu reprendre tous ces droits..",
+      "Bonne Chance sur cette planète.",
+      "Vous descendez du vaisseau. Et a ce moment la, vous etes émerveiller du paysage verdoyant...  ",
+      "Au loin, vous apercevez un gobelin qui semble faibles et faciles à tuer. Vous commencez à courir vers lui pour l'affronter. ",
+      " \" Hé toi ! Sale gobelin prépare toi a mourir face a ma force ! \""
+    ],
+    "idEnnemi": "1",
+    "typeEnnemi": "brute",
+    "idIssue" : "3"
+  },
+
+  "3": {
+    "type": "combat",
+    "scenario" : [
+      "Vous entendez des bruits qui proviennent d'un buisson. Vous vous retournez est là ! Un Gorille surgit du buisson et semble vouloir ta peau ! ",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      "Essaie de le vaincre afin de lui soutirer son arme ! ",
+      "Le Gorille commença à crier : \" Je vais te tuer ! Ahah ! Ramène-toi, je vais te faire subir la même chose que tu as fait au gobelin ! Petit avorton !\" ",
+      " \" C'est ce que tu penses sale macaque ! Je vais te montrais, c'est qui ' Avorton ' ! \" "
+    ],
+    "idEnnemi" : "3",
+    "typeEnnemi": "boss",
+    "optionA": "Prendre le chemin pour la ville.",
+    "optionB": "Retourner dans le vaisseau.",
+    "idIssueA" : "5",
+    "idIssueB" : "VAISSEAU"
+  },
+
+  "5": {
+    "type": "decision",
+    "scenario": [
+      "Après de longues heures de recherche, tu trouves une ville ravagée et tu te mets à chercher des indices.",
+      "Et là ! Dans le dernier bâtiment au dernier étage, vous trouvez une pièce remplir de documents sur les planètes au alentour. Et un indice sur Calypso !  ",
+      " \"Cette pièce devait appartenir à une personne venue de Calypso ou une des planètes qui est proche de celle-ci. \" \n \" Félicitation pour cet indice ! Continue comme çà\"\n  ",
+      "Cette journée a été très rude pour toi, il est l’heure pour toi de partir de cette planète afin de pouvoir continuer ta destiné ! ",
+      "Je suis dans mon vaisseau  sauf que je me ve-sau."
+    ],
+    "optionA": null ,
+    "optionB": null ,
+    "idIssueA": "VAISSEAU",
+    "idIssueB": null
+  },
+
+  "7": {
+    "type": "decision",
+    "scenario": [
+      "\n BIENVENUE sur Ienos, des terres de feu \n",
+      "Elle est considérée comme l’une des planètes les plus hostile du système. L’espèce a dû reculer sous les terres pour fuir cette aridité pour y construire leurs villes. La planète Ienos est principalement constituée de sable et de roches volcaniques de couleur rouges.",
+      "Avant votre arrivée à la station de « Nowso », vous apercevez un paysage désertique d’une couleur rouge sang, l’aventure  sur cette planète va être difficile. ",
+      "Vous avez atterri à la station « Nowso », la plus grande station pour vaisseaux. Lors de la sortie de ton vaisseau, vous regardez aux alentours et vous voyez la sortie de la station.",
+      "Vous y dirigez vers la sortie, un groupe d’hommes criant \" On cherche une personne pour nous aider à faire une quête importante ! \" Vous vous rapprochez d'eux pour les questionner sur cette quête et la récompense. ",
+      "Le chef du groupe : \" La quête consiste juste à ramener l’arme d’un grand boss, mais pas n’importe laquelle ! Celle de Chô Peleux un grand monstre que mon groupe et moi redoutons. La récompense sera un équipement unique et aussi de l’essence parce qu’ici, il est difficile d’en avoir. \"",
+      "Vous acceptez directement la quête, car vous n'avez peur de rien, mais vous avez besoin d'équipement aussi."
+    ],
+    "optionA": "Prendre la porte EST",
+    "optionB": "Prendre la porte OUEST",
+    "idIssueA": "9",
+    "idIssueB": "9"
+  },
+
+  "9": {
+    "type": "combat",
+    "scenario" : [
+      "Vous acceptez et vous vous mettez en route, vous vous dirigez donc en dehors de la ville vers la destination de la quête. ",
+      "Quelques mètres après la sortie, vous vous faites interpeller par le rebelle ville. Il a aperçu vous êtes un étranger et donc c'est pour cela qui veut vous volez vos équipements.",
+      "Le Bebelle: \" Hé toi ! Petit étranger ! Viens me voir ! Tu m'a l'air riche et bien équipé ! Viens donc me donner tout ce que tu as ! Sinon la mort t'arrivera !  \"  ",
+      "\" Je préfère me battre que de me laisser voler comme ca ! Ramène-toi ! Je t'attends. \""
+    ],
+    "idEnnemi" : "5",
+    "typeEnnemi": "tireur",
+    "idIssue" : "11"
+  },
+
+  "11": {
+    "type": "decision",
+    "scenario": [
+      "Après votre combat contre Tink Berval, vous vous diriez vers l'endroit indiqué par le groupe. ",
+      "Vous continuez votre chemin jusqu'à la grotte, une pancarte se trouve devant celle-ci. Dessus est écris « Garde à vous aventurier ! N’essayer pas d’entrer dans cette grotte ou la mort vous attendras ». Mais vus, que c’est écrit dans une langue que vous ne comprendrez pas, vous continuerez votre route sans y faire attention. ",
+      "Vous arrivez bientôt au bout de cette grotte, vous vous êtes caché derrière une grosse pierre pour analyser la situation. Vous apercevez Chô Peleux le boss que vous devez tuer pour accomplir cette quête. ",
+      "Chô Peleux :  \" Je suis tellement bien dans cette grotte ! Tout le monde a peur de moi, tellement que je suis fort. Je dois aménager cette grotte à mon goût pour montrer ma puissance et ma richesse au monde ! \" "
+    ],
+    "optionA": "Vous prenez la fuite, comme un lache",
+    "optionB": "Vous faites une attaque surprise",
+    "idIssueA": "13",
+    "idIssueB": "13"
+  },
+
+  "13": {
+    "type": "combat",
+    "scenario" : [
+      "Vous êtes tellement indiscret que vous vous faites repérer par Chô Peleux ! Cela est du a votre odeur corporelle...",
+      "Dommage pour vous, maintenant vous avez plus le choix. Préparez-vous au combat.",
+      "Chô Peleux : \" Comment oses-tu venir dans ma demeure ! Ton odeur est tellement différente que ceux de cette planète que j'ai pu te repérer. Mais c'est dommage pour toi, maintenant, tu vas mourir pour avoir pénétré ma demeure ! \""
+    ],
+    "idEnnemi" : "7",
+    "typeEnnemi": "boss",
+    "idIssue" : "15"
+  },
+
+  "15":{
+    "type": "decision",
+    "scenario": [
+      "Vous faite le chemin de retour à Noswo pour valider votre quête",
+      "Lors de votre arrivée à « Noswo », vous vous rendez au point de rendez-vous, le groupe d’hommes arrivent peu après vous. Tu leur donnes l'objet de la quête en échange de l'équipement et de l’essence. ",
+      "\n vous avez reçu Plastron Credo de la gloire ! \n",
+      "En plus, vous avez pu trouver un indice sur Calypso grâce à l'armure qui est Made in Calypso.",
+      "Chef de groupe : \" voilà, nous avons finis avec toi ! Merci encore et je te souhaite Bonne chance et Courage. Salut \" Le groupe disparaît dans une ruelle... "
+    ],
+    "optionA": null ,
+    "optionB": null ,
+    "idIssueA": "VAISSEAU",
+    "idIssueB": null
+  },
+
+  "17": {
+    "type": "combat",
+    "scenario": [
+      "\n BIENVENUE sur Zéphyr, du vent de l'ouest \n ",
+      "Elle constituée principalement de mer. Mais le problème, c’est qu’elle est difficile d’accès dû aux satellites qui tourne autour d’elle. De plus, cette planète est paradisiaque : eau turquoise, terre verdoyante, montagne bien enneigé, Forêt avec une multitude d’arbres différents. Elle est l'une des planètes les plus belles du système. \n\nZéphyr a amené Fortune, Gloire et Pouvoir, un homme avait amassé toutes les richesses du monde, son nom God Roger, Roi des pirates, ces dernières paroles incitaient tous les hommes de la planète à s’aventurer en mer.",
+      "God Roger  : \n \" Mon trésor ? Je vous le laisse si vous le voulez : TROUVER LE ! Je l'ai laissé quelque part dans ce monde. \" \n Tous se lancèrent sur la route de Zéphyr dans l’espoir de mettre la main sur ce fameux trésor ! Le monde entier connut alors une grande vague de piraterie.",
+      "Tous se lancèrent sur la route de Zéphyr dans l’espoir de mettre la main sur ce fameux trésor ! Le monde entier connut alors une grande vague de piraterie.\nVous venez d'atterrir à la capital REDLINE. Vous vous promenez dans la ville à la recherche de quête à faire. Vous arrivez devant un tableau avec plus de quête, vous consultez les quêtes qui pourraient être bien pour vous.\nVous sentez quelqu'un, vous touchez le dos... Vous vous retournez et un enfant trouve derrière vous. L'enfant vous demande de l'aide, car il a un souci. ",
+      "L'enfant : \" Un monsieur m'a voler mon pendentif qui appartenait a mon père... Et j'aimerais le recupérer pouvez vous m'aider s'il vous plaint ! \" ",
+      "Vous regardez l'enfant... Et vous acceptez de l'aider ! Vous commencez a le suivre...\n Vous arrivez devant le bar et il vous montre la personne. Et vous vous dirigez vers celle-ci pour vous battre et récupérer l'objet de l'enfant."
+    ],
+    "idEnnemi" : "9",
+    "typeEnnemi": "brute",
+    "idIssue" : "19"
+  },
+
+  "19": {
+    "type" : "combat",
+    "scenario": [
+      "Vous avez battu Jul'Tarv, mais aucun objet pour l'enfant. Vous retournez le voir et il vous explique que c'était un test ! Il vous ramène au port. Il vous montre un bateau, il vous explique que son pendentif est dans ce bateau. ",
+      "Vous dirigez vers ce bateau, mais un moussaillon vous interpelle et vous attaque, car il a entendu la conversion que vous avez eu avec l'enfant. ",
+      "Moussaillon : \" Vous ! N'y penser pas ! Vous ne passerez pas tant que je suis là ! \" Du coup, vous chargez sur le moussaillon pouvoir passer ! "
+    ],
+    "idEnnemi" : "11",
+    "typeEnnemi": "brute",
+    "IdIssue" : "21"
+  },
+
+  "21": {
+    "type" : "combat",
+    "scenario": [
+      "Vous avez réussi à vaincre Loudmerawa Le Marin. Vous montez à bord du bateau et vous le fouiller. Vous avez trouvé le pendentif de l'enfant et vous le récupérer.... ",
+      " \n Sauf que le capitaine du navire, vous surprendre ! \n ",
+      "Oshar Marif, le chef des pirates : \" Toi ! Comment oses-tu monter dans mon navire et me voler mon trésor ! Tu te crois pour qui ?! Je suis OSHAR MARIF ! En garde ! Je vais te montrer ce que fais a ceux qui ose me voler ! \" "
+    ],
+    "idEnnemi" : "13",
+    "typeEnnemi": "boss",
+    "IdIssue" : "23"
+  },
+
+  "23": {
+    "type": "decision",
+    "scenario": [
+      "Vous retournez voir l'enfant, cacher derrière une caisse pour ne pas se faire attraper par les pirates. ",
+      " \" Voilà mon enfant, je te redonne le pendentif de ton père. Garde le précieusement et ne le perds plus. \" ",
+      "L'enfant le récupère est vous remercie. Et vous remet la récompense qu'il vous avait promis. Il s'agit d'une PGM Ultima Ratio Hecate II, une arme à distance assez rare. L'enfant retourna chez lui, en ayant les larmes aux yeux. ",
+      "\n Je suis dans mon vaisseau  sauf que je me ve-sau. \n"
+    ],
+    "optionA": null,
+    "optionB": null,
+    "idIssueA": "VAISSEAU",
+    "idIssueB": null
+  },
+
+  "6": {
+    "type": "combat",
+    "scenario": [
+      "Vous avez gagné le combat!",
+      "Vous marchez en observant toute cette désolation environnante",
+      "De nombreux corps sans vie gisent sur la route",
+      "Vous apercevez au loin trois silhouettes. Vous vous rapprochez doucement jusqu'à comprendre que ces dernières sont  en train de dévorer un cadavre humain...",
+      "Devant vous, un arbre. Vous courez pour vous cacher derrière. Malheureusement, vous glissez sur une flaque de sang et renversez un baril en feu. Le bruit alerte les ennemis: <<Un humain, tuons-le!>>"
+    ],
+    "idEnnemi": "4",
+    "typeEnnemi": "tireur",
+    "idIssue": "8"
+  },
+
+  "8": {
+    "type": "combat",
+    "scenario": [
+      "Vous avez gagné le combat!",
+      "Vous reprenez la route vers le concessionnaire",
+      "Après une centaine de mètres, vous voyez un panneau publicitaire concernant le concessionnaire de vaisseaux. Vous êtes sur la bonne voie...",
+      "Vous arrivez devant un pont. Malheureusement, celui-ci est détruit. En contrebas, un ravin.",
+      "Ne connaissant d'autres route et vu le risque encouru à faire un détour, vous décidez de descendre dans le ravin puis de l'escalader",
+      "Arrivé en bas, vous entendez <<Le repas est servi!>>. Un ennemi court vers vous, impossible de fuir..."
+    ],
+    "idEnnemi": "2",
+    "typeEnnemi": "brute",
+    "idIssue": "10"
+  },
+
+  "10":{
+    "type":"combat",
+    "scenario": [
+      "Vous avez gagné le combat!",
+      "Vous reprenez la route vers le concessionnaire...",
+      "Vous arrivez enfin devant le concessionnaire. Une partie de la structure s'est effondrée, seul le hangar est intact. En revanche c'est calme, trop calme...",
+      "Vous entrez. Immédiatement, vous tombez nez à nez avec un ennemi. Derrière-lui, un chef de guerre en armure armé d'une masse d'arme impressionnante. Un de ses sbires semble réparer un vaisseau...",
+      "Le chef de guerre s'exclame: <<Laissez le moi, j'ai besoin deme dégourdir les jambes!"
+    ],
+    "idEnnemi": "6",
+    "typeEnnemi": "boss",
+    "idIssue": "12"
+  },
+
+  "12": {
+    "type": "decision",
+    "scenario": [
+      "Vous avez gagné le combat!",
+      "A la fin de ce combat, vous apercevez un sbire de chef de guerre mettre le feu au hangar. Vous ne voyez qu'un seul vaisseau. Un <<Nostromo>>, modèle qui permet les voyages interstellaires. Une aubaine... Mais il faut vite partir",
+      "Vous montez à bord et mettez le contact. Bonne nouvelle, tous les voyants sont au vert! Malheureusement, un ne l'est pas: celui du carburant.",
+      "Vous descendez du vaisseau et par chance, un baril,25 de carburant se trouve à quelques mètres du vaisseaux. Vous faites donc le plein...",
+      "Vous remontez à bord du Nostromo et décollez en catastrophe.",
+      "Une fois en sécurité, vous scannez votre carte stellaire, et remarquez qu'un baril d'essence seront nécessaires pour accéder aux trois planètes les plus proches, 2 barils pour celles plus lointaines et 3 pour Calypso, votre planète natale..."
+    ],
+    "optionA": null,
+    "optionB": null,
+    "idIssueA": "VAISSEAU",
+    "idIssueB": null
+  },
+
+
+  "14":{
+    "type":"combat",
+    "scenario": [
+      "Vous atterrissez sur Lumini.",
+      "Vous savez qu'il s'agit de la dernière étape avec de rentrer à la maison",
+      "Tout semble paisible sur cette planète. Vous vous trouvez dans une ville moderne ou buildings et nature coexistent de façon harmonieuse. Tout est si lumineux...",
+      "La population est dense. Vous croisez de nombreuses personnes, toutes vous saluent, sourient, vous demande si vous avez besoin d'aide sans que vous ne demandiez rien. En revanche vous remarquez quelque chose de troublant: toutes ces personnes ont les violets avec une spirale à leur centre. Etrange...",
+      "Afin d'obtenir la dernière coordonnées pour votre planète, vous devez trouver le mal caché qui ronge cette cité...",
+      "Midi sonne. Tout le monde marche et se dirige vers la même direction. Vous suivez la foule...",
+      "Vous arrivez devant une majestueuse cathédrale. Apparait en haut des marches de cette dernière une femme. Elle est vêtue d'une tunique violette dont une capuche cache son visage...",
+      "Après quelques secondes de silence, elle récite ce qui semble être une formule dans un dialecte inconnu. Subitement, elle s'interrompt et dit <<Un intrus est présent>>. Elle  vous désigne du doigt. La foule s'écarte et forme un cercle autour de vous. Deux gardes et deux fusiliers impériaux vous encerclent : <<On ne sait pas qui tu es ni d'où tu viens mais c'est ici que ta vie va prendre fin>>"
+    ],
+    "idEnnemi": "8",
+    "typeEnnemi": "tireur",
+    "idIssue": "16"
+  },
+
+  "16": {
+    "type":"combat",
+    "scenario": [
+      "Vous avez gagné le combat!",
+      "La femme mystérieuse, escortée par deux géants impériaux, se réfugie dans la cathédrale. La foule reste immobile, silencieuse. Vous décidez de la poursuivre",
+      "Les portes de la cathédrale sont fermées. Vous les détruisez avec votre pistolet laser. A l'intérieure, la femme mystérieuse est absente. En revanche, un garde impérial vous attend..."
+    ],
+    "idEnnemi": "10",
+    "typeEnnemi": "brute",
+    "idIssue": "18"
+  },
+
+  "18": {
+    "type": "combat",
+    "scenario": [
+      "Vous avez gagné le combat!",
+      "Vous décidez d'accéder à la tour principale de la cathédrale. Après avoir gravi ses innombrables marches, vous voilà au sommet...",
+      "Devant vous, la femme mystérieuse et sa garde rapprochée. Vous lui demandez ce qu'il se passe dans cette ville",
+      "Elle retire sa capuche. Sous cette capuche une femme au visage angélique. <<En temps normal je n'aurai bien évidemment rien répondu mais comme tu vis tes derniers instants, je vais t'accorder une réponse. J'ai développé un pouvoir très puissant qui me permet de manipuler la population. Ainsi, j'évite tout conflit et instaure une paix inébranlable.>>",
+      "Vous répondez qu'il est indigne de pratiquer ce genre de magie noire. Son visage se métamorphose et devient d'une monstruosité absolue <<Quiconque se trouvant sur mon chemin périra dans la douleur!>>"
+    ],
+    "idEnnemi": "12",
+    "typeEnnemi": "superBoss",
+    "idIssue": "20"
+  },
+
+  "20": {
+    "type": "decison",
+    "scenario": [
+      "Vous avez gagné le combat!",
+      "Du haut de la tour, vous constatez que toute la population reprend ses esprits et vous acclame. Vous avez sauvé des ténèbres toute la ville!",
+      "Apparait devant vous, dans un halo de lumière, la dernière coordonnée nécessaire de Calypso. De plus, vous sentez qu'un pouvoir vous envahi: c'est celui de la femme mystérieuse! Comment l'utiliserez-vous?...",
+      "Vous récupérez l'ensemble de son équipement",
+      "Vous retournez sans plus attendre vers le Nostromo. Sur le chemin, deux barils de carburant! Vous avec donc en votre possession 3 barils de carburant. Plus rien ne vous empêche de rentrer chez vous!",
+      "Une fois à bord du Nostromo, vous faites le plein, entrez les coordonnées puis décollez..."
+    ],
+    "optionA": null,
+    "optionB": null,
+    "idIssueA": "VAISSEAU",
+    "idIssueB": null
+  },
+
+  "22": {
+    "type": "decision",
+    "scenario": [
+      "Vous atterrissez sur Tremor.",
+      "Vous savez qu'il s'agit de la dernière étape avec de rentrer à la maison...",
+      "Cette planète est dévastée. Elle vous rappelle Utopia",
+      "Vous descendez de votre vaisseau. Rapidement, plusieurs personnes viennent à votre rencontre: << Vous devez nous aider étranger. Vous êtes notre dernier espoir! >>" ,
+      "Après discussion, vous comprenez qu'un tyran dirige d'une main de fer cette planète. On vous indique où le trouver, deux chemins sont possibles. Le premier, le moins sûr, sera semé d'embuches mais vous permettra de débarrasser les sbires du tyran de cette planète . Le second, est un passage secret souterrain qui vous permettra d'accéder au tyran en peu de temps...",
+      "Que choisissez-vous?"
+    ],
+    "optionA": "Venger les habitants",
+    "optionB": "Accéder au tyran via le passage secret?",
+    "idIssueA": "24",
+    "idIssueB": "28"
+  },
+
+  "24": {
+    "type": "combat",
+    "scenario": [
+      "Vous ne choisissez pas la simplicité mais les habitants vous en seront d'avantage redevable.",
+      "Après une heure de marche, vous arrivez aux porte d'une forteresse. Une voix vous interpelle: <<Dégage d'ici misérable>>. Vous levez la tête et défiez du regard la personne d'où provient cette voix.",
+      "La porte de la forteresse s'ouvre: un ennemi vient dans votre direction. Il veut en découdre..."
+    ],
+    "idEnnemi": "14",
+    "typeEnnemi":"brute",
+    "idIssue": "26"
+  },
+
+  "26": {
+    "type": "combat",
+    "scenario": [
+      "Vous avez gagné le combat!",
+      "Vous pénétrez dans la forteresses. Elle est magnifique, dans un état irréprochable. Très différent ce que vous avez pu voir avant...",
+      "Vous surprenez un sbire du tyran pleureur: << Ce monstre est indigne de nous diriger>> . Vous vous approchez  lui les mains en l'air et lui demandez pourquoi: <<Cela fait des années que je le sers. J'ai commis des actes terribles pour lui et hier, il a ordonné un raid dans mon village car il était sûr que des opposants s'y trouvaient. Il n'en était rien, toute ma famille est morte... Je me vengerai! >>",
+      "Vous lui dites alors que vous êtes en mesure de l'aider: << Etranger, des centaines de soldates occupent cette forteresse. Ce que je peux faire c'est lancer une alerte afin de créer une diversion. Si vous parvenez à tuer le tyran, ses sbires et moi compris vous obéiront. Vous semblez être quelqu'un de bien... Au fait, je m'appelle Kaison! >> Vous acceptez.",
+      "Une alarme retenti. Vous vous dirigez vers l'endroit où se trouve le tyran",
+      "Dans un couloir, vous tombez sur un ennemi: <<C'est une diversion! Il y a un traître parmi nous!>>. Vous devez vite le réduire au silence avant que votre plan ne tombe à l'eau..."
+    ],
+    "idEnnemi": "16",
+    "typeEnnemi": "tireur",
+    "idIssue": "28"
+  },
+
+  "28": {
+    "type" : "combat",
+    "scenario": [
+      "Vous voilà devant l'entrée du donjon du tyran. Vous entrez...",
+      "Une voix retenti <<Quel agitateur ose pénétrer dans mon royaume?>>. Vous restez silencieux, déterminé à mettre un terme à cette tyrannie",
+      "<<Comment osez-vous perturber l'harmonie de cette planète?>>. Vous lui répondez que l'harmonie est étrangère à ces terres et que le temps est venu de libérer le peuple. <<L'ordre et le pouvoir s'obtiennent par le sang. Pour les conserver, il en sera de même!>>. Il sort de sa poche un diamant, le serre fort. Un halo de lumière enveloppe le tyran pendant quelques secondes. Le halo se dissipe et laisse apparaitre un jeune homme au physique imposant: <<Voyons ce que tu as dans le ventre!>>"
+    ],
+    "idEnnemi": "18",
+    "typeEnnemi": "superBoss",
+    "idIssue": "30"
+  },
+
+  "30": {
+    "type": "decison",
+    "scenario": [
+      "Vous avez gagné le combat!",
+      "Apparait devant vous, dans un halo de lumière, la dernière coordonnée nécessaire de Calypso. A vos pieds, le diamant qu'a utilisé le tyran. Comment l'utiliserez-vous?...",
+      "Vous récupérez l'ensemble de son équipement",
+      "Vous descendez du donjon. Dans la cour de la forteresse, tous les sbires du tyran sont à genoux. Ils vous regardent et attendent vos ordres. Que faire? Remplacer le tyran ou laisser Kaison prendre ce rôle?",
+      "Vous appelez Kaison et lui proposez ce rôle. Il accepte :<<Soyez sûr que les choses vont changer!>>",
+      "Avant de vous diriger vers le Nostromo, vous récupérez deux barils de carburant dans la forteresse. Kaison vous aide à les porter jusqu'à votre vaisseau.",
+      "Merci! Tu seras toujours le bienvenu ici!",
+      "Une fois à bord du Nostromo vous faites le plein, entrez les coordonnées puis décollez..."
+    ],
+    "optionA": null,
+    "optionB": null,
+    "idIssueA": "VAISSEAU",
+    "idIssueB": null
+  }
+
+}

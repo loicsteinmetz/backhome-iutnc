@@ -1,0 +1,46 @@
+AnchorPane{
+    -fx-background-color:black;
+}
+
+ImageView{
+    -fx-opacity:0;
+}
+
+Label{
+    -fx-wrap-text:true;
+}
+
+#ecran{
+    -fx-font-size:25;
+    -fx-text-fill:white;
+    -fx-font-family: "Roboto Slab";
+    -fx-text-alignment: center;
+    -fx-line-spacing: 0.8em;
+    -fx-alignment:center;
+    -fx-min-width:800;
+    -fx-min-height:600;
+    -fx-max-width:800;
+    -fx-max-height:600;
+    -fx-opacity:0;
+    -fx-padding: 0 100px;
+}
+
+HBox{
+    -fx-min-width:800;
+    -fx-max-width:800;
+    -fx-alignment:center;
+    -fx-spacing:50px;
+}
+
+.choix{
+    -fx-padding:20 15;
+    -fx-font-size:16;
+    -fx-text-fill:white;
+    -fx-background-color: #1F2C2F;
+    -fx-font-family: "Roboto Slab";
+}
+
+.choix:hover{
+    -fx-background-color: #CB4242;
+    -fx-cursor: hand;
+}

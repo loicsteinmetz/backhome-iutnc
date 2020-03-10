@@ -1,0 +1,56 @@
+package models;
+
+import lib.org.json.simple.JSONObject;
+import lib.org.json.simple.parser.ParseException;
+import utils.JsonParser;
+
+import java.io.IOException;
+
+/**
+ * Modélisation d'un pnj étant de type "Superboss" au combat
+ */
+public class SuperBoss extends Boss {
+
+    private Arme armeLegendaire;
+
+    /**
+     * Constructeur
+     * @param id l'id du superboss
+     */
+    public SuperBoss(int id){
+        super(id);
+    }
+    
+
+    /**
+     * Getter
+     * @return l'arme légendaire du superboss
+     */
+    public Arme getArmeLegendaire() {
+        return armeLegendaire;
+    }
+
+    /**
+     * Récupère les données de configuration du superboss
+     */
+    @Override
+    public void initConfiguration() {
+        String chemin = "/data/ennemis.json";
+        String cle = Integer.toString(id);
+        JSONObject ennemi = null;
+        try {
+            ennemi = new JsonParser().parseObject(chemin, cle);
+        } catch (IOException | ParseException e) {
+            e.printStackTrace();
+        }
+        if (ennemi != null){
+            nom = ennemi.get("nom").toString();
+            description = ennemi.get("description").toString();
+            pv = (int) (long) ennemi.get("pv");
+            int idArme = (Integer.parseInt(ennemi.get("idArme").toString()));
+            int idArmeLegendraire = (Integer.parseInt(ennemi.get("idArmeLegendaire").toString()));
+            arme = new Arme(idArme);
+            armeLegendaire = new Arme(idArmeLegendraire);
+        }
+    }
+}

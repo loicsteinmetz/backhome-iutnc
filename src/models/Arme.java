@@ -1,28 +1,34 @@
 package models;
 
+import lib.org.json.simple.JSONObject;
+import lib.org.json.simple.parser.ParseException;
+import utils.JsonParser;
+
+import java.io.IOException;
+
 /**
  * Modélisation d'une arme générique
  * (utilisées pour les pnj)
  */
-public class Arme {
+public class Arme extends Item implements Configurable {
 
-    private int degats;
-    private String nom;
+    protected int degats;
 
     /**
-     * Constructeur d'arme générique
-     * @param puissance puissance de l'arme
+     * Constructeur
+     * @param id id de l'arme
      */
-    public Arme(int puissance){
-        degats = puissance;
+    public Arme(int id){
+        super(id);
+        this.initConfiguration();
     }
 
     /**
      * Lance une attaque sur un personnage, avec une arme choisie
      * @param cible victime de l'attaque
      */
-    public void attaquer(Personnage cible){
-        cible.subirAttaque(this.degats);
+    public int attaquer(Personnage cible){
+         return cible.subirAttaque(this.degats);
     }
 
     /**
@@ -47,5 +53,24 @@ public class Arme {
      */
     public void setNom(String nom) {
         this.nom = nom;
+    }
+
+    /**
+     * Récupère les données de configuration de l'arme
+     */
+    @Override
+    public void initConfiguration() {
+        String chemin = "/data/armes.json";
+        String cle = Integer.toString(id);
+        JSONObject arme = null;
+        try {
+            arme = new JsonParser().parseObject(chemin, cle);
+        } catch (IOException | ParseException e) {
+            e.printStackTrace();
+        }
+        if (arme != null){
+            nom = arme.get("nom").toString();
+            degats = (int) (long) arme.get("degats");
+        }
     }
 }

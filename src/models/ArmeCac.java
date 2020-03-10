@@ -1,33 +1,46 @@
 package models;
 
+import static models.Inventaire.getInventaire;
+
 /**
- * Modélisation d'une arme au corps à corps
- * (utilisée pour le héros)
+ * Modélisation d'une arme au corps à corps (utilisée pour le héros)
  */
 public class ArmeCac extends Arme {
 
-    /**
-     * Constructeur d'arme au cac
-     * @param puissance puissance de l'arme
-     * @param nom nom de l'arme
-     */
-    public ArmeCac(int puissance, String nom){
-        super(puissance);
-        this.setNom(nom);
-    }
+	/**
+	 * Constructeur
+	 * 
+	 * @param id l'id de l'arme
+	 */
+	public ArmeCac(int id) {
+		super(id);
+	}
 
-    /**
-     * Lance une attaque sur un personnage
-     * @param cible victime de l'attaque
-     */
-    @Override
-    public void attaquer(Personnage cible) {
-        if (cible instanceof Brute){
-            cible.subirAttaque(this.getDegats() * 0.75);
-        }
-        if (cible instanceof Tireur){
-            cible.subirAttaque(this.getDegats() * 1.5);
-        }
-    }
+	/**
+	 * Lance une attaque sur un personnage
+	 * @param cible victime de l'attaque
+	 */
+	@Override
+	public int attaquer(Personnage cible) {
+		if (cible instanceof Brute) {
+			cible.subirAttaque(this.getDegats() * 0.75);
+			return (int)(this.getDegats() * 0.75);
+		} else {
+			if (cible instanceof Tireur) {
+				cible.subirAttaque(this.getDegats() * 1.5);
+				return(int)(this.getDegats() * 1.5);
+			}
+			else {
+				if(cible instanceof Heros){
+					cible.subirAttaque(this.getDegats());
+					return this.getDegats()-getInventaire().getArmure().getResistance();
+				}
+				else{
+					cible.subirAttaque(this.getDegats());
+					return this.getDegats();
+				}				
+			}
+		}
+	}
 
 }

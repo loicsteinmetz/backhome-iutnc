@@ -1,23 +1,26 @@
 package models;
 
+import lib.org.json.simple.JSONObject;
+import lib.org.json.simple.parser.ParseException;
+import utils.JsonParser;
+
+import java.io.IOException;
+
 /**
  * Modélisation d'une armure
  * (utilisée par le héros)
  */
-public class Armure {
+public class Armure extends Item implements Configurable {
 	
 	private int resistance;
-	private String nom;
 
 	/**
-	 * Constructeur d'armure
-	 * @param res resistance de l'armure
-	 * @param nom nom de l'armure
+	 * Constructeur
+	 * @param id l'id de l'armure
 	 */
-	public Armure(int res, String nom)
-	{
-		this.resistance = res;
-		this.nom = nom;
+	public Armure(int id) {
+		super(id);
+		this.initConfiguration();
 	}
 
 	/**
@@ -30,11 +33,21 @@ public class Armure {
 	}
 
 	/**
-	 * Getter
-	 * @return nom de l'armure
+	 * Récupère les données de configuration de l'armure
 	 */
-	public String getNom()
-	{
-		return this.nom;
+	@Override
+	public void initConfiguration() {
+		String chemin = "/data/armures.json";
+		String cle = Integer.toString(id);
+		JSONObject armure = null;
+		try {
+			armure = new JsonParser().parseObject(chemin, cle);
+		} catch (IOException | ParseException e) {
+			e.printStackTrace();
+		}
+		if (armure != null){
+			nom = armure.get("nom").toString();
+			resistance = (int) (long) armure.get("resistance");
+		}
 	}
 }

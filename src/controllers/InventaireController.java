@@ -14,6 +14,9 @@ import utils.ViewLoader;
 
 import static models.Inventaire.getInventaire;
 
+/**
+ * Controleur de l'inventaire
+ */
 public class InventaireController extends Application {
 
     @FXML
@@ -38,7 +41,7 @@ public class InventaireController extends Application {
     @Controller
     private static final String STYLE = "/assets/css/Inventaire.css";
     @Controller
-    private static final Inventaire MODELE = getInventaire();
+    private Inventaire MODELE;
 
     /**
      * Retourne la vue associée au controller
@@ -63,10 +66,11 @@ public class InventaireController extends Application {
     }
 
     /**
-     * Initialisation de la vue
+     * Initialisation de la vue et du modèle
      */
     @FXML
     private void initialize(){
+        MODELE = getInventaire();
         armeCacNom.setText(MODELE.getArmeCac().getNom());
         armeCacDesc.setText("DEGATS  :  " + MODELE.getArmeCac().getDegats());
         armeDistNom.setText(MODELE.getArmeDist().getNom());

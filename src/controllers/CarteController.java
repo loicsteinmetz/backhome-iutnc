@@ -14,10 +14,13 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import models.Carte;
 import models.Planete;
+import models.Situation;
 import utils.EffetsJavaFx;
 import utils.ViewLoader;
 
+import static models.Carte.getCarte;
 import static models.Heros.getHeros;
+import static models.Inventaire.getInventaire;
 
 /**
  * Controller de la carte
@@ -29,7 +32,7 @@ public class CarteController extends Application {
     @Controller
     private static final String STYLE = "/assets/css/Carte.css";
     @Controller
-    private static final Carte MODELE = Carte.getCarte();
+    private static Carte MODELE;
 
     @FXML
     private ImageView hud;
@@ -63,10 +66,13 @@ public class CarteController extends Application {
     }
 
     /**
-     * Initialisation de la vue
+     * Initialisation de la vue et du modèle
      */
     @FXML
     private void initialize(){
+        MODELE = getCarte();
+        getHeros().soin();
+        getHeros().setSituation(Situation.VAISSEAU);
         chargeElementsInterface();
         chargeLocalisation();
         chargePlanetesDisponibles();
@@ -102,6 +108,7 @@ public class CarteController extends Application {
             box.setOpacity(0);
             box.getStyleClass().add("planete");
             Label nom = new Label();
+            nom.getStyleClass().add("nomPlanete");
             nom.setText(p.getNom());
             Label desc = new Label();
             desc.getStyleClass().add("descriptionPlanete");
@@ -122,7 +129,8 @@ public class CarteController extends Application {
         HBox box = (HBox) e.getSource();
         Planete nouvellePlanete = MODELE.getPlaneteParNom((String) box.getUserData());
         getHeros().setLocalisation(nouvellePlanete);
-        new ViewLoader().switchTo(VIEW, e, 0.5);
+        getInventaire().modifierCarburant(-100 * getHeros().getLocalisation().getNiveau());
+        new ViewLoader().switchTo(QueteController.getView(), e, 0.5);
     }
 
     /**

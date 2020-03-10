@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<AnchorPane fx:id="pane"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.DecisionController">
+
+    <ImageView fitHeight="600" fitWidth="800" fx:id="bg">
+        <Image url="/assets/img/landscape.png"/>
+    </ImageView>
+
+    <Label fx:id="ecran"/>
+
+    <HBox fx:id="btnBox" layoutY="600">
+        <Button fx:id="issueA" text="issueA" styleClass="choix" onAction="#issueA"/>
+        <Button fx:id="issueB" text="issueB" styleClass="choix" onAction="#issueB"/>
+    </HBox>
+
+</AnchorPane>

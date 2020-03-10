@@ -1,0 +1,115 @@
+{
+  "1":{
+    "nom": "Ozen le sage",
+    "description": "un petit gobelin ",
+    "idArme": "1",
+    "pv": 50
+  },
+
+  "2":{
+    "nom": "Galdur",
+    "description": "un orc",
+    "idArme": "2",
+    "pv": 100
+  },
+
+  "3":{
+    "nom": "Captaine Banwana",
+    "description": "le roi gorille",
+    "idArme": "3",
+    "pv": 150
+  },
+
+  "5":{
+    "nom": "Tink Berval",
+    "description": "Le Rebelle de la ville",
+    "idArme": "7",
+    "pv": 100
+  },
+
+  "7":{
+    "nom": "Chô Peleux",
+    "description": "Un Bip-Bip venère ",
+    "idArme": "9",
+    "pv": 150
+  },
+
+  "9":{
+    "nom": "Jul'Tarv",
+    "description": "un gnome alcoolisé",
+    "idArme": "11",
+    "pv": 100
+  },
+
+  "11":{
+    "nom": "Loudmerawa Le Marin",
+    "description": "Le moussaillon",
+    "idArme": "13",
+    "pv": 100
+  },
+
+  "13":{
+    "nom": "Oshar Marif",
+    "description": "le chef des pirates",
+    "idArme": "15",
+    "pv": 150
+  },
+
+  "4": {
+    "nom": "Rator",
+    "description": "une balle, un mort",
+    "idArme": "4",
+    "pv": 100
+  },
+
+  "6": {
+    "nom": "Goroth",
+    "description": "chef de guerre",
+    "idArme": "6",
+    "pv":300
+  },
+
+  "8": {
+    "nom": "Troye",
+    "description": "balle filante",
+    "idArme": "8",
+    "pv": 250
+  },
+
+  "10": {
+    "nom": "Gareth",
+    "description": "le fou",
+    "idArme": "10",
+    "pv":250
+  },
+
+  "12": {
+    "nom": "Celesta",
+    "description": "Impératrice de Lumini",
+    "idArme": "12",
+    "idArmeLegendaire": "14",
+    "pv": 400
+  },
+
+  "14": {
+    "nom": "Katorus",
+    "description": "lieutenant Xénomorphe",
+    "idArme": "16",
+    "pv": 250
+  },
+
+  "16": {
+    "nom": "Viramar",
+    "description": "tireur d'exception",
+    "idArme": "18",
+    "pv": 250
+},
+
+  "18": {
+    "nom": "Lazarus",
+    "description": "tyran de Tremor",
+    "idArme": "20",
+    "idArmeLegendaire": "22",
+    "pv": 400
+  }
+}
