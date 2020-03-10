@@ -1,11 +1,13 @@
 package models;
 
+import lib.org.json.simple.JSONArray;
 import lib.org.json.simple.JSONObject;
 import lib.org.json.simple.parser.ParseException;
 import utils.JsonParser;
 
 import java.io.IOException;
 
+import static models.Carte.getCarte;
 import static models.Inventaire.getInventaire;
 
 public class Sauvegarde {
@@ -25,6 +27,12 @@ public class Sauvegarde {
             getInventaire().setArmure(new Armure((int)(long)save.get("idArmure")));
             getInventaire().modifierCarburant((int)(long)save.get("carbu"));
 
+            JSONArray a = (JSONArray) save.get("planetes");
+            for(Object p : a){
+                if(p.visitee) {
+                    getCarte().getPlaneteParNom(p.toString()).setVisitee();
+                }
+            }
         }
     }
 }
