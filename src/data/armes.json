@@ -142,14 +142,21 @@
     "nom": "Gatling AZ-1",
     "degats": 35
   },
+
+  "32": {
+    "type": "generique",
+    "nom": "Mitrailleuse à protons",
+    "degats": 10
+  },
+
   "100": {
     "type": "cac",
-    "nom": "Epee",
+    "nom": "Epée en fer",
     "degats": 100
   },
   "101": {
     "type": "distance",
-    "nom": "Pistolet",
+    "nom": "Pistolet AA-1",
     "degats": 100
   }
 }
