@@ -64,7 +64,7 @@
       "Et là ! Dans le dernier bâtiment au dernier étage, vous trouvez une pièce remplir de documents sur les planètes au alentour. Et un indice sur Calypso !  ",
       " \"Cette pièce devait appartenir à une personne venue de Calypso ou une des planètes qui est proche de celle-ci. \" \n \" Félicitation pour cet indice ! Continue comme çà\"\n  ",
       "Cette journée a été très rude pour toi, il est l’heure pour toi de partir de cette planète afin de pouvoir continuer ta destiné ! ",
-      "Je suis dans mon vaisseau  sauf que je me ve-sau."
+      "Je suis dans le vaisseau  sauf que je me ve-sau."
     ],
     "optionA": null ,
     "optionB": null ,
@@ -75,7 +75,7 @@
   "7": {
     "type": "decision",
     "scenario": [
-      "\n BIENVENUE sur Ienos, des terres de feu \n",
+      "\n BIENVENUE SUR IENOS, Des terres de feu \n",
       "Elle est considérée comme l’une des planètes les plus hostile du système. L’espèce a dû reculer sous les terres pour fuir cette aridité pour y construire leurs villes. La planète Ienos est principalement constituée de sable et de roches volcaniques de couleur rouges.",
       "Avant votre arrivée à la station de « Nowso », vous apercevez un paysage désertique d’une couleur rouge sang, l’aventure  sur cette planète va être difficile. ",
       "Vous avez atterri à la station « Nowso », la plus grande station pour vaisseaux. Lors de la sortie de ton vaisseau, vous regardez aux alentours et vous voyez la sortie de la station.",
@@ -119,9 +119,9 @@
   "13": {
     "type": "combat",
     "scenario" : [
-      "Vous êtes tellement indiscret que vous vous faites repérer par Chô Peleux ! Cela est du a votre odeur corporelle...",
+      "Vous êtes tellement indiscret que vous vous faites repérer par Chô Peleux ! ",
       "Dommage pour vous, maintenant vous avez plus le choix. Préparez-vous au combat.",
-      "Chô Peleux : \" Comment oses-tu venir dans ma demeure ! Ton odeur est tellement différente que ceux de cette planète que j'ai pu te repérer. Mais c'est dommage pour toi, maintenant, tu vas mourir pour avoir pénétré ma demeure ! \""
+      "Chô Peleux : \" Comment oses-tu venir dans ma demeure ! C'est dommage pour toi, maintenant, tu vas mourir pour avoir pénétré ma demeure ! \""
     ],
     "idEnnemi" : "7",
     "typeEnnemi": "boss",
@@ -132,10 +132,11 @@
     "type": "decision",
     "scenario": [
       "Vous faite le chemin de retour à Noswo pour valider votre quête",
-      "Lors de votre arrivée à « Noswo », vous vous rendez au point de rendez-vous, le groupe d’hommes arrivent peu après vous. Tu leur donnes l'objet de la quête en échange de l'équipement et de l’essence. ",
-      "\n vous avez reçu Plastron Credo de la gloire ! \n",
+      "Lors de votre arrivée à « Noswo », vous vous rendez au point de rendez-vous, le groupe d’hommes arrivent peu après vous. Vous donnez au chef de groupe l'objet demandé. ",
+      "\n Vous avez reçu Plastron Credo de la gloire ! \n",
       "En plus, vous avez pu trouver un indice sur Calypso grâce à l'armure qui est Made in Calypso.",
-      "Chef de groupe : \" voilà, nous avons finis avec toi ! Merci encore et je te souhaite Bonne chance et Courage. Salut \" Le groupe disparaît dans une ruelle... "
+      "Chef de groupe : \" Voilà, nous avons finis avec toi ! Merci encore et je te souhaite Bonne chance et Courage. Salut \" Le groupe disparaît dans une ruelle... ",
+      "Je suis dans le vaisseau  sauf que je me ve-sau."
     ],
     "optionA": null ,
     "optionB": null ,
@@ -188,7 +189,7 @@
       "Vous retournez voir l'enfant, cacher derrière une caisse pour ne pas se faire attraper par les pirates. ",
       " \" Voilà mon enfant, je te redonne le pendentif de ton père. Garde le précieusement et ne le perds plus. \" ",
       "L'enfant le récupère est vous remercie. Et vous remet la récompense qu'il vous avait promis. Il s'agit d'une PGM Ultima Ratio Hecate II, une arme à distance assez rare. L'enfant retourna chez lui, en ayant les larmes aux yeux. ",
-      "\n Je suis dans mon vaisseau  sauf que je me ve-sau. \n"
+      "\n Je suis dans le vaisseau  sauf que je me ve-sau. \n"
     ],
     "optionA": null,
     "optionB": null,
