@@ -1,0 +1,113 @@
+{
+  "1": {
+    "date": "12654216",
+    "idArmeCac": "100",
+    "idArmeDistance": "101",
+    "idArmure": "100",
+    "carbu": 125,
+    "planetes": [
+      {
+        "nom": "Utopia",
+        "visitee": true
+      },
+      {
+        "nom": "Ienos",
+        "visitee": false
+      },
+      {
+        "nom": "Zéphyr",
+        "visitee": false
+      },
+      {
+        "nom": "Hermès",
+        "visitee": false
+      },
+      {
+        "nom": "Lumini",
+        "visitee": false
+      },
+      {
+        "nom": "Tremor",
+        "visitee": false
+      },
+      {
+        "nom": "Calypso",
+        "visitee": false
+      }
+    ]
+  },
+  "2": {
+    "date": "987654321",
+    "armeCac": "",
+    "armeDistance": "",
+    "armure": "",
+    "carbu": "",
+    "planetes": [
+      {
+        "nom": "Utopia",
+        "visitee": true
+      },
+      {
+        "nom": "Ienos",
+        "visitee": false
+      },
+      {
+        "nom": "Zéphyr",
+        "visitee": false
+      },
+      {
+        "nom": "Hermès",
+        "visitee": false
+      },
+      {
+        "nom": "Lumini",
+        "visitee": false
+      },
+      {
+        "nom": "Tremor",
+        "visitee": false
+      },
+      {
+        "nom": "Calypso",
+        "visitee": false
+      }
+    ]
+  },
+  "3": {
+    "date": "123456789",
+    "armeCac": "",
+    "armeDistance": "",
+    "armure": "",
+    "carbu": "",
+    "planetes": [
+      {
+        "nom": "Utopia",
+        "visitee": true
+      },
+      {
+        "nom": "Ienos",
+        "visitee": false
+      },
+      {
+        "nom": "Zéphyr",
+        "visitee": false
+      },
+      {
+        "nom": "Hermès",
+        "visitee": false
+      },
+      {
+        "nom": "Lumini",
+        "visitee": false
+      },
+      {
+        "nom": "Tremor",
+        "visitee": false
+      },
+      {
+        "nom": "Calypso",
+        "visitee": false
+      }
+    ]
+  }
+}
