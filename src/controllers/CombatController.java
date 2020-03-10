@@ -391,6 +391,7 @@ public class CombatController extends Application {
                     getHeros().setSituation(Situation.DEBUT);
                     vl.switchTo(QueteController.getView(), event);
                 } else {
+                    getHeros().retour();
                     getHeros().setSituation(Situation.VAISSEAU);
                     vl.switchTo(CarteController.getView(), event);
                 }

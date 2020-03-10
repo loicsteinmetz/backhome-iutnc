@@ -13,6 +13,7 @@ public class Heros extends Personnage {
 
     private Planete localisation;
     private Situation situation;
+    private Planete localisationPrecedente;
 
     /**
      * Constructeur privé
@@ -48,6 +49,7 @@ public class Heros extends Personnage {
      * @param localisation localisation du héros
      */
     public void setLocalisation(Planete localisation) {
+        localisationPrecedente = this.localisation;
         this.localisation = localisation;
     }
     
@@ -86,5 +88,10 @@ public class Heros extends Personnage {
 
     public static void reset(){
         HEROS = new Heros();
+    }
+
+    public void retour(){
+        getInventaire().modifierCarburant(localisation.getNiveau() * 100);
+        localisation = localisationPrecedente;
     }
 }
