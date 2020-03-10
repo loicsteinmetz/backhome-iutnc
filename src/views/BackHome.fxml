@@ -16,7 +16,7 @@
         <Image url="/assets/img/stars_bg.png"/>
     </ImageView>
 
-    <GridPane>
+    <GridPane fx:id="grid">
 
         <HBox GridPane.columnIndex="1" GridPane.rowIndex="1">
             <ImageView fx:id="vaisseau" fitHeight="150.0" preserveRatio="true">

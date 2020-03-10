@@ -82,4 +82,8 @@ public class Quete implements Configurable {
         idProchainEvenement = id;
         initConfiguration();
     }
+
+    public static void reset(){
+        QUETE = new Quete();
+    }
 }

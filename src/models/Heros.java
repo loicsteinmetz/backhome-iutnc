@@ -83,4 +83,8 @@ public class Heros extends Personnage {
     public void soin(){
         pv = 100;
     }
+
+    public static void reset(){
+        HEROS = new Heros();
+    }
 }

@@ -16,6 +16,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import models.BackHome;
 import models.Combat;
 import models.Situation;
 import utils.EffetsJavaFx;
@@ -373,10 +374,14 @@ public class CombatController extends Application {
         pane.setOnMouseClicked((e)->{
             if (getHeros().enVie()){
                 if (MODELE.getIdIssue() == 0){
-                    getHeros().setSituation(Situation.VAISSEAU);
-                    getHeros().getLocalisation().recompenses();
-                    getInventaire().modifierCarburant(125);
-                    vl.switchTo(CarteController.getView(), event);
+                    if (!BackHome.finJeu()){
+                        getHeros().setSituation(Situation.VAISSEAU);
+                        getHeros().getLocalisation().recompenses();
+                        getInventaire().modifierCarburant(125);
+                        vl.switchTo(CarteController.getView(), event);
+                    } else {
+                        vl.switchTo(BackHomeController.getView(), event);
+                    }
                 } else {
                     getQuete().prochainEvenement(MODELE.getIdIssue());
                     vl.switchTo(QueteController.getView(), event);

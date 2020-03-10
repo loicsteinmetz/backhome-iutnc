@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import models.BackHome;
 import utils.EffetsJavaFx;
@@ -30,6 +31,8 @@ public class BackHomeController extends Application {
 
     @FXML
     private AnchorPane pane;
+    @FXML
+    private GridPane grid;
     @FXML
     private Label titre;
     @FXML
@@ -66,6 +69,17 @@ public class BackHomeController extends Application {
     private void initialize(){
         MODELE = new BackHome();
         EffetsJavaFx.defilementBg(starsBg1, starsBg2);
+        if (BackHome.finJeu()){
+            grid.setDisable(true);
+            grid.setVisible(false);
+            Label label = new Label(MODELE.getScenarioFin()[0]);
+            label.setId("ecran");
+            label.setOpacity(0);
+            label.setUserData(0);
+            label.setOnMouseClicked(this::passeTexte);
+            pane.getChildren().add(label);
+            EffetsJavaFx.fadeIn(label, 2.0, 1.5);
+        }
     }
 
     /**
@@ -77,7 +91,7 @@ public class BackHomeController extends Application {
         titre.setVisible(false);
         Transition fadeOut = EffetsJavaFx.fadeOut(vaisseau, 1.5, 0);
         fadeOut.setOnFinished((e) -> {
-            Label label = new Label(MODELE.getScenario()[0]);
+            Label label = new Label(MODELE.getScenarioDebut()[0]);
             label.setId("ecran");
             label.setOpacity(0);
             label.setUserData(0);
@@ -95,15 +109,22 @@ public class BackHomeController extends Application {
     private void passeTexte(Event event){
         Label label = (Label) event.getSource();
         int index = (int) label.getUserData() + 1;
-        if (index < MODELE.getScenario().length){
+        String[] scenario = BackHome.finJeu() ? MODELE.getScenarioFin() : MODELE.getScenarioDebut();
+        if (index < scenario.length){
             label.setOpacity(0);
-            label.setText(MODELE.getScenario()[index]);
+            label.setText(scenario[index]);
             EffetsJavaFx.fadeIn(label, 2, 0);
             label.setUserData(index);
-        } else if (index == MODELE.getScenario().length) {
+        } else if (index == scenario.length) {
             label.setDisable(true);
             label.setVisible(false);
-            new ViewLoader().switchTo(QueteController.getView(), event, 2);
+            ViewLoader vl = new ViewLoader();
+            if (!BackHome.finJeu()){
+                vl.switchTo(QueteController.getView(), event, 2);
+            } else {
+                BackHome.resetJeu();
+                vl.switchTo(BackHomeController.getView(), event);
+            }
         }
     }
 }

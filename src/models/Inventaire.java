@@ -95,5 +95,9 @@ public class Inventaire {
 	public void setArmure(Armure armure){
 		this.armure=armure;
 	}
+
+	public static void reset(){
+		INVENTAIRE = new Inventaire();
+	}
 }
 
