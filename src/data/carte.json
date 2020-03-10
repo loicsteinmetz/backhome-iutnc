@@ -51,9 +51,9 @@
   },
   {
     "nom":"Tremor",
-    "niveau":"22",
+    "niveau":"2",
     "planetesVoisines": ["calypso"],
-    "idPremierEvenement": "2",
+    "idPremierEvenement": "22",
     "idRecompenseArmeCac": "28",
     "idRecompenseDistance": "30",
     "idRecompenseArmure": "4",
