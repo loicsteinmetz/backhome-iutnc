@@ -1,9 +1,9 @@
 {
   "1": {
     "date": "12654216",
-    "idArmeCac": "100",
-    "idArmeDistance": "101",
-    "idArmure": "100",
+    "idArmeCac": 1,
+    "idArmeDistance": 3,
+    "idArmure": 1,
     "carbu": 125,
     "planetes": [
       {
@@ -38,10 +38,10 @@
   },
   "2": {
     "date": "987654321",
-    "armeCac": "",
-    "armeDistance": "",
-    "armure": "",
-    "carbu": "",
+    "idArmeCac": 100,
+    "idArmeDistance": 101,
+    "idArmure": 100,
+    "carbu": 125,
     "planetes": [
       {
         "nom": "Utopia",
@@ -75,10 +75,10 @@
   },
   "3": {
     "date": "123456789",
-    "armeCac": "",
-    "armeDistance": "",
-    "armure": "",
-    "carbu": "",
+    "idArmeCac": 100,
+    "idArmeDistance": 101,
+    "idArmure": 100,
+    "carbu": 125,
     "planetes": [
       {
         "nom": "Utopia",
