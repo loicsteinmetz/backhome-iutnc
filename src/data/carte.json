@@ -43,7 +43,7 @@
     "nom":"Lumini",
     "niveau":"2",
     "planetesVoisines": ["calypso"],
-    "idPremierEvenement": "2",
+    "idPremierEvenement": "14",
     "idRecompenseArmeCac": "24",
     "idRecompenseDistance": "26",
     "idRecompenseArmure": "2",
@@ -51,7 +51,7 @@
   },
   {
     "nom":"Tremor",
-    "niveau":"2",
+    "niveau":"22",
     "planetesVoisines": ["calypso"],
     "idPremierEvenement": "2",
     "idRecompenseArmeCac": "28",

@@ -1,21 +1,21 @@
 {
   "1":{
     "nom": "Ozen le sage",
-    "description": "un petit gobelin ",
+    "description": "Un petit gobelin ",
     "idArme": "1",
     "pv": 50
   },
 
   "2":{
     "nom": "Galdur",
-    "description": "responsable des sanitaires",
+    "description": "Responsable des sanitaires",
     "idArme": "2",
     "pv": 100
   },
 
   "3":{
     "nom": "Captaine Banwana",
-    "description": "le roi gorille",
+    "description": "Le roi gorille",
     "idArme": "3",
     "pv": 150
   },
@@ -36,7 +36,7 @@
 
   "9":{
     "nom": "Jul'Tarv",
-    "description": "un gnome alcoolisé",
+    "description": "Un gnome alcoolisé",
     "idArme": "11",
     "pv": 100
   },
@@ -50,35 +50,35 @@
 
   "13":{
     "nom": "Oshar Marif",
-    "description": "le chef des pirates",
+    "description": "Le chef des pirates",
     "idArme": "15",
     "pv": 150
   },
 
   "4": {
     "nom": "Rator",
-    "description": "une balle, un mort",
+    "description": "Une balle, un mort",
     "idArme": "4",
     "pv": 100
   },
 
   "6": {
     "nom": "Goroth",
-    "description": "chef de guerre",
+    "description": "Chef de guerre",
     "idArme": "6",
     "pv":300
   },
 
   "8": {
     "nom": "Troye",
-    "description": "balle filante",
+    "description": "Balle filante",
     "idArme": "8",
     "pv": 250
   },
 
   "10": {
     "nom": "Gareth",
-    "description": "le fou",
+    "description": "Le fou",
     "idArme": "10",
     "pv":250
   },
@@ -93,23 +93,30 @@
 
   "14": {
     "nom": "Katorus",
-    "description": "lieutenant Xénomorphe",
+    "description": "Lieutenant Xénomorphe",
     "idArme": "16",
     "pv": 250
   },
 
   "16": {
     "nom": "Viramar",
-    "description": "tireur d'exception",
+    "description": "Tireur d'exception",
     "idArme": "18",
     "pv": 250
 },
 
   "18": {
     "nom": "Lazarus",
-    "description": "tyran de Tremor",
+    "description": "Tyran de Tremor",
     "idArme": "20",
     "idArmeLegendaire": "22",
     "pv": 400
+  },
+
+  "20": {
+    "nom": "Vekar",
+    "description": "Chef d'esquade",
+    "idArme": "2",
+    "pv": 100
   }
 }

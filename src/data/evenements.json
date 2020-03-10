@@ -14,15 +14,16 @@
   "4": {
     "type": "combat",
     "scenario": [
-      "Vous marchez en observant toute cette désolation environnante",
-      "De nombreux corps sans vie gisent sur la route",
-      "Vous entendez des voix au loin. Vous ralentissez le pas et vous cachez",
-      "A proximité, deux silhouettes. L'une d'entre elle dit :<<Si je croise encore un humain vivant, je lui tranche la tête! Le massacre d'hier ne m'a pas suffit>>",
-      "Malheureusement, vous entendez derrière vous une autre voix. Vous vous retournez: un Orc courir vers vous <<Il en reste un! Tuons-le!>> "
+      "Vous marchez en observant toute cette désolation environnante...",
+      "De nombreux corps sans vie gisent sur la route...",
+      "Vous entendez des voix au loin. Vous ralentissez le pas et vous cachez.",
+      "A proximité, une silhouette. Vous entendez: \"Si je croise encore un humain vivant, je lui tranche la tête! Le massacre d'hier ne m'a pas suffit\"",
+      "Malheureusement, vous entendez derrière vous une autre voix. Vous vous retournez: un Orc court vers vous \"Il en reste un! Tuons-le!\". Malheureusement pour lui, une maison explose et il disparait dans la déflagration.",
+      "\"Ce sera entre toi et moi!\""
     ],
     "idEnnemi": "2",
     "typeEnnemi": "brute",
-    "idIssue": "6"
+    "idIssue": "8"
   },
 
   "1": {
@@ -31,7 +32,7 @@
       "\n BIENVENUE sur Hermès, aux terres promises \n",
       "Cette planète a été abandonnée par l'espèce humaine,en laissant tout sur leur passage… Cette planète a pu renaître de ses cendres, suite à ses dégâts…. Et la nature a pu reprendre tous ces droits..",
       "Bonne Chance sur cette planète.",
-      "Vous descendez du vaisseau. Et a ce moment la, vous etes émerveiller du paysage verdoyant...  ",
+      "Vous descendez du vaisseau. Et a ce moment la, vous etes émerveiller du paysage verdoyant...",
       "Au loin, vous apercevez un gobelin qui semble faibles et faciles à tuer. Vous commencez à courir vers lui pour l'affronter. ",
       " \" Hé toi ! Sale gobelin prépare toi a mourir face a ma force ! \""
     ],
@@ -62,7 +63,7 @@
     "scenario": [
       "Après de longues heures de recherche, tu trouves une ville ravagée et tu te mets à chercher des indices.",
       "Et là ! Dans le dernier bâtiment au dernier étage, vous trouvez une pièce remplir de documents sur les planètes au alentour. Et un indice sur Calypso !  ",
-      " \"Cette pièce devait appartenir à une personne venue de Calypso ou une des planètes qui est proche de celle-ci. \" \n \" Félicitation pour cet indice ! Continue comme çà\"\n  ",
+      "\"Cette pièce devait appartenir à une personne venue de Calypso ou une des planètes qui est proche de celle-ci. \" \n \" Félicitation pour cet indice ! Continue comme çà\"\n  ",
       "Cette journée a été très rude pour toi, il est l’heure pour toi de partir de cette planète afin de pouvoir continuer ta destiné ! ",
       "Je suis dans le vaisseau  sauf que je me ve-sau."
     ],
@@ -220,8 +221,8 @@
       "Ne connaissant d'autres routes et vu le risque encouru à faire un détour, vous décidez de descendre dans le ravin puis de l'escalader.",
       "Arrivé en bas, vous entendez \"Le repas est servi!\". Un ennemi court vers vous, impossible de fuir..."
     ],
-    "idEnnemi": "2",
-    "typeEnnemi": "brute",
+    "idEnnemi": "20",
+    "typeEnnemi": "tireur",
     "idIssue": "10"
   },
 
@@ -266,7 +267,8 @@
       "Afin d'obtenir la dernière coordonnée pour votre planète, vous devez trouver le mal caché qui ronge cette cité...",
       "Midi sonne. Tout le monde marche et se dirige vers la même direction. Vous suivez la foule...",
       "Vous arrivez devant une majestueuse cathédrale. Apparait, en haut des marches de cette dernière, une femme. Elle est vêtue d'une tunique violette dont une capuche cache son visage...",
-      "Après quelques secondes de silence, elle récite ce qui semble être une formule dans un dialecte inconnu. Subitement, elle s'interrompt et dit \"Un intrus est présent\". Elle  vous désigne du doigt. La foule s'écarte et forme un cercle autour de vous. Un fusilier court vers vous : \"Veuillez m'excuser de vous déranger ainsi, mais l'Impératrice souhaite votre mort. Je ferai en sorte qu'elle soit rapide et indolore!\""
+      "Après quelques secondes de silence, elle récite ce qui semble être une formule dans un dialecte inconnu. Subitement, elle s'interrompt et dit \"Un intrus est présent\". Elle  vous désigne du doigt.",
+      " La foule s'écarte et forme un cercle autour de vous. Un fusilier court vers vous: \"Veuillez m'excuser de vous déranger ainsi, mais l'Impératrice souhaite votre mort. Je ferai en sorte qu'elle soit rapide et indolore!\""
     ],
     "idEnnemi": "8",
     "typeEnnemi": "tireur",
@@ -277,7 +279,7 @@
     "type":"combat",
     "scenario": [
       "Vous avez gagné le combat!",
-      "La femme mystérieuse, escortée par deux géants impériaux, se réfugie dans la cathédrale. La foule reste immobile, silencieuse. Vous décidez de la poursuivre",
+      "La femme mystérieuse, escortée par deux géants impériaux, se réfugie dans la cathédrale. La foule reste immobile, silencieuse. Vous décidez de la poursuivre...",
       "Les portes de la cathédrale sont fermées. Vous les détruisez avec votre pistolet laser. A l'intérieure, la femme mystérieuse est absente. En revanche, un garde impérial vous attend..."
     ],
     "idEnnemi": "10",
