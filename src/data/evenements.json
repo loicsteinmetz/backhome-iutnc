@@ -28,7 +28,7 @@
   "1": {
     "type": "combat",
     "scenario" : [
-      "\n BIENVENUE sur Hermès, aux terres promises \n",
+      "\n BIENVENUE SUR HERMÈS, Aux terres promises \n",
       "Cette planète a été abandonnée par l'espèce humaine,en laissant tout sur leur passage… Cette planète a pu renaître de ses cendres, suite à ses dégâts…. Et la nature a pu reprendre tous ces droits..",
       "Bonne Chance sur cette planète.",
       "Vous descendez du vaisseau. Et a ce moment la, vous etes émerveiller du paysage verdoyant...  ",
@@ -44,17 +44,25 @@
     "type": "combat",
     "scenario" : [
       "Vous entendez des bruits qui proviennent d'un buisson. Vous vous retournez est là ! Un Gorille surgit du buisson et semble vouloir ta peau ! ",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
       "Essaie de le vaincre afin de lui soutirer son arme ! ",
       "Le Gorille commença à crier : \" Je vais te tuer ! Ahah ! Ramène-toi, je vais te faire subir la même chose que tu as fait au gobelin ! Petit avorton !\" ",
-      " \" C'est ce que tu penses sale macaque ! Je vais te montrais, c'est qui ' Avorton ' ! \" "
+      " \" C'est ce que tu penses sale macaque ! Je vais te montrais, c'est qui \"Avorton\" ! \" "
     ],
     "idEnnemi" : "3",
     "typeEnnemi": "boss",
+    "idIssue" : "5"
+  },
+
+  "25": {
+    "type": "decision",
+    "scenario": [
+      "Bravo ! Tu as gagné le combat ! Tu as gagné l’arme du monstre.",
+      "Souhaitez-vous prendre le chemin pour la ville ou retourner dans le vaisseau ?"
+    ],
     "optionA": "Prendre le chemin pour la ville.",
     "optionB": "Retourner dans le vaisseau.",
-    "idIssueA" : "5",
-    "idIssueB" : "VAISSEAU"
+    "idIssueA": "5",
+    "idIssueB": "VAISSEAU"
   },
 
   "5": {
@@ -80,7 +88,7 @@
       "Avant votre arrivée à la station de « Nowso », vous apercevez un paysage désertique d’une couleur rouge sang, l’aventure  sur cette planète va être difficile. ",
       "Vous avez atterri à la station « Nowso », la plus grande station pour vaisseaux. Lors de la sortie de ton vaisseau, vous regardez aux alentours et vous voyez la sortie de la station.",
       "Vous y dirigez vers la sortie, un groupe d’hommes criant \" On cherche une personne pour nous aider à faire une quête importante ! \" Vous vous rapprochez d'eux pour les questionner sur cette quête et la récompense. ",
-      "Le chef du groupe : \" La quête consiste juste à ramener l’arme d’un grand boss, mais pas n’importe laquelle ! Celle de Chô Peleux un grand monstre que mon groupe et moi redoutons. La récompense sera un équipement unique et aussi de l’essence parce qu’ici, il est difficile d’en avoir. \"",
+      "Le chef du groupe : \" La quête consiste juste à ramener l’arme d’un grand boss, mais pas n’importe laquelle ! Celle de Chô Peleux un grand monstre que mon groupe et moi redoutons. La récompense sera un équipement unique. \"",
       "Vous acceptez directement la quête, car vous n'avez peur de rien, mais vous avez besoin d'équipement aussi."
     ],
     "optionA": "Prendre la porte EST",
@@ -92,8 +100,8 @@
   "9": {
     "type": "combat",
     "scenario" : [
-      "Vous acceptez et vous vous mettez en route, vous vous dirigez donc en dehors de la ville vers la destination de la quête. ",
-      "Quelques mètres après la sortie, vous vous faites interpeller par le rebelle ville. Il a aperçu vous êtes un étranger et donc c'est pour cela qui veut vous volez vos équipements.",
+      "Vous vous mettez en route, vous vous dirigez donc en dehors de la ville vers la destination de la quête. ",
+      "Quelques mètres après la sortie, vous vous faites interpeller par le rebelle ville. Il a aperçu vous êtes seul et pas du coin, c'est pour cela qui veut vous voler vos équipements.",
       "Le Bebelle: \" Hé toi ! Petit étranger ! Viens me voir ! Tu m'a l'air riche et bien équipé ! Viens donc me donner tout ce que tu as ! Sinon la mort t'arrivera !  \"  ",
       "\" Je préfère me battre que de me laisser voler comme ca ! Ramène-toi ! Je t'attends. \""
     ],
@@ -132,7 +140,8 @@
     "type": "decision",
     "scenario": [
       "Vous faite le chemin de retour à Noswo pour valider votre quête",
-      "Lors de votre arrivée à « Noswo », vous vous rendez au point de rendez-vous, le groupe d’hommes arrivent peu après vous. Vous donnez au chef de groupe l'objet demandé. ",
+      "Lors de votre arrivée à « Noswo », vous vous rendez au point de rendez-vous, le groupe d’hommes arrivent peu après vous. Vous donnez au chef de groupe l'objet demandé.",
+      "Il vous remet la récompense pour cette quête.",
       "\n Vous avez reçu Plastron Credo de la gloire ! \n",
       "En plus, vous avez pu trouver un indice sur Calypso grâce à l'armure qui est Made in Calypso.",
       "Chef de groupe : \" Voilà, nous avons finis avec toi ! Merci encore et je te souhaite Bonne chance et Courage. Salut \" Le groupe disparaît dans une ruelle... ",
@@ -147,12 +156,15 @@
   "17": {
     "type": "combat",
     "scenario": [
-      "\n BIENVENUE sur Zéphyr, du vent de l'ouest \n ",
-      "Elle constituée principalement de mer. Mais le problème, c’est qu’elle est difficile d’accès dû aux satellites qui tourne autour d’elle. De plus, cette planète est paradisiaque : eau turquoise, terre verdoyante, montagne bien enneigé, Forêt avec une multitude d’arbres différents. Elle est l'une des planètes les plus belles du système. \n\nZéphyr a amené Fortune, Gloire et Pouvoir, un homme avait amassé toutes les richesses du monde, son nom God Roger, Roi des pirates, ces dernières paroles incitaient tous les hommes de la planète à s’aventurer en mer.",
+      "\n BIENVENUE SUR ZÉPHYR, Du vent de l'ouest \n ",
+      "Elle constituée principalement de mer. Mais le problème, c’est qu’elle est difficile d’accès dû aux satellites qui tourne autour d’elle. De plus, cette planète est paradisiaque : eau turquoise, terre verdoyante, montagne bien enneigé, Forêt avec une multitude d’arbres différents. Elle est l'une des planètes les plus belles du système.",
+      "Zéphyr a amené Fortune, Gloire et Pouvoir, un homme avait amassé toutes les richesses du monde, son nom God Roger, Roi des pirates, ces dernières paroles incitaient tous les hommes de la planète à s’aventurer en mer.",
       "God Roger  : \n \" Mon trésor ? Je vous le laisse si vous le voulez : TROUVER LE ! Je l'ai laissé quelque part dans ce monde. \" \n Tous se lancèrent sur la route de Zéphyr dans l’espoir de mettre la main sur ce fameux trésor ! Le monde entier connut alors une grande vague de piraterie.",
-      "Tous se lancèrent sur la route de Zéphyr dans l’espoir de mettre la main sur ce fameux trésor ! Le monde entier connut alors une grande vague de piraterie.\nVous venez d'atterrir à la capital REDLINE. Vous vous promenez dans la ville à la recherche de quête à faire. Vous arrivez devant un tableau avec plus de quête, vous consultez les quêtes qui pourraient être bien pour vous.\nVous sentez quelqu'un, vous touchez le dos... Vous vous retournez et un enfant trouve derrière vous. L'enfant vous demande de l'aide, car il a un souci. ",
+      "Tous se lancèrent sur la route de Zéphyr dans l’espoir de mettre la main sur ce fameux trésor ! Le monde entier connut alors une grande vague de piraterie.",
+      "Vous venez d'atterrir à la capital REDLINE. Vous vous promenez dans la ville à la recherche de quête à faire. Vous arrivez devant un tableau avec plus de quête, vous consultez les quêtes qui pourraient être bien pour vous.",
+      "Tout tout à coup, vous sentez quelqu'un, vous touchez le dos... Vous vous retournez et un enfant trouve derrière vous. L'enfant vous demande de l'aide. ",
       "L'enfant : \" Un monsieur m'a voler mon pendentif qui appartenait a mon père... Et j'aimerais le recupérer pouvez vous m'aider s'il vous plaint ! \" ",
-      "Vous regardez l'enfant... Et vous acceptez de l'aider ! Vous commencez a le suivre...\n Vous arrivez devant le bar et il vous montre la personne. Et vous vous dirigez vers celle-ci pour vous battre et récupérer l'objet de l'enfant."
+      "Vous regardez l'enfant... Et vous acceptez de l'aider ! Vous commencez a le suivre... Vous arrivez devant le bar et il vous montre la personne. Et vous vous dirigez vers celle-ci pour récupérer l'objet de l'enfant."
     ],
     "idEnnemi" : "9",
     "typeEnnemi": "brute",
@@ -168,7 +180,7 @@
     ],
     "idEnnemi" : "11",
     "typeEnnemi": "brute",
-    "IdIssue" : "21"
+    "idIssue" : "21"
   },
 
   "21": {
@@ -180,7 +192,7 @@
     ],
     "idEnnemi" : "13",
     "typeEnnemi": "boss",
-    "IdIssue" : "23"
+    "idIssue" : "23"
   },
 
   "23": {
