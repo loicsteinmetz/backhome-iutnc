@@ -119,7 +119,13 @@ public class Carte implements Configurable {
         this.planetes.add(p);
     }
 
-    public static void reset(){
+
+    public static void reset() {
         CARTE = new Carte();
+    }
+
+    // todo à enlever apr tests
+    public ArrayList<Planete> getPlanetes() {
+        return planetes;
     }
 }
