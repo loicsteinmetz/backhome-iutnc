@@ -11,24 +11,24 @@
         <HBox id="control">
             <VBox id="sauvegardes">
                 <HBox styleClass="sauvegarde" userData="1">
-                    <Label text="19/03/2020 - 16:24"/>
-                    <Label text="LUMINI"/>
+                    <Label text="19/03/2020 - 16:24" styleClass="date"/>
+                    <Label text="LUMINI" styleClass="localisation"/>
                 </HBox>
                 <HBox styleClass="sauvegarde" userData="2">
-                    <Label text="06/08/2019 - 05:11"/>
-                    <Label text="TREMOR"/>
+                    <Label text="06/08/2019 - 05:11" styleClass="date"/>
+                    <Label text="TREMOR" styleClass="localisation"/>
                 </HBox>
                 <HBox styleClass="sauvegarde" userData="3">
-                    <Label text="27/02/2019 - 12:48"/>
-                    <Label text="IENOS"/>
+                    <Label text="27/02/2019 - 12:48" styleClass="date"/>
+                    <Label text="IENOS" styleClass="localisation"/>
                 </HBox>
                 <HBox styleClass="sauvegarde" userData="4">
-                    <Label text="Emplacement vide"/>
-                    <Label/>
+                    <Label text="Emplacement vide" styleClass="date"/>
+                    <Label styleClass="localisation"/>
                 </HBox>
                 <HBox styleClass="sauvegarde" userData="5">
-                    <Label text="Emplacement vide"/>
-                    <Label/>
+                    <Label text="Emplacement vide" styleClass="date"/>
+                    <Label styleClass="localisation"/>
                 </HBox>
             </VBox>
             <VBox id="btns">
