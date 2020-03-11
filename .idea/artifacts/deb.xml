@@ -1,14 +1,19 @@
 <component name="ArtifactManager">
-  <artifact type="javafx" name="projet_jeu_iutnc">
-    <output-path>$PROJECT_DIR$/out/artifacts/projet_jeu_iutnc</output-path>
+  <artifact type="javafx" name="deb">
+    <output-path>$PROJECT_DIR$/out/artifacts/deb</output-path>
     <properties id="javafx-properties">
       <options>
         <option name="appClass" value="app.Main" />
-        <option name="description" value="" />
+        <option name="description" value="IUT Nancy Charlemagne -&#10;Dosda Clément,&#10;Friedrich Louis,&#10;Martin Tony,&#10;Phu Quoc-Hieu,&#10;Steinmetz Loïc" />
         <option name="height" value="600" />
         <option name="htmlPlaceholderId" value="" />
-        <option name="nativeBundle" value="image" />
-        <option name="title" value="" />
+        <option name="icons">
+          <JavaFxApplicationIcons>
+            <option name="linuxIcon" value="$PROJECT_DIR$/src/assets/img/vaisseau.png" />
+          </JavaFxApplicationIcons>
+        </option>
+        <option name="nativeBundle" value="deb" />
+        <option name="title" value="BackHome" />
         <option name="vendor" value="" />
         <option name="version" value="" />
         <option name="width" value="800" />

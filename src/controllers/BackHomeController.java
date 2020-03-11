@@ -1,5 +1,6 @@
 package controllers;
 
+import javafx.animation.PauseTransition;
 import javafx.animation.Transition;
 import javafx.application.Application;
 import javafx.event.Event;
@@ -13,6 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import models.BackHome;
 import utils.EffetsJavaFx;
 import utils.ViewLoader;
@@ -123,7 +125,9 @@ public class BackHomeController extends Application {
                 vl.switchTo(QueteController.getView(), event, 2);
             } else {
                 BackHome.resetJeu();
-                vl.switchTo(BackHomeController.getView(), event);
+                Transition p = new PauseTransition(Duration.seconds(2.5));
+                p.setOnFinished((e)-> vl.switchTo(BackHomeController.getView(), event));
+                p.play();
             }
         }
     }
