@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -26,7 +27,9 @@ public class SauvegardeController extends Application {
     private static Sauvegarde MODELE;
 
     @FXML
-    private VBox sauvegardes;
+    private VBox sauvegardes, btns;
+    @FXML
+    private Button btn1, btn2, btn3;
 
     /**
      * Retourne la vue associée au controller
@@ -52,23 +55,39 @@ public class SauvegardeController extends Application {
 
     @FXML
     private void initialize(){
-        for(Node sauvegarde : sauvegardes.getChildren()){
-            HBox s = (HBox)sauvegarde;
-            if (s.getStyleClass().contains("vide")) s.setDisable(true);
+        btn1.setDisable(true);
+        btn2.setDisable(true);
+        if (!BackHome.getStarted()){
+            for(Node sauvegarde : sauvegardes.getChildren()){
+                HBox s = (HBox)sauvegarde;
+                if (s.getStyleClass().contains("vide")) s.setDisable(true);
+            }
+        } else {
+            btn1.setText("Sauvegarder");
+            btns.getChildren().remove(1);
         }
     }
 
     @FXML
     private void selectionner(Event e){
+        btn1.setDisable(false);
+        btn2.setDisable(false);
         for(Node sauvegarde : sauvegardes.getChildren()){
             HBox s = (HBox)sauvegarde;
             s.setStyle("-fx-border-color:transparent;");
-            if (!s.getStyleClass().contains("vide")) s.setDisable(false);
+            if (!s.getStyleClass().contains("vide") || BackHome.getStarted()) s.setDisable(false);
         }
         HBox selectionee = (HBox)e.getSource();
         selectionee.setStyle("-fx-border-color:white;");
         selectionee.setDisable(true);
         idSelection = Integer.parseInt(selectionee.getUserData().toString());
+        if (BackHome.getStarted()){
+            if (!selectionee.getStyleClass().contains("vide")){
+                btn1.setText("Ecraser");
+            } else {
+                btn1.setText("Sauvegarder");
+            }
+        }
     }
 
     @FXML

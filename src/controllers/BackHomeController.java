@@ -16,6 +16,7 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import models.BackHome;
+import models.Carte;
 import utils.EffetsJavaFx;
 import utils.ViewLoader;
 
@@ -38,7 +39,7 @@ public class BackHomeController extends Application {
     @FXML
     private Label titre;
     @FXML
-    private Button startBtn;
+    private Button startBtn, saveBtn;
     @FXML
     private ImageView vaisseau, starsBg1,starsBg2;
 
@@ -91,6 +92,7 @@ public class BackHomeController extends Application {
     private void bouttonJouer() {
         BackHome.setStarted();
         startBtn.setVisible(false);
+        saveBtn.setVisible(false);
         titre.setVisible(false);
         Transition fadeOut = EffetsJavaFx.fadeOut(vaisseau, 1.5, 0);
         fadeOut.setOnFinished((e) -> {

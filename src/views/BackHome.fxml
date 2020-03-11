@@ -34,7 +34,7 @@
                     GridPane.columnIndex="1" GridPane.rowIndex="2"
                     onAction="#bouttonJouer">
             </Button>
-            <Button id="saveBtn" text="CHARGER"
+            <Button fx:id="saveBtn" text="CHARGER"
                     GridPane.columnIndex="1" GridPane.rowIndex="2"
                     onAction="#sauvegardes">
             </Button>

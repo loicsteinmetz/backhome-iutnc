@@ -31,10 +31,10 @@
                     <Label styleClass="localisation"/>
                 </HBox>
             </VBox>
-            <VBox id="btns">
-                <Button id="chargerBtn" text="Charger"/>
-                <Button id="supprimerBtn" text="Supprimer"/>
-                <Button id="retourBtn" text="Retour" onAction="#retour"/>
+            <VBox fx:id="btns">
+                <Button fx:id="btn1" text="Charger"/>
+                <Button fx:id="btn2" text="Supprimer"/>
+                <Button fx:id="btn3" text="Retour" onAction="#retour"/>
             </VBox>
         </HBox>
     </FlowPane>
