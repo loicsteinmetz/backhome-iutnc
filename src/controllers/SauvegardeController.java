@@ -10,7 +10,9 @@ import javafx.scene.Scene;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import models.BackHome;
 import models.Sauvegarde;
+import utils.ViewLoader;
 
 public class SauvegardeController extends Application {
 
@@ -67,5 +69,15 @@ public class SauvegardeController extends Application {
         selectionee.setStyle("-fx-border-color:white;");
         selectionee.setDisable(true);
         idSelection = Integer.parseInt(selectionee.getUserData().toString());
+    }
+
+    @FXML
+    private void retour(Event e){
+        ViewLoader vl = new ViewLoader();
+        if (BackHome.getStarted()){
+            vl.switchTo(CarteController.getView(), e);
+        } else {
+            vl.switchTo(BackHomeController.getView(), e);
+        }
     }
 }

@@ -89,6 +89,7 @@ public class BackHomeController extends Application {
      */
     @FXML
     private void bouttonJouer() {
+        BackHome.setStarted();
         startBtn.setVisible(false);
         titre.setVisible(false);
         Transition fadeOut = EffetsJavaFx.fadeOut(vaisseau, 1.5, 0);

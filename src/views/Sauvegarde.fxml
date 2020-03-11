@@ -34,6 +34,7 @@
             <VBox id="btns">
                 <Button id="chargerBtn" text="Charger"/>
                 <Button id="supprimerBtn" text="Supprimer"/>
+                <Button id="retourBtn" text="Retour" onAction="#retour"/>
             </VBox>
         </HBox>
     </FlowPane>

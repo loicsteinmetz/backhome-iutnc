@@ -16,6 +16,7 @@ public class BackHome implements Configurable {
 
     private String[] scenarioDebut;
     private String[] scenarioFin;
+    private static boolean started = false;
 
     public BackHome(){
         initConfiguration();
@@ -64,5 +65,13 @@ public class BackHome implements Configurable {
         Heros.reset();
         Quete.reset();
         Inventaire.reset();
+    }
+
+    public static boolean getStarted(){
+        return started;
+    }
+
+    public static void setStarted(){
+        started = true;
     }
 }

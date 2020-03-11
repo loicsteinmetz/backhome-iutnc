@@ -70,7 +70,7 @@ Button:hover{
     -fx-cursor: hand;
 }
 
-#chargerBtn:hover{
+#chargerBtn:hover, #retourBtn:hover{
     -fx-background-color: #207090;
 }
 
