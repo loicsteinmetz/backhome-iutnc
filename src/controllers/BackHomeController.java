@@ -122,7 +122,7 @@ public class BackHomeController extends Application {
             label.setVisible(false);
             ViewLoader vl = new ViewLoader();
             if (!BackHome.finJeu()){
-                vl.switchTo(SauvegardeController.getView(), event, 2); // todo : test
+                vl.switchTo(QueteController.getView(), event, 2);
             } else {
                 BackHome.resetJeu();
                 Transition p = new PauseTransition(Duration.seconds(2.5));

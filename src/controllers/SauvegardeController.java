@@ -1,13 +1,20 @@
 package controllers;
 
 import javafx.application.Application;
+import javafx.event.Event;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import models.Sauvegarde;
 
 public class SauvegardeController extends Application {
+
+    private int idSelection;
 
     @Controller
     private static final String VIEW = "/views/Sauvegarde.fxml";
@@ -15,6 +22,9 @@ public class SauvegardeController extends Application {
     private static final String STYLE = "/assets/css/Sauvegarde.css";
     @Controller
     private static Sauvegarde MODELE;
+
+    @FXML
+    private VBox sauvegardes;
 
     /**
      * Retourne la vue associée au controller
@@ -36,5 +46,26 @@ public class SauvegardeController extends Application {
         Scene scene = new Scene(root, 800, 600);
         scene.getStylesheets().add(STYLE);
         stage.setScene(scene);
+    }
+
+    @FXML
+    private void initialize(){
+        for(Node sauvegarde : sauvegardes.getChildren()){
+            HBox s = (HBox)sauvegarde;
+            if (s.getStyleClass().contains("vide")) s.setDisable(true);
+        }
+    }
+
+    @FXML
+    private void selectionner(Event e){
+        for(Node sauvegarde : sauvegardes.getChildren()){
+            HBox s = (HBox)sauvegarde;
+            s.setStyle("-fx-border-color:transparent;");
+            if (!s.getStyleClass().contains("vide")) s.setDisable(false);
+        }
+        HBox selectionee = (HBox)e.getSource();
+        selectionee.setStyle("-fx-border-color:white;");
+        selectionee.setDisable(true);
+        idSelection = Integer.parseInt(selectionee.getUserData().toString());
     }
 }

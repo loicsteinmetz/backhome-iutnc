@@ -52,6 +52,10 @@ FlowPane{
     -fx-cursor: hand;
 }
 
+.sauvegarde:diabled, .sauvegarde:disabled Label{
+    -fx-opacity:1.0;
+}
+
 .date{
     -fx-min-width: 200;
     -fx-max-width: 200;
