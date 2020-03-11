@@ -53,6 +53,9 @@ public class SauvegardeController extends Application {
         stage.setScene(scene);
     }
 
+    /**
+     * Initialisation de la vue et du modèle
+     */
     @FXML
     private void initialize(){
         btn1.setDisable(true);
@@ -68,6 +71,11 @@ public class SauvegardeController extends Application {
         }
     }
 
+    /**
+     * Gère la sélection d'une sauvegarde pour ensuite la charger
+     * la supprimer ou l'écraser pour un nouveau jeu de données
+     * @param e clic sur une sauvegarde
+     */
     @FXML
     private void selectionner(Event e){
         btn1.setDisable(false);
@@ -90,6 +98,10 @@ public class SauvegardeController extends Application {
         }
     }
 
+    /**
+     * Permet le retour à la carte ou à l'écran d'accueil, suivant le contexte
+     * @param e clic sur le bouton retour
+     */
     @FXML
     private void retour(Event e){
         ViewLoader vl = new ViewLoader();
