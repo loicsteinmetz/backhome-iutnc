@@ -44,10 +44,11 @@
   "3": {
     "type": "combat",
     "scenario" : [
+      "Vous avez gagné le combat !",
       "Vous entendez des bruits qui proviennent d'un buisson. Vous vous retournez est là ! Un Gorille surgit du buisson et semble vouloir ta peau ! ",
       "Essaie de le vaincre afin de lui soutirer son arme ! ",
       "Le Gorille commença à crier : \" Je vais te tuer ! Ahah ! Ramène-toi, je vais te faire subir la même chose que tu as fait au gobelin ! Petit avorton !\" ",
-      " \" C'est ce que tu penses sale macaque ! Je vais te montrais, c'est qui \"Avorton\" ! \" "
+      " \" C'est ce que tu penses sale macaque ! Je vais te montrais, c'est qui avorton ! \" "
     ],
     "idEnnemi" : "3",
     "typeEnnemi": "boss",
@@ -57,7 +58,7 @@
   "25": {
     "type": "decision",
     "scenario": [
-      "Bravo ! Tu as gagné le combat ! Tu as gagné l’arme du monstre.",
+      "Vous avez gagné le combat ! Tu as gagné l’arme du monstre.",
       "Souhaitez-vous prendre le chemin pour la ville ou retourner dans le vaisseau ?"
     ],
     "optionA": "Prendre le chemin pour la ville.",
@@ -73,7 +74,7 @@
       "Et là ! Dans le dernier bâtiment au dernier étage, vous trouvez une pièce remplir de documents sur les planètes au alentour. Et un indice sur Calypso !  ",
       "\"Cette pièce devait appartenir à une personne venue de Calypso ou une des planètes qui est proche de celle-ci. \" \n \" Félicitation pour cet indice ! Continue comme çà\"\n  ",
       "Cette journée a été très rude pour toi, il est l’heure pour toi de partir de cette planète afin de pouvoir continuer ta destiné ! ",
-      "Je suis dans le vaisseau  sauf que je me ve-sau."
+      "Je suis dans le vaisseau  sauf que je me vé-sau."
     ],
     "optionA": null ,
     "optionB": null ,
@@ -85,11 +86,11 @@
     "type": "decision",
     "scenario": [
       "\n BIENVENUE SUR IENOS, Des terres de feu \n",
-      "Elle est considérée comme l’une des planètes les plus hostile du système. L’espèce a dû reculer sous les terres pour fuir cette aridité pour y construire leurs villes. La planète Ienos est principalement constituée de sable et de roches volcaniques de couleur rouges.",
-      "Avant votre arrivée à la station de « Nowso », vous apercevez un paysage désertique d’une couleur rouge sang, l’aventure  sur cette planète va être difficile. ",
+      "Elle est considérée comme l’une des planètes les plus hostile du système. Ses habitants ont dû creuser galeries souterraines pour y vivre. La planète Ienos est principalement constituée de sable et de roches volcaniques de couleur rouges.",
+      "Avant votre arrivée à la station de « Nowso », vous apercevez un paysage désertique sans vie. ",
       "Vous avez atterri à la station « Nowso », la plus grande station pour vaisseaux. Lors de la sortie de ton vaisseau, vous regardez aux alentours et vous voyez la sortie de la station.",
-      "Vous y dirigez vers la sortie, un groupe d’hommes criant \" On cherche une personne pour nous aider à faire une quête importante ! \" Vous vous rapprochez d'eux pour les questionner sur cette quête et la récompense. ",
-      "Le chef du groupe : \" La quête consiste juste à ramener l’arme d’un grand boss, mais pas n’importe laquelle ! Celle de Chô Peleux un grand monstre que mon groupe et moi redoutons. La récompense sera un équipement unique. \"",
+      "Vous y dirigez vers la sortie, un groupe d’hommes criant : \" On cherche une personne pour nous aider à faire une quête importante ! \" Vous vous rapprochez d'eux pour les questionner sur cette quête et la récompense. ",
+      "Le chef du groupe : \" La quête consiste juste à ramener l’arme d’un grand boss, mais pas n’importe laquelle ! Celle de Chô Peleux, l'un des cinq boss de cette planète. Si tu y arrives, tu auras droit a un équipement unique. \"",
       "Vous acceptez directement la quête, car vous n'avez peur de rien, mais vous avez besoin d'équipement aussi."
     ],
     "optionA": "Prendre la porte EST",
@@ -103,7 +104,7 @@
     "scenario" : [
       "Vous vous mettez en route, vous vous dirigez donc en dehors de la ville vers la destination de la quête. ",
       "Quelques mètres après la sortie, vous vous faites interpeller par le rebelle ville. Il a aperçu vous êtes seul et pas du coin, c'est pour cela qui veut vous voler vos équipements.",
-      "Le Bebelle: \" Hé toi ! Petit étranger ! Viens me voir ! Tu m'a l'air riche et bien équipé ! Viens donc me donner tout ce que tu as ! Sinon la mort t'arrivera !  \"  ",
+      "Le Rebelle: \" Hé toi ! Petit étranger ! Viens me voir ! Tu m'a l'air riche et bien équipé ! Viens donc me donner tout ce que tu as ! Sinon tu meurs !\" ",
       "\" Je préfère me battre que de me laisser voler comme ca ! Ramène-toi ! Je t'attends. \""
     ],
     "idEnnemi" : "5",
@@ -114,10 +115,11 @@
   "11": {
     "type": "decision",
     "scenario": [
+      "Vous avez gagné le combat !",
       "Après votre combat contre Tink Berval, vous vous diriez vers l'endroit indiqué par le groupe. ",
-      "Vous continuez votre chemin jusqu'à la grotte, une pancarte se trouve devant celle-ci. Dessus est écris « Garde à vous aventurier ! N’essayer pas d’entrer dans cette grotte ou la mort vous attendras ». Mais vus, que c’est écrit dans une langue que vous ne comprendrez pas, vous continuerez votre route sans y faire attention. ",
-      "Vous arrivez bientôt au bout de cette grotte, vous vous êtes caché derrière une grosse pierre pour analyser la situation. Vous apercevez Chô Peleux le boss que vous devez tuer pour accomplir cette quête. ",
-      "Chô Peleux :  \" Je suis tellement bien dans cette grotte ! Tout le monde a peur de moi, tellement que je suis fort. Je dois aménager cette grotte à mon goût pour montrer ma puissance et ma richesse au monde ! \" "
+      "Vous continuez votre chemin jusqu'à la grotte, une pancarte se trouve devant celle-ci. Dessus est écris « Garde à vous aventurier ! N’essayer pas d’entrer dans cette grotte ou la mort vous attendras ». Vous continuerez votre route sans y faire attention. ",
+      "Vous arrivez au bout de cette grotte, vous vous êtes caché derrière une grosse pierre pour analyser la situation. Vous apercevez Chô Peleux, le boss que vous devez tuer. ",
+      "Chô Peleux :  \" Mmhh... Je suis bien dans cette grotte ! Tout le monde a peur de moi ! Ahah ! Cette planète est ma destinée ! \" "
     ],
     "optionA": "Vous prenez la fuite, comme un lache",
     "optionB": "Vous faites une attaque surprise",
@@ -130,7 +132,7 @@
     "scenario" : [
       "Vous êtes tellement indiscret que vous vous faites repérer par Chô Peleux ! ",
       "Dommage pour vous, maintenant vous avez plus le choix. Préparez-vous au combat.",
-      "Chô Peleux : \" Comment oses-tu venir dans ma demeure ! C'est dommage pour toi, maintenant, tu vas mourir pour avoir pénétré ma demeure ! \""
+      "Chô Peleux : \" Comment oses-tu venir dans ma demeure ! C'est dommage pour toi, maintenant, tu vas mourir ! \""
     ],
     "idEnnemi" : "7",
     "typeEnnemi": "boss",
@@ -140,13 +142,14 @@
   "15":{
     "type": "decision",
     "scenario": [
+      "Vous avez gagné le combat ! Vous ramassez l'arme du boss.",
       "Vous faite le chemin de retour à Noswo pour valider votre quête",
-      "Lors de votre arrivée à « Noswo », vous vous rendez au point de rendez-vous, le groupe d’hommes arrivent peu après vous. Vous donnez au chef de groupe l'objet demandé.",
-      "Il vous remet la récompense pour cette quête.",
-      "\n Vous avez reçu Plastron Credo de la gloire ! \n",
-      "En plus, vous avez pu trouver un indice sur Calypso grâce à l'armure qui est Made in Calypso.",
-      "Chef de groupe : \" Voilà, nous avons finis avec toi ! Merci encore et je te souhaite Bonne chance et Courage. Salut \" Le groupe disparaît dans une ruelle... ",
-      "Je suis dans le vaisseau  sauf que je me ve-sau."
+      "Lors de votre arrivée à « Noswo », au point de rendez-vous, le groupe d’hommes arrivent un peu après vous. Vous donnez au chef de groupe l'objet demandé.",
+      "\" Voici ta récompense, jeune aventurier. \"",
+      "\n Vous avez reçu Plastron Credo de Gloire ! \n",
+      "Vous avez eu un indice sur Calypso grâce à l'armure qui est Made in Calypso.",
+      "Chef de groupe : \" Voilà, nous avons finis avec toi ! Merci pour avoir accomplis cette quête, je te souhaite bonne chance et courage. Salut \" Le groupe disparaît dans une ruelle... ",
+      "Je suis dans le vaisseau  sauf que je me vé-sau."
     ],
     "optionA": null ,
     "optionB": null ,
@@ -201,8 +204,8 @@
     "scenario": [
       "Vous retournez voir l'enfant, cacher derrière une caisse pour ne pas se faire attraper par les pirates. ",
       " \" Voilà mon enfant, je te redonne le pendentif de ton père. Garde le précieusement et ne le perds plus. \" ",
-      "L'enfant le récupère est vous remercie. Et vous remet la récompense qu'il vous avait promis. Il s'agit d'une PGM Ultima Ratio Hecate II, une arme à distance assez rare. L'enfant retourna chez lui, en ayant les larmes aux yeux. ",
-      "\n Je suis dans le vaisseau  sauf que je me ve-sau. \n"
+      "L'enfant le récupère est vous remercie. Et vous remet la récompense qu'il vous avait promis. Il s'agit d'une Maverick MV700, une arme à distance assez rare. L'enfant retourna chez lui, en ayant les larmes aux yeux. ",
+      "\n Je suis dans le vaisseau  sauf que je me vé-sau. \n"
     ],
     "optionA": null,
     "optionB": null,

@@ -16,8 +16,8 @@
     "description": "Une planète hostile. Ses habitants ont dû creuser galeries souterraines pour y vivre. Et la loi du plus fort est instaurée.",
     "idPremierEvenement": "7",
     "idRecompenseArmeCac": null,
-    "idRecompenseDistance": "1",
-    "idRecompenseArmure": null
+    "idRecompenseDistance": null,
+    "idRecompenseArmure": "1"
   },
   {
     "nom":"Zéphyr",
