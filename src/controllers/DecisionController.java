@@ -98,14 +98,14 @@ public class DecisionController extends Application {
                 ecran.setDisable(true);
                 EffetsJavaFx.fadeIn(issueA, 2, 0);
                 EffetsJavaFx.fadeIn(issueB, 2, 0);
-                btnBox.setLayoutY(450);
+                btnBox.setLayoutY(475);
                 issueA.setText(MODELE.getOptionA());
                 issueB.setText(MODELE.getOptionB());
             } else if (MODELE.getIdIssueA() == 0){
                 ecran.setDisable(true);
                 EffetsJavaFx.fadeIn(issueA, 2, 0);
                 btnBox.getChildren().remove(1);
-                btnBox.setLayoutY(450);
+                btnBox.setLayoutY(475);
                 issueA.setText("Aller au vaisseau");
             } else {
                 ecran.setOnMouseClicked((e)->{
