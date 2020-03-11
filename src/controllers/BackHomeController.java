@@ -103,6 +103,11 @@ public class BackHomeController extends Application {
         });
     }
 
+    @FXML
+    private void sauvegardes(Event event){
+        new ViewLoader().switchTo(SauvegardeController.getView(), event);
+    }
+
     /**
      * Saute la page de texte pour aller à la prochaîne ou vers la prochaîne vue
      * @param event clic
