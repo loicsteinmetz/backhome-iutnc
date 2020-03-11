@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -71,6 +72,7 @@ public class CarteController extends Application {
     @FXML
     private void initialize(){
         MODELE = getCarte();
+        getHeros().getLocalisation().setVisitee();
         getHeros().soin();
         getHeros().setSituation(Situation.VAISSEAU);
         chargeElementsInterface();
@@ -107,6 +109,7 @@ public class CarteController extends Application {
             box.setUserData(p.getNom());
             box.setOpacity(0);
             box.getStyleClass().add("planete");
+            stylePlanete(box, p);
             Label nom = new Label();
             nom.getStyleClass().add("nomPlanete");
             nom.setText(p.getNom());
@@ -128,9 +131,15 @@ public class CarteController extends Application {
     private void allerPlanete(MouseEvent e){
         HBox box = (HBox) e.getSource();
         Planete nouvellePlanete = MODELE.getPlaneteParNom((String) box.getUserData());
-        getHeros().setLocalisation(nouvellePlanete);
-        getInventaire().modifierCarburant(-100 * getHeros().getLocalisation().getNiveau());
-        new ViewLoader().switchTo(QueteController.getView(), e, 0.5);
+        if (nouvellePlanete.estAccessible()){
+            getHeros().setLocalisation(nouvellePlanete);
+            getInventaire().modifierCarburant(-100 * getHeros().getLocalisation().getNiveau());
+            new ViewLoader().switchTo(QueteController.getView(), e, 0.5);
+        } else {
+            Label l = (Label)(box.getChildren().get(1));
+            l.setText("Carburant nécessaire : " + nouvellePlanete.getNiveau() * 100 + "L");
+            box.setDisable(true);
+        }
     }
 
     /**
@@ -140,5 +149,24 @@ public class CarteController extends Application {
     @FXML
     private void allerInventaire(Event e){
         new ViewLoader().switchTo(InventaireController.getView(), e, 0);
+    }
+
+    /**
+     * Génère le style du bouton en fonction du statut de la planète
+     * @param box bouton
+     * @param p planete
+     */
+    @FXML
+    private void stylePlanete(HBox box, Planete p){
+        if (p.estAccessible()){
+            if (p.getVisitee()){
+                box.getStyleClass().add("visitee");
+                box.setDisable(true);
+            } else {
+                box.getStyleClass().add("dispo");
+            }
+        } else {
+            box.getStyleClass().add("inaccessible");
+        }
     }
 }

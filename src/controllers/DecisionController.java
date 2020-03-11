@@ -12,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import models.BackHome;
 import models.Decision;
 import utils.EffetsJavaFx;
 import utils.ViewLoader;
@@ -122,9 +123,13 @@ public class DecisionController extends Application {
     private void issueA(Event e){
         ViewLoader vl = new ViewLoader();
         if (MODELE.getIdIssueA() == 0){
-            getHeros().getLocalisation().recompenses();
-            getInventaire().modifierCarburant(125);
-            vl.switchTo(CarteController.getView(), e);
+            if (!BackHome.finJeu()){
+                getHeros().getLocalisation().recompenses();
+                getInventaire().modifierCarburant(125);
+                vl.switchTo(CarteController.getView(), e);
+            } else {
+                vl.switchTo(BackHomeController.getView(), e);
+            }
         } else {
             getQuete().prochainEvenement(MODELE.getIdIssueA());
             new ViewLoader().switchTo(QueteController.getView(), e);

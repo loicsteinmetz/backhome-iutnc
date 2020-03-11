@@ -164,6 +164,7 @@ Button{
     -fx-min-height: 50px;
     -fx-max-height: 50px;
     -fx-wrap-text:true;
+    -fx-text-alignment:center;
 }
 
 Button:hover{
