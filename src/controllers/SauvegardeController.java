@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -115,18 +116,30 @@ public class SauvegardeController extends Application {
     }
 
     @FXML
-    private void supprimer(){
-        // todo : suppression d'une sauvegarde et actualisation de la view
+    private void supprimer(Event e){
+        // todo : suppression de la sauvegarde
+        HBox sauvegarde = (HBox)sauvegardes.getChildren().get(idSelection - 1);
+        sauvegarde.getStyleClass().add("vide");
+        sauvegarde.setStyle("-fx-border-color:transparent;");
+        Label date = (Label)sauvegarde.getChildren().get(0);
+        date.setText("Emplacement vide");
+        Label localisation = (Label)sauvegarde.getChildren().get(1);
+        localisation.setText("");
+        sauvegarde.setDisable(true);
+        btn1.setDisable(true);
+        btn2.setDisable(true);
     }
 
     @FXML
     private void charger(Event e){
-        // todo : chargement d'une sauvegarde et redirection vers Carte
+        // todo : chargement de la sauvegarde
+        new ViewLoader().switchTo(CarteController.getView(), e);
     }
 
     @FXML
     private void sauvegarder(Event e){
-        // todo : enregistrement d'une sauvegarde et actualisation de la view
+        // todo : enregistrement de la sauvegarde
+        new ViewLoader().switchTo(CarteController.getView(), e);
     }
 
 
