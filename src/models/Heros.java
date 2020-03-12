@@ -3,12 +3,16 @@ package models;
 import static models.Carte.getCarte;
 import static models.Inventaire.getInventaire;
 
+
+
 /**
  * Singleton modélisant le héros du jeu
  */
 public class Heros extends Personnage {
 
-    @Singleton
+	
+
+	@Singleton
     private static Heros HEROS = new Heros();
 
     private Planete localisation;
