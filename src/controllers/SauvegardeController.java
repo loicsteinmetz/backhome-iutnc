@@ -115,6 +115,10 @@ public class SauvegardeController extends Application {
         }
     }
 
+    /**
+     * Supprime la sauvegarde sélectionnée et met à jour la vue
+     * @param e bouton supprimer
+     */
     @FXML
     private void supprimer(Event e){
         // todo : suppression de la sauvegarde
@@ -130,12 +134,21 @@ public class SauvegardeController extends Application {
         btn2.setDisable(true);
     }
 
+    /**
+     * Charge la sauvegarde sélectionnée et redirige vers la carte
+     * @param e bouton charger
+     */
     @FXML
     private void charger(Event e){
         // todo : chargement de la sauvegarde
         new ViewLoader().switchTo(CarteController.getView(), e);
     }
 
+    /**
+     * Enregistre la partie en cours et redirige vers la carte
+     * (écrase éventuellement une sauvegarde existante)
+     * @param e bouton sauvegarder
+     */
     @FXML
     private void sauvegarder(Event e){
         // todo : enregistrement de la sauvegarde
