@@ -61,11 +61,13 @@ public class SauvegardeController extends Application {
         btn1.setDisable(true);
         btn2.setDisable(true);
         if (!BackHome.getStarted()){
+            btn1.setOnAction(this::charger);
             for(Node sauvegarde : sauvegardes.getChildren()){
                 HBox s = (HBox)sauvegarde;
                 if (s.getStyleClass().contains("vide")) s.setDisable(true);
             }
         } else {
+            btn1.setOnAction(this::sauvegarder);
             btn1.setText("Sauvegarder");
             btns.getChildren().remove(1);
         }
@@ -111,4 +113,21 @@ public class SauvegardeController extends Application {
             vl.switchTo(BackHomeController.getView(), e);
         }
     }
+
+    @FXML
+    private void supprimer(){
+        // todo : suppression d'une sauvegarde et actualisation de la view
+    }
+
+    @FXML
+    private void charger(Event e){
+        // todo : chargement d'une sauvegarde et redirection vers Carte
+    }
+
+    @FXML
+    private void sauvegarder(Event e){
+        // todo : enregistrement d'une sauvegarde et actualisation de la view
+    }
+
+
 }
