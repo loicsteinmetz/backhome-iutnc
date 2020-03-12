@@ -123,8 +123,10 @@ public class Carte implements Configurable {
         CARTE = new Carte();
     }
 
-
-    // todo (nécessaire pr tests sauvegarde)
+    /**
+     * Getter
+     * @return liste des planètes
+     */
     public ArrayList<Planete> getPlanetes() {
         return planetes;
     }
