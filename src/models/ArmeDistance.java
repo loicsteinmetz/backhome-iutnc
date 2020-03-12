@@ -20,21 +20,22 @@ public class ArmeDistance extends Arme {
 	 * @param cible victime de l'attaque
 	 */
 	@Override
-	public int attaquer(Personnage cible) {
+	public int attaquer(Personnage cible) {		
+	int prctAttaque = this.rdm();
 		if (cible instanceof Brute) {
-			cible.subirAttaque(this.getDegats() * 1.5);
-			return (int)(this.getDegats() * 1.5);
+			cible.subirAttaque(this.getDegats() * 1.5+prctAttaque);
+			return (int)(this.getDegats() * 1.5+prctAttaque);
 		} else {
 			if (cible instanceof Tireur) {
-				cible.subirAttaque(this.getDegats() * 0.75);
-				return (int)(this.getDegats() * 0.75);
+				cible.subirAttaque(this.getDegats() * 0.75+prctAttaque);
+				return (int)(this.getDegats() * 0.75+prctAttaque);
 			} else {
 				if (cible instanceof Heros) {
-					cible.subirAttaque(this.getDegats());
-					return this.getDegats() - getInventaire().getArmure().getResistance();
+					cible.subirAttaque(this.getDegats()+prctAttaque);
+					return this.getDegats() - getInventaire().getArmure().getResistance()+prctAttaque;
 				} else {
-					cible.subirAttaque(this.getDegats());
-					return this.getDegats();
+					cible.subirAttaque(this.getDegats()+prctAttaque);
+					return this.getDegats()+prctAttaque;
 				}
 			}
 		}

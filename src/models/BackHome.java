@@ -16,6 +16,7 @@ public class BackHome implements Configurable {
 
     private String[] scenarioDebut;
     private String[] scenarioFin;
+    private static boolean started = false;
 
     public BackHome(){
         initConfiguration();
@@ -59,10 +60,29 @@ public class BackHome implements Configurable {
         this.scenarioFin = scenarioFin;
     }
 
+    /**
+     * Réinitialise le jeu en vue d'une nouvelle partie
+     */
     public static void resetJeu(){
+        started = false;
         Carte.reset();
         Heros.reset();
         Quete.reset();
         Inventaire.reset();
+    }
+
+    /**
+     * Getter - indique si la partie est commencée
+     * @return true si la partie est commencée
+     */
+    public static boolean getStarted(){
+        return started;
+    }
+
+    /**
+     * Setter - indique que la partie est commencée
+     */
+    public static void setStarted(){
+        started = true;
     }
 }

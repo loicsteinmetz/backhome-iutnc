@@ -169,4 +169,9 @@ public class CarteController extends Application {
             box.getStyleClass().add("inaccessible");
         }
     }
+
+    @FXML
+    private void sauvegarder(Event e){
+        new ViewLoader().switchTo(SauvegardeController.getView(), e);
+    }
 }

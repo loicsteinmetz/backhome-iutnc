@@ -16,6 +16,7 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import models.BackHome;
+import models.Carte;
 import utils.EffetsJavaFx;
 import utils.ViewLoader;
 
@@ -38,7 +39,7 @@ public class BackHomeController extends Application {
     @FXML
     private Label titre;
     @FXML
-    private Button startBtn;
+    private Button startBtn, saveBtn;
     @FXML
     private ImageView vaisseau, starsBg1,starsBg2;
 
@@ -74,6 +75,10 @@ public class BackHomeController extends Application {
         if (BackHome.finJeu()){
             grid.setDisable(true);
             grid.setVisible(false);
+            starsBg1.setOpacity(0);
+            starsBg2.setOpacity(0);
+            EffetsJavaFx.fadeIn(starsBg1, 2, 0);
+            EffetsJavaFx.fadeIn(starsBg2, 2, 0);
             Label label = new Label(MODELE.getScenarioFin()[0]);
             label.setId("ecran");
             label.setOpacity(0);
@@ -89,7 +94,9 @@ public class BackHomeController extends Application {
      */
     @FXML
     private void bouttonJouer() {
+        BackHome.setStarted();
         startBtn.setVisible(false);
+        saveBtn.setVisible(false);
         titre.setVisible(false);
         Transition fadeOut = EffetsJavaFx.fadeOut(vaisseau, 1.5, 0);
         fadeOut.setOnFinished((e) -> {
@@ -101,6 +108,11 @@ public class BackHomeController extends Application {
             pane.getChildren().add(label);
             EffetsJavaFx.fadeIn(label, 2.0, 1.5);
         });
+    }
+
+    @FXML
+    private void sauvegardes(Event event){
+        new ViewLoader().switchTo(SauvegardeController.getView(), event);
     }
 
     /**
