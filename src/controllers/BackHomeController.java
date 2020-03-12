@@ -75,6 +75,10 @@ public class BackHomeController extends Application {
         if (BackHome.finJeu()){
             grid.setDisable(true);
             grid.setVisible(false);
+            starsBg1.setOpacity(0);
+            starsBg2.setOpacity(0);
+            EffetsJavaFx.fadeIn(starsBg1, 2, 0);
+            EffetsJavaFx.fadeIn(starsBg2, 2, 0);
             Label label = new Label(MODELE.getScenarioFin()[0]);
             label.setId("ecran");
             label.setOpacity(0);
