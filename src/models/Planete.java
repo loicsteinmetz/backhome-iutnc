@@ -108,7 +108,7 @@ public class Planete {
                 getInventaire().modifierCarburant(125);
                 break;
             case 2:
-                getInventaire().modifierCarburant(500);
+                getInventaire().modifierCarburant(300);
                 break;
         }
     }
