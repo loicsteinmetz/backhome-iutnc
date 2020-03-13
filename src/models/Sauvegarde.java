@@ -2,215 +2,159 @@ package models;
 
 import lib.org.json.simple.JSONArray;
 import lib.org.json.simple.JSONObject;
-import lib.org.json.simple.parser.JSONParser;
 import lib.org.json.simple.parser.ParseException;
 import utils.JsonParser;
 
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import java.net.URISyntaxException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 
 import static models.Carte.getCarte;
 import static models.Heros.getHeros;
 import static models.Inventaire.getInventaire;
 
-public class Sauvegarde {
+public class Sauvegarde implements models.Configurable {
 
-    private final static String FORMAT = "dd-M-yyyy hh:mm";
-    private final static String CHEMIN = "/data/sauvegardes.json";
-    private final static int NB_SAUVEGARDES = 5;
     private int id;
+    private Date date;
     private Planete localisation;
-    private String date;
-    private static Sauvegarde[] SAUVEGARDES = new Sauvegarde[NB_SAUVEGARDES];
+    private boolean[] statusPlanete;
+    private ArmeCac armeCac;
+    private ArmeDistance armeDistance;
+    private Armure armure;
+    private int carburant;
+    private boolean vide;
 
-    /**
-     * Constructeur
-     * @param id id de la sauvegarde
-     */
     public Sauvegarde(int id){
         this.id = id;
-        JSONObject save = null;
+        this.initConfiguration();
+    }
+
+    @Override
+    public void initConfiguration() {
+        String chemin = "/data/sauvegardes.json";
+        String cle = Integer.toString(id);
+        JSONObject sauvegarde = null;
         try {
-            save = new JsonParser().parseObject(CHEMIN,Integer.toString(id));
+            sauvegarde = new JsonParser().parseObject(chemin, cle);
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
-        if (save != null){
-            localisation = getCarte().getPlaneteParNom(save.get("localisation").toString());
-            date = save.get("date").toString();
-        }
-    }
-
-    /**
-     * Initialise SAUVEGARDES, le tableau des sauvegardes
-     * ( à appeler au début du jeu )
-     */
-    public static void chargerAffSauvegardes(){
-        for (int i=0; i<NB_SAUVEGARDES ; i++) {
-            if (SAUVEGARDES[i] == null) SAUVEGARDES[i] = new Sauvegarde(i+1);
-        }
-    }
-
-    /**
-     * Récupère l'état du jeu d'une sauvegarde
-     */
-    public void chargerSauvegarde(){
-        JSONObject save = null;
-        try {
-            save = new JsonParser().parseObject(CHEMIN,Integer.toString(id));
-        } catch (IOException | ParseException e) {
-            e.printStackTrace();
-        }
-        if (save != null){
-            getInventaire().setArmeCac(new ArmeCac((int)(long)save.get("idArmeCac")));
-            getInventaire().setArmeDist(new ArmeDistance((int)(long)save.get("idArmeDistance")));
-            getInventaire().setArmure(new Armure((int)(long)save.get("idArmure")));
-            getInventaire().modifierCarburant((int)(long)save.get("carbu"));
-            getHeros().setLocalisation(getCarte().getPlaneteParNom(save.get("localisation").toString()));
-
-            JSONArray a = (JSONArray) save.get("planetesVisitees");
-            for(Object p : a){
-                if (p != null) {
-                    Planete planete = getCarte().getPlaneteParNom(p.toString());
-                    planete.setVisitee();
+        if (sauvegarde != null){
+            if (sauvegarde.get("date") != null){
+                vide = false;
+                SimpleDateFormat parser = new SimpleDateFormat("dd-MM-YYYY - HH:mm");
+                try {
+                    date = parser.parse(sauvegarde.get("date").toString());
+                } catch (java.text.ParseException e) {
+                    e.printStackTrace();
                 }
+                localisation = getCarte().getPlaneteParNom(sauvegarde.get("localisation").toString());
+                JSONArray arr = (JSONArray) sauvegarde.get("statusPlanetes");
+                statusPlanete = new boolean[arr.size()];
+                for (int i = 0 ; i < arr.size() ; i++){
+                    statusPlanete[i] = (boolean)arr.get(i);
+                }
+                armeCac = new ArmeCac(Integer.parseInt(sauvegarde.get("idArmeCac").toString()));
+                armeDistance = new ArmeDistance(Integer.parseInt(sauvegarde.get("idArmeDistance").toString()));
+                armure = new Armure(Integer.parseInt(sauvegarde.get("idArmure").toString()));
+                carburant = Integer.parseInt(sauvegarde.get("carburant").toString());
+            } else {
+                vide = true;
             }
         }
     }
 
-    /**
-     * Retranscrit l'état du jeu dans une sauvegarde dans sauvegardes.json
-     * et modifie les attributs de l'objet Sauvegarde correspondant
-     * ( appelle recupererEtat() et toJson() )
-     */
-    public void sauvegarder(){
-        // todo utiliser chemin relatif pour le FileWriter
-        // distingue la sauvegarde à modifier de celles à retranscrire
-        JSONObject saveModifiee = null;
-        JSONObject savesConst = null;
+    public static Sauvegarde[] getAllSauvegardes(){
+        Sauvegarde[] sauvegardes = new Sauvegarde[5];
+        for (int i = 0 ; i < sauvegardes.length ; i++){
+            sauvegardes[i] = new Sauvegarde(i + 1);
+        }
+        return sauvegardes;
+    }
+
+    public static void sauvegarder(int id){
+        JSONObject sauvegardes = new JSONObject();
+        JSONObject sauvegarde = initSauvegarde();
+        sauvegardes.put(String.valueOf(id), sauvegarde);
+        ajouterAnciennesSauvegardes(id, sauvegardes);
+
         try {
-            saveModifiee = new JsonParser().parseObject(CHEMIN,Integer.toString(id));
-            savesConst = (JSONObject) new JSONParser().parse(new InputStreamReader(getClass().getResourceAsStream(CHEMIN)));
-        } catch (IOException | ParseException e) {
+            new JsonParser().ecrireJson("/data/sauvegardes.json", sauvegardes);
+        } catch (IOException | URISyntaxException e) {
             e.printStackTrace();
         }
-        recupererEtat(saveModifiee);
-        // écrit les nouvelles valeurs dans la sauvegarde correspondante
-        try (FileWriter file = new FileWriter("/home/friedrich/Programmation/java/projet_jeu_iutnc/src/data/sauvegardes.json")) {
-            file.write("{ \"" + id + "\":" + saveModifiee.toJSONString());
-            for (int i=1 ; i<=NB_SAUVEGARDES ; i++){
-                if(i != id)
-                    file.write(toJson((JSONObject) savesConst.get(Integer.toString(i)),i));
+    }
+
+    public static void supprimerSauvegarde(int id){
+        JSONObject sauvegardes = new JSONObject();
+        JSONObject sauvegarde = initSauvegardeVide();
+        sauvegardes.put(String.valueOf(id), sauvegarde);
+        ajouterAnciennesSauvegardes(id, sauvegardes);
+        try {
+            new JsonParser().ecrireJson("/data/sauvegardes.json", sauvegardes);
+        } catch (IOException | URISyntaxException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void ajouterAnciennesSauvegardes(int id, JSONObject sauvegardes){
+        SimpleDateFormat parser = new SimpleDateFormat("dd-MM-YYYY - HH:mm");
+        JSONObject prev;
+        Sauvegarde[] prevSauvegardes = getAllSauvegardes();
+        for (int i = 0 ; i < prevSauvegardes.length ; i++){
+            if (i != id - 1){
+                prev = new JSONObject();
+                if (prevSauvegardes[i].date != null){
+                    prev.put("date", parser.format(prevSauvegardes[i].date));
+                    prev.put("localisation", prevSauvegardes[i].localisation.getNom());
+                    prev.put("statusPlanetes", prevSauvegardes[i].statusPlanete);
+                    prev.put("idArmeCac", prevSauvegardes[i].armeCac.getId());
+                    prev.put("idArmeDistance", prevSauvegardes[i].armeDistance.getId());
+                    prev.put("idArmure", prevSauvegardes[i].armure.getId());
+                    prev.put("carburant", prevSauvegardes[i].carburant);
+                } else {
+                    prev.put("date", null);
+                }
+                sauvegardes.put(String.valueOf(prevSauvegardes[i].id), prev);
             }
-            file.write("}");
-            file.close();
-            // actualise les attributs de l'objet sauvegarde
-            localisation = getHeros().getLocalisation();
-            date = new SimpleDateFormat(FORMAT).format(new Date());
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
-    /**
-     * Formatte l'écriture d'une sauvegarde dans le .json
-     * @param save le JSONObject à formatter
-     * @param id l'id de la sauvegarde correspondante
-     * @return un string
-     */
-    private static String toJson(JSONObject save, int id){
-        return ",\n \"" + id + "\":" + save.toJSONString();
+    private static JSONObject initSauvegarde(){
+        JSONObject sauvegarde = new JSONObject();
+        SimpleDateFormat parser = new SimpleDateFormat("dd-MM-YYYY - HH:mm");
+        sauvegarde.put("date", parser.format(new Date()));
+        sauvegarde.put("localisation", getHeros().getLocalisation().getNom());
+        sauvegarde.put("statusPlanetes", getCarte().getAllStatus());
+        sauvegarde.put("idArmeCac", getInventaire().getArmeCac().getId());
+        sauvegarde.put("idArmeDistance", getInventaire().getArmeDist().getId());
+        sauvegarde.put("idArmure", getInventaire().getArmure().getId());
+        sauvegarde.put("carburant", getInventaire().getCarburant());
+        return sauvegarde;
     }
 
-    /**
-     * Affecte l'état actuel du jeu au JSONObject
-     * @param saveModifiee JSONObject à traiter
-     */
-    private static void recupererEtat(JSONObject saveModifiee){
-        saveModifiee.put("date", new SimpleDateFormat(FORMAT).format(new Date()));
-        saveModifiee.put("idArmeDistance", getInventaire().getArmeDist().getId());
-        saveModifiee.put("idArmeCac", getInventaire().getArmeCac().getId());
-        saveModifiee.put("idArmure", getInventaire().getArmure().getId());
-        saveModifiee.put("carbu", getInventaire().getCarburant());
-        saveModifiee.put("localisation", getHeros().getLocalisation().getNom());
-        ArrayList<Planete> list = getCarte().getPlanetes();
-        String[] array = new String[list.size()];
-        for (int i = 0; i < array.length; i++){
-            if(list.get(i).getVisitee() == true) array[i] = list.get(i).getNom();
-        }
-        saveModifiee.put("planetesVisitees", array);
+    private static JSONObject initSauvegardeVide(){
+        JSONObject sauvegarde = new JSONObject();
+        sauvegarde.put("date", null);
+        return sauvegarde;
     }
 
-    /**
-     * Test si une sauvegarde est vide
-     * @return true si la sauvegarde est vide
-     */
     public boolean estVide(){
-        return date == null;
+        return vide;
     }
 
-    /**
-     * Efface une sauvegarde aux yeux du joueur
-     */
-    public void effacerSauvegarde(){
-        date = null;
-        localisation = null;
+    public void charger(){
+        getHeros().setLocalisation(localisation);
+        getCarte().setAllStatus(statusPlanete);
+        getInventaire().setArmeCac(armeCac);
+        getInventaire().setArmeDist(armeDistance);
+        getInventaire().setArmure(armure);
+        getInventaire().setCarburant(carburant);
     }
 
-    /**
-     * Getter
-     * @return id de la sauvegarde
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * Getter
-     * @return localisation du héros au moment de la sauvegarde
-     */
-    public Planete getLocalisation() {
-        return localisation;
-    }
-
-    /**
-     * Getter
-     * @return date de la sauvegarde
-     */
-    public String getDate() {
-        return date;
-    }
-
-    public static void main (String[] args) {
-        chargerAffSauvegardes();
-        Heros h = getHeros();
-        Inventaire i = getInventaire();
-        Sauvegarde save = SAUVEGARDES[0];
-//      /*
-        System.out.println(save.getId() + " : " + save.getDate() + " : " + save.getLocalisation().getNom());
-        System.out.println(h.getLocalisation().getNom());
-        System.out.println(i.getArmeCac().getNom());
-        System.out.println(i.getArmeDist().getNom());
-        System.out.println(i.getArmure().getNom());
-        System.out.println(i.getCarburant());
-//      */
-        for(Sauvegarde s : SAUVEGARDES) s.effacerSauvegarde();
-//      /*
-        //todo pq il fait que le dernier ce fils de timp
-        SAUVEGARDES[2].sauvegarder();
-        System.out.println("*");
-        SAUVEGARDES[3].sauvegarder();
-        System.out.println("*");
-        SAUVEGARDES[4].sauvegarder();
-        System.out.println("*");
-        SAUVEGARDES[0].sauvegarder();
-        System.out.println("*");
-        SAUVEGARDES[1].sauvegarder();
-        System.out.println("*");
-//      */
+    public static void main (String[] ags){
+        sauvegarder(2);
     }
 }
