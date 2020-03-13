@@ -23,7 +23,7 @@
     "nom":"Zéphyr",
     "niveau":"1",
     "planetesVoisines": ["ienos","hermès","lumini","tremor"],
-    "description": "Une planète paradisiaque, constituée de mer. Elle est peuplée par des pirates ! Garde-à-vous moussaillon. ",
+    "description": "Une planète paradisiaque, constituée de mer. Elle est peuplée par des pirates ! Gare-à-vous moussaillon. ",
     "idPremierEvenement": "17",
     "idRecompenseArmeCac": null,
     "idRecompenseDistance": "17",

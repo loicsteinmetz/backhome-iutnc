@@ -100,6 +100,17 @@ public class Planete {
         if (idRecompenseArmure != -1){
             getInventaire().setArmure(new Armure(idRecompenseArmure));
         }
+        switch (niveau){
+            case 0:
+                getInventaire().modifierCarburant(125);
+                break;
+            case 1:
+                getInventaire().modifierCarburant(125);
+                break;
+            case 2:
+                getInventaire().modifierCarburant(300);
+                break;
+        }
     }
 
     /**

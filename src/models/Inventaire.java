@@ -99,5 +99,9 @@ public class Inventaire {
 	public static void reset(){
 		INVENTAIRE = new Inventaire();
 	}
+
+	public void setCarburant(int carburant){
+		this.carburant = carburant;
+	}
 }
 

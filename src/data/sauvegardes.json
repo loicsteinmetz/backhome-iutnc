@@ -1,5 +1,23 @@
-{ "2":{"date":"12-3-2020 11:52","idArmeDistance":101,"idArmeCac":100,"carbu":0,"localisation":"Utopia","idArmure":100,"planetesVisitees":[null,null,null,null,null,null,null]},
- "1":{"date":"12-3-2020 11:10","idArmeDistance":101,"idArmeCac":100,"carbu":0,"localisation":"Calypso","idArmure":100,"planetesVisitees":[null,null,null,null,null,null,null]},
- "3":{"date":"12-3-2020 11:14","idArmeDistance":101,"idArmeCac":100,"carbu":0,"localisation":"Utopia","idArmure":100,"planetesVisitees":[null,null,null,null,null,null,null]},
- "4":{"date":"12-3-2020 10:53","idArmeDistance":101,"idArmeCac":100,"carbu":0,"localisation":"Calypso","idArmure":100,"planetesVisitees":[null,null,null,null,null,null,null]},
- "5":{"date":"12-3-2020 11:39","idArmeDistance":101,"idArmeCac":100,"carbu":0,"localisation":"Utopia","idArmure":100,"planetesVisitees":[null,null,null,null,null,null,null]}}
+{
+  "1": {
+    "date":"13-03-2020 - 19:23",
+    "localisation":"Ienos",
+    "statusPlanetes":[true,true,true,true,false,false,false],
+    "idArmeCac":100,
+    "idArmeDistance":101,
+    "idArmure":100,
+    "carburant":200
+  },
+  "2": {
+    "date": null
+  },
+  "3": {
+    "date": null
+  },
+  "4": {
+    "date": null
+  },
+  "5": {
+    "date": null
+  }
+}

@@ -5,8 +5,8 @@ import lib.org.json.simple.JSONObject;
 import lib.org.json.simple.parser.JSONParser;
 import lib.org.json.simple.parser.ParseException;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.net.URISyntaxException;
 
 /**
  * Classe utilitaire de gestion du parsing json
@@ -67,5 +67,12 @@ public class JsonParser {
         Object obj = parser.parse(new InputStreamReader(getClass().getResourceAsStream(fichier)));
         JSONObject jsonObject = (JSONObject) obj;
         return (JSONObject) jsonObject.get(cle);
+    }
+
+    public void ecrireJson(String fichier, JSONObject objet) throws IOException, URISyntaxException {
+        OutputStream outputStream = new FileOutputStream(new File(getClass().getResource(fichier).toURI()));
+        OutputStreamWriter file = new OutputStreamWriter(outputStream);
+        file.write(objet.toJSONString());
+        file.close();
     }
 }

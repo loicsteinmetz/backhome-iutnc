@@ -13,6 +13,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import models.BackHome;
 import models.Carte;
 import models.Planete;
 import models.Situation;
@@ -71,6 +72,7 @@ public class CarteController extends Application {
      */
     @FXML
     private void initialize(){
+        BackHome.setStarted();
         MODELE = getCarte();
         getHeros().getLocalisation().setVisitee();
         getHeros().soin();

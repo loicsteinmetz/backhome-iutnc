@@ -26,6 +26,7 @@
   },
   "1": {
     "type": "combat",
+<<<<<<< HEAD
     "scenario": [
       "\n BIENVENUE SUR HERMÈS, Aux terres promises \n",
       "Cette planète a été abandonnée par l'espèce humaine,en laissant tout sur leur passage… Cette planète a pu renaître de ses cendres, suite à ses dégâts…. Et la nature a pu reprendre tous ces droits..",
@@ -33,6 +34,14 @@
       "Vous descendez du vaisseau. Et a ce moment la, vous etes émerveiller du paysage verdoyant...",
       "Au loin, vous apercevez un gobelin qui semble faibles et faciles à tuer. Vous commencez à courir vers lui pour l'affronter. ",
       " \" Hé toi ! Sale gobelin prépare toi a mourir face a ma force ! \""
+=======
+    "scenario" : [
+      "BIENVENUE SUR HERMÈS, Aux terres promises",
+      "Cette planète a été abandonnée par l'espèce humaine, en laissant tout sur leur passage… Elle a pu renaître de ses cendres... Et la nature a pu reprendre tous ces droits...",
+      "Vous descendez du vaisseau. Et à ce moment-là, vous êtes émerveillé par le paysage verdoyant...",
+      "Au loin, vous apercevez un gobelin qui semble faible et facile à tuer. Vous commencez à courir vers lui pour l'affronter.",
+      "\" Hé toi ! Sale gobelin prépare toi a mourir face a ma force ! \""
+>>>>>>> 17d2346b268f030516421bc6a22cf220237c8984
     ],
     "idEnnemi": "1",
     "typeEnnemi": "brute",
@@ -42,19 +51,23 @@
     "type": "combat",
     "scenario": [
       "Vous avez gagné le combat !",
-      "Vous entendez des bruits qui proviennent d'un buisson. Vous vous retournez est là ! Un Gorille surgit du buisson et semble vouloir ta peau !",
-      "Essaie de le vaincre afin de lui soutirer son arme ! ",
-      "Le Gorille commença à crier : \"Je vais te tuer ! Ahah ! Ramène-toi, je vais te faire subir la même chose que tu as fait au gobelin ! Petit avorton !\"",
-      "\" C'est ce que tu penses sale macaque ! Je vais te montrais, c'est qui avorton ! \""
+      "Vous entendez des bruits qui proviennent d'un buisson. Vous vous retournez est là ! Un Gorille surgit et veut votre peau !",
+      "Le Gorille commença à crier : \" Je vais te tuer ! Ahah ! Ramène-toi ! Je vais te faire subir la même chose que tu as fait au gobelin ! Petit avorton ! \"",
+      "\" Tu crois vraiment ça ! Sale macaque ! Je vais te montrais, c'est qui l'avorton ! \""
     ],
     "idEnnemi": "3",
     "typeEnnemi": "boss",
+<<<<<<< HEAD
     "idIssue": "5"
+=======
+    "idIssue" : "25"
+>>>>>>> 17d2346b268f030516421bc6a22cf220237c8984
   },
   "25": {
     "type": "decision",
     "scenario": [
-      "Vous avez gagné le combat ! Tu as gagné l’arme du monstre.",
+      "Vous avez gagné le combat ! Tu ramasse l'arme du Captaine Banwana.",
+      "Vous avez reçu Dark Repulser !",
       "Souhaitez-vous prendre le chemin pour la ville ou retourner dans le vaisseau ?"
     ],
     "optionA": "Prendre le chemin pour la ville.",
@@ -65,11 +78,11 @@
   "5": {
     "type": "decision",
     "scenario": [
-      "Après de longues heures de recherche, tu trouves une ville ravagée et tu te mets à chercher des indices.",
-      "Et là ! Dans le dernier bâtiment au dernier étage, vous trouvez une pièce remplir de documents sur les planètes au alentour. Et un indice sur Calypso !",
-      "\"Cette pièce devait appartenir à une personne venue de Calypso ou une des planètes qui est proche de celle-ci.\" \"Félicitation pour cet indice ! Continue comme çà\"",
-      "Cette journée a été très rude pour toi, il est l’heure pour toi de partir de cette planète afin de pouvoir continuer ta destiné !",
-      "Je suis dans le vaisseau  sauf que je me vé-sau."
+      "Après de longues heures de recherche, vous trouvez une ville et vous commencez à rechercher des indices.",
+      "Et là ! Vous trouvez une pièce remplie de documents sur les planètes des alentour. Et un indice sur Calypso !",
+      "Cette pièce devait appartenir à une personne venue de Calypso ou des environs.",
+      "Cette journée a été très rude, il est l’heure de partir !",
+      "Je suis dans le vaisseau faut que je me vé-sau."
     ],
     "optionA": null,
     "optionB": null,
@@ -80,12 +93,12 @@
     "type": "decision",
     "scenario": [
       "BIENVENUE SUR IENOS, Des terres de feu",
-      "Elle est considérée comme l’une des planètes les plus hostile du système. Ses habitants ont dû creuser galeries souterraines pour y vivre. La planète Ienos est principalement constituée de sable et de roches volcaniques de couleur rouges.",
+      "Elle est considérée comme l’une des planètes les plus hostile du système. Ses habitants ont dû creuser galeries souterraines pour y vivre. Ienos est principalement constituée de sable et de roches volcaniques de couleur rouge.",
       "Avant votre arrivée à la station de « Nowso », vous apercevez un paysage désertique sans vie.",
       "Vous avez atterri à la station « Nowso », la plus grande station pour vaisseaux. Vous vous dirigez vers la sortie de la station.",
-      "A la sortie de la station, vous apercevez un groupe d’hommes criant : \" On cherche une personne ou un groupe de personnes pour nous aider à faire une quête importante ! \" \nVous vous rapprochez d'eux pour les questionner sur cette quête et la récompense.\n",
-      "Le chef du groupe : \" La quête consiste juste à ramener l’arme d’un grand boss, mais pas n’importe laquelle ! Celle de Chô Peleux, l'un des cinq boss de cette planète. Si tu y arrives, tu auras droit a un équipement unique.\"",
-      "Vous acceptez directement la quête, car vous n'avez peur de rien, mais vous avez besoin d'équipement aussi."
+      "A la sortie de la station, vous apercevez un groupe d’hommes criant : \"Cherche guerrier fort pour nous aider à effectuer une quête !\" \nVous vous rapprochez d'eux pour avoir des renseignements sur cette quête.\n",
+      "Le chef du groupe : \"La quête consiste à ramener l’arme d’un grand boss. Celle de Chô Peleux, l'un des cinq boss de cette planète. Si tu y arrives, tu auras droit à une récompense.\"",
+      "Vous acceptez directement la quête ! \nD'une vous n'avez peur de rien et deux vous voulez en savoir plus sur la récompense.\n"
     ],
     "optionA": "Prendre la porte EST",
     "optionB": "Prendre la porte OUEST",
@@ -94,10 +107,17 @@
   },
   "9": {
     "type": "combat",
+<<<<<<< HEAD
     "scenario": [
       "Vous vous mettez en route, vous vous dirigez donc en dehors de la ville vers la destination de la quête.",
       "Quelques mètres après la sortie, vous vous faites interpeller par le rebelle de la ville. Il a aperçu vous êtes seul et pas du coin.",
       "Le Rebelle: \" Hé toi ! Petit étranger ! Viens me voir ! Tu m'a l'air riche et bien équipé ! Viens donc me donner tout ce que tu as ! Sinon tu meurs !\"",
+=======
+    "scenario" : [
+      "Vous vous mettez en route, vous sortez de la ville vers le repère du boss...",
+      "Quelques mètres après la sortie, vous vous faites interpeller par une personne bizarre.",
+      "Personne bizarre: \" Hé toi ! Petit étranger ! Viens me voir ! Tu m'a l'air riche et bien équipé ! Viens donc me donner tout ce que tu as ! Sinon tu meurs !\"",
+>>>>>>> 17d2346b268f030516421bc6a22cf220237c8984
       "\" Je préfère me battre que de me laisser voler comme ca ! Ramène-toi !\""
     ],
     "idEnnemi": "5",
@@ -108,10 +128,10 @@
     "type": "decision",
     "scenario": [
       "Vous avez gagné le combat !",
-      "Après votre combat contre Tink Berval, vous vous diriez vers l'endroit indiqué par le groupe.",
-      "Vous continuez votre chemin jusqu'à la grotte, une pancarte se trouve devant. Dessus est écris « Garde à vous aventurier ! N’essayer pas d’entrer dans cette grotte ou la mort vous attendras ». Vous continuerez votre route sans y faire attention.",
-      "Vous arrivez au bout de cette grotte, vous vous êtes caché derrière un rocher pour analyser la situation. Vous apercevez Chô Peleux, le boss que vous devez tuer.",
-      "Chô Peleux :  \" Mmhh... Cette grotte est faite pour moi ! Tout le monde a peur de moi ! Ahah ! Cette planète est ma destinée !\""
+      "Après votre combat contre Tink Berval, vous continuez votre chemin.",
+      "Vous arrivez de la grotte, il y a une pancarte devant. « Gare à vous ! Ne pas entrer sinon vous etes mort !» Vous continuerez votre route sans y faire attention.",
+      "Au bout de cette grotte, vous vous cachez derrière un rocher pour analyser la situation. Au loin, vous apercevez Chô Peleux.",
+      "Chô Peleux :\"Cette grotte est faite pour moi. Elle est isolée et personne n'osera y pénétrer. Tout le monde a peur de moi ! Ahah !\""
     ],
     "optionA": "Vous prenez la fuite, comme un lache",
     "optionB": "Vous faites une attaque surprise",
@@ -120,10 +140,17 @@
   },
   "13": {
     "type": "combat",
+<<<<<<< HEAD
     "scenario": [
       "Vous êtes tellement indiscret que vous vous faites repérer par Chô Peleux !",
       "Dommage pour vous, maintenant vous avez plus le choix. Préparez-vous au combat.",
       "Chô Peleux : \" Comment oses-tu venir dans ma demeure ! C'est dommage pour toi, maintenant, tu vas mourir !\""
+=======
+    "scenario" : [
+      "Vous êtes tellement indiscret que Chô Peleux vous repère !",
+      "Chô Peleux : \" Comment oses-tu venir dans ma demeure ! C'est dommage pour toi, maintenant, tu vas mourir !\"",
+      "Dommage pour vous, maintenant vous avez plus le choix. Préparez-vous au combat."
+>>>>>>> 17d2346b268f030516421bc6a22cf220237c8984
     ],
     "idEnnemi": "7",
     "typeEnnemi": "boss",
@@ -133,14 +160,14 @@
     "type": "decision",
     "scenario": [
       "Vous avez gagné le combat ! Vous ramassez l'arme de Chô Peleux.",
-      "Vous faite le chemin de retour à Noswo pour valider votre quête",
-      "Lors de votre arrivée à « Noswo », au point de rendez-vous, le groupe d’hommes arrivent un peu après vous. Vous donnez au chef de groupe l'objet demandé.",
+      "Vous retournez à Noswo pour valider votre quête",
+      "Lors de votre arrivée au point de rendez-vous, le groupe d’hommes arrive un peu après vous. Vous donnez au chef de groupe l'objet demandé.",
       "\"Voici ta récompense, jeune aventurier.\"",
       "Vous avez reçu Plastron Credo de Gloire !",
       "Vous avez eu un indice sur Calypso grâce à l'armure qui est Made in Calypso.",
-      "Chef de groupe : \" Voilà, nous avons finis avec toi ! Merci pour avoir accomplis cette quête, je te souhaite bonne chance et courage. Salut \"",
+      "Chef de groupe : \" Voilà, nous avons finis avec toi ! Merci pour avoir accompli cette quête, je te serais à jamais reconnaissant. Salut \"",
       "Le groupe disparaît dans une ruelle...",
-      "Je suis dans le vaisseau  sauf que je me vé-sau."
+      "Je suis dans le vaisseau faut que je me vé-sau."
     ],
     "optionA": null,
     "optionB": null,
@@ -151,14 +178,16 @@
     "type": "combat",
     "scenario": [
       "BIENVENUE SUR ZÉPHYR, Du vent de l'ouest",
-      "Elle constituée principalement de mer. Mais le problème, c’est qu’elle est difficile d’accès dû aux satellites qui tourne autour d’elle. De plus, cette planète est paradisiaque : eau turquoise, terre verdoyante, montagne bien enneigé, Forêt avec une multitude d’arbres différents. Elle est l'une des planètes les plus belles du système.",
-      "Zéphyr a amené Fortune, Gloire et Pouvoir, un homme avait amassé toutes les richesses du monde, son nom God Roger, Roi des pirates, ces dernières paroles incitaient tous les hommes de la planète à s’aventurer en mer.",
-      "God Roger  : \" Mon trésor ? Je vous le laisse si vous le voulez : TROUVER LE ! Je l'ai laissé quelque part dans ce monde. \" Tous se lancèrent sur la route de Zéphyr dans l’espoir de mettre la main sur ce fameux trésor ! Le monde entier connut alors une grande vague de piraterie.",
-      "Tous se lancèrent sur la route de Zéphyr dans l’espoir de mettre la main sur ce fameux trésor ! Le monde entier connut alors une grande vague de piraterie.",
-      "Vous venez d'atterrir à la capital REDLINE. Vous vous promenez dans la ville à la recherche de quête à faire. Vous arrivez devant un tableau avec plus de quête, vous consultez les quêtes qui pourraient être bien pour vous.",
-      "Tout tout à coup, vous sentez quelqu'un, vous touchez le dos... Vous vous retournez et un enfant trouve derrière vous. L'enfant vous demande de l'aide.",
-      "L'enfant : \" Un monsieur m'a voler mon pendentif qui appartenait a mon père... Et j'aimerais le recupérer pouvez vous m'aider s'il vous plaint !\"",
-      "Vous regardez l'enfant... Et vous acceptez de l'aider ! Vous commencez a le suivre... Vous arrivez devant le bar et il vous montre la personne. Et vous vous dirigez vers celle-ci pour récupérer l'objet de l'enfant."
+      "Elle est constituée principalement de mer. Le problème, c’est qu’elle est difficile d’accès à cause de ses satellites.",
+      "Cette planète est paradisiaque : eaux turquoise, terres verdoyantes, montagnes bien enneigées et forêts. Cette planète est la plus belle du système.",
+      "Zéphyr a amené Fortune, Gloire et Pouvoir ! Un homme avait amassé toutes les richesses du monde, son nom God R.Devil, Roi des pirates, ces dernières paroles incitaient tous les hommes de la planète à s’aventurer en mer.",
+      "God R.Devil : \"Mon trésor ? Je vous le laisse si vous le voulez : TROUVER LE ! Je l'ai laissé quelque part dans ce monde. \"",
+      "Tous se lancèrent sur la route de Démacia dans l’espoir de mettre la main sur ce fameux trésor ! Le monde entier connut alors une grande vague de piraterie.",
+      "Vous venez d'atterrir à REDLINE. Vous vous promenez dans la ville à la recherche de quêtes. Vous arrivez devant un tableau à quêtes, vous consultez les quêtes qui pourrez-vous plaire.",
+      "Tout à coup, vous sentez que quelqu'un vous touche le dos... Vous vous retournez. Et là un enfant se trouve devant vous et vous demande de l'aide.",
+      "L'enfant : \"Un monsieur m'a volé mon pendentif qui appartenait à mon père parti en mer... Pouvez-vous me le récupérer s'il vous plait !\"",
+      "Vous acceptez et vous suivez l'enfant jusqu'à un bar. Il vous montre la personne qui lui a volé le pendentif. Vous allez vers cette personne.",
+      "Vous commencez à discuter avec cette personne. Mais vue, qu'il est bourré il commence à vous bousculer et à dégainer son arme."
     ],
     "idEnnemi": "9",
     "typeEnnemi": "brute",
@@ -169,7 +198,7 @@
     "scenario": [
       "Vous avez battu Tek Apout, mais aucun objet pour l'enfant. Vous retournez le voir et il vous explique que c'était un test ! Il vous ramène au port. Il vous montre un bateau, il vous explique que son pendentif est dans ce bateau.",
       "Vous dirigez vers ce bateau, mais un moussaillon vous interpelle et vous attaque, car il a entendu la conversion que vous avez eu avec l'enfant.",
-      "Moussaillon : \" Vous ! N'y penser pas ! Vous ne passerez pas tant que je suis là ! \" Du coup, vous chargez sur le moussaillon pouvoir passer !"
+      "Moussaillon : \" Vous ! N'y penser pas ! Vous ne passerez pas tant que je suis là ! \" \nDu coup, vous chargez sur le moussaillon pouvoir passer !\n"
     ],
     "idEnnemi": "11",
     "typeEnnemi": "brute",
@@ -179,8 +208,8 @@
     "type": "combat",
     "scenario": [
       "Vous avez réussi à vaincre Loudmerawa Le Marin. Vous montez à bord du bateau et vous le fouiller. Vous avez trouvé le pendentif de l'enfant et vous le récupérer.... ",
-      "Sauf que le capitaine du navire, vous surprendre !",
-      "Oshar Marif, le chef des pirates : \" Toi ! Comment oses-tu monter dans mon navire et me voler mon trésor ! Tu te crois pour qui ?! Je suis OSHAR MARIF ! En garde ! Je vais te montrer ce que fais a ceux qui ose me voler !\""
+      "Sauf que le capitaine du navire, vous surprend !",
+      "Oshar Marif, le capitaine du navire : \"Toi ! Comment oses-tu monter dans mon navire et me voler mon trésor ! Tu te crois pour qui ?! Je suis OSHAR MARIF ! En garde ! Je vais te montrer ce que fais a ceux qui ose me voler !\""
     ],
     "idEnnemi": "13",
     "typeEnnemi": "boss",
@@ -191,8 +220,9 @@
     "scenario": [
       "Vous retournez voir l'enfant, cacher derrière une caisse pour ne pas se faire attraper par les pirates.",
       "\"Voilà mon enfant, je te redonne le pendentif de ton père. Garde le précieusement et ne le perds plus.\"",
-      "L'enfant le récupère est vous remercie. Et vous remet la récompense qu'il vous avait promis. Il s'agit d'une Maverick MV700, une arme à distance assez rare. L'enfant retourna chez lui, en ayant les larmes aux yeux.",
-      "Je suis dans le vaisseau  sauf que je me vé-sau."
+      "L'enfant le récupère est vous remercie. Et vous remet une récompense... L'enfant retourna chez lui, en ayant les larmes aux yeux.",
+      "Vous avez reçu Maverick MV700 !",
+      "Je suis dans le vaisseau faut que je me vé-sau."
     ],
     "optionA": null,
     "optionB": null,
