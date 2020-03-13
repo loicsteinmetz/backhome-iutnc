@@ -94,7 +94,6 @@ public class BackHomeController extends Application {
      */
     @FXML
     private void bouttonJouer() {
-        BackHome.setStarted();
         startBtn.setVisible(false);
         saveBtn.setVisible(false);
         titre.setVisible(false);

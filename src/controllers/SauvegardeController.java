@@ -61,6 +61,20 @@ public class SauvegardeController extends Application {
     private void initialize(){
         btn1.setDisable(true);
         btn2.setDisable(true);
+        Sauvegarde[] allSauvegardes = Sauvegarde.getAllSauvegardes();
+        HBox box;
+        Label date, localisation;
+        for (int i = 0 ; i < sauvegardes.getChildren().size() ; i++){
+            box = (HBox)sauvegardes.getChildren().get(i);
+            if (!allSauvegardes[i].estVide()){
+                date = (Label)box.getChildren().get(0);
+                date.setText(allSauvegardes[i].getDate());
+                localisation = (Label)box.getChildren().get(1);
+                localisation.setText(allSauvegardes[i].getLocalisation());
+            } else {
+                box.getStyleClass().add("vide");
+            }
+        }
         if (!BackHome.getStarted()){
             btn1.setOnAction(this::charger);
             for(Node sauvegarde : sauvegardes.getChildren()){
@@ -121,8 +135,8 @@ public class SauvegardeController extends Application {
      */
     @FXML
     private void supprimer(Event e){
-        // todo : suppression de la sauvegarde
         HBox sauvegarde = (HBox)sauvegardes.getChildren().get(idSelection - 1);
+        Sauvegarde.supprimerSauvegarde(idSelection);
         sauvegarde.getStyleClass().add("vide");
         sauvegarde.setStyle("-fx-border-color:transparent;");
         Label date = (Label)sauvegarde.getChildren().get(0);
@@ -140,7 +154,7 @@ public class SauvegardeController extends Application {
      */
     @FXML
     private void charger(Event e){
-        // todo : chargement de la sauvegarde
+        new Sauvegarde(idSelection).charger();
         new ViewLoader().switchTo(CarteController.getView(), e);
     }
 
@@ -151,7 +165,7 @@ public class SauvegardeController extends Application {
      */
     @FXML
     private void sauvegarder(Event e){
-        // todo : enregistrement de la sauvegarde
+        Sauvegarde.sauvegarder(idSelection);
         new ViewLoader().switchTo(CarteController.getView(), e);
     }
 

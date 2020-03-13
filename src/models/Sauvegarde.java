@@ -157,4 +157,13 @@ public class Sauvegarde implements models.Configurable {
     public static void main (String[] ags){
         sauvegarder(2);
     }
+
+    public String getDate() {
+        SimpleDateFormat parser = new SimpleDateFormat("dd-MM-YYYY - HH:mm");
+        return parser.format(date);
+    }
+
+    public String getLocalisation() {
+        return localisation.getNom();
+    }
 }

@@ -70,7 +70,6 @@ public class JsonParser {
     }
 
     public void ecrireJson(String fichier, JSONObject objet) throws IOException, URISyntaxException {
-        System.out.println(getClass().getResource(fichier).toURI());
         OutputStream outputStream = new FileOutputStream(new File(getClass().getResource(fichier).toURI()));
         OutputStreamWriter file = new OutputStreamWriter(outputStream);
         file.write(objet.toJSONString());
