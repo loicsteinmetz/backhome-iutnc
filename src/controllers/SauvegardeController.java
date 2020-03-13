@@ -59,6 +59,7 @@ public class SauvegardeController extends Application {
      */
     @FXML
     private void initialize(){
+        Sauvegarde.init();
         btn1.setDisable(true);
         btn2.setDisable(true);
         Sauvegarde[] allSauvegardes = Sauvegarde.getAllSauvegardes();

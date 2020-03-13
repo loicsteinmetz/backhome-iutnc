@@ -2,11 +2,15 @@ package models;
 
 import lib.org.json.simple.JSONArray;
 import lib.org.json.simple.JSONObject;
+import lib.org.json.simple.parser.JSONParser;
 import lib.org.json.simple.parser.ParseException;
-import utils.JsonParser;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.URISyntaxException;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -26,21 +30,50 @@ public class Sauvegarde implements models.Configurable {
     private int carburant;
     private boolean vide;
 
+    private static String FICHIER;
+
     public Sauvegarde(int id){
         this.id = id;
         this.initConfiguration();
     }
 
-    @Override
-    public void initConfiguration() {
-        String chemin = "/data/sauvegardes.json";
-        String cle = Integer.toString(id);
-        JSONObject sauvegarde = null;
+    public static void init(){
+        URL url = Sauvegarde.class.getProtectionDomain()
+                .getCodeSource()
+                .getLocation();
         try {
-            sauvegarde = new JsonParser().parseObject(chemin, cle);
-        } catch (IOException | ParseException e) {
+            File dir = new File(url.toURI()).getParentFile();
+            FICHIER = dir.getPath() + "/sauvegardes.json";
+        } catch (URISyntaxException e) {
             e.printStackTrace();
         }
+        try {
+            new FileReader(FICHIER);
+        } catch (FileNotFoundException e) {
+            try {
+                Files.copy(Sauvegarde.class.getResourceAsStream("/data/sauvegardes.json"),
+                        Paths.get(FICHIER));
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+
+    @Override
+    public void initConfiguration() {
+        String cle = Integer.toString(id);
+        Object obj = null;
+        JSONParser JsonParser = new JSONParser();
+        try {
+            FileReader r = new FileReader(FICHIER);
+            obj = JsonParser.parse(r);
+        } catch (ParseException | FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        JSONObject json = (JSONObject) obj;
+        JSONObject sauvegarde = (JSONObject) json.get(cle);
         if (sauvegarde != null){
             if (sauvegarde.get("date") != null){
                 vide = false;
@@ -79,10 +112,11 @@ public class Sauvegarde implements models.Configurable {
         JSONObject sauvegarde = initSauvegarde();
         sauvegardes.put(String.valueOf(id), sauvegarde);
         ajouterAnciennesSauvegardes(id, sauvegardes);
-
-        try {
-            new JsonParser().ecrireJson("/data/sauvegardes.json", sauvegardes);
-        } catch (IOException | URISyntaxException e) {
+        try (Writer writer = new BufferedWriter(new OutputStreamWriter(
+                new FileOutputStream(FICHIER),
+                StandardCharsets.UTF_8))) {
+            writer.write(sauvegardes.toJSONString());
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -92,9 +126,11 @@ public class Sauvegarde implements models.Configurable {
         JSONObject sauvegarde = initSauvegardeVide();
         sauvegardes.put(String.valueOf(id), sauvegarde);
         ajouterAnciennesSauvegardes(id, sauvegardes);
-        try {
-            new JsonParser().ecrireJson("/data/sauvegardes.json", sauvegardes);
-        } catch (IOException | URISyntaxException e) {
+        try (Writer writer = new BufferedWriter(new OutputStreamWriter(
+                new FileOutputStream(FICHIER),
+                StandardCharsets.UTF_8))) {
+            writer.write(sauvegardes.toJSONString());
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -161,5 +197,9 @@ public class Sauvegarde implements models.Configurable {
 
     public String getLocalisation() {
         return localisation.getNom();
+    }
+
+    public static void main(String[] args){
+        System.out.println(Sauvegarde.class.getProtectionDomain().getCodeSource().getLocation().getPath() + "sauvegardes.json");
     }
 }
