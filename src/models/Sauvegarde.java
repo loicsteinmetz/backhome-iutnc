@@ -44,7 +44,7 @@ public class Sauvegarde implements models.Configurable {
         if (sauvegarde != null){
             if (sauvegarde.get("date") != null){
                 vide = false;
-                SimpleDateFormat parser = new SimpleDateFormat("dd-MM-YYYY - HH:mm");
+                SimpleDateFormat parser = new SimpleDateFormat("dd-MM-yyyy - HH:mm");
                 try {
                     date = parser.parse(sauvegarde.get("date").toString());
                 } catch (java.text.ParseException e) {
@@ -100,7 +100,7 @@ public class Sauvegarde implements models.Configurable {
     }
 
     private static void ajouterAnciennesSauvegardes(int id, JSONObject sauvegardes){
-        SimpleDateFormat parser = new SimpleDateFormat("dd-MM-YYYY - HH:mm");
+        SimpleDateFormat parser = new SimpleDateFormat("dd-MM-yyyy - HH:mm");
         JSONObject prev;
         Sauvegarde[] prevSauvegardes = getAllSauvegardes();
         for (int i = 0 ; i < prevSauvegardes.length ; i++){
@@ -124,7 +124,7 @@ public class Sauvegarde implements models.Configurable {
 
     private static JSONObject initSauvegarde(){
         JSONObject sauvegarde = new JSONObject();
-        SimpleDateFormat parser = new SimpleDateFormat("dd-MM-YYYY - HH:mm");
+        SimpleDateFormat parser = new SimpleDateFormat("dd-MM-yyyy - HH:mm");
         sauvegarde.put("date", parser.format(new Date()));
         sauvegarde.put("localisation", getHeros().getLocalisation().getNom());
         sauvegarde.put("statusPlanetes", getCarte().getAllStatus());
@@ -154,12 +154,8 @@ public class Sauvegarde implements models.Configurable {
         getInventaire().setCarburant(carburant);
     }
 
-    public static void main (String[] ags){
-        sauvegarder(2);
-    }
-
     public String getDate() {
-        SimpleDateFormat parser = new SimpleDateFormat("dd-MM-YYYY - HH:mm");
+        SimpleDateFormat parser = new SimpleDateFormat("dd-MM-yyyy - HH:mm");
         return parser.format(date);
     }
 
