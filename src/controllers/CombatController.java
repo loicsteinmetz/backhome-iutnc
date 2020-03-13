@@ -377,7 +377,6 @@ public class CombatController extends Application {
                     if (!BackHome.finJeu()){
                         getHeros().setSituation(Situation.VAISSEAU);
                         getHeros().getLocalisation().recompenses();
-                        getInventaire().modifierCarburant(125);
                         vl.switchTo(CarteController.getView(), event);
                     } else {
                         vl.switchTo(BackHomeController.getView(), event);

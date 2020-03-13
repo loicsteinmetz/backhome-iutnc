@@ -125,7 +125,6 @@ public class DecisionController extends Application {
         if (MODELE.getIdIssueA() == 0){
             if (!BackHome.finJeu()){
                 getHeros().getLocalisation().recompenses();
-                getInventaire().modifierCarburant(125);
                 vl.switchTo(CarteController.getView(), e);
             } else {
                 vl.switchTo(BackHomeController.getView(), e);
