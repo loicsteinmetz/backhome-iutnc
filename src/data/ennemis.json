@@ -106,7 +106,7 @@
 },
 
   "18": {
-    "nom": "Lazarus",
+    "nom": "Kamero I",
     "description": "Tyran de Tremor",
     "idArme": "20",
     "idArmeLegendaire": "22",
@@ -118,5 +118,34 @@
     "description": "Chef d'esquade",
     "idArme": "2",
     "pv": 100
+  },
+
+  "22": {
+    "nom": "Narami",
+    "description": "Lieutenant fantassin Impérial",
+    "idArme": "34",
+    "pv": 100
+  },
+
+  "24": {
+    "nom":"Geralt",
+    "description": "Lieutenant artilleur Impérial",
+    "idArme": "36",
+    "pv": 50
+  },
+
+  "26": {
+    "nom": "Argos",
+    "description": "Général Impérial",
+    "idArme": "38",
+    "pv": 50
+  },
+
+  "28": {
+    "nom": "Noctarion III",
+    "description": "Empereur suprême",
+    "idArme": "40",
+    "idArmeLegendaire": "42",
+    "pv": 300
   }
 }

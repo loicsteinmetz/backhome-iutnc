@@ -10,7 +10,6 @@
     "idIssueA": "4",
     "idIssueB": "6"
   },
-
   "4": {
     "type": "combat",
     "scenario": [
@@ -25,10 +24,9 @@
     "typeEnnemi": "brute",
     "idIssue": "8"
   },
-
   "1": {
     "type": "combat",
-    "scenario" : [
+    "scenario": [
       "\n BIENVENUE SUR HERMÈS, Aux terres promises \n",
       "Cette planète a été abandonnée par l'espèce humaine,en laissant tout sur leur passage… Cette planète a pu renaître de ses cendres, suite à ses dégâts…. Et la nature a pu reprendre tous ces droits..",
       "Bonne Chance sur cette planète.",
@@ -38,23 +36,21 @@
     ],
     "idEnnemi": "1",
     "typeEnnemi": "brute",
-    "idIssue" : "3"
+    "idIssue": "3"
   },
-
   "3": {
     "type": "combat",
-    "scenario" : [
+    "scenario": [
       "Vous avez gagné le combat !",
       "Vous entendez des bruits qui proviennent d'un buisson. Vous vous retournez est là ! Un Gorille surgit du buisson et semble vouloir ta peau !",
       "Essaie de le vaincre afin de lui soutirer son arme ! ",
       "Le Gorille commença à crier : \"Je vais te tuer ! Ahah ! Ramène-toi, je vais te faire subir la même chose que tu as fait au gobelin ! Petit avorton !\"",
       "\" C'est ce que tu penses sale macaque ! Je vais te montrais, c'est qui avorton ! \""
     ],
-    "idEnnemi" : "3",
+    "idEnnemi": "3",
     "typeEnnemi": "boss",
-    "idIssue" : "5"
+    "idIssue": "5"
   },
-
   "25": {
     "type": "decision",
     "scenario": [
@@ -66,7 +62,6 @@
     "idIssueA": "5",
     "idIssueB": "VAISSEAU"
   },
-
   "5": {
     "type": "decision",
     "scenario": [
@@ -76,12 +71,11 @@
       "Cette journée a été très rude pour toi, il est l’heure pour toi de partir de cette planète afin de pouvoir continuer ta destiné !",
       "Je suis dans le vaisseau  sauf que je me vé-sau."
     ],
-    "optionA": null ,
-    "optionB": null ,
+    "optionA": null,
+    "optionB": null,
     "idIssueA": "VAISSEAU",
     "idIssueB": null
   },
-
   "7": {
     "type": "decision",
     "scenario": [
@@ -98,20 +92,18 @@
     "idIssueA": "9",
     "idIssueB": "9"
   },
-
   "9": {
     "type": "combat",
-    "scenario" : [
+    "scenario": [
       "Vous vous mettez en route, vous vous dirigez donc en dehors de la ville vers la destination de la quête.",
       "Quelques mètres après la sortie, vous vous faites interpeller par le rebelle de la ville. Il a aperçu vous êtes seul et pas du coin.",
       "Le Rebelle: \" Hé toi ! Petit étranger ! Viens me voir ! Tu m'a l'air riche et bien équipé ! Viens donc me donner tout ce que tu as ! Sinon tu meurs !\"",
       "\" Je préfère me battre que de me laisser voler comme ca ! Ramène-toi !\""
     ],
-    "idEnnemi" : "5",
+    "idEnnemi": "5",
     "typeEnnemi": "tireur",
-    "idIssue" : "11"
+    "idIssue": "11"
   },
-
   "11": {
     "type": "decision",
     "scenario": [
@@ -126,20 +118,18 @@
     "idIssueA": "13",
     "idIssueB": "13"
   },
-
   "13": {
     "type": "combat",
-    "scenario" : [
+    "scenario": [
       "Vous êtes tellement indiscret que vous vous faites repérer par Chô Peleux !",
       "Dommage pour vous, maintenant vous avez plus le choix. Préparez-vous au combat.",
       "Chô Peleux : \" Comment oses-tu venir dans ma demeure ! C'est dommage pour toi, maintenant, tu vas mourir !\""
     ],
-    "idEnnemi" : "7",
+    "idEnnemi": "7",
     "typeEnnemi": "boss",
-    "idIssue" : "15"
+    "idIssue": "15"
   },
-
-  "15":{
+  "15": {
     "type": "decision",
     "scenario": [
       "Vous avez gagné le combat ! Vous ramassez l'arme de Chô Peleux.",
@@ -152,12 +142,11 @@
       "Le groupe disparaît dans une ruelle...",
       "Je suis dans le vaisseau  sauf que je me vé-sau."
     ],
-    "optionA": null ,
-    "optionB": null ,
+    "optionA": null,
+    "optionB": null,
     "idIssueA": "VAISSEAU",
     "idIssueB": null
   },
-
   "17": {
     "type": "combat",
     "scenario": [
@@ -171,35 +160,32 @@
       "L'enfant : \" Un monsieur m'a voler mon pendentif qui appartenait a mon père... Et j'aimerais le recupérer pouvez vous m'aider s'il vous plaint !\"",
       "Vous regardez l'enfant... Et vous acceptez de l'aider ! Vous commencez a le suivre... Vous arrivez devant le bar et il vous montre la personne. Et vous vous dirigez vers celle-ci pour récupérer l'objet de l'enfant."
     ],
-    "idEnnemi" : "9",
+    "idEnnemi": "9",
     "typeEnnemi": "brute",
-    "idIssue" : "19"
+    "idIssue": "19"
   },
-
   "19": {
-    "type" : "combat",
+    "type": "combat",
     "scenario": [
       "Vous avez battu Tek Apout, mais aucun objet pour l'enfant. Vous retournez le voir et il vous explique que c'était un test ! Il vous ramène au port. Il vous montre un bateau, il vous explique que son pendentif est dans ce bateau.",
       "Vous dirigez vers ce bateau, mais un moussaillon vous interpelle et vous attaque, car il a entendu la conversion que vous avez eu avec l'enfant.",
       "Moussaillon : \" Vous ! N'y penser pas ! Vous ne passerez pas tant que je suis là ! \" Du coup, vous chargez sur le moussaillon pouvoir passer !"
     ],
-    "idEnnemi" : "11",
+    "idEnnemi": "11",
     "typeEnnemi": "brute",
-    "idIssue" : "21"
+    "idIssue": "21"
   },
-
   "21": {
-    "type" : "combat",
+    "type": "combat",
     "scenario": [
       "Vous avez réussi à vaincre Loudmerawa Le Marin. Vous montez à bord du bateau et vous le fouiller. Vous avez trouvé le pendentif de l'enfant et vous le récupérer.... ",
       "Sauf que le capitaine du navire, vous surprendre !",
       "Oshar Marif, le chef des pirates : \" Toi ! Comment oses-tu monter dans mon navire et me voler mon trésor ! Tu te crois pour qui ?! Je suis OSHAR MARIF ! En garde ! Je vais te montrer ce que fais a ceux qui ose me voler !\""
     ],
-    "idEnnemi" : "13",
+    "idEnnemi": "13",
     "typeEnnemi": "boss",
-    "idIssue" : "23"
+    "idIssue": "23"
   },
-
   "23": {
     "type": "decision",
     "scenario": [
@@ -213,7 +199,6 @@
     "idIssueA": "VAISSEAU",
     "idIssueB": null
   },
-
   "6": {
     "type": "combat",
     "scenario": [
@@ -226,7 +211,6 @@
     "typeEnnemi": "tireur",
     "idIssue": "8"
   },
-
   "8": {
     "type": "combat",
     "scenario": [
@@ -241,9 +225,8 @@
     "typeEnnemi": "tireur",
     "idIssue": "10"
   },
-
-  "10":{
-    "type":"combat",
+  "10": {
+    "type": "combat",
     "scenario": [
       "Vous avez gagné le combat!",
       "Vous reprenez la route vers le concessionnaire...",
@@ -255,7 +238,6 @@
     "typeEnnemi": "boss",
     "idIssue": "12"
   },
-
   "12": {
     "type": "decision",
     "scenario": [
@@ -271,10 +253,8 @@
     "idIssueA": "VAISSEAU",
     "idIssueB": null
   },
-
-
-  "14":{
-    "type":"combat",
+  "14": {
+    "type": "combat",
     "scenario": [
       "Vous atterrissez sur Lumini.",
       "Vous savez qu'il s'agit de la dernière étape avec de rentrer chez vous...",
@@ -284,15 +264,14 @@
       "Midi sonne. Tout le monde marche et se dirige vers la même direction. Vous suivez la foule...",
       "Vous arrivez devant une majestueuse cathédrale. Apparait, en haut des marches de cette dernière, une femme. Elle est vêtue d'une tunique violette dont une capuche cache son visage...",
       "Après quelques secondes de silence, elle récite ce qui semble être une formule dans un dialecte inconnu. Subitement, elle s'interrompt et dit \"Un intrus est présent\". Elle  vous désigne du doigt.",
-      " La foule s'écarte et forme un cercle autour de vous. Un fusilier court vers vous: \"Veuillez m'excuser de vous déranger ainsi, mais l'Impératrice souhaite votre mort. Je ferai en sorte qu'elle soit rapide et indolore!\""
+      "La foule s'écarte et forme un cercle autour de vous. Un fusilier court vers vous: \"Veuillez m'excuser de vous déranger ainsi, mais l'Impératrice souhaite votre mort. Je ferai en sorte qu'elle soit rapide et indolore!\""
     ],
     "idEnnemi": "8",
     "typeEnnemi": "tireur",
     "idIssue": "16"
   },
-
   "16": {
-    "type":"combat",
+    "type": "combat",
     "scenario": [
       "Vous avez gagné le combat!",
       "La femme mystérieuse, escortée par deux géants impériaux, se réfugie dans la cathédrale. La foule reste immobile, silencieuse. Vous décidez de la poursuivre...",
@@ -302,23 +281,21 @@
     "typeEnnemi": "brute",
     "idIssue": "18"
   },
-
   "18": {
     "type": "combat",
     "scenario": [
       "Vous avez gagné le combat!",
       "Vous décidez d'accéder à la tour principale de la cathédrale. Après avoir gravi ses innombrables marches, vous voilà au sommet...",
-      "Devant vous, la femme mystérieuse et sa garde rapprochée. Vous lui demandez ce qu'il se passe dans cette ville",
-      "Elle retire sa capuche. Sous cette capuche une femme au visage angélique. \"En temps normal je n'aurai bien évidemment rien répondu mais comme tu vis tes derniers instants, je vais t'accorder une réponse. J'ai développé un pouvoir très puissant qui me permet de manipuler la population. Ainsi, j'évite tout conflit et instaure une paix inébranlable.\"",
+      "Devant vous, la femme mystérieuse et sa garde rapprochée. Vous lui demandez ce qu'il se passe dans cette ville.",
+      "Elle retire sa capuche. En dessous, une femme au visage angélique. \"En temps normal je n'aurai bien évidemment rien répondu mais comme tu vis tes derniers instants, je vais t'accorder une réponse. J'ai développé un pouvoir très puissant qui me permet de manipuler la population. Ainsi, j'évite tout conflit et instaure une paix inébranlable.\"",
       "Vous répondez qu'il est indigne de pratiquer ce genre de magie noire. Son visage se métamorphose et devient d'une monstruosité absolue \"Quiconque se trouvant sur mon chemin périra dans la douleur!\""
     ],
     "idEnnemi": "12",
     "typeEnnemi": "superBoss",
     "idIssue": "20"
   },
-
   "20": {
-    "type": "decison",
+    "type": "decision",
     "scenario": [
       "Vous avez gagné le combat!",
       "Du haut de la tour, vous constatez que toute la population reprend ses esprits et vous acclame. Vous avez sauvé des ténèbres toute la ville!",
@@ -332,32 +309,30 @@
     "idIssueA": "VAISSEAU",
     "idIssueB": null
   },
-
   "22": {
     "type": "decision",
     "scenario": [
       "Vous atterrissez sur Tremor.",
       "Vous savez qu'il s'agit de la dernière étape avec de rentrer à la maison...",
-      "Cette planète est dévastée. Elle vous rappelle Utopia",
-      "Vous descendez de votre vaisseau. Rapidement, plusieurs personnes viennent à votre rencontre: \"Vous devez nous aider étranger. Vous êtes notre dernier espoir!\"" ,
-      "Après discussion, vous comprenez qu'un tyran dirige d'une main de fer cette planète. On vous indique où le trouver, deux chemins sont possibles. Le premier, le moins sûr, sera semé d'embuches mais vous permettra de débarrasser les sbires du tyran de cette planète. Le second, est un passage secret souterrain qui vous permettra d'accéder au tyran en peu de temps...",
+      "Cette planète est dévastée. Elle vous rappelle Utopia.",
+      "Vous descendez de votre vaisseau. Rapidement, plusieurs personnes viennent à votre rencontre: \"Vous devez nous aider étranger. Vous êtes notre dernier espoir!\"",
+      "Après discussion, vous comprenez qu'un tyran dirige d'une main de fer cette planète. On vous indique où le trouver: deux chemins sont possibles. Le premier, le moins sûr, sera semé d'embuches mais vous permettra de débarrasser les sbires du tyran de cette planète. Le second, est un passage secret souterrain qui vous permettra d'accéder au tyran en peu de temps...",
       "Que choisissez-vous?"
     ],
     "optionA": "Venger les habitants",
-    "optionB": "Accéder au Tyran via le passage secret?",
+    "optionB": "Accéder au Tyran via le passage secret",
     "idIssueA": "24",
     "idIssueB": "28"
   },
-
   "24": {
     "type": "combat",
     "scenario": [
       "Vous ne choisissez pas la simplicité mais les habitants vous en seront d'avantage redevable.",
-      "Après une heure de marche, vous arrivez aux porte d'une forteresse. Une voix vous interpelle: \"Dégage d'ici misérable\". Vous levez la tête et défiez du regard la personne d'où provient cette voix.",
+      "Après une heure de marche, vous arrivez aux portes d'une forteresse. Une voix vous interpelle: \"Dégage d'ici misérable\". Vous levez la tête et défiez du regard la personne d'où provient cette voix.",
       "La porte de la forteresse s'ouvre: un ennemi vient dans votre direction. Il veut en découdre..."
     ],
     "idEnnemi": "14",
-    "typeEnnemi":"brute",
+    "typeEnnemi": "brute",
     "idIssue": "26"
   },
 
@@ -368,28 +343,27 @@
       "Vous pénétrez dans la forteresses. Elle est magnifique, dans un état irréprochable. Très différent ce que vous avez pu voir avant...",
       "Vous surprenez un sbire du tyran pleureur: \"Ce monstre est indigne de nous diriger\" . Vous vous approchez  lui les mains en l'air et lui demandez pourquoi: \"Cela fait des années que je le sers. J'ai commis des actes terribles pour lui et hier, il a ordonné un raid dans mon village car il était sûr que des opposants s'y trouvaient. Il n'en était rien, toute ma famille est morte... Je me vengerai!\"",
       "Vous lui dites alors que vous êtes en mesure de l'aider: \"Etranger, des centaines de soldates occupent cette forteresse. Ce que je peux faire c'est lancer une alerte afin de créer une diversion. Si vous parvenez à tuer le tyran, ses sbires et moi compris vous obéiront. Vous semblez être quelqu'un de bien... Au fait, je m'appelle Kaison!\" Vous acceptez.",
-      "Une alarme retenti. Vous vous dirigez vers l'endroit où se trouve le tyran",
+      "Une alarme retenti. Vous vous dirigez vers l'endroit où se trouve le tyran.",
       "Dans un couloir, vous tombez sur un ennemi: \"C'est une diversion! Il y a un traître parmi nous!\". Vous devez vite le réduire au silence avant que votre plan ne tombe à l'eau..."
     ],
     "idEnnemi": "16",
     "typeEnnemi": "tireur",
     "idIssue": "28"
   },
-
   "28": {
-    "type" : "combat",
+    "type": "combat",
     "scenario": [
       "Vous voilà devant l'entrée du donjon du tyran. Vous entrez...",
       "Une voix retenti \"Quel agitateur ose pénétrer dans mon royaume?\". Vous restez silencieux, déterminé à mettre un terme à cette tyrannie",
-      "\"Comment osez-vous perturber l'harmonie de cette planète?\". Vous lui répondez que l'harmonie est étrangère à ces terres et que le temps est venu de libérer le peuple. \"L'ordre et le pouvoir s'obtiennent par le sang. Pour les conserver, il en sera de même!\". Il sort de sa poche un diamant, le serre fort. Un halo de lumière enveloppe le tyran pendant quelques secondes. Le halo se dissipe et laisse apparaitre un jeune homme au physique imposant: \"Voyons ce que tu as dans le ventre!\""
+      "\"Comment osez-vous perturber l'harmonie de cette planète?\". Vous lui répondez que l'harmonie est étrangère à ces terres et que le temps est venu de libérer le peuple.",
+      "\"L'ordre et le pouvoir s'obtiennent par le sang. Pour les conserver, il en sera de même!\". Il sort de sa poche un diamant, le serre fort. Un halo de lumière enveloppe le tyran pendant quelques secondes. Le halo se dissipe et laisse apparaitre un jeune homme au physique imposant: \"Voyons ce que tu as dans le ventre!\""
     ],
     "idEnnemi": "18",
     "typeEnnemi": "superBoss",
     "idIssue": "30"
   },
-
   "30": {
-    "type": "decison",
+    "type": "decision",
     "scenario": [
       "Vous avez gagné le combat!",
       "Apparait devant vous, dans un halo de lumière, la dernière coordonnée nécessaire de Calypso. A vos pieds, le diamant qu'a utilisé le tyran. Comment l'utiliserez-vous?...",
@@ -404,6 +378,94 @@
     "optionB": null,
     "idIssueA": "VAISSEAU",
     "idIssueB": null
+  },
+  "32": {
+    "type": "combat",
+    "scenario": [
+      "Vous atterrissez sur Calypso.",
+      "Après ce long et dangereux périple, vous voilà enfin chez vous.",
+      "Malgré le peu de souvenir que vous en avez, vous pensez reconnaitre au loin votre ville natale. Il est temps de retrouver vos proches et, peut-être, d'obtenir les réponses à vos questions...",
+      "Vous vous dirigez vers la ville. Vous ne parvenez pas à vous en rappeler le nom jusqu'à voir un panneau d'indication. Il est écrit \"Eternia\",. Ce nom vous est familier, vous continuez d'avancer...",
+      "La route est déserte.",
+      "Vous arrivez enfin. Vous croisez quelques habitants qui semblent hagard. Subitement, quelqu'un vous interpelle: \"Lazarus, est-ce toi? \". Il s'agit d'une femme d'un certain âge. Vous ne parvenez pas à la reconnaître. \"C'est bien toi je suis sûr! Je suis Eucharis, ta mère! Je n'en reviens pas que tu sois revenu, tu es bien le seul malheureusement...\"",
+      "Vous vous souvenez d'elle, ainsi que de votre père et de votre femme. Leurs noms ne vous reviennent pas, seulement leurs visages... Vous demandez à votre mère ce qu'il s'est passé.",
+      "\"Il y a maintenant 10 ans, des envahisseurs sont venus du ciel. C'était la première fois que nous voyions ça! Malheureusement, ils n'étaient pas pacifiques. A peine arrivés, ils nous ont massacré. Une chose les intéressaient, l'arbre de Morgdrul et son pouvoir. Leur leader suprême, Noctarion III, s'en est emparé. L'obtention de ce pouvoir à provoqué une conséquence désastreuse: une explosion d'énergie à tuer bon nombres de personnes et il semblerait qu'elle en ai téléporté d'autres... Noctarion III se trouve toujours ici avec son armée, à 2h de marche d'ici. A cause de lui, nous sommes réduits en esclavage... \" ",
+      "Tout devient plus clair! Vous vous souvenez en effet d'une invasion suivie d'une explosion. Dix ans se sont écoulées! Et puis votre réveil en dessous d'un arbre sur Utopia a t'il un lien avec Morgdrul? En tout cas, il est tant de vous venger et de rétablir la paix sur Calypso. Votre mère vous donne une carte. Il est temps d'en finir!",
+      "Après deux heures de marche, un garde ennemi vous interpelle \"Vous avez interdiction de sortir des zones restreintes. Vous connaissez la conséquence! \" "
+    ],
+    "idEnnemi": "22",
+    "typeEnnemi": "brute",
+    "idIssue": "34"
+  },
+  "34": {
+    "type": "decision",
+    "scenario": [
+      "Vous avez gagné!",
+      "Vous apercevez une immense base. De nombreux Destroyers et vaisseaux de combat sont au sol ainsi que des dizaines de milliers de soldats.",
+      " Au centre de cette base, une immense tour. Nocturion III est forcément à son sommet.",
+      "Deux chemins sont possibles: le premier vous fera passer directement dans la base et vous permettra de venger votre peuple des sbires de l'empereur. Le second est un passage secret vous permettant d'accéder directement à la tour. Quel chemin souhaitez-vous emprunter?"
+    ],
+    "optionA": "Venger le peuple",
+    "optionB": "Emprunter le passage secret",
+    "idIssueA": "36",
+    "idIssueB": "40"
+  },
+  "36": {
+    "type": "combat",
+    "scenario": [
+      "Vous vous dirigez vers la base. Rapidement, vous apercevez un ennemi de dos. Vous ne lui laissez aucune chance et l'attaquez..."
+    ],
+    "idEnnemi": "24",
+    "typeEnnemi": "brute",
+    "idIssue": "34"
+  },
+  "38": {
+    "type": "decision",
+    "scenario": [
+      "Vous avez gagné!",
+      "Un autre soldat vous a aperçu vous battre. Il a donné l'alerte. Vous courrez vers la tour discrètement."
+    ],
+    "optionA": "Courir vers la tour",
+    "optionB": null,
+    "idIssueA": "40",
+    "idIssueB": null
+  },
+  "40": {
+    "type": "combat",
+    "scenario": [
+      "Vous voilà dans la tour. Dès l'entrée, vous tombez sur un colosse, seul, équipé d'une armure technologique très avancée.",
+      "\"Te voilà. L'Empereur savait que tu viendrais. Lorsqu'il a récupéré le pouvoir de l'arbre, il a eu une vision de toi qui tenterait de nous vaincre. La fin de cette histoire? Ta défaite, ici et maintenant! \" "
+    ],
+    "idEnnemi": "26",
+    "typeEnnemi": "boss",
+    "idIssue": "42"
+  },
+  "42": {
+    "type": "combat",
+    "scenario": [
+      "Vous avez gagné!",
+      "Devant-vous, un escalier composé de milliers de marches... Sans attendre, vous montez",
+      "Vous voilà à l'apogée de votre aventure...",
+      "Sur un trône, Noctarion III. Il vous interpelle: \"Te voilà enfin Lazarus. Tu es exactement comme je t'avais vu dans ma vision. Savais-tu que récupérer le pouvoir de Morgdrul doit entrainer la réalisation d'une prophétie? La personne qui se sera emparé de son pouvoir devra faire face à un ennemi pas comme les autres. Un ennemi originaire d'une civilisation très ancienne. Si il parvient à le tuer, alors il sera jusqu'à la fin des temps l'être le plus puissant de l'univers.\"",
+      "\"C'est aujourd'hui que je deviendrai cette personne! \""
+    ],
+    "idEnnemi": "28",
+    "typeEnnemi": "superBoss",
+    "idIssue": "44"
+  },
+  "44": {
+    "type": "decision",
+    "scenario": [
+      "Vous avez gagné!",
+      "L'empereur est mort... Vive l'Empereur? Non... Vous ne voulez pas de ce rôle. Une lumière s'échappe du corps de Noctarion III, il s'agit du pouvoir de l'arbre. S'en emparer ou le rendre? La décision est rapidement prise.",
+      "Vous sortez de la tour et l'ensemble de l'armée de l'Empereur prend la fuite. La paix est rétablie.",
+      "Vous retournez voir votre mère. Elle est très fière de vous! En revanche, toutes les autres personnes qui ont été téléportées comme vous ne sont toujours pas revenue...",
+      "Une autre aventure vous attend: retrouver votre famille! Vous saluez votre mère et lui promettez que tout rentrera bientôt dans l'ordre. Vous retournez vers le vaisseau...",
+      "FIN"
+    ],
+    "optionA": null,
+    "optionB": null,
+    "idIssueA": "VAISSEAU",
+    "idIssueB": null
   }
-
 }
