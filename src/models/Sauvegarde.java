@@ -18,7 +18,10 @@ import static models.Carte.getCarte;
 import static models.Heros.getHeros;
 import static models.Inventaire.getInventaire;
 
-public class Sauvegarde implements models.Configurable {
+/**
+ * Modélise une sauvegarde et gère son traitement
+ */
+public class Sauvegarde implements Configurable {
 
     private int id;
     private Date date;
@@ -32,11 +35,18 @@ public class Sauvegarde implements models.Configurable {
 
     private static String FICHIER;
 
+    /**
+     * Constructeur
+     * @param id identifiant de la sauvegarde
+     */
     public Sauvegarde(int id){
         this.id = id;
         this.initConfiguration();
     }
 
+    /**
+     * Initialise un fichier de stockage externe
+     */
     public static void init(){
         URL url = Sauvegarde.class.getProtectionDomain()
                 .getCodeSource()
@@ -59,8 +69,40 @@ public class Sauvegarde implements models.Configurable {
         }
     }
 
+    /**
+     * Récupère les données de configuration d'une sauvegarde
+     */
     @Override
     public void initConfiguration() {
+        JSONObject sauvegarde = readSauvegarde();
+        if (sauvegarde != null && !(boolean)sauvegarde.get("vide")){
+            vide = false;
+            SimpleDateFormat parser = new SimpleDateFormat("dd-MM-yyyy - HH:mm");
+            try {
+                date = parser.parse(sauvegarde.get("date").toString());
+            } catch (java.text.ParseException e) {
+                e.printStackTrace();
+            }
+            localisation = getCarte().getPlaneteParNom(sauvegarde.get("localisation").toString());
+            JSONArray arr = (JSONArray) sauvegarde.get("statusPlanetes");
+            statusPlanete = new boolean[arr.size()];
+            for (int i = 0 ; i < arr.size() ; i++){
+                statusPlanete[i] = (boolean)arr.get(i);
+            }
+            armeCac = new ArmeCac(Integer.parseInt(sauvegarde.get("idArmeCac").toString()));
+            armeDistance = new ArmeDistance(Integer.parseInt(sauvegarde.get("idArmeDistance").toString()));
+            armure = new Armure(Integer.parseInt(sauvegarde.get("idArmure").toString()));
+            carburant = Integer.parseInt(sauvegarde.get("carburant").toString());
+        } else {
+            vide = true;
+        }
+    }
+
+    /**
+     * Accède en lecture au fichier de sauvegarde
+     * @return
+     */
+    private JSONObject readSauvegarde(){
         String cle = Integer.toString(id);
         Object obj = null;
         JSONParser JsonParser = new JSONParser();
@@ -72,32 +114,13 @@ public class Sauvegarde implements models.Configurable {
         }
         JSONObject json = (JSONObject) obj;
         assert json != null;
-        JSONObject sauvegarde = (JSONObject) json.get(cle);
-        if (sauvegarde != null){
-            if (sauvegarde.get("date") != null){
-                vide = false;
-                SimpleDateFormat parser = new SimpleDateFormat("dd-MM-yyyy - HH:mm");
-                try {
-                    date = parser.parse(sauvegarde.get("date").toString());
-                } catch (java.text.ParseException e) {
-                    e.printStackTrace();
-                }
-                localisation = getCarte().getPlaneteParNom(sauvegarde.get("localisation").toString());
-                JSONArray arr = (JSONArray) sauvegarde.get("statusPlanetes");
-                statusPlanete = new boolean[arr.size()];
-                for (int i = 0 ; i < arr.size() ; i++){
-                    statusPlanete[i] = (boolean)arr.get(i);
-                }
-                armeCac = new ArmeCac(Integer.parseInt(sauvegarde.get("idArmeCac").toString()));
-                armeDistance = new ArmeDistance(Integer.parseInt(sauvegarde.get("idArmeDistance").toString()));
-                armure = new Armure(Integer.parseInt(sauvegarde.get("idArmure").toString()));
-                carburant = Integer.parseInt(sauvegarde.get("carburant").toString());
-            } else {
-                vide = true;
-            }
-        }
+        return (JSONObject) json.get(cle);
     }
 
+    /**
+     * Renvoie toutes les sauvegardes enregistrées
+     * @return sauvegardes
+     */
     public static Sauvegarde[] getAllSauvegardes(){
         Sauvegarde[] sauvegardes = new Sauvegarde[5];
         for (int i = 0 ; i < sauvegardes.length ; i++){
@@ -106,6 +129,10 @@ public class Sauvegarde implements models.Configurable {
         return sauvegardes;
     }
 
+    /**
+     * Sauvegarde l'état actuel de la partie
+     * @param id slot de sauvegarde
+     */
     public static void sauvegarder(int id){
         JSONObject sauvegardes = new JSONObject();
         JSONObject sauvegarde = initSauvegarde();
@@ -120,6 +147,10 @@ public class Sauvegarde implements models.Configurable {
         }
     }
 
+    /**
+     * Supprime une sauvegarde
+     * @param id identifiant de la sauvegarde à supprimer
+     */
     public static void supprimerSauvegarde(int id){
         JSONObject sauvegardes = new JSONObject();
         JSONObject sauvegarde = initSauvegardeVide();
@@ -134,6 +165,11 @@ public class Sauvegarde implements models.Configurable {
         }
     }
 
+    /**
+     * Complète le JSONObject par les sauvegardes non modifiées lors d'une écriture
+     * @param id identifiant de la sauvegarde modifiée
+     * @param sauvegardes objet json
+     */
     private static void ajouterAnciennesSauvegardes(int id, JSONObject sauvegardes){
         SimpleDateFormat parser = new SimpleDateFormat("dd-MM-yyyy - HH:mm");
         JSONObject prev;
@@ -149,14 +185,19 @@ public class Sauvegarde implements models.Configurable {
                     prev.put("idArmeDistance", prevSauvegardes[i].armeDistance.getId());
                     prev.put("idArmure", prevSauvegardes[i].armure.getId());
                     prev.put("carburant", prevSauvegardes[i].carburant);
+                    prev.put("vide", false);
                 } else {
-                    prev.put("date", null);
+                    prev.put("vide", true);
                 }
                 sauvegardes.put(String.valueOf(prevSauvegardes[i].id), prev);
             }
         }
     }
 
+    /**
+     * Génère un objet json d'après l'état actuel de la partie
+     * @return objet json configuré avec les données de la partie
+     */
     private static JSONObject initSauvegarde(){
         JSONObject sauvegarde = new JSONObject();
         SimpleDateFormat parser = new SimpleDateFormat("dd-MM-yyyy - HH:mm");
@@ -167,19 +208,31 @@ public class Sauvegarde implements models.Configurable {
         sauvegarde.put("idArmeDistance", getInventaire().getArmeDist().getId());
         sauvegarde.put("idArmure", getInventaire().getArmure().getId());
         sauvegarde.put("carburant", getInventaire().getCarburant());
+        sauvegarde.put("vide", false);
         return sauvegarde;
     }
 
+    /**
+     * Génère un objet json formaté comme sauvegarde vide
+     * @return json configuré comme sauvegarde vide
+     */
     private static JSONObject initSauvegardeVide(){
         JSONObject sauvegarde = new JSONObject();
-        sauvegarde.put("date", null);
+        sauvegarde.put("vide", true);
         return sauvegarde;
     }
 
+    /**
+     * Teste si le slot de sauvegarde est vide
+     * @return true si le slot est vide
+     */
     public boolean estVide(){
         return vide;
     }
 
+    /**
+     * Charge la sauvegarde dans le jeu
+     */
     public void charger(){
         getHeros().setLocalisation(localisation);
         getCarte().setAllStatus(statusPlanete);
@@ -189,16 +242,20 @@ public class Sauvegarde implements models.Configurable {
         getInventaire().setCarburant(carburant);
     }
 
+    /**
+     * Getter - date formatée
+     * @return date de la sauvegarde
+     */
     public String getDate() {
         SimpleDateFormat parser = new SimpleDateFormat("dd-MM-yyyy - HH:mm");
         return parser.format(date);
     }
 
+    /**
+     * Getter - localisation formatée
+     * @return localisation au moment de la sauvegarde
+     */
     public String getLocalisation() {
         return localisation.getNom();
-    }
-
-    public static void main(String[] args){
-        System.out.println(Sauvegarde.class.getProtectionDomain().getCodeSource().getLocation().getPath() + "sauvegardes.json");
     }
 }

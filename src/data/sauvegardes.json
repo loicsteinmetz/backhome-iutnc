@@ -1,23 +1,24 @@
 {
   "1": {
-    "date":"13-03-2020 - 19:23",
+    "date":"01-01-2020 - 00:00",
     "localisation":"Ienos",
     "statusPlanetes":[true,true,true,true,false,false,false],
     "idArmeCac":100,
     "idArmeDistance":101,
     "idArmure":100,
-    "carburant":200
+    "carburant":200,
+    "vide": false
   },
   "2": {
-    "date": null
+    "vide": true
   },
   "3": {
-    "date": null
+    "vide": true
   },
   "4": {
-    "date": null
+    "vide": true
   },
   "5": {
-    "date": null
+    "vide": true
   }
 }
