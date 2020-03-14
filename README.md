@@ -23,7 +23,7 @@
 
 **Exécution simple :**
 
-Un export exécutables du jeu est disponible dans l'onglet [Downloads](https://bitbucket.org/b4va/projet_jeu_iutnc/downloads/) du repository. Il s'agit d'une image de l'application directement exécutable en ligne de commande.
+Un export exécutable du jeu, sous la forme d'un fichier image, est disponible dans l'onglet [Downloads](https://bitbucket.org/b4va/projet_jeu_iutnc/downloads/) du repository.
 
 **Exécution dans un environnement de développement :**
 
