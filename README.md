@@ -4,20 +4,24 @@ Mini-jeu réalisé dans le cadre du DUT informatique A.S. 2019-2020 - IUT Nancy 
 
 **Participants au projet :** Clément Dosda, Louis Friedrich, Tony Martin, Quoc-Hieu Phu, Loïc Steinmetz.
 
-- [1. Général](#1.-Général)
-    - [1.1 Lancer le jeu](#1.1-Lancer-le-jeu)
-    - [1.2 Scénario](#1.2-Scénario)
-    - [1.3 Gameplay](#1.3-Gameplay)
-- [2. Conception](#2.-Conception)
-    - [2.1 Adaptation du pattern MVC](#2.1-Adaptation-du-pattern-MVC)
-    - [2.2 Structure applicative](#2.2-Structure-applicative)
-    - [2.3 Gestion des données](#2.3-Gestion-des-données)
-- [3. Bilan](#3.-Bilan)
+- [1. Général](#1)
+    - [1.1 Lancer le jeu](#1.1)
+    - [1.2 Scénario](#1.2)
+    - [1.3 Gameplay](#1.3)
+- [2. Conception](#2)
+    - [2.1 Adaptation du pattern MVC](#2.1)
+    - [2.2 Structure applicative](#2.2)
+    - [2.3 Gestion des données](#2.3)
+- [3. Bilan](#3)
 
 
 ## 1. Général
 
+<a name="1"></a>
+
 ### 1.1 Lancer le jeu
+
+<a name="1.1"></a>
 
 **Exécution simple :**
 
@@ -37,6 +41,8 @@ Le projet a été développé sur Intellij et Eclipse et contient donc les fichi
 
 ### 1.2 Scénario
 
+<a name="1.2"></a>
+
 Le héros se réveille mystérieusement sur la planète Utopia, qui incarnait les idéaux de l'humanité, à travers notamment son développement technologique. Il n'est pourtant pas originaire de cette planète. Ne sachant pas combien de temps il est resté inconscient, le personnage découvre un monde en ruine, où la majeure partie de l'humanité a disparu, à l'exception de rodeurs et de factions.
 
 Il faudra donc entamer un voyage pour retrouver Calypso, la planète d'origine du héros, à travers de nécessaires détours par des planètes plus ou moins hospitalières...
@@ -46,6 +52,8 @@ Toutes les planètes ne sont pas disponibles au début du jeu. Il faudra réunir
 ![carte](readme_img/carte.png)
 
 ### 1.3 Gameplay
+
+<a name="1.3"></a>
 
 Le jeu propose principalement deux phases de gameplay :
 
@@ -57,7 +65,11 @@ Le jeu propose principalement deux phases de gameplay :
 
 ## 2. Conception
 
+<a name="2"></a>
+
 ### 2.1 Adaptation du pattern MVC
+
+<a name="2.1"></a>
 
 La structure de l'application repose sur les fonctionnalités de JavaFx. Les différentes classes java sont donc réparties en différents packages, selon le pattern MVC (Model, View, Controller), d'après leur usage fonctionnel.
 
@@ -99,6 +111,8 @@ Pour un input impliquant le passage à une vue différente
 ```
 
 ### 2.2 Structure applicative
+
+<a name="2.2"></a>
 
 Outre la division fonctionnelles des différentes classes du programme, répercutée dans leur répartition en différents packages, on peut également diviser le projet en différents groupes de classes répondant d'une même fonction utilisateur. Ces structures sont visibles à travers les conventions de nommage du projet ; modèle, vue et controleur d'une même structure sont nommées de la façon suivante :
 
@@ -171,6 +185,8 @@ Gèrent le chargement et l'enregistrement d'une sauvegarde. Permettent égalemen
 
 ### 2.3 Gestion des données
 
+<a name="2.3"></a>
+
 Les données de configuration et de sauvegarde, persistante entre différentes exécutions de l'application, sont stockées dans des fichiers au format `json`. Ces fichiers sont parsés au cours de l'exécution des différents programmes de l'application. Ils servent alors à l'initialisation de différents modèles qui implémentent, dans cette perspective, l'interface Configurable, et renvoient à un fichier `json` portant le même nom.
 
 La persistance des données entre différentes séquences, une fois l'application exécutée, est quant à elle permise par certains modèles étant construit comme des singletons. Ces modèles sont les suivants :
@@ -181,3 +197,5 @@ La persistance des données entre différentes séquences, une fois l'applicatio
 - Quete
 
 ## 3. Bilan
+
+<a name="3"></a>
