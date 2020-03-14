@@ -10,8 +10,6 @@ import static models.Inventaire.getInventaire;
  */
 public class Heros extends Personnage {
 
-	
-
 	@Singleton
     private static Heros HEROS = new Heros();
 
@@ -90,10 +88,16 @@ public class Heros extends Personnage {
         pv = 100;
     }
 
+    /**
+     * Génère une nouvelle instance de Héros
+     */
     public static void reset(){
         HEROS = new Heros();
     }
 
+    /**
+     * Fait revenir le héros sur la planète précédente
+     */
     public void retour(){
         getInventaire().modifierCarburant(localisation.getNiveau() * 100);
         localisation = localisationPrecedente;

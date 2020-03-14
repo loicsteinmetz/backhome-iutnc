@@ -141,6 +141,10 @@ public class Planete {
         visitee = true;
     }
 
+    /**
+     * Indique si la planète est accessible en fonction des réserves de carburant
+     * @return true si la planète est accessible
+     */
     public boolean estAccessible(){
         return niveau * 100 <= getInventaire().getCarburant();
     }

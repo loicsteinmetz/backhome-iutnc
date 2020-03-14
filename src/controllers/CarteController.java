@@ -4,7 +4,6 @@ import javafx.application.Application;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -41,9 +40,7 @@ public class CarteController extends Application {
     @FXML
     private FlowPane flow;
     @FXML
-    private Label loc;
-    @FXML
-    private Label dest;
+    private Label loc, dest;
 
     /**
      * Retourne la vue associée au controller

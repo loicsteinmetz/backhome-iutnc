@@ -24,13 +24,11 @@ public class SauvegardeController extends Application {
     private static final String VIEW = "/views/Sauvegarde.fxml";
     @Controller
     private static final String STYLE = "/assets/css/Sauvegarde.css";
-    @Controller
-    private static Sauvegarde MODELE;
 
     @FXML
     private VBox sauvegardes, btns;
     @FXML
-    private Button btn1, btn2, btn3;
+    private Button btn1, btn2;
 
     /**
      * Retourne la vue associée au controller

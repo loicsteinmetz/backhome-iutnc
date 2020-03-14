@@ -100,7 +100,7 @@ public class Sauvegarde implements Configurable {
 
     /**
      * Accède en lecture au fichier de sauvegarde
-     * @return
+     * @return objet json global des sauvegardes
      */
     private JSONObject readSauvegarde(){
         String cle = Integer.toString(id);

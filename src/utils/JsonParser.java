@@ -5,9 +5,8 @@ import lib.org.json.simple.JSONObject;
 import lib.org.json.simple.parser.JSONParser;
 import lib.org.json.simple.parser.ParseException;
 
-import java.io.*;
-import java.net.URISyntaxException;
-import java.nio.charset.StandardCharsets;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  * Classe utilitaire de gestion du parsing json

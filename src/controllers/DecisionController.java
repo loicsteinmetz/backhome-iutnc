@@ -18,7 +18,6 @@ import utils.EffetsJavaFx;
 import utils.ViewLoader;
 
 import static models.Heros.getHeros;
-import static models.Inventaire.getInventaire;
 import static models.Quete.getQuete;
 
 /**
@@ -71,9 +70,7 @@ public class DecisionController extends Application {
     public void initialize(){
         MODELE = (Decision) getQuete().getProchainEvenement();
         Transition t = EffetsJavaFx.fade(bg, 4, 0, 0.15);
-        t.setOnFinished((e)->{
-            EffetsJavaFx.vibrance(bg, 6, 0.15, 0.05);
-        });
+        t.setOnFinished((e)-> EffetsJavaFx.vibrance(bg, 6, 0.15, 0.05));
         ecran.setText(MODELE.getScenario().get(0));
         ecran.setUserData(0);
         ecran.setOnMouseClicked(this::passeTexte);
@@ -108,9 +105,7 @@ public class DecisionController extends Application {
                 btnBox.setLayoutY(475);
                 issueA.setText("Aller au vaisseau");
             } else {
-                ecran.setOnMouseClicked((e)->{
-                    new ViewLoader().switchTo(QueteController.getView(), event);
-                });
+                ecran.setOnMouseClicked((e)-> new ViewLoader().switchTo(QueteController.getView(), event));
             }
         }
     }

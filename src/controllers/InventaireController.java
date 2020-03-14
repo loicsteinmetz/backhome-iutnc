@@ -20,21 +20,10 @@ import static models.Inventaire.getInventaire;
 public class InventaireController extends Application {
 
     @FXML
-    private Label armeCacNom;
-    @FXML
-    private Label armeCacDesc;
-    @FXML
-    private Label armeDistNom;
-    @FXML
-    private Label armeDistDesc;
-    @FXML
-    private Label armureNom;
-    @FXML
-    private Label armureDesc;
+    private Label armeCacNom, armeCacDesc, armeDistNom, armeDistDesc,
+            armureNom, armureDesc, niveauCarburantLitres;
     @FXML
     private HBox niveauCarburant;
-    @FXML
-    private Label niveauCarburantLitres;
 
     @Controller
     private static final String VIEW = "/views/Inventaire.fxml";

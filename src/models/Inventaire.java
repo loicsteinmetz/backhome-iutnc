@@ -96,10 +96,17 @@ public class Inventaire {
 		this.armure=armure;
 	}
 
+	/**
+	 * Génère une nouvelle instance de l'inventaire
+	 */
 	public static void reset(){
 		INVENTAIRE = new Inventaire();
 	}
 
+	/**
+	 * Setter
+	 * @param carburant niveau de carburant
+	 */
 	public void setCarburant(int carburant){
 		this.carburant = carburant;
 	}
