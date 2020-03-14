@@ -52,7 +52,8 @@ public abstract class Ennemi extends Personnage implements Configurable {
         String cle = Integer.toString(id);
         JSONObject ennemi = null;
         try {
-            ennemi = new JsonParser().parseObject(chemin, cle);
+            new JsonParser();
+            ennemi = JsonParser.parseObject(chemin, cle);
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }

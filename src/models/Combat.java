@@ -33,7 +33,8 @@ public class Combat extends Evenement implements Configurable {
 		String cle = Integer.toString(id);
 		JSONObject evenement = null;
 		try {
-			evenement = new JsonParser().parseObject(chemin, cle);
+			new JsonParser();
+			evenement = JsonParser.parseObject(chemin, cle);
 		} catch (IOException | ParseException e) {
 			e.printStackTrace();
 		}

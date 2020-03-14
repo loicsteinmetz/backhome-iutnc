@@ -51,8 +51,8 @@ public class BackHome implements Configurable {
         String[] scenarioDebut = new String[0];
         String[] scenarioFin = new String[0];
         try {
-            scenarioDebut = parser.parseStrings(chemin, "nouvellePartie");
-            scenarioFin = parser.parseStrings(chemin, "finPartie");
+            scenarioDebut = JsonParser.parseStrings(chemin, "nouvellePartie");
+            scenarioFin = JsonParser.parseStrings(chemin, "finPartie");
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }

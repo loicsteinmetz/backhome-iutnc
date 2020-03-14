@@ -77,7 +77,8 @@ public class Arme extends Item implements Configurable {
         String cle = Integer.toString(id);
         JSONObject arme = null;
         try {
-            arme = new JsonParser().parseObject(chemin, cle);
+            new JsonParser();
+            arme = JsonParser.parseObject(chemin, cle);
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }

@@ -23,9 +23,9 @@ public class JsonParser {
      * @throws IOException récupération du fichier json
      * @throws ParseException parsing du fichier json
      */
-    public String[] parseStrings(String fichier, String cle) throws IOException, ParseException {
+    public static String[] parseStrings(String fichier, String cle) throws IOException, ParseException {
         JSONParser parser = new JSONParser();
-        Object obj = parser.parse(new InputStreamReader(getClass().getResourceAsStream(fichier)));
+        Object obj = parser.parse(new InputStreamReader(JsonParser.class.getResourceAsStream(fichier)));
         JSONObject jsonObject = (JSONObject) obj;
         JSONArray arr = (JSONArray) jsonObject.get(cle);
         String[] res = new String[arr.size()];
@@ -43,9 +43,9 @@ public class JsonParser {
      * @throws IOException récupération du fichier json
      * @throws ParseException parsing du fichier json
      */
-    public JSONObject[] parseObjects(String fichier, String cle) throws IOException, ParseException {
+    public static JSONObject[] parseObjects(String fichier, String cle) throws IOException, ParseException {
         JSONParser parser = new JSONParser();
-        Object obj = parser.parse(new InputStreamReader(getClass().getResourceAsStream(fichier)));
+        Object obj = parser.parse(new InputStreamReader(JsonParser.class.getResourceAsStream(fichier)));
         JSONObject jsonObject = (JSONObject) obj;
         JSONArray arr = (JSONArray) jsonObject.get(cle);
         JSONObject[] res = new JSONObject[arr.size()];
@@ -63,9 +63,9 @@ public class JsonParser {
      * @throws IOException récupération du fichier json
      * @throws ParseException parsing du fichier json
      */
-    public JSONObject parseObject(String fichier, String cle) throws IOException, ParseException {
+    public static JSONObject parseObject(String fichier, String cle) throws IOException, ParseException {
         JSONParser parser = new JSONParser();
-        Object obj = parser.parse(new InputStreamReader(getClass().getResourceAsStream(fichier)));
+        Object obj = parser.parse(new InputStreamReader(JsonParser.class.getResourceAsStream(fichier)));
         JSONObject jsonObject = (JSONObject) obj;
         return (JSONObject) jsonObject.get(cle);
     }

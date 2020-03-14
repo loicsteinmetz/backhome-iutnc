@@ -102,8 +102,6 @@ public class Planete {
         }
         switch (niveau){
             case 0:
-                getInventaire().modifierCarburant(125);
-                break;
             case 1:
                 getInventaire().modifierCarburant(125);
                 break;

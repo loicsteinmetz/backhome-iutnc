@@ -61,7 +61,8 @@ public class Carte implements Configurable {
         String cle = "planetes";
         JSONObject[] pl = null;
         try {
-            pl = new JsonParser().parseObjects(cheminConf, cle);
+            new JsonParser();
+            pl = JsonParser.parseObjects(cheminConf, cle);
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }

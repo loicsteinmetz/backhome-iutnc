@@ -67,12 +67,11 @@ public class Sauvegarde implements models.Configurable {
         try {
             FileReader r = new FileReader(FICHIER);
             obj = JsonParser.parse(r);
-        } catch (ParseException | FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (ParseException | IOException e) {
             e.printStackTrace();
         }
         JSONObject json = (JSONObject) obj;
+        assert json != null;
         JSONObject sauvegarde = (JSONObject) json.get(cle);
         if (sauvegarde != null){
             if (sauvegarde.get("date") != null){

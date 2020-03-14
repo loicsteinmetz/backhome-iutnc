@@ -41,7 +41,8 @@ public class Armure extends Item implements Configurable {
 		String cle = Integer.toString(id);
 		JSONObject armure = null;
 		try {
-			armure = new JsonParser().parseObject(chemin, cle);
+			new JsonParser();
+			armure = JsonParser.parseObject(chemin, cle);
 		} catch (IOException | ParseException e) {
 			e.printStackTrace();
 		}
