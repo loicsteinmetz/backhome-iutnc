@@ -26,22 +26,12 @@
   },
   "1": {
     "type": "combat",
-<<<<<<< HEAD
-    "scenario": [
-      "\n BIENVENUE SUR HERMÈS, Aux terres promises \n",
-      "Cette planète a été abandonnée par l'espèce humaine,en laissant tout sur leur passage… Cette planète a pu renaître de ses cendres, suite à ses dégâts…. Et la nature a pu reprendre tous ces droits..",
-      "Bonne Chance sur cette planète.",
-      "Vous descendez du vaisseau. Et a ce moment la, vous etes émerveiller du paysage verdoyant...",
-      "Au loin, vous apercevez un gobelin qui semble faibles et faciles à tuer. Vous commencez à courir vers lui pour l'affronter. ",
-      " \" Hé toi ! Sale gobelin prépare toi a mourir face a ma force ! \""
-=======
     "scenario" : [
       "BIENVENUE SUR HERMÈS, Aux terres promises",
       "Cette planète a été abandonnée par l'espèce humaine, en laissant tout sur leur passage… Elle a pu renaître de ses cendres... Et la nature a pu reprendre tous ces droits...",
       "Vous descendez du vaisseau. Et à ce moment-là, vous êtes émerveillé par le paysage verdoyant...",
       "Au loin, vous apercevez un gobelin qui semble faible et facile à tuer. Vous commencez à courir vers lui pour l'affronter.",
       "\" Hé toi ! Sale gobelin prépare toi a mourir face a ma force ! \""
->>>>>>> 17d2346b268f030516421bc6a22cf220237c8984
     ],
     "idEnnemi": "1",
     "typeEnnemi": "brute",
@@ -57,11 +47,7 @@
     ],
     "idEnnemi": "3",
     "typeEnnemi": "boss",
-<<<<<<< HEAD
-    "idIssue": "5"
-=======
     "idIssue" : "25"
->>>>>>> 17d2346b268f030516421bc6a22cf220237c8984
   },
   "25": {
     "type": "decision",
@@ -107,17 +93,10 @@
   },
   "9": {
     "type": "combat",
-<<<<<<< HEAD
-    "scenario": [
-      "Vous vous mettez en route, vous vous dirigez donc en dehors de la ville vers la destination de la quête.",
-      "Quelques mètres après la sortie, vous vous faites interpeller par le rebelle de la ville. Il a aperçu vous êtes seul et pas du coin.",
-      "Le Rebelle: \" Hé toi ! Petit étranger ! Viens me voir ! Tu m'a l'air riche et bien équipé ! Viens donc me donner tout ce que tu as ! Sinon tu meurs !\"",
-=======
     "scenario" : [
       "Vous vous mettez en route, vous sortez de la ville vers le repère du boss...",
       "Quelques mètres après la sortie, vous vous faites interpeller par une personne bizarre.",
       "Personne bizarre: \" Hé toi ! Petit étranger ! Viens me voir ! Tu m'a l'air riche et bien équipé ! Viens donc me donner tout ce que tu as ! Sinon tu meurs !\"",
->>>>>>> 17d2346b268f030516421bc6a22cf220237c8984
       "\" Je préfère me battre que de me laisser voler comme ca ! Ramène-toi !\""
     ],
     "idEnnemi": "5",
@@ -140,17 +119,10 @@
   },
   "13": {
     "type": "combat",
-<<<<<<< HEAD
-    "scenario": [
-      "Vous êtes tellement indiscret que vous vous faites repérer par Chô Peleux !",
-      "Dommage pour vous, maintenant vous avez plus le choix. Préparez-vous au combat.",
-      "Chô Peleux : \" Comment oses-tu venir dans ma demeure ! C'est dommage pour toi, maintenant, tu vas mourir !\""
-=======
     "scenario" : [
       "Vous êtes tellement indiscret que Chô Peleux vous repère !",
       "Chô Peleux : \" Comment oses-tu venir dans ma demeure ! C'est dommage pour toi, maintenant, tu vas mourir !\"",
       "Dommage pour vous, maintenant vous avez plus le choix. Préparez-vous au combat."
->>>>>>> 17d2346b268f030516421bc6a22cf220237c8984
     ],
     "idEnnemi": "7",
     "typeEnnemi": "boss",
