@@ -66,9 +66,10 @@ La structure de l'application repose sur les fonctionnalités de JavaFx. Les dif
 - Le package `models` regroupe les différents modèles mobilisés par l'application, soit la modélisation concrète des différents objets manipulés.
 - Le package `controllers` regroupe les différents controleurs appelés au cours de l'exécution et permettant d'interagir avec la vue proposée à l'utilisateur.
 - Le package `views` regroupe les différentes vues au format `fxml`, qui structurent l'interface utilisateur et qui sont initialisées et mises à jour par le controller.
-- Le package `data` regroupe les fichiers de stockage au format `json`, servant à la configuration des modèles.
 - Le package `utils` regroupe des classes utilitaires, dont les méthodes sont mobilisées à différents endroits.
 - Le package `lib` regroupe les librairies externes utiles au projet.
+- Le dossier `data` regroupe les fichiers de stockage au format `json`, servant à la configuration des modèles.
+- Le dossier `assets` regroupe les différentes ressources du programme : images, polices, feuilles de style.
 
 Ci-dessous, la présentation d'une séquence type du fonctionnement de l'application.
 
