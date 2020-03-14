@@ -56,10 +56,10 @@
       "Vous avez reçu Dark Repulser !",
       "Souhaitez-vous prendre le chemin pour la ville ou retourner dans le vaisseau ?"
     ],
-    "optionA": "Prendre le chemin pour la ville.",
-    "optionB": "Retourner dans le vaisseau.",
-    "idIssueA": "5",
-    "idIssueB": "VAISSEAU"
+    "optionB": "Prendre le chemin pour la ville.",
+    "optionA": "Retourner dans le vaisseau.",
+    "idIssueA": "VAISSEAU",
+    "idIssueB": "5"
   },
   "5": {
     "type": "decision",
