@@ -64,7 +64,7 @@
     "niveau":"3",
     "planetesVoisines": [],
     "description": "Votre planète natale. Peut-être allez vous enfin avoir les réponses à vos questions...",
-    "idPremierEvenement": "2",
+    "idPremierEvenement": "32",
     "idRecompenseArmeCac": null,
     "idRecompenseDistance": null,
     "idRecompenseArmure": null
