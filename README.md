@@ -1,6 +1,6 @@
 # BackHome
 
-Mini-jeu réalisé dans le cadre du DUT informatique A.S. 2019-2020 - IUT Nancy Charlemagne. 
+*Mini-jeu réalisé dans le cadre du DUT informatique A.S. 2019-2020 - IUT Nancy Charlemagne.*
 
 **Participants au projet :** Clément Dosda, Louis Friedrich, Tony Martin, Quoc-Hieu Phu, Loïc Steinmetz.
 
@@ -14,6 +14,8 @@ Mini-jeu réalisé dans le cadre du DUT informatique A.S. 2019-2020 - IUT Nancy 
     - [2.3 Gestion des données](#markdown-header-23-gestion-des-donnees)
 - [3. Bilan](#markdown-header-3-bilan)
 
+![accueil](readme_img/capture1.png)
+
 
 ## 1. Général
 
@@ -21,7 +23,7 @@ Mini-jeu réalisé dans le cadre du DUT informatique A.S. 2019-2020 - IUT Nancy 
 
 **Exécution simple :**
 
-Des exports exécutables du jeu sont disponibles dans l'onglet [Downloads](https://bitbucket.org/b4va/projet_jeu_iutnc/downloads/) du repository. Les extensions disponibles sont les suivantes : `.deb`, `.exe`, AppImage.
+Un export exécutables du jeu est disponible dans l'onglet [Downloads](https://bitbucket.org/b4va/projet_jeu_iutnc/downloads/) du repository. Il s'agit d'une image de l'application directement exécutable en ligne de commande.
 
 **Exécution dans un environnement de développement :**
 
@@ -49,11 +51,11 @@ Toutes les planètes ne sont pas disponibles au début du jeu. Il faudra réunir
 
 Le jeu propose principalement deux phases de gameplay :
 
-- La navigation : Vous êtes à bord du vaisseau. Vous devez choisir la prochaîne planète à visiter, en prenant en compte vos ressources. Ces ressources peuvent être consultée dans un menu d'inventaire.
+- La navigation : Vous êtes à bord du vaisseau. Vous devez choisir la prochaîne planète à visiter, en prenant en compte vos ressources. Ces ressources peuvent être consultées dans un menu d'inventaire.
 - Les événements : Vous atterissez sur une planète, et êtes confrontés à différentes situations. Vous devrez réaliser des choix entre différentes options et affronter des ennemis.
 
-![navigation](readme_img/capture1.png)
 ![combat](readme_img/capture2.png)
+![navigation](readme_img/capture3.png)
 
 ## 2. Conception
 
@@ -63,8 +65,8 @@ La structure de l'application repose sur les fonctionnalités de JavaFx. Les dif
 
 - Le package `models` regroupe les différents modèles mobilisés par l'application, soit la modélisation concrète des différents objets manipulés.
 - Le package `controllers` regroupe les différents controleurs appelés au cours de l'exécution et permettant d'interagir avec la vue proposée à l'utilisateur.
-- Le package `views` regroupe les différentes views au format `fxml`, qui structurent l'interface utilisateur et qui sont initialisées et mises à jour par le controller.
-- Le package `data` regroupe les fichiers de stockage au format `json`, servant notamment à la configuration des modèles.
+- Le package `views` regroupe les différentes vues au format `fxml`, qui structurent l'interface utilisateur et qui sont initialisées et mises à jour par le controller.
+- Le package `data` regroupe les fichiers de stockage au format `json`, servant à la configuration des modèles.
 - Le package `utils` regroupe des classes utilitaires, dont les méthodes sont mobilisées à différents endroits.
 - Le package `lib` regroupe les librairies externes utiles au projet.
 
@@ -100,7 +102,7 @@ Pour un input impliquant le passage à une vue différente
 
 ### 2.2 Structure applicative
 
-Outre la division fonctionnelles des différentes classes du programme, répercutée dans leur répartition en différents packages, on peut également diviser le projet en différents groupes de classes répondant d'une même fonction utilisateur. Ces structures sont visibles à travers les conventions de nommage du projet ; modèle, vue et controleur d'une même structure sont nommées de la façon suivante :
+Outre la division fonctionnelle des différentes classes du programme, répercutée dans leur répartition en différents packages, on peut également diviser le projet en différents groupes de classes répondant d'une même fonction logique. Ces structures sont visibles à travers les conventions de nommage du projet ; modèle, vue et controleur d'une même structure sont nommées de la façon suivante :
 
 - Model
 - Model.fxml
@@ -165,15 +167,16 @@ Gèrent le déroulement d'une prise de décision : scénario introductif, choix 
 - Modèle : Sauvegarde
 - Vue : Sauvegarde.fxml
 - Controleur : SauvegardeController
-Diagramme d'état QueteController
 
 Gèrent le chargement et l'enregistrement d'une sauvegarde. Permettent également l'accès à une interface de gestion des sauvegardes, disponible depuis l'accueil du jeu et permettant à l'utilisateur de charger et supprimer les sauvegardes disponibles.
 
 ### 2.3 Gestion des données
 
-Les données de configuration et de sauvegarde, persistante entre différentes exécutions de l'application, sont stockées dans des fichiers au format `json`. Ces fichiers sont parsés au cours de l'exécution des différents programmes de l'application. Ils servent alors à l'initialisation de différents modèles qui implémentent, dans cette perspective, l'interface Configurable, et renvoient à un fichier `json` portant le même nom.
+Les données de configuration, persistantes entre différentes exécutions de l'application, sont stockées dans des fichiers au format `json`. Ces fichiers sont parsés au cours de l'exécution des différents programmes de l'application. Ils servent alors à l'initialisation de différents modèles qui implémentent, dans cette perspective, l'interface Configurable, et renvoient à un fichier `json` portant le même nom.
 
 La persistance des données entre différentes séquences, une fois l'application exécutée, est quant à elle permise par certains modèles étant construit comme des singletons. Ces modèles sont les suivants :
+
+La gestion des sauvegardes donne lieu à la création d'un fichier de stockage externe au format `json`.
 
 - Heros
 - Inventaire
@@ -181,3 +184,13 @@ La persistance des données entre différentes séquences, une fois l'applicatio
 - Quete
 
 ## 3. Bilan
+
+Plusieurs difficultés ont été rencontrées au cours du développement, nous amenant à réfléchir à certaines solutions pour des projets futurs :
+
+- **JavaFx** : Ce projet consituait pour nous une première utilisation des fonctionnalités JavaFx. Il a donc été assez long de maîtriser leurs différents aspects techniques, et de les implémenter de façon claire et rigoureuse. L'implémentation de JavaFx suivant le pattern M.V.C. a ainsi été particulèrement compliquée à mettre en oeuvre, nécessitant plusieurs itérations. Les problèmes rencontrés lors de cette implémentation ont cependant conduit à une recherche approfondie quant aux standards en la matière.
+- **Gestion des données** : 
+    - *Fichiers de stockage* : Le format `json`, retenu pour le stockage des données persistantes, a été privilégié en tenant compte de nos connaissances préalables. Il s'est avéré que ce format n'est pas nécessairement le plus adapté à des traitement Java. Nous en avons conclu qu'il aurait été préférable de stocker les données dans des fichiers `xml`.
+    - *Modélisation* : Faute de temps, nous avons du concevoir notre organisation des données au fil du développement, sans conduire une réelle réflexion sur leur structure. Cela nous a permis de comprendre davantage l'importance d'une modélisation réfléchie du système de données, devant être réalisée en amont.
+- **Tests** : Faute de temps encore une fois, les tests ont du être réalisés à la suite du développement proprement dit de l'application. Cela nous a donc privé de tests d'intégration au cours du développement, tests qui auraient été utiles pour valider l'implémentation de nouvelles fonctionnalité, au fur et à mesure que nous réalisions de nouvelles itérations du projet. Dans l'idéal, et si nous avions eut plus de temps, nous avons conclu sur l'intérêt des TDD (*Test Driven Development*) pour la conduite de projets futurs.
+
+En dépit de ces difficultés, nous avons su être suffisament organisés et impliqués pour livrer un jeu fonctionnel et conforme à nos attentes de départ. Ainsi, nous avons pu conduire ce projet avec enthousiasme et sommes satisfait du résultats, compte tenu des contraintes, notamment de temps, qui nous étaient imposées.
