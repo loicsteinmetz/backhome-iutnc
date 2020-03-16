@@ -169,6 +169,10 @@ public class CarteController extends Application {
         }
     }
 
+    /**
+     * Redirige vers la vue sauvegardes
+     * @param e clic sur le bouton sauvegarder
+     */
     @FXML
     private void sauvegarder(Event e){
         new ViewLoader().switchTo(SauvegardeController.getView(), e);

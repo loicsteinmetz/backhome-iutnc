@@ -16,6 +16,9 @@ import models.BackHome;
 import models.Sauvegarde;
 import utils.ViewLoader;
 
+/**
+ * Controleur de l'interface sauvegardes
+ */
 public class SauvegardeController extends Application {
 
     private int idSelection;

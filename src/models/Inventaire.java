@@ -1,5 +1,8 @@
 package models;
 
+/**
+ * Singleton modélisant l'inventaire du joueur
+ */
 public class Inventaire {
 
 	@Singleton

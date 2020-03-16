@@ -84,6 +84,9 @@ public class Quete implements Configurable {
         initConfiguration();
     }
 
+    /**
+     * Réinitialise le singleton avec une nouvelle instance de Quete
+     */
     public static void reset(){
         QUETE = new Quete();
     }
