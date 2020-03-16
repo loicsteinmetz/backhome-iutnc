@@ -50,7 +50,8 @@ public class Quete implements Configurable {
         String cle = Integer.toString(idProchainEvenement);
         JSONObject evenement = null;
         try {
-            evenement = new JsonParser().parseObject(chemin, cle);
+            new JsonParser();
+            evenement = JsonParser.parseObject(chemin, cle);
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
@@ -81,5 +82,12 @@ public class Quete implements Configurable {
     public void prochainEvenement(int id){
         idProchainEvenement = id;
         initConfiguration();
+    }
+
+    /**
+     * Réinitialise le singleton avec une nouvelle instance de Quete
+     */
+    public static void reset(){
+        QUETE = new Quete();
     }
 }

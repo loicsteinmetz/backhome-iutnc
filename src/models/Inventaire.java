@@ -1,5 +1,8 @@
 package models;
 
+/**
+ * Singleton modélisant l'inventaire du joueur
+ */
 public class Inventaire {
 
 	@Singleton
@@ -94,6 +97,21 @@ public class Inventaire {
 	 */
 	public void setArmure(Armure armure){
 		this.armure=armure;
+	}
+
+	/**
+	 * Génère une nouvelle instance de l'inventaire
+	 */
+	public static void reset(){
+		INVENTAIRE = new Inventaire();
+	}
+
+	/**
+	 * Setter
+	 * @param carburant niveau de carburant
+	 */
+	public void setCarburant(int carburant){
+		this.carburant = carburant;
 	}
 }
 

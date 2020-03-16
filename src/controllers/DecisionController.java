@@ -12,12 +12,12 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import models.BackHome;
 import models.Decision;
 import utils.EffetsJavaFx;
 import utils.ViewLoader;
 
 import static models.Heros.getHeros;
-import static models.Inventaire.getInventaire;
 import static models.Quete.getQuete;
 
 /**
@@ -70,9 +70,7 @@ public class DecisionController extends Application {
     public void initialize(){
         MODELE = (Decision) getQuete().getProchainEvenement();
         Transition t = EffetsJavaFx.fade(bg, 4, 0, 0.15);
-        t.setOnFinished((e)->{
-            EffetsJavaFx.vibrance(bg, 6, 0.15, 0.05);
-        });
+        t.setOnFinished((e)-> EffetsJavaFx.vibrance(bg, 6, 0.15, 0.05));
         ecran.setText(MODELE.getScenario().get(0));
         ecran.setUserData(0);
         ecran.setOnMouseClicked(this::passeTexte);
@@ -97,19 +95,17 @@ public class DecisionController extends Application {
                 ecran.setDisable(true);
                 EffetsJavaFx.fadeIn(issueA, 2, 0);
                 EffetsJavaFx.fadeIn(issueB, 2, 0);
-                btnBox.setLayoutY(450);
+                btnBox.setLayoutY(475);
                 issueA.setText(MODELE.getOptionA());
                 issueB.setText(MODELE.getOptionB());
             } else if (MODELE.getIdIssueA() == 0){
                 ecran.setDisable(true);
                 EffetsJavaFx.fadeIn(issueA, 2, 0);
                 btnBox.getChildren().remove(1);
-                btnBox.setLayoutY(450);
+                btnBox.setLayoutY(475);
                 issueA.setText("Aller au vaisseau");
             } else {
-                ecran.setOnMouseClicked((e)->{
-                    new ViewLoader().switchTo(QueteController.getView(), event);
-                });
+                ecran.setOnMouseClicked((e)-> new ViewLoader().switchTo(QueteController.getView(), event));
             }
         }
     }
@@ -122,9 +118,12 @@ public class DecisionController extends Application {
     private void issueA(Event e){
         ViewLoader vl = new ViewLoader();
         if (MODELE.getIdIssueA() == 0){
-            getHeros().getLocalisation().recompenses();
-            getInventaire().modifierCarburant(125);
-            vl.switchTo(CarteController.getView(), e);
+            if (!BackHome.finJeu()){
+                getHeros().getLocalisation().recompenses();
+                vl.switchTo(CarteController.getView(), e);
+            } else {
+                vl.switchTo(BackHomeController.getView(), e);
+            }
         } else {
             getQuete().prochainEvenement(MODELE.getIdIssueA());
             new ViewLoader().switchTo(QueteController.getView(), e);

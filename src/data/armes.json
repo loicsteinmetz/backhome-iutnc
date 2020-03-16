@@ -20,7 +20,7 @@
   "5": {
     "type": "cac",
     "nom": "Dark Repulser",
-    "degats": 25
+    "degats": 300
   },
 
   "7": {
@@ -55,8 +55,8 @@
 
   "17": {
     "type": "distance",
-    "nom": "PGM Ultima Ratio Hecate II",
-    "degats": 25
+    "nom": "Maverick MV700",
+    "degats": 300
   },
 
   "4": {
@@ -110,7 +110,7 @@
   "20": {
   "type": "generique",
   "nom": "Meteora Divinus",
-  "degats": 35
+  "degats": 20
 },
 
   "22": {
@@ -142,14 +142,51 @@
     "nom": "Gatling AZ-1",
     "degats": 35
   },
+
+  "32": {
+    "type": "generique",
+    "nom": "Mitrailleuse à protons",
+    "degats": 10
+  },
+
+  "34": {
+    "type": "generique",
+    "nom": "Epée en acier stellaire",
+    "degats": 10
+  },
+
+  "36": {
+    "type": "generique",
+    "nom": "Fusil à cellule atomique",
+    "degats": 10
+  },
+
+  "38": {
+    "type": "generique",
+    "nom": "Proxima Centauris",
+    "degats": 50
+  },
+
+  "40": {
+    "type": "generique",
+    "nom": "Ultima",
+    "degats": 70
+  },
+
+  "42": {
+    "type": "generique",
+    "nom": "Universalis Omega",
+    "degats": 70
+  },
+
   "100": {
     "type": "cac",
-    "nom": "Epee",
+    "nom": "Epée en fer",
     "degats": 100
   },
   "101": {
     "type": "distance",
-    "nom": "Pistolet",
+    "nom": "Pistolet AA-1",
     "degats": 100
   }
 }

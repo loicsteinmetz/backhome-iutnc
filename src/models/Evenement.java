@@ -2,6 +2,9 @@ package models;
 
 import java.util.ArrayList;
 
+/**
+ * Modélisation d'un événement
+ */
 public class Evenement {
 
     protected int id;
@@ -15,6 +18,10 @@ public class Evenement {
         this.id = id;
     }
 
+    /**
+     * Getter
+     * @return scénario
+     */
     public ArrayList<String> getScenario() {
         return scenario;
     }

@@ -46,8 +46,9 @@ Label{
     -fx-text-fill: white;
     -fx-font-size: 26px;
     -fx-font-weight: 400;
-    -fx-label-padding: 30 0 30 35;
+    -fx-label-padding: 30 0 30 20;
     -fx-min-width: 300px;
+    -fx-max-width: 300px;
 }
 
 .descItem{
@@ -58,7 +59,8 @@ Label{
     -fx-border-color:white;
     -fx-border-width: 0 0 0 1px;
     -fx-border-style: solid;
-    -fx-min-width: 180px;
+    -fx-min-width: 200px;
+    -fx-max-width: 200px;
     -fx-alignment: center;
 }
 

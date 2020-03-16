@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.SauvegardeController">
+    <FlowPane id="main">
+        <Label text="-  Sauvegardes  -" id="titre"/>
+        <HBox id="control">
+            <VBox fx:id="sauvegardes">
+                <HBox styleClass="sauvegarde" userData="1" onMouseClicked="#selectionner">
+                    <Label text="Emplacement vide" styleClass="date"/>
+                    <Label styleClass="localisation"/>
+                </HBox>
+                <HBox styleClass="sauvegarde" userData="2" onMouseClicked="#selectionner">
+                    <Label text="Emplacement vide" styleClass="date"/>
+                    <Label styleClass="localisation"/>
+                </HBox>
+                <HBox styleClass="sauvegarde" userData="3" onMouseClicked="#selectionner">
+                    <Label text="Emplacement vide" styleClass="date"/>
+                    <Label styleClass="localisation"/>
+                </HBox>
+                <HBox styleClass="sauvegarde" userData="4" onMouseClicked="#selectionner">
+                    <Label text="Emplacement vide" styleClass="date"/>
+                    <Label styleClass="localisation"/>
+                </HBox>
+                <HBox styleClass="sauvegarde" userData="5" onMouseClicked="#selectionner">
+                    <Label text="Emplacement vide" styleClass="date"/>
+                    <Label styleClass="localisation"/>
+                </HBox>
+            </VBox>
+            <VBox fx:id="btns">
+                <Button fx:id="btn1" text="Charger"/>
+                <Button fx:id="btn2" text="Supprimer" onAction="#supprimer"/>
+                <Button id="btn3" text="Retour" onAction="#retour"/>
+            </VBox>
+        </HBox>
+    </FlowPane>
+</AnchorPane>

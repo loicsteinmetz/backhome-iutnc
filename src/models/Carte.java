@@ -16,7 +16,7 @@ public class Carte implements Configurable {
     @Singleton
     private static Carte CARTE = new Carte();
 
-    private ArrayList<Planete> planetes = new ArrayList<>();
+    private ArrayList<Planete> planetes;
 
     /**
      * Constructeur privé
@@ -61,7 +61,8 @@ public class Carte implements Configurable {
         String cle = "planetes";
         JSONObject[] pl = null;
         try {
-            pl = new JsonParser().parseObjects(cheminConf, cle);
+            new JsonParser();
+            pl = JsonParser.parseObjects(cheminConf, cle);
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
@@ -75,8 +76,8 @@ public class Carte implements Configurable {
      * Initialise les planètes de la carte
      */
     private void initialiserPlanetes(JSONObject[] planetes) {
+        this.planetes = new ArrayList<>();
         for (JSONObject p : planetes){
-
             Object pe = p.get("idPremierEvenement");
             int peInt = pe == null ? -1 : Integer.parseInt(p.get("idPremierEvenement").toString());
             Object rcac = p.get("idRecompenseArmeCac");
@@ -117,5 +118,31 @@ public class Carte implements Configurable {
      */
     private void nouvellePlanete(Planete p){
         this.planetes.add(p);
+    }
+
+    public static void reset() {
+        CARTE = new Carte();
+    }
+
+    /**
+     * Getter
+     * @return liste des planètes
+     */
+    public ArrayList<Planete> getPlanetes() {
+        return planetes;
+    }
+
+    public boolean[] getAllStatus(){
+        boolean[] arr = new boolean[planetes.size()];
+        for (int i = 0 ; i < planetes.size() ; i++){
+            arr[i] = planetes.get(i).getVisitee();
+        }
+        return arr;
+    }
+
+    public void setAllStatus(boolean[] status){
+        for (int i = 0 ; i < planetes.size() ; i++){
+            if (status[i]) planetes.get(i).setVisitee();
+        }
     }
 }

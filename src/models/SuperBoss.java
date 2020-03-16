@@ -4,7 +4,10 @@ import lib.org.json.simple.JSONObject;
 import lib.org.json.simple.parser.ParseException;
 import utils.JsonParser;
 
+import static models.Heros.getHeros;
+
 import java.io.IOException;
+import java.lang.Math; 
 
 /**
  * Modélisation d'un pnj étant de type "Superboss" au combat
@@ -29,6 +32,21 @@ public class SuperBoss extends Boss {
     public Arme getArmeLegendaire() {
         return armeLegendaire;
     }
+    
+    /**
+     * Traite l'attaque d'un ennemi sur le héros
+     * @return degats
+     */
+    public int attaque(){
+    	double rdm = Math.random();
+    	if(rdm>0.75) {
+    		return this.getArmeLegendaire().attaquer(getHeros());
+    	}
+    	else {
+    		return this.getArme().attaquer(getHeros());
+    	}    	
+    }
+
 
     /**
      * Récupère les données de configuration du superboss
@@ -39,7 +57,8 @@ public class SuperBoss extends Boss {
         String cle = Integer.toString(id);
         JSONObject ennemi = null;
         try {
-            ennemi = new JsonParser().parseObject(chemin, cle);
+            new JsonParser();
+            ennemi = JsonParser.parseObject(chemin, cle);
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }

@@ -3,7 +3,7 @@ package models;
 import lib.org.json.simple.JSONObject;
 import lib.org.json.simple.parser.ParseException;
 import utils.JsonParser;
-
+import java.util.Random;
 import java.io.IOException;
 
 /**
@@ -28,7 +28,8 @@ public class Arme extends Item implements Configurable {
      * @param cible victime de l'attaque
      */
     public int attaquer(Personnage cible){
-         return cible.subirAttaque(this.degats);
+    	int prctAttaque = this.rdm();
+        return cible.subirAttaque(this.degats+prctAttaque);
     }
 
     /**
@@ -54,6 +55,18 @@ public class Arme extends Item implements Configurable {
     public void setNom(String nom) {
         this.nom = nom;
     }
+    
+    /**
+     * 
+     */
+    public int rdm() {
+    	int max = 15;
+    	int min = -10;
+        Random r = new Random();
+        int rmd =r.nextInt((max - min) + 1) + min;
+        int prctAttaque = ((this.degats*rmd)/100);
+        return(prctAttaque);
+    }
 
     /**
      * Récupère les données de configuration de l'arme
@@ -64,7 +77,8 @@ public class Arme extends Item implements Configurable {
         String cle = Integer.toString(id);
         JSONObject arme = null;
         try {
-            arme = new JsonParser().parseObject(chemin, cle);
+            new JsonParser();
+            arme = JsonParser.parseObject(chemin, cle);
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }

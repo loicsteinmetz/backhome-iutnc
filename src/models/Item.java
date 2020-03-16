@@ -24,4 +24,12 @@ public abstract class Item {
     {
         return this.nom;
     }
+
+    /**
+     * Getter
+     * @return id de l'arme
+     */
+    public int getId() {
+        return id;
+    }
 }

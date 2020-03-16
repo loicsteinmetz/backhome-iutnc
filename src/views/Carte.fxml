@@ -26,12 +26,8 @@
     </FlowPane>
 
     <HBox id="btnBox">
-        <Button id="inventaireBtn" text="Inventaire"
-                onAction="#allerInventaire">
-        </Button>
-        <Button id="saveBtn" text="Sauvegarder">
-                <!--onAction="#sauvegarder"-->
-        </Button>
+        <Button id="inventaireBtn" text="Inventaire" onAction="#allerInventaire"/>
+        <Button id="saveBtn" text="Sauvegarder" onAction="#sauvegarder"/>
     </HBox>
 
 </AnchorPane>

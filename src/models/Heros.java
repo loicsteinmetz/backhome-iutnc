@@ -3,16 +3,19 @@ package models;
 import static models.Carte.getCarte;
 import static models.Inventaire.getInventaire;
 
+
+
 /**
  * Singleton modélisant le héros du jeu
  */
 public class Heros extends Personnage {
 
-    @Singleton
+	@Singleton
     private static Heros HEROS = new Heros();
 
     private Planete localisation;
     private Situation situation;
+    private Planete localisationPrecedente;
 
     /**
      * Constructeur privé
@@ -48,6 +51,7 @@ public class Heros extends Personnage {
      * @param localisation localisation du héros
      */
     public void setLocalisation(Planete localisation) {
+        localisationPrecedente = this.localisation;
         this.localisation = localisation;
     }
     
@@ -82,5 +86,20 @@ public class Heros extends Personnage {
      */
     public void soin(){
         pv = 100;
+    }
+
+    /**
+     * Génère une nouvelle instance de Héros
+     */
+    public static void reset(){
+        HEROS = new Heros();
+    }
+
+    /**
+     * Fait revenir le héros sur la planète précédente
+     */
+    public void retour(){
+        getInventaire().modifierCarburant(localisation.getNiveau() * 100);
+        localisation = localisationPrecedente;
     }
 }

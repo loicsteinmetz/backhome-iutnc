@@ -18,6 +18,7 @@ public class Planete {
     private int idRecompenseDistance;
     private int idRecompenseArmure;
     private boolean soinDisponible;
+    private boolean visitee;
 
     /**
      * Constructeur
@@ -35,6 +36,7 @@ public class Planete {
         this.idRecompenseDistance = idRecompenseDistance;
         this.idRecompenseArmure = idRecompenseArmure;
         this.soinDisponible = true;
+        this.visitee = false;
     }
 
     /**
@@ -98,6 +100,15 @@ public class Planete {
         if (idRecompenseArmure != -1){
             getInventaire().setArmure(new Armure(idRecompenseArmure));
         }
+        switch (niveau){
+            case 0:
+            case 1:
+                getInventaire().modifierCarburant(125);
+                break;
+            case 2:
+                getInventaire().modifierCarburant(300);
+                break;
+        }
     }
 
     /**
@@ -113,5 +124,28 @@ public class Planete {
      */
     public void consommerSoin(){
         soinDisponible = false;
+    }
+
+    /**
+     * Getter - Indique si la planète a été visitée
+     * @return vrai si la planète a été visitée
+     */
+    public boolean getVisitee(){
+        return visitee;
+    }
+
+    /**
+     * Setter - Indique que la planète a été visitée
+     */
+    public void setVisitee(){
+        visitee = true;
+    }
+
+    /**
+     * Indique si la planète est accessible en fonction des réserves de carburant
+     * @return true si la planète est accessible
+     */
+    public boolean estAccessible(){
+        return niveau * 100 <= getInventaire().getCarburant();
     }
 }

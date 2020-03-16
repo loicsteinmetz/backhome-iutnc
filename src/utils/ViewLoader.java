@@ -8,6 +8,9 @@ import javafx.scene.Node;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+/**
+ * Classe utilitaire servant au chargement des vues
+ */
 public class ViewLoader {
 
     /**
