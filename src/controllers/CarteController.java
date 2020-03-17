@@ -1,23 +1,20 @@
 package controllers;
 
-import javafx.application.Application;
-import javafx.event.Event;
+import javafx.animation.PauseTransition;
+import javafx.animation.Transition;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
-import javafx.stage.Stage;
+import javafx.util.Duration;
 import models.BackHome;
 import models.Carte;
 import models.Planete;
 import models.Situation;
 import utils.EffetsJavaFx;
-import utils.ViewLoader;
+import views.View;
 
 import static models.Carte.getCarte;
 import static models.Heros.getHeros;
@@ -26,12 +23,8 @@ import static models.Inventaire.getInventaire;
 /**
  * Controller de la carte
  */
-public class CarteController extends Application {
+public class CarteController {
 
-    @Controller
-    private static final String VIEW = "/views/Carte.fxml";
-    @Controller
-    private static final String STYLE = "/assets/css/Carte.css";
     @Controller
     private static Carte MODELE;
 
@@ -41,28 +34,6 @@ public class CarteController extends Application {
     private FlowPane flow;
     @FXML
     private Label loc, dest;
-
-    /**
-     * Retourne la vue associée au controller
-     * @return chemin de la vue
-     */
-    @Controller
-    public static String getView(){
-        return VIEW;
-    }
-
-    /**
-     * Génère l'interface de la carte
-     * @param stage primaryStage
-     * @throws Exception chargement de la vue
-     */
-    @Override
-    public void start(Stage stage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource(VIEW));
-        Scene scene = new Scene(root, 800, 600);
-        scene.getStylesheets().add(STYLE);
-        stage.setScene(scene);
-    }
 
     /**
      * Initialisation de la vue et du modèle
@@ -133,7 +104,9 @@ public class CarteController extends Application {
         if (nouvellePlanete.estAccessible()){
             getHeros().setLocalisation(nouvellePlanete);
             getInventaire().modifierCarburant(-100 * getHeros().getLocalisation().getNiveau());
-            new ViewLoader().switchTo(QueteController.getView(), e, 0.5);
+            Transition p = new PauseTransition(Duration.seconds(1));
+            p.setOnFinished((e2)->new View().queteView());
+            p.play();
         } else {
             Label l = (Label)(box.getChildren().get(1));
             l.setText("Carburant nécessaire : " + nouvellePlanete.getNiveau() * 100 + "L");
@@ -143,11 +116,10 @@ public class CarteController extends Application {
 
     /**
      * Permet d'accéder à l'inventaire
-     * @param e clic sur le bouton
      */
     @FXML
-    private void allerInventaire(Event e){
-        new ViewLoader().switchTo(InventaireController.getView(), e, 0);
+    private void allerInventaire(){
+        new View().inventaireView();
     }
 
     /**
@@ -171,10 +143,9 @@ public class CarteController extends Application {
 
     /**
      * Redirige vers la vue sauvegardes
-     * @param e clic sur le bouton sauvegarder
      */
     @FXML
-    private void sauvegarder(Event e){
-        new ViewLoader().switchTo(SauvegardeController.getView(), e);
+    private void sauvegarder(){
+        new View().sauvegardeView();
     }
 }

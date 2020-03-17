@@ -2,32 +2,23 @@ package controllers;
 
 import javafx.animation.PauseTransition;
 import javafx.animation.Transition;
-import javafx.application.Application;
 import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 import models.BackHome;
 import utils.EffetsJavaFx;
-import utils.ViewLoader;
+import views.View;
 
 /**
  * Controleur principal
  */
-public class BackHomeController extends Application {
+public class BackHomeController {
 
-    @Controller
-    private static final String VIEW = "/views/BackHome.fxml";
-    @Controller
-    private static final String STYLE = "/assets/css/BackHome.css";
     @Controller
     private static BackHome MODELE;
 
@@ -41,28 +32,6 @@ public class BackHomeController extends Application {
     private Button startBtn, saveBtn;
     @FXML
     private ImageView vaisseau, starsBg1,starsBg2;
-
-    /**
-     * Retourne la vue associée au controller
-     * @return chemin de la vue
-     */
-    @Controller
-    public static String getView(){
-        return VIEW;
-    }
-
-    /**
-     * Génère l'interface d'accueil
-     * @param stage primaryStage
-     * @throws Exception chargement de la vue
-     */
-    @Override
-    public void start(Stage stage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource(VIEW));
-        Scene scene = new Scene(root, 800, 600);
-        scene.getStylesheets().add(STYLE);
-        stage.setScene(scene);
-    }
 
     /**
      * Initialisation de la vue et du modèle
@@ -112,8 +81,8 @@ public class BackHomeController extends Application {
     }
 
     @FXML
-    private void sauvegardes(Event event){
-        new ViewLoader().switchTo(SauvegardeController.getView(), event);
+    private void sauvegardes(){
+        new View().sauvegardeView();
     }
 
     /**
@@ -135,13 +104,12 @@ public class BackHomeController extends Application {
         } else if (index == scenario.length) {
             label.setDisable(true);
             label.setVisible(false);
-            ViewLoader vl = new ViewLoader();
             if (!BackHome.finJeu()){
-                vl.switchTo(QueteController.getView(), event, 2);
+                new View().queteView();
             } else {
                 BackHome.resetJeu();
                 Transition p = new PauseTransition(Duration.seconds(2.5));
-                p.setOnFinished((e)-> vl.switchTo(BackHomeController.getView(), event));
+                p.setOnFinished((e)-> new View().backHomeView());
                 p.play();
             }
         }

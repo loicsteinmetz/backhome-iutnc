@@ -1,21 +1,16 @@
 package controllers;
 
 import javafx.animation.Transition;
-import javafx.application.Application;
 import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
-import javafx.stage.Stage;
 import models.BackHome;
 import models.Decision;
 import utils.EffetsJavaFx;
-import utils.ViewLoader;
+import views.View;
 
 import static models.Heros.getHeros;
 import static models.Quete.getQuete;
@@ -23,12 +18,8 @@ import static models.Quete.getQuete;
 /**
  * Controller des décisions
  */
-public class DecisionController extends Application {
+public class DecisionController {
 
-    @Controller
-    private static final String VIEW = "/views/Decision.fxml";
-    @Controller
-    private static final String STYLE = "/assets/css/Decision.css";
     @Controller
     private Decision MODELE;
 
@@ -40,28 +31,6 @@ public class DecisionController extends Application {
     private Label ecran, cliquez;
     @FXML
     private HBox btnBox;
-
-    /**
-     * Retourne la vue associée au controller
-     * @return chemin de la vue
-     */
-    @Controller
-    public static String getView(){
-        return VIEW;
-    }
-
-    /**
-     * Génère l'interface de prise de décision
-     * @param stage primaryStage
-     * @throws Exception chargement de la vue
-     */
-    @Override
-    public void start(Stage stage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource(VIEW));
-        Scene scene = new Scene(root, 800, 600);
-        scene.getStylesheets().add(STYLE);
-        stage.setScene(scene);
-    }
 
     /**
      * Initialisation de la vue et du modèle
@@ -108,7 +77,7 @@ public class DecisionController extends Application {
                 btnBox.setLayoutY(475);
                 issueA.setText("Aller au vaisseau");
             } else {
-                ecran.setOnMouseClicked((e)-> new ViewLoader().switchTo(QueteController.getView(), event));
+                ecran.setOnMouseClicked((e)-> new View().queteView());
             }
         } else {
             ecran.setOnMouseMoved((e)->cliquez.setVisible(true));
@@ -117,31 +86,28 @@ public class DecisionController extends Application {
 
     /**
      * Traite le choix de l'issue A
-     * @param e clic sur l'issue A
      */
     @FXML
-    private void issueA(Event e){
-        ViewLoader vl = new ViewLoader();
+    private void issueA(){
         if (MODELE.getIdIssueA() == 0){
             if (!BackHome.finJeu()){
                 getHeros().getLocalisation().recompenses();
-                vl.switchTo(CarteController.getView(), e);
+                new View().carteView();
             } else {
-                vl.switchTo(BackHomeController.getView(), e);
+                new View().backHomeView();
             }
         } else {
             getQuete().prochainEvenement(MODELE.getIdIssueA());
-            new ViewLoader().switchTo(QueteController.getView(), e);
+            new View().queteView();
         }
     }
 
     /**
      * Traite le choix de l'issue B
-     * @param e clic sur l'issue B
      */
     @FXML
-    private void issueB(Event e){
+    private void issueB(){
         getQuete().prochainEvenement(MODELE.getIdIssueB());
-        new ViewLoader().switchTo(QueteController.getView(), e);
+        new View().queteView();
     }
 }

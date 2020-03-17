@@ -1,12 +1,8 @@
 package controllers;
 
 import javafx.animation.*;
-import javafx.application.Application;
 import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -14,13 +10,12 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 import models.BackHome;
 import models.Combat;
 import models.Situation;
 import utils.EffetsJavaFx;
-import utils.ViewLoader;
+import views.View;
 
 import static models.Carte.getCarte;
 import static models.Heros.getHeros;
@@ -30,14 +25,10 @@ import static models.Quete.getQuete;
 /**
  * Controller des combats
  */
-public class CombatController extends Application {
+public class CombatController {
 
     private int pvInitEnnemi;
 
-    @Controller
-    private static final String VIEW = "/views/Combat.fxml";
-    @Controller
-    private static final String STYLE = "/assets/css/Combat.css";
     @Controller
     private Combat MODELE;
 
@@ -57,28 +48,6 @@ public class CombatController extends Application {
             print, ecran, soinTexte, cliquez;
     @FXML
     private Button attaqueCac, attaqueDist;
-
-    /**
-     * Retourne la vue associée au controller
-     * @return chemin de la vue
-     */
-    @Controller
-    public static String getView(){
-        return VIEW;
-    }
-
-    /**
-     * Génère l'interface de combat
-     * @param stage primaryStage
-     * @throws Exception chargement de la vue
-     */
-    @Override
-    public void start(Stage stage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource(VIEW));
-        Scene scene = new Scene(root, 800, 600);
-        scene.getStylesheets().add(STYLE);
-        stage.setScene(scene);
-    }
 
     /**
      * Initialisation de la vue et du modèle
@@ -197,22 +166,20 @@ public class CombatController extends Application {
 
     /**
      * Lance l'attaque cac du joueur
-     * @param event clic sur le bouton d'attaque cac
      */
     @FXML
-    private void attaqueCac(Event event){
+    private void attaqueCac(){
         int degatsH = getHeros().attaquer(MODELE.getEnnemi(), getInventaire().getArmeCac());
-        lancerAttaque(degatsH, event);
+        lancerAttaque(degatsH);
     }
 
     /**
      * Lance l'attaque à distance du joueur
-     * @param event clic sur le bouton d'attaque à distance
      */
     @FXML
-    private void attaqueDist(Event event){
+    private void attaqueDist(){
         int degatsH = getHeros().attaquer(MODELE.getEnnemi(), getInventaire().getArmeDist());
-        lancerAttaque(degatsH, event);
+        lancerAttaque(degatsH);
     }
 
     /**
@@ -241,10 +208,9 @@ public class CombatController extends Application {
     /**
      * Gère le déroulement d'une attaque du joueur
      * @param degatsH dégats infligés à l'ennemi
-     * @param event clic sur un bouton d'attaque
      */
     @FXML
-    private void lancerAttaque(int degatsH, Event event){
+    private void lancerAttaque(int degatsH){
         attaqueCac.setDisable(true);
         attaqueDist.setDisable(true);
         print.setText("");
@@ -255,10 +221,10 @@ public class CombatController extends Application {
             if (getHeros().enVie()){
                 finAttaque(degatsH, degatsE);
             } else {
-                herosMort(event);
+                herosMort();
             }
         } else {
-            ennemiMort(event);
+            ennemiMort();
         }
     }
 
@@ -322,24 +288,22 @@ public class CombatController extends Application {
 
     /**
      * Gère la mort de l'ennemi
-     * @param event clic sur un bouton d'attaque
      */
     @FXML
-    private void ennemiMort(Event event){
+    private void ennemiMort(){
         Transition t = new PauseTransition(Duration.seconds(2));
         t.setOnFinished((e)->{
             print.setText("VOUS AVEZ VAINCU " + MODELE.getEnnemi().getNom().toUpperCase() + " !\nCliquez pour continuer.");
-            finCombat(event);
+            finCombat();
         });
         t.play();
     }
 
     /**
      * Gère la mort du héros
-     * @param event clic sur un bouton d'attaque
      */
     @FXML
-    private void herosMort(Event event){
+    private void herosMort(){
         Transition t = new PauseTransition(Duration.seconds(4));
         t.setOnFinished((e)->{
             if (getHeros().getLocalisation() == getCarte().getPlaneteParNom("utopia")){
@@ -347,7 +311,7 @@ public class CombatController extends Application {
             } else {
                 print.setText(MODELE.getEnnemi().getNom().toUpperCase() + " VOUS A VAINCU...\nVous reviendrez...\nCliquez pour revenir au vaisseau.");
             }
-            finCombat(event);
+            finCombat();
         });
         t.play();
     }
@@ -372,33 +336,31 @@ public class CombatController extends Application {
 
     /**
      * Gère la fin du combat
-     * @param event clic sur un bouton d'attaque
      */
     @FXML
-    private void finCombat(Event event){
-        ViewLoader vl = new ViewLoader();
+    private void finCombat(){
         pane.setOnMouseClicked((e)->{
             if (getHeros().enVie()){
                 if (MODELE.getIdIssue() == 0){
                     if (!BackHome.finJeu()){
                         getHeros().setSituation(Situation.VAISSEAU);
                         getHeros().getLocalisation().recompenses();
-                        vl.switchTo(CarteController.getView(), event);
+                        new View().carteView();
                     } else {
-                        vl.switchTo(BackHomeController.getView(), event);
+                        new View().backHomeView();
                     }
                 } else {
                     getQuete().prochainEvenement(MODELE.getIdIssue());
-                    vl.switchTo(QueteController.getView(), event);
+                    new View().queteView();
                 }
             } else {
                 if (getHeros().getLocalisation() == getCarte().getPlaneteParNom("utopia")){
                     getHeros().setSituation(Situation.DEBUT);
-                    vl.switchTo(QueteController.getView(), event);
+                    new View().queteView();
                 } else {
                     getHeros().retour();
                     getHeros().setSituation(Situation.VAISSEAU);
-                    vl.switchTo(CarteController.getView(), event);
+                    new View().carteView();
                 }
             }
         });

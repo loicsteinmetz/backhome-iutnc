@@ -1,22 +1,17 @@
 package controllers;
 
 import javafx.animation.Transition;
-import javafx.application.Application;
 import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 import models.Decision;
 import models.Quete;
 import models.Situation;
 import utils.EffetsJavaFx;
-import utils.ViewLoader;
+import views.View;
 
 import static models.Carte.getCarte;
 import static models.Heros.getHeros;
@@ -25,12 +20,8 @@ import static models.Quete.getQuete;
 /**
  * Controller de la quête
  */
-public class QueteController extends Application {
+public class QueteController {
 
-    @Controller
-    private static final String VIEW = "/views/Quete.fxml";
-    @Controller
-    private static final String STYLE = "/assets/css/Quete.css";
     @Controller
     private Quete MODELE;
 
@@ -42,28 +33,6 @@ public class QueteController extends Application {
     private Label nomPlanete;
     @FXML
     private Button startBtn;
-
-    /**
-     * Génère l'interface de quête
-     * @param stage primaryStage
-     * @throws Exception chargement de la vue
-     */
-    @Override
-    public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource(VIEW));
-        Scene scene = new Scene(root, 800, 600);
-        scene.getStylesheets().add(STYLE);
-        stage.setScene(scene);
-    }
-
-    /**
-     * Retourne la vue associée au controller
-     * @return chemin de la vue
-     */
-    @Controller
-    public static String getView(){
-        return VIEW;
-    }
 
     /**
      * Initialisation de la vue et du modèle
@@ -111,11 +80,10 @@ public class QueteController extends Application {
                 break;
         }
         getHeros().setSituation(Situation.EVENEMENT);
-        ViewLoader vl = new ViewLoader();
         if (MODELE.getProchainEvenement() instanceof Decision){
-            vl.switchTo(DecisionController.getView(), e);
+            new View().decisionView();
         } else {
-            vl.switchTo(CombatController.getView(), e);
+            new View().combatView();
         }
     }
 
