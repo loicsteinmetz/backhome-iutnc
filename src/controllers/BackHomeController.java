@@ -36,7 +36,7 @@ public class BackHomeController extends Application {
     @FXML
     private GridPane grid;
     @FXML
-    private Label titre;
+    private Label titre, cliquez;
     @FXML
     private Button startBtn, saveBtn;
     @FXML
@@ -71,6 +71,7 @@ public class BackHomeController extends Application {
     private void initialize(){
         MODELE = new BackHome();
         EffetsJavaFx.defilementBg(starsBg1, starsBg2);
+        cliquez.setVisible(false);
         if (BackHome.finJeu()){
             grid.setDisable(true);
             grid.setVisible(false);
@@ -105,6 +106,8 @@ public class BackHomeController extends Application {
             label.setOnMouseClicked(this::passeTexte);
             pane.getChildren().add(label);
             EffetsJavaFx.fadeIn(label, 2.0, 1.5);
+            cliquez.setVisible(false);
+            label.setOnMouseMoved((e2)->cliquez.setVisible(true));
         });
     }
 
@@ -119,7 +122,9 @@ public class BackHomeController extends Application {
      */
     @FXML
     private void passeTexte(Event event){
+        cliquez.setVisible(false);
         Label label = (Label) event.getSource();
+        label.setOnMouseMoved((e)->cliquez.setVisible(true));
         int index = (int) label.getUserData() + 1;
         String[] scenario = BackHome.finJeu() ? MODELE.getScenarioFin() : MODELE.getScenarioDebut();
         if (index < scenario.length){
