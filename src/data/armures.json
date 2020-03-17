@@ -5,17 +5,17 @@
   },
 
   "2": {
-    "nom": "Tunique sacrée de Saturnus",
+    "nom": "Tunique divin de Saturnus",
     "resistance": 40
   },
 
   "4": {
-    "nom": "Armure légendaire d'Agarothi",
+    "nom": "Armure immortel d'Agarothi",
     "resistance": 40
   },
 
   "100": {
-    "nom": "Veste renforcée",
+    "nom": "Veste en kevlar",
     "resistance": 0
   }
 }

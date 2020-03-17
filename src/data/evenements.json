@@ -27,7 +27,7 @@
   "1": {
     "type": "combat",
     "scenario" : [
-      "BIENVENUE SUR HERMÈS, Aux terres promises",
+      "BIENVENUE SUR HERMES, Aux terres promises",
       "Cette planète a été abandonnée par l'espèce humaine, en laissant tout sur leur passage… Elle a pu renaître de ses cendres... Et la nature a pu reprendre tous ces droits...",
       "Vous descendez du vaisseau. Et à ce moment-là, vous êtes émerveillé par le paysage verdoyant...",
       "Au loin, vous apercevez un gobelin qui semble faible et facile à tuer. Vous commencez à courir vers lui pour l'affronter.",
@@ -149,10 +149,10 @@
   "17": {
     "type": "combat",
     "scenario": [
-      "BIENVENUE SUR ZÉPHYR, Du vent de l'ouest",
+      "BIENVENUE SUR ZEPHYR, Du vent de l'ouest",
       "Elle est constituée principalement de mer. Le problème, c’est qu’elle est difficile d’accès à cause de ses satellites.",
       "Cette planète est paradisiaque : eaux turquoise, terres verdoyantes, montagnes bien enneigées et forêts. Cette planète est la plus belle du système.",
-      "Zéphyr a amené Fortune, Gloire et Pouvoir ! Un homme avait amassé toutes les richesses du monde, son nom God R.Devil, Roi des pirates, ces dernières paroles incitaient tous les hommes de la planète à s’aventurer en mer.",
+      "Zephyr a amené Fortune, Gloire et Pouvoir ! Un homme avait amassé toutes les richesses du monde, son nom God R.Devil, Roi des pirates, ces dernières paroles incitaient tous les hommes de la planète à s’aventurer en mer.",
       "God R.Devil : \"Mon trésor ? Je vous le laisse si vous le voulez : TROUVER LE ! Je l'ai laissé quelque part dans ce monde. \"",
       "Tous se lancèrent sur la route de Démacia dans l’espoir de mettre la main sur ce fameux trésor ! Le monde entier connut alors une grande vague de piraterie.",
       "Vous venez d'atterrir à REDLINE. Vous vous promenez dans la ville à la recherche de quêtes. Vous arrivez devant un tableau à quêtes, vous consultez les quêtes qui pourrez-vous plaire.",
@@ -391,7 +391,7 @@
       "La route est déserte.",
       "Vous arrivez enfin. Vous croisez quelques habitants qui semblent hagard. Subitement, quelqu'un vous interpelle: \"Lazarus, est-ce toi? \". Il s'agit d'une femme d'un certain âge. Vous ne parvenez pas à la reconnaître. \"C'est bien toi je suis sûr! Je suis Eucharis, ta mère! Je n'en reviens pas que tu sois revenu, tu es bien le seul malheureusement...\"",
       "Vous vous souvenez d'elle, ainsi que de votre père et de votre femme. Leurs noms ne vous reviennent pas, seulement leurs visages... Vous demandez à votre mère ce qu'il s'est passé.",
-      "\"Il y a maintenant 10 ans, des envahisseurs sont venus du ciel. C'était la première fois que nous voyions ça! Malheureusement, ils n'étaient pas pacifiques. A peine arrivés, ils nous ont massacré. Une chose les intéressaient, l'arbre de Morgdrul et son pouvoir. Leur leader suprême, Noctarion III, s'en est emparé. L'obtention de ce pouvoir à provoqué une conséquence désastreuse: une explosion d'énergie à tuer bon nombres de personnes et il semblerait qu'elle en ai téléporté d'autres... Noctarion III se trouve toujours ici avec son armée, à 2h de marche d'ici. A cause de lui, nous sommes réduits en esclavage... \" ",
+      "\"Il y a maintenant 10 ans, des envahisseurs sont venus du ciel. C'était la première fois que nous voyions ça! Malheureusement, ils n'étaient pas pacifiques. A peine arrivés, ils nous ont massacré. Une chose les intéressaient, l'arbre de Morgdrul et son pouvoir. Leur leader divin, Noctarion III, s'en est emparé. L'obtention de ce pouvoir à provoqué une conséquence désastreuse: une explosion d'énergie à tuer bon nombres de personnes et il semblerait qu'elle en ai téléporté d'autres... Noctarion III se trouve toujours ici avec son armée, à 2h de marche d'ici. A cause de lui, nous sommes réduits en esclavage... \" ",
       "Tout devient plus clair! Vous vous souvenez en effet d'une invasion suivie d'une explosion. Dix ans se sont écoulées! Et puis votre réveil en dessous d'un arbre sur Utopia a t'il un lien avec Morgdrul? En tout cas, il est tant de vous venger et de rétablir la paix sur Calypso. Votre mère vous donne une carte. Il est temps d'en finir!",
       "Après deux heures de marche, un garde ennemi vous interpelle \"Vous avez interdiction de sortir des zones restreintes. Vous connaissez la conséquence! \" "
     ],

@@ -29,14 +29,14 @@
 
   "7":{
     "nom": "Chô Peleux",
-    "description": "Un Bip-Bip venère ",
+    "description": "Le roi Bip-Bip",
     "idArme": "9",
     "pv": 150
   },
 
   "9":{
     "nom": "Tek Apout",
-    "description": "Un gnome alcoolisé",
+    "description": "Un gnome enivrant",
     "idArme": "11",
     "pv": 100
   },
@@ -85,7 +85,7 @@
 
   "12": {
     "nom": "Celesta",
-    "description": "Impératrice de Lumini",
+    "description": "Souveraine de Lumini",
     "idArme": "12",
     "idArmeLegendaire": "14",
     "pv": 400
@@ -93,7 +93,7 @@
 
   "14": {
     "nom": "Katorus",
-    "description": "Lieutenant Xénomorphe",
+    "description": "Lieutenant Xenomorphe",
     "idArme": "16",
     "pv": 250
   },
@@ -122,28 +122,28 @@
 
   "22": {
     "nom": "Narami",
-    "description": "Lieutenant fantassin Impérial",
+    "description": "Lieutenant fantassin Royal",
     "idArme": "34",
     "pv": 100
   },
 
   "24": {
     "nom":"Geralt",
-    "description": "Lieutenant artilleur Impérial",
+    "description": "Lieutenant artilleur Royal",
     "idArme": "36",
     "pv": 50
   },
 
   "26": {
     "nom": "Argos",
-    "description": "Général Impérial",
+    "description": "Caporal Royal",
     "idArme": "38",
     "pv": 50
   },
 
   "28": {
     "nom": "Noctarion III",
-    "description": "Empereur suprême",
+    "description": "Empereur divin",
     "idArme": "40",
     "idArmeLegendaire": "42",
     "pv": 300
