@@ -50,9 +50,11 @@ public class CombatController extends Application {
     @FXML
     private ImageView bg;
     @FXML
-    private HBox niveauVieEnnemi, niveauVieHeros, ennemiBox, herosBox, printBox, titre;
+    private HBox niveauVieEnnemi, niveauVieHeros, ennemiBox,
+            herosBox, printBox, titre;
     @FXML
-    private Label pvEnnemi, pvHeros, nomEnnemi, descEnnemi, print, ecran, soinTexte;
+    private Label pvEnnemi, pvHeros, nomEnnemi, descEnnemi,
+            print, ecran, soinTexte, cliquez;
     @FXML
     private Button attaqueCac, attaqueDist;
 
@@ -84,6 +86,7 @@ public class CombatController extends Application {
     @FXML
     private void initialize(){
         MODELE = (Combat) getQuete().getProchainEvenement();
+        cliquez.setVisible(false);
         pvInitEnnemi = MODELE.getEnnemi().getPv();
         flow.setVisible(false);
         chargeBg();
@@ -91,6 +94,7 @@ public class CombatController extends Application {
         ecran.setUserData(0);
         ecran.setOnMouseClicked(this::passeTexte);
         EffetsJavaFx.fadeIn(ecran, 2.0, 1);
+        ecran.setOnMouseMoved((e)->cliquez.setVisible(true));
     }
 
     /**
@@ -167,7 +171,9 @@ public class CombatController extends Application {
      */
     @FXML
     private void passeTexte(Event event){
+        cliquez.setVisible(false);
         Label label = (Label) event.getSource();
+        label.setOnMouseMoved((e)->cliquez.setVisible(true));
         int index = (int) label.getUserData() + 1;
         if (index < MODELE.getScenario().size()){
             label.setOpacity(0);

@@ -37,7 +37,7 @@ public class DecisionController extends Application {
     @FXML
     private Button issueA, issueB;
     @FXML
-    private Label ecran;
+    private Label ecran, cliquez;
     @FXML
     private HBox btnBox;
 
@@ -69,6 +69,7 @@ public class DecisionController extends Application {
     @FXML
     public void initialize(){
         MODELE = (Decision) getQuete().getProchainEvenement();
+        cliquez.setVisible(false);
         Transition t = EffetsJavaFx.fade(bg, 4, 0, 0.15);
         t.setOnFinished((e)-> EffetsJavaFx.vibrance(bg, 6, 0.15, 0.05));
         ecran.setText(MODELE.getScenario().get(0));
@@ -77,6 +78,7 @@ public class DecisionController extends Application {
         EffetsJavaFx.fadeIn(ecran, 2.0, 1);
         issueA.setOpacity(0);
         issueB.setOpacity(0);
+        ecran.setOnMouseMoved((e)->cliquez.setVisible(true));
     }
 
     /**
@@ -85,6 +87,7 @@ public class DecisionController extends Application {
      */
     @FXML
     private void passeTexte(Event event){
+        cliquez.setVisible(false);
         int index = (int) ecran.getUserData() + 1;
         ecran.setOpacity(0);
         ecran.setText(MODELE.getScenario().get(index));
@@ -107,6 +110,8 @@ public class DecisionController extends Application {
             } else {
                 ecran.setOnMouseClicked((e)-> new ViewLoader().switchTo(QueteController.getView(), event));
             }
+        } else {
+            ecran.setOnMouseMoved((e)->cliquez.setVisible(true));
         }
     }
 

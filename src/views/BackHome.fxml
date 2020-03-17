@@ -16,6 +16,10 @@
         <Image url="/assets/img/stars_bg.png"/>
     </ImageView>
 
+    <HBox id="clicBox" layoutY="500">
+        <Label fx:id="cliquez" text="Cliquez pour passer..."/>
+    </HBox>
+
     <GridPane fx:id="grid">
 
         <HBox GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -39,6 +43,7 @@
                     onAction="#sauvegardes">
             </Button>
         </HBox>
+
 
     </GridPane>
 </AnchorPane>
