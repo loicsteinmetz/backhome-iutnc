@@ -24,7 +24,7 @@
             <Label fx:id="nomPlanete" text="..."/>
         </HBox>
         <HBox GridPane.columnIndex="1" GridPane.rowIndex="2">
-            <Button onAction="#switchType" text="COMMENCER" fx:id="startBtn"/>
+            <Button onAction="#next" text="COMMENCER" fx:id="startBtn"/>
         </HBox>
     </GridPane>
 
