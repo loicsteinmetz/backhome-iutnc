@@ -31,22 +31,6 @@ public class View {
         }
     }
 
-    public void combatView(){
-        try {
-            new CombatView().start(primaryStage);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void decisionView(){
-        try {
-            new DecisionView().start(primaryStage);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     public void inventaireView(){
         try {
             new InventaireView().start(primaryStage);
@@ -58,6 +42,22 @@ public class View {
     public void queteView(){
         try {
             new QueteView().start(primaryStage);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void combatView(){
+        try {
+            new CombatView().start(primaryStage);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void decisionView(){
+        try {
+            new DecisionView().start(primaryStage);
         } catch (Exception e) {
             e.printStackTrace();
         }
