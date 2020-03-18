@@ -5,6 +5,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import models.Decision;
+import models.Situation;
+
+import static models.Heros.getHeros;
+import static models.Quete.getQuete;
 
 public class View {
 
@@ -177,10 +182,18 @@ public class View {
          */
         @Override
         public void start(Stage stage) throws Exception{
-            Parent root = FXMLLoader.load(getClass().getResource(VIEW));
-            Scene scene = new Scene(root, 800, 600);
-            scene.getStylesheets().add(STYLE);
-            stage.setScene(scene);
+            if (getHeros().getSituation() != Situation.EVENEMENT){
+                Parent root = FXMLLoader.load(getClass().getResource(VIEW));
+                Scene scene = new Scene(root, 800, 600);
+                scene.getStylesheets().add(STYLE);
+                stage.setScene(scene);
+            } else {
+                if (getQuete().getProchainEvenement() instanceof Decision){
+                    new View().decisionView();
+                } else {
+                    new View().combatView();
+                }
+            }
         }
     }
 
