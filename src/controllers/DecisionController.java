@@ -101,12 +101,18 @@ public class DecisionController extends Application {
                 btnBox.setLayoutY(475);
                 issueA.setText(MODELE.getOptionA());
                 issueB.setText(MODELE.getOptionB());
-            } else if (MODELE.getIdIssueA() == 0){
+            } else if (MODELE.getIdIssueA() == 0) {
                 ecran.setDisable(true);
                 EffetsJavaFx.fadeIn(issueA, 2, 0);
                 btnBox.getChildren().remove(1);
                 btnBox.setLayoutY(475);
                 issueA.setText("Aller au vaisseau");
+            } else if (MODELE.getIdIssueA() != 0) {
+                ecran.setDisable(true);
+                EffetsJavaFx.fadeIn(issueA, 2, 0);
+                btnBox.getChildren().remove(1);
+                btnBox.setLayoutY(475);
+                issueA.setText(MODELE.getOptionA());
             } else {
                 ecran.setOnMouseClicked((e)-> new ViewLoader().switchTo(QueteController.getView(), event));
             }
