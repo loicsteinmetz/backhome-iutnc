@@ -57,7 +57,7 @@ public class Arme extends Item implements Configurable {
     }
     
     /**
-     * 
+     * todo : javadoc
      */
     public int rdm() {
     	int max = 15;
