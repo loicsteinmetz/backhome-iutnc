@@ -87,4 +87,13 @@ public class Arme extends Item implements Configurable {
             degats = (int) (long) arme.get("degats");
         }
     }
+
+    /**
+     * Constructeur servant uniquement aux tests
+     * @param degats les dégâts de l'arme
+     */
+    public Arme(double degats){
+        super();
+        this.degats = (int) degats;
+    }
 }

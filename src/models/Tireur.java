@@ -12,5 +12,13 @@ public class Tireur extends Ennemi {
     public Tireur(int id){
         super(id);
     }
-    
+
+    /**
+     * Constructeur servant uniquement aux tests
+     * @param pv les pv du combattant
+     * @param arme l'arme du combattant
+     */
+    public Tireur(int pv, Arme arme) {
+        super(pv, arme);
+    }
 }

@@ -88,12 +88,20 @@ public class DecisionController {
                 issueB.setText(MODELE.getOptionB());
 
             // affichage d'un bouton de retour au vaisseau si paramétrage VAISSEAU
-            } else if (MODELE.getIdIssueA() == 0){
+            } else if (MODELE.getIdIssueA() == 0) {
                 ecran.setDisable(true);
                 EffetsJavaFx.fadeIn(issueA, 2, 0);
                 btnBox.getChildren().remove(1);
                 btnBox.setLayoutY(475);
                 issueA.setText("Aller au vaisseau");
+
+            // affichage d'un seul bouton si une seule issue possible
+            } else if (MODELE.getIdIssueA() != 0) {
+                ecran.setDisable(true);
+                EffetsJavaFx.fadeIn(issueA, 2, 0);
+                btnBox.getChildren().remove(1);
+                btnBox.setLayoutY(475);
+                issueA.setText(MODELE.getOptionA());
 
             // poursuite de la quête avec un clic si aucun choix à faire
             } else {

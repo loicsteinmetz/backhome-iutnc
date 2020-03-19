@@ -32,4 +32,9 @@ public abstract class Item {
     public int getId() {
         return id;
     }
+
+    /**
+     * Constructeur servant uniquement aux tests
+     */
+    public Item(){};
 }
