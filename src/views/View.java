@@ -11,10 +11,18 @@ import models.Situation;
 import static models.Heros.getHeros;
 import static models.Quete.getQuete;
 
+/**
+ * Classe de gestion des vues, appelée dans les controleurs
+ * @see controllers.Controller
+ */
 public class View {
 
     private static Stage primaryStage;
 
+    /**
+     * Génère la vue BackHome
+     * @see BackHomeView
+     */
     public void backHomeView() {
         try {
             new BackHomeView().start(primaryStage);
@@ -23,6 +31,10 @@ public class View {
         }
     }
 
+    /**
+     * Génère la vue Carte
+     * @see CarteView
+     */
     public void carteView(){
         try {
             new CarteView().start(primaryStage);
@@ -31,6 +43,10 @@ public class View {
         }
     }
 
+    /**
+     * Génère la vue Inventaire
+     * @see InventaireView
+     */
     public void inventaireView(){
         try {
             new InventaireView().start(primaryStage);
@@ -39,14 +55,30 @@ public class View {
         }
     }
 
+    /**
+     * Génère la vue Quete ou redirige vers la vue Combat/Decision
+     * @see QueteView
+     */
     public void queteView(){
-        try {
-            new QueteView().start(primaryStage);
-        } catch (Exception e) {
-            e.printStackTrace();
+        if (getHeros().getSituation() != Situation.EVENEMENT){
+            try {
+                new QueteView().start(primaryStage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            if (getQuete().getProchainEvenement() instanceof Decision){
+                decisionView();
+            } else {
+                combatView();
+            }
         }
     }
 
+    /**
+     * Génère la vue Combat
+     * @see CombatView
+     */
     private void combatView(){
         try {
             new CombatView().start(primaryStage);
@@ -55,6 +87,10 @@ public class View {
         }
     }
 
+    /**
+     * Génère la vue Decision
+     * @see DecisionView
+     */
     private void decisionView(){
         try {
             new DecisionView().start(primaryStage);
@@ -63,6 +99,10 @@ public class View {
         }
     }
 
+    /**
+     * Génère la vue Sauvegarde
+     * @see SauvegardeView
+     */
     public void sauvegardeView(){
         try {
             new SauvegardeView().start(primaryStage);
@@ -71,10 +111,19 @@ public class View {
         }
     }
 
+    /**
+     * Setter
+     * @param s stage initial généré pour l'application
+     * @see app.Main
+     */
     public static void setStage(Stage s){
         primaryStage = s;
     }
 
+    /**
+     * Gère la vue BackHome
+     * @see View
+     */
     private static class BackHomeView extends Application {
 
         private static final String VIEW = "/views/BackHome.fxml";
@@ -82,6 +131,7 @@ public class View {
 
         /**
          * Génère l'interface d'accueil
+         * @see View
          * @param stage primaryStage
          * @throws Exception chargement de la vue
          */
@@ -94,6 +144,10 @@ public class View {
         }
     }
 
+    /**
+     * Gère la vue Carte
+     * @see View
+     */
     private static class CarteView extends Application{
 
         private static final String VIEW = "/views/Carte.fxml";
@@ -101,6 +155,7 @@ public class View {
 
         /**
          * Génère l'interface du vaisseau à partir de la carte
+         * @see View
          * @param stage primaryStage
          * @throws Exception chargement de la vue
          */
@@ -113,6 +168,10 @@ public class View {
         }
     }
 
+    /**
+     * Gère la vue Combat
+     * @see View
+     */
     private static class CombatView extends Application{
 
         private static final String VIEW = "/views/Combat.fxml";
@@ -120,6 +179,7 @@ public class View {
 
         /**
          * Génère l'interface de combat
+         * @see View
          * @param stage primaryStage
          * @throws Exception chargement de la vue
          */
@@ -132,6 +192,10 @@ public class View {
         }
     }
 
+    /**
+     * Gère la vue Decision
+     * @see View
+     */
     private static class DecisionView extends Application{
 
         private static final String VIEW = "/views/Decision.fxml";
@@ -139,6 +203,7 @@ public class View {
 
         /**
          * Génère l'interface de combat
+         * @see View
          * @param stage primaryStage
          * @throws Exception chargement de la vue
          */
@@ -151,6 +216,10 @@ public class View {
         }
     }
 
+    /**
+     * Gère la vue Inventaire
+     * @see View
+     */
     private static class InventaireView extends Application{
 
         private static final String VIEW = "/views/Inventaire.fxml";
@@ -158,6 +227,7 @@ public class View {
 
         /**
          * Génère l'interface de l'inventaire
+         * @see View
          * @param stage primaryStage
          * @throws Exception chargement de la vue
          */
@@ -170,6 +240,10 @@ public class View {
         }
     }
 
+    /**
+     * Gère la vue Quete
+     * @see View
+     */
     private static class QueteView extends Application{
 
         private static final String VIEW = "/views/Quete.fxml";
@@ -177,26 +251,23 @@ public class View {
 
         /**
          * Génère l'interface de quête
+         * @see View
          * @param stage primaryStage
          * @throws Exception chargement de la vue
          */
         @Override
         public void start(Stage stage) throws Exception{
-            if (getHeros().getSituation() != Situation.EVENEMENT){
-                Parent root = FXMLLoader.load(getClass().getResource(VIEW));
-                Scene scene = new Scene(root, 800, 600);
-                scene.getStylesheets().add(STYLE);
-                stage.setScene(scene);
-            } else {
-                if (getQuete().getProchainEvenement() instanceof Decision){
-                    new View().decisionView();
-                } else {
-                    new View().combatView();
-                }
-            }
+            Parent root = FXMLLoader.load(getClass().getResource(VIEW));
+            Scene scene = new Scene(root, 800, 600);
+            scene.getStylesheets().add(STYLE);
+            stage.setScene(scene);
         }
     }
 
+    /**
+     * Gère la vue Sauvegarde
+     * @see View
+     */
     private static class SauvegardeView extends Application{
 
         private static final String VIEW = "/views/Sauvegarde.fxml";
@@ -204,6 +275,7 @@ public class View {
 
         /**
          * Génère l'interface de sauvegarde
+         * @see View
          * @param stage primaryStage
          * @throws Exception chargement de la vue
          */
