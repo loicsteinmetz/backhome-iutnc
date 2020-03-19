@@ -27,7 +27,11 @@ public class InventaireController {
      */
     @FXML
     private void initialize(){
+
+        // initialisation du modèle
         MODELE = getInventaire();
+
+        // affiche le contenu de l'inventaire
         armeCacNom.setText(MODELE.getArmeCac().getNom());
         armeCacDesc.setText("DEGATS  :  " + MODELE.getArmeCac().getDegats());
         armeDistNom.setText(MODELE.getArmeDist().getNom());
