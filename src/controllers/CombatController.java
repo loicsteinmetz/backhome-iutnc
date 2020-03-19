@@ -54,10 +54,18 @@ public class CombatController {
      */
     @FXML
     private void initialize(){
+
+        // initialise le modèle
         MODELE = (Combat) getQuete().getProchainEvenement();
+
+        // instruction 'cliquez' masquée par défaut
         cliquez.setVisible(false);
+
+        // initialise les PV de l'ennemi et masque l'interface de combat
         pvInitEnnemi = MODELE.getEnnemi().getPv();
         flow.setVisible(false);
+
+        // gère l'arrière-plan et l'affichage du scénario
         chargeBg();
         ecran.setText(MODELE.getScenario().get(0));
         ecran.setUserData(0);
@@ -140,18 +148,26 @@ public class CombatController {
      */
     @FXML
     private void passeTexte(Event event){
+
+        // affiche le prochain écran et masque par défaut l'instruction 'cliquez'
         cliquez.setVisible(false);
         Label label = (Label) event.getSource();
         label.setOnMouseMoved((e)->cliquez.setVisible(true));
+
+        // récupère et affiche le scénario
         int index = (int) label.getUserData() + 1;
+        // si il reste du texte
         if (index < MODELE.getScenario().size()){
             label.setOpacity(0);
             label.setText(MODELE.getScenario().get(index));
             EffetsJavaFx.fadeIn(label, 2, 0);
             label.setUserData(index);
+        // si il ne reste plus de texte
         } else if (index == MODELE.getScenario().size()) {
             label.setDisable(true);
             label.setVisible(false);
+
+            // affichage éventuel de l'interface de soin, puis de l'interface de combat
             Transition t = new PauseTransition(Duration.seconds(1));
             t.setOnFinished((e)->{
                 if (getHeros().getPv() < 100 && getHeros().getLocalisation().soinDisponible()){
@@ -214,15 +230,25 @@ public class CombatController {
         attaqueCac.setDisable(true);
         attaqueDist.setDisable(true);
         print.setText("");
+
+        // gère l'attaque du héros
         attaqueHeros(degatsH);
+
+        // poursuite de la phase de jeu si l'ennemi est toujours en vie
         if (MODELE.getEnnemi().enVie()){
             int degatsE = MODELE.getEnnemi().attaque();
+
+            // contre-attaque de l'ennemi
             attaqueEnnemi(degatsH, degatsE);
+
+            // gère la fin de la phase de jeu en fonction du status du héros
             if (getHeros().enVie()){
                 finAttaque(degatsH, degatsE);
             } else {
                 herosMort();
             }
+
+        // gère la fin du combat si l'ennemi est mort
         } else {
             ennemiMort();
         }
@@ -234,20 +260,23 @@ public class CombatController {
      */
     @FXML
     private void attaqueHeros(int degats){
-        Timeline tl = new Timeline(
-                new KeyFrame(
-                        Duration.ZERO,
-                        new KeyValue(niveauVieEnnemi.minWidthProperty(), niveauVieEnnemi.getMinWidth())),
-                new KeyFrame(
-                        Duration.seconds(0.5),
-                        new KeyValue(
-                                niveauVieEnnemi.minWidthProperty(),
-                                (double)MODELE.getEnnemi().getPv() / pvInitEnnemi * 300))
+
+        // gère l'affichage de la barre de PV de l'ennemi
+        Timeline tl = EffetsJavaFx.barreEtat(
+                niveauVieEnnemi,
+                MODELE.getEnnemi().getPv(),
+                pvInitEnnemi,
+                300
         );
+
+        // gère l'affichage des PV de l'ennemi et des infos relative à la phase de jeu
         tl.setOnFinished((e)->{
             int pv = Math.max(MODELE.getEnnemi().getPv(), 0);
             pvEnnemi.setText(pv + "/" + pvInitEnnemi + " PV");
-            print.setText("Vous avez infligé " + degats + " points de dégats à " + MODELE.getEnnemi().getNom() + " !");
+            print.setText(
+                    "Vous avez infligé " + degats +
+                    " points de dégats à " + MODELE.getEnnemi().getNom() + " !"
+            );
         });
         tl.play();
     }
@@ -259,21 +288,20 @@ public class CombatController {
      */
     @FXML
     private void attaqueEnnemi(int degatsH, int degatsE){
+
+        // gère l'affichage des infos relative à la phase de jeu
         Transition t = new PauseTransition(Duration.seconds(1.5));
         t.setOnFinished((e)->{
-            print.setText("Vous avez infligé " + degatsH + " points de dégats à " + MODELE.getEnnemi().getNom() + " !\n" +
-                    "L'ennemi contre-attaque avec " + MODELE.getEnnemi().getArme().getNom() + " et vous inflige à son tour " + degatsE + " points de dégats...");
-            Transition tp = new PauseTransition(Duration.seconds(1));
-            Timeline tl = new Timeline(
-                    new KeyFrame(
-                            Duration.ZERO,
-                            new KeyValue(niveauVieHeros.minWidthProperty(), niveauVieHeros.getMinWidth())),
-                    new KeyFrame(
-                            Duration.seconds(0.5),
-                            new KeyValue(
-                                    niveauVieHeros.minWidthProperty(),
-                                    getHeros().getPv() * 2))
+            print.setText(
+                    "Vous avez infligé " + degatsH + " points de dégats à " +
+                    MODELE.getEnnemi().getNom() + " !\n" +
+                    "L'ennemi contre-attaque avec " + MODELE.getEnnemi().getArme().getNom() +
+                    " et vous inflige à son tour " + degatsE + " points de dégats..."
             );
+            Transition tp = new PauseTransition(Duration.seconds(1));
+
+            // gère l'affichage de la barre de PV du héros
+            Timeline tl = EffetsJavaFx.barreEtat(niveauVieHeros, getHeros().getPv(), 100, 200);
             tp.setOnFinished((e2)->{
                 tl.setOnFinished((e3)->{
                     int pv = Math.max(getHeros().getPv(), 0);
@@ -293,7 +321,11 @@ public class CombatController {
     private void ennemiMort(){
         Transition t = new PauseTransition(Duration.seconds(2));
         t.setOnFinished((e)->{
-            print.setText("VOUS AVEZ VAINCU " + MODELE.getEnnemi().getNom().toUpperCase() + " !\nCliquez pour continuer.");
+            print.setText(
+                    "VOUS AVEZ VAINCU " +
+                    MODELE.getEnnemi().getNom().toUpperCase() +
+                    " !\nCliquez pour continuer."
+            );
             finCombat();
         });
         t.play();
@@ -306,10 +338,20 @@ public class CombatController {
     private void herosMort(){
         Transition t = new PauseTransition(Duration.seconds(4));
         t.setOnFinished((e)->{
+
+            // recommence immédiatement si début de partie
             if (getHeros().getLocalisation() == getCarte().getPlaneteParNom("utopia")){
-                print.setText(MODELE.getEnnemi().getNom().toUpperCase() + " VOUS A VAINCU...\nCliquez pour recommencer la quête.");
+                print.setText(
+                        MODELE.getEnnemi().getNom().toUpperCase() +
+                        " VOUS A VAINCU...\nCliquez pour recommencer la quête."
+                );
+
+            // redirige vers le vaisseau si partie avancée
             } else {
-                print.setText(MODELE.getEnnemi().getNom().toUpperCase() + " VOUS A VAINCU...\nVous reviendrez...\nCliquez pour revenir au vaisseau.");
+                print.setText(
+                        MODELE.getEnnemi().getNom().toUpperCase() +
+                        " VOUS A VAINCU...\nVous reviendrez...\nCliquez pour revenir au vaisseau."
+                );
             }
             finCombat();
         });
@@ -325,9 +367,13 @@ public class CombatController {
     private void finAttaque(int degatsH, int degatsE){
         Transition t = new PauseTransition(Duration.seconds(3.5));
         t.setOnFinished((e)->{
-            print.setText("Vous avez infligé " + degatsH + " points de dégats à " + MODELE.getEnnemi().getNom() + " !\n" +
-                    "L'ennemi contre-attaque avec " + MODELE.getEnnemi().getArme().getNom() + " et vous inflige à son tour " + degatsE + " points de dégats...\n" +
-                    "C'est votre tour d'attaquer.");
+            print.setText(
+                    "Vous avez infligé " + degatsH + " points de dégats à " +
+                    MODELE.getEnnemi().getNom() + " !\n" +
+                    "L'ennemi contre-attaque avec " + MODELE.getEnnemi().getArme().getNom() +
+                    " et vous inflige à son tour " + degatsE + " points de dégats...\n" +
+                    "C'est votre tour d'attaquer."
+            );
             attaqueCac.setDisable(false);
             attaqueDist.setDisable(false);
         });
@@ -340,23 +386,39 @@ public class CombatController {
     @FXML
     private void finCombat(){
         pane.setOnMouseClicked((e)->{
+
+            // si victoire
             if (getHeros().enVie()){
+
+                // si dernier événement de la planète
                 if (MODELE.getIdIssue() == 0){
+
+                    // redirection vers le vaisseau si cours de jeu
                     if (!BackHome.finJeu()){
                         getHeros().setSituation(Situation.VAISSEAU);
                         getHeros().getLocalisation().recompenses();
                         new View().carteView();
+
+                    // redirection vers la vue dédiée si fin du jeu
                     } else {
                         new View().backHomeView();
                     }
+
+                // redirige vers le prochain événement s'il en reste pour la planète
                 } else {
                     getQuete().prochainEvenement(MODELE.getIdIssue());
                     new View().queteView();
                 }
+
+            // si défaite
             } else {
+
+                // recommence le parcours planète si début de partie
                 if (getHeros().getLocalisation() == getCarte().getPlaneteParNom("utopia")){
                     getHeros().setSituation(Situation.DEBUT);
                     new View().queteView();
+
+                // redirige vers le vaisseau si partie avancée
                 } else {
                     getHeros().retour();
                     getHeros().setSituation(Situation.VAISSEAU);
