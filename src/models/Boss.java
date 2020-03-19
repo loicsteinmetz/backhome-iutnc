@@ -15,9 +15,10 @@ public class Boss extends Ennemi {
 
     /**
      * Constructeur servant uniquement aux tests
+     * @param pv les pv du combattant
      * @param arme l'arme du combattant
      */
-    public Boss(Arme arme) {
-        super(arme);
+    public Boss(int pv, Arme arme) {
+        super(pv, arme);
     }
 }

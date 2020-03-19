@@ -78,7 +78,8 @@ public abstract class Ennemi extends Personnage implements Configurable {
      * Constructeur servant uniquement aux tests
      * @param arme l'arme du combattant
      */
-    public Ennemi(Arme arme) {
+    public Ennemi(int pv, Arme arme) {
+        super(pv);
         this.arme = arme;
     }
 }

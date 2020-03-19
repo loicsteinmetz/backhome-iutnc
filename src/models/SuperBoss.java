@@ -74,11 +74,12 @@ public class SuperBoss extends Boss {
 
     /**
      * Constructeur servant uniquement aux tests
+     * @param pv les pv du combattant
      * @param arme l'arme du combattant
-     * @param armeLegendaire l'arme légendaire du superboss
+     * @param armeLegendaire l'arme légendaire du combattant
      */
-    public SuperBoss(Arme arme, Arme armeLegendaire) {
-        super(arme);
+    public SuperBoss(int pv, Arme arme, Arme armeLegendaire) {
+        super(pv, arme);
         this.armeLegendaire = armeLegendaire;
     }
 }

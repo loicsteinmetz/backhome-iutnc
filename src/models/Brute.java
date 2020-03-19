@@ -15,9 +15,10 @@ public class Brute extends Ennemi {
 
     /**
      * Constructeur servant uniquement aux tests
+     * @param pv les pv du combattant
      * @param arme l'arme du combattant
      */
-    public Brute(Arme arme) {
-        super(arme);
+    public Brute(int pv, Arme arme) {
+        super(pv, arme);
     }
 }
