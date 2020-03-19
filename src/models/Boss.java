@@ -12,6 +12,12 @@ public class Boss extends Ennemi {
     public Boss(int id){
         super(id);
     }
-    
 
+    /**
+     * Constructeur servant uniquement aux tests
+     * @param arme l'arme du combattant
+     */
+    public Boss(Arme arme) {
+        super(arme);
+    }
 }

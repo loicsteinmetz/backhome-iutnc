@@ -4,10 +4,9 @@ import lib.org.json.simple.JSONObject;
 import lib.org.json.simple.parser.ParseException;
 import utils.JsonParser;
 
-import static models.Heros.getHeros;
-
 import java.io.IOException;
-import java.lang.Math; 
+
+import static models.Heros.getHeros;
 
 /**
  * Modélisation d'un pnj étant de type "Superboss" au combat
@@ -71,5 +70,15 @@ public class SuperBoss extends Boss {
             arme = new Arme(idArme);
             armeLegendaire = new Arme(idArmeLegendraire);
         }
+    }
+
+    /**
+     * Constructeur servant uniquement aux tests
+     * @param arme l'arme du combattant
+     * @param armeLegendaire l'arme légendaire du superboss
+     */
+    public SuperBoss(Arme arme, Arme armeLegendaire) {
+        super(arme);
+        this.armeLegendaire = armeLegendaire;
     }
 }
