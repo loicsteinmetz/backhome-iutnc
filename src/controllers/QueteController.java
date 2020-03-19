@@ -26,8 +26,6 @@ public class QueteController {
     @FXML
     private ImageView starsBg1,starsBg2;
     @FXML
-    private AnchorPane pane;
-    @FXML
     private Label nomPlanete;
     @FXML
     private Button startBtn;
@@ -37,7 +35,11 @@ public class QueteController {
      */
     @FXML
     public void initialize(){
+
+        // initialise le modèle
         MODELE = getQuete();
+
+        // affichage de l'arrière-plan, du nom de la planète et d'un bouton 'commencer'
         startBtn.setVisible(false);
         EffetsJavaFx.defilementBg(starsBg1, starsBg2);
         nomPlanete.setText(getHeros().getLocalisation().getNom().toUpperCase());
@@ -45,14 +47,20 @@ public class QueteController {
         EffetsJavaFx.fadeIn(starsBg2, 2, 0);
         Transition t = EffetsJavaFx.fadeIn(nomPlanete, 2, 1.5);
         t.setOnFinished((e) -> startBtn.setVisible(true));
+
+        // initialisation du premier événement de la planète
         switch (getHeros().getSituation()){
+            // si début de partie
             case DEBUT:
                 MODELE.nouvellePlanete(getCarte().getPlaneteParNom("utopia"));
                 break;
+            // si cours de partie
             case VAISSEAU:
                 MODELE.nouvellePlanete(getHeros().getLocalisation());
                 break;
         }
+
+        // mise à jour de la situation du héros
         getHeros().setSituation(Situation.EVENEMENT);
     }
 

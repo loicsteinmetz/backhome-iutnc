@@ -10,7 +10,7 @@
 
 <AnchorPane xmlns:fx="http://javafx.com/fxml"
             fx:controller="controllers.QueteController"
-            fx:id="pane">
+            id="pane">
 
     <ImageView fx:id="starsBg1">
         <Image url="/assets/img/stars_bg.png"/>
