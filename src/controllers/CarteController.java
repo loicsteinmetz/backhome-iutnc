@@ -40,11 +40,19 @@ public class CarteController {
      */
     @FXML
     private void initialize(){
-        BackHome.setStarted();
+
+        // initialise le modèle
         MODELE = getCarte();
+
+        // enregistre le début de partie
+        BackHome.setStarted();
+
+        // met à jour la situation du héros
         getHeros().getLocalisation().setVisitee();
         getHeros().soin();
         getHeros().setSituation(Situation.VAISSEAU);
+
+        // initialise la vue
         chargeElementsInterface();
         chargeLocalisation();
         chargePlanetesDisponibles();
@@ -101,12 +109,16 @@ public class CarteController {
     private void allerPlanete(MouseEvent e){
         HBox box = (HBox) e.getSource();
         Planete nouvellePlanete = MODELE.getPlaneteParNom((String) box.getUserData());
+
+        // redirige vers l'interface de quête si la planète est disponible
         if (nouvellePlanete.estAccessible()){
             getHeros().setLocalisation(nouvellePlanete);
             getInventaire().modifierCarburant(-100 * getHeros().getLocalisation().getNiveau());
             Transition p = new PauseTransition(Duration.seconds(1));
             p.setOnFinished((e2)->new View().queteView());
             p.play();
+
+        // affiche les ressources nécessaires pour accéder à la planète si indisponible
         } else {
             Label l = (Label)(box.getChildren().get(1));
             l.setText("Carburant nécessaire : " + nouvellePlanete.getNiveau() * 100 + "L");
