@@ -40,4 +40,14 @@ public class ArmeDistance extends Arme {
 			}
 		}
 	}
+
+	/**
+	 * Constructeur servant uniquement aux tests
+	 * @param id l'id de l'arme
+	 * @param degats les degats de l'arme
+	 */
+	public ArmeDistance(int id, int degats){
+		super(id);
+		this.degats = degats;
+	}
 }

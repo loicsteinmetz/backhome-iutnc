@@ -51,4 +51,14 @@ public class Armure extends Item implements Configurable {
 			resistance = (int) (long) armure.get("resistance");
 		}
 	}
+
+	/**
+	 * Constructeur servant uniquement aux tests
+	 * @param id l'id de l'armure
+	 * @param resistance la résistance de l'armure
+	 */
+	public Armure(int id, int resistance){
+		super(id);
+		this.resistance = resistance;
+	}
 }
