@@ -37,8 +37,14 @@ public class DecisionController {
      */
     @FXML
     public void initialize(){
+
+        // initialisation du modèle
         MODELE = (Decision) getQuete().getProchainEvenement();
+
+        // instruction 'cliquez' masquée par défaut
         cliquez.setVisible(false);
+
+        // gère l'arrière-plan et l'affichage du scénario
         Transition t = EffetsJavaFx.fade(bg, 4, 0, 0.15);
         t.setOnFinished((e)-> EffetsJavaFx.vibrance(bg, 6, 0.15, 0.05));
         ecran.setText(MODELE.getScenario().get(0));
@@ -47,6 +53,8 @@ public class DecisionController {
         EffetsJavaFx.fadeIn(ecran, 2.0, 1);
         issueA.setOpacity(0);
         issueB.setOpacity(0);
+
+        // instruction 'cliquez affichée si mouvement de souris
         ecran.setOnMouseMoved((e)->cliquez.setVisible(true));
     }
 
@@ -56,13 +64,21 @@ public class DecisionController {
      */
     @FXML
     private void passeTexte(Event event){
+
+        // affiche le prochain écran et masque par défaut l'instruction 'cliquez'
         cliquez.setVisible(false);
+
+        // récupère et affiche le scénario
         int index = (int) ecran.getUserData() + 1;
         ecran.setOpacity(0);
         ecran.setText(MODELE.getScenario().get(index));
         EffetsJavaFx.fadeIn(ecran, 2, 0);
         ecran.setUserData(index);
+
+        // si dernier écran texte
         if (index == MODELE.getScenario().size() - 1){
+
+            // affichage des deux boutons si deux issues possibles
             if (MODELE.getIdIssueA() != -1 && MODELE.getIdIssueB() != -1){
                 ecran.setDisable(true);
                 EffetsJavaFx.fadeIn(issueA, 2, 0);
@@ -70,12 +86,16 @@ public class DecisionController {
                 btnBox.setLayoutY(475);
                 issueA.setText(MODELE.getOptionA());
                 issueB.setText(MODELE.getOptionB());
+
+            // affichage d'un bouton de retour au vaisseau si paramétrage VAISSEAU
             } else if (MODELE.getIdIssueA() == 0){
                 ecran.setDisable(true);
                 EffetsJavaFx.fadeIn(issueA, 2, 0);
                 btnBox.getChildren().remove(1);
                 btnBox.setLayoutY(475);
                 issueA.setText("Aller au vaisseau");
+
+            // poursuite de la quête avec un clic si aucun choix à faire
             } else {
                 ecran.setOnMouseClicked((e)-> new View().queteView());
             }
@@ -89,13 +109,21 @@ public class DecisionController {
      */
     @FXML
     private void issueA(){
+
+        // si dernier événement de la planète
         if (MODELE.getIdIssueA() == 0){
+
+            // redirection vers le vaisseau, après attribution récompenses si cours de partie
             if (!BackHome.finJeu()){
                 getHeros().getLocalisation().recompenses();
                 new View().carteView();
+
+            // redirection vers la vue dédiée si fin de partie
             } else {
                 new View().backHomeView();
             }
+
+        // prochain événement si il en reste sur la planète
         } else {
             getQuete().prochainEvenement(MODELE.getIdIssueA());
             new View().queteView();
@@ -107,6 +135,8 @@ public class DecisionController {
      */
     @FXML
     private void issueB(){
+
+        // prohcain événement sur la planète
         getQuete().prochainEvenement(MODELE.getIdIssueB());
         new View().queteView();
     }

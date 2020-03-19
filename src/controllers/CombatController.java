@@ -152,6 +152,8 @@ public class CombatController {
         // affiche le prochain écran et masque par défaut l'instruction 'cliquez'
         cliquez.setVisible(false);
         Label label = (Label) event.getSource();
+
+        // instruction 'cliquez affichée si mouvement de souris
         label.setOnMouseMoved((e)->cliquez.setVisible(true));
 
         // récupère et affiche le scénario

@@ -92,6 +92,8 @@ public class BackHomeController {
             pane.getChildren().add(label);
             EffetsJavaFx.fadeIn(label, 2.0, 1.5);
             cliquez.setVisible(false);
+
+            // instruction 'cliquez affichée si mouvement de souris
             label.setOnMouseMoved((e2)->cliquez.setVisible(true));
         });
     }
@@ -114,6 +116,8 @@ public class BackHomeController {
         // affiche le prochain écran et masque par défaut l'instruction 'cliquez'
         cliquez.setVisible(false);
         Label label = (Label) event.getSource();
+
+        // instruction 'cliquez affichée si mouvement de souris
         label.setOnMouseMoved((e)->cliquez.setVisible(true));
 
         // récupère et affiche le scénario
