@@ -1,23 +1,17 @@
 package controllers;
 
-import javafx.application.Application;
-import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
-import javafx.stage.Stage;
 import models.Inventaire;
-import utils.ViewLoader;
+import views.View;
 
 import static models.Inventaire.getInventaire;
 
 /**
  * Controleur de l'inventaire
  */
-public class InventaireController extends Application {
+public class InventaireController {
 
     @FXML
     private Label armeCacNom, armeCacDesc, armeDistNom, armeDistDesc,
@@ -26,40 +20,18 @@ public class InventaireController extends Application {
     private HBox niveauCarburant;
 
     @Controller
-    private static final String VIEW = "/views/Inventaire.fxml";
-    @Controller
-    private static final String STYLE = "/assets/css/Inventaire.css";
-    @Controller
     private Inventaire MODELE;
-
-    /**
-     * Retourne la vue associée au controller
-     * @return chemin de la vue
-     */
-    @Controller
-    public static String getView(){
-        return VIEW;
-    }
-
-    /**
-     * Génère l'interface d'accueil
-     * @param stage primaryStage
-     * @throws Exception chargement de la vue
-     */
-    @Override
-    public void start(Stage stage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource(VIEW));
-        Scene scene = new Scene(root, 800, 600);
-        scene.getStylesheets().add(STYLE);
-        stage.setScene(scene);
-    }
 
     /**
      * Initialisation de la vue et du modèle
      */
     @FXML
     private void initialize(){
+
+        // initialisation du modèle
         MODELE = getInventaire();
+
+        // affiche le contenu de l'inventaire
         armeCacNom.setText(MODELE.getArmeCac().getNom());
         armeCacDesc.setText("DEGATS  :  " + MODELE.getArmeCac().getDegats());
         armeDistNom.setText(MODELE.getArmeDist().getNom());
@@ -72,10 +44,9 @@ public class InventaireController extends Application {
 
     /**
      * Permet d'accéder à la carte
-     * @param event clic sur le bouton
      */
     @FXML
-    private void allerCarte(Event event){
-        new ViewLoader().switchTo(CarteController.getView(), event);
+    private void allerCarte(){
+        new View().carteView();
     }
 }

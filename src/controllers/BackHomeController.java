@@ -2,32 +2,23 @@ package controllers;
 
 import javafx.animation.PauseTransition;
 import javafx.animation.Transition;
-import javafx.application.Application;
 import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 import models.BackHome;
 import utils.EffetsJavaFx;
-import utils.ViewLoader;
+import views.View;
 
 /**
- * Controleur principal
+ * Controleur début et fin de jeu
  */
-public class BackHomeController extends Application {
+public class BackHomeController {
 
-    @Controller
-    private static final String VIEW = "/views/BackHome.fxml";
-    @Controller
-    private static final String STYLE = "/assets/css/BackHome.css";
     @Controller
     private static BackHome MODELE;
 
@@ -43,42 +34,32 @@ public class BackHomeController extends Application {
     private ImageView vaisseau, starsBg1,starsBg2;
 
     /**
-     * Retourne la vue associée au controller
-     * @return chemin de la vue
-     */
-    @Controller
-    public static String getView(){
-        return VIEW;
-    }
-
-    /**
-     * Génère l'interface d'accueil
-     * @param stage primaryStage
-     * @throws Exception chargement de la vue
-     */
-    @Override
-    public void start(Stage stage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource(VIEW));
-        Scene scene = new Scene(root, 800, 600);
-        scene.getStylesheets().add(STYLE);
-        stage.setScene(scene);
-    }
-
-    /**
      * Initialisation de la vue et du modèle
      */
     @FXML
     private void initialize(){
+
+        // initialise le modèle
         MODELE = new BackHome();
+
+        // gère le mvt de l'arrière-plan
         EffetsJavaFx.defilementBg(starsBg1, starsBg2);
         cliquez.setVisible(false);
+
+        // gère la fin du jeu
         if (BackHome.finJeu()){
+
+            // retire les éléments de l'accueil
             grid.setDisable(true);
             grid.setVisible(false);
+
+            // gère l'arrière-plan
             starsBg1.setOpacity(0);
             starsBg2.setOpacity(0);
             EffetsJavaFx.fadeIn(starsBg1, 2, 0);
             EffetsJavaFx.fadeIn(starsBg2, 2, 0);
+
+            // affiche le scénario de fin / les crédits
             Label label = new Label(MODELE.getScenarioFin()[0]);
             label.setId("ecran");
             label.setOpacity(0);
@@ -94,10 +75,14 @@ public class BackHomeController extends Application {
      */
     @FXML
     private void bouttonJouer() {
+
+        // gère la transition
         startBtn.setVisible(false);
         saveBtn.setVisible(false);
         titre.setVisible(false);
         Transition fadeOut = EffetsJavaFx.fadeOut(vaisseau, 1.5, 0);
+
+        // affiche le scénario du début de partie
         fadeOut.setOnFinished((e) -> {
             Label label = new Label(MODELE.getScenarioDebut()[0]);
             label.setId("ecran");
@@ -107,13 +92,18 @@ public class BackHomeController extends Application {
             pane.getChildren().add(label);
             EffetsJavaFx.fadeIn(label, 2.0, 1.5);
             cliquez.setVisible(false);
+
+            // instruction 'cliquez affichée si mouvement de souris
             label.setOnMouseMoved((e2)->cliquez.setVisible(true));
         });
     }
 
+    /**
+     * Redirige vers la view propre aux sauvegardes
+     */
     @FXML
-    private void sauvegardes(Event event){
-        new ViewLoader().switchTo(SauvegardeController.getView(), event);
+    private void sauvegardes(){
+        new View().sauvegardeView();
     }
 
     /**
@@ -122,26 +112,39 @@ public class BackHomeController extends Application {
      */
     @FXML
     private void passeTexte(Event event){
+
+        // affiche le prochain écran et masque par défaut l'instruction 'cliquez'
         cliquez.setVisible(false);
         Label label = (Label) event.getSource();
+
+        // instruction 'cliquez affichée si mouvement de souris
         label.setOnMouseMoved((e)->cliquez.setVisible(true));
+
+        // récupère et affiche le scénario
         int index = (int) label.getUserData() + 1;
         String[] scenario = BackHome.finJeu() ? MODELE.getScenarioFin() : MODELE.getScenarioDebut();
+
+        // si il reste du texte
         if (index < scenario.length){
             label.setOpacity(0);
             label.setText(scenario[index]);
             EffetsJavaFx.fadeIn(label, 2, 0);
             label.setUserData(index);
+
+        // si il ne reste plus de texte
         } else if (index == scenario.length) {
             label.setDisable(true);
             label.setVisible(false);
-            ViewLoader vl = new ViewLoader();
+
+            // redirige vers la view de quête si début de partie
             if (!BackHome.finJeu()){
-                vl.switchTo(QueteController.getView(), event, 2);
+                new View().queteView();
+
+            // réinitialise le jeu et redirige vers page d'accueil si fin de partie
             } else {
                 BackHome.resetJeu();
                 Transition p = new PauseTransition(Duration.seconds(2.5));
-                p.setOnFinished((e)-> vl.switchTo(BackHomeController.getView(), event));
+                p.setOnFinished((e)-> new View().backHomeView());
                 p.play();
             }
         }
