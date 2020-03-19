@@ -28,29 +28,41 @@ public class SauvegardeController {
      */
     @FXML
     private void initialize(){
+
+        // initialise si besoin le fichier de sauvegarde
         Sauvegarde.init();
+
+        // boutons désactivés par défaut, sauf bouton retour
         btn1.setDisable(true);
         btn2.setDisable(true);
+
+        // récupération et affichage des sauvegarde
         Sauvegarde[] allSauvegardes = Sauvegarde.getAllSauvegardes();
         HBox box;
         Label date, localisation;
         for (int i = 0 ; i < sauvegardes.getChildren().size() ; i++){
             box = (HBox)sauvegardes.getChildren().get(i);
+            // si sauvegarde enregistrée
             if (!allSauvegardes[i].estVide()){
                 date = (Label)box.getChildren().get(0);
                 date.setText(allSauvegardes[i].getDate());
                 localisation = (Label)box.getChildren().get(1);
                 localisation.setText(allSauvegardes[i].getLocalisation());
+            // si sauvegarde vide
             } else {
                 box.getStyleClass().add("vide");
             }
         }
+
+        // possibilité de charger les sauvegarde quand accès depuis accueil (jeu non démarré)
         if (!BackHome.getStarted()){
             btn1.setOnAction(this::charger);
             for(Node sauvegarde : sauvegardes.getChildren()){
                 HBox s = (HBox)sauvegarde;
                 if (s.getStyleClass().contains("vide")) s.setDisable(true);
             }
+
+        // possibilité d'enregistrer une sauvegarde quand accès depuis la carte (jeu démarré)
         } else {
             btn1.setOnAction(this::sauvegarder);
             btn1.setText("Sauvegarder");
@@ -65,20 +77,32 @@ public class SauvegardeController {
      */
     @FXML
     private void selectionner(Event e){
+
+        // active les boutons
         btn1.setDisable(false);
         btn2.setDisable(false);
+
+        // rétablit format par défaut
         for(Node sauvegarde : sauvegardes.getChildren()){
             HBox s = (HBox)sauvegarde;
             s.setStyle("-fx-border-color:transparent;");
             if (!s.getStyleClass().contains("vide") || BackHome.getStarted()) s.setDisable(false);
         }
+
+        // formate l'affichage de la sauvegarde sélectionnée
         HBox selectionee = (HBox)e.getSource();
         selectionee.setStyle("-fx-border-color:white;");
         selectionee.setDisable(true);
         idSelection = Integer.parseInt(selectionee.getUserData().toString());
+
+        // si accès depuis la carte (jeu démarré)
         if (BackHome.getStarted()){
+
+            // affiche bouton 'écraser' si la sauvegarde séléctionnée est déjà configurée
             if (!selectionee.getStyleClass().contains("vide")){
                 btn1.setText("Ecraser");
+
+            // affiche bouton 'sauvegarder' si la sauvegarde sélectionnée est vide
             } else {
                 btn1.setText("Sauvegarder");
             }
@@ -102,8 +126,12 @@ public class SauvegardeController {
      */
     @FXML
     private void supprimer(){
-        HBox sauvegarde = (HBox)sauvegardes.getChildren().get(idSelection - 1);
+
+        // supprime la sauvegarde
         Sauvegarde.supprimerSauvegarde(idSelection);
+
+        // gère l'affichage après suppression
+        HBox sauvegarde = (HBox)sauvegardes.getChildren().get(idSelection - 1);
         sauvegarde.getStyleClass().add("vide");
         sauvegarde.setStyle("-fx-border-color:transparent;");
         Label date = (Label)sauvegarde.getChildren().get(0);
