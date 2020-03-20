@@ -1,18 +1,22 @@
 {
   "nouvellePartie": [
-    "L'endroit est inconnu... Aucun bruit sauf celui du vent...Une colline semble tout de même apparaître au loin. Derrière ? Une ville dont la seule lumière qui en émane est celle des flammes.",
-    "\"Qui suis-je ? Quel est mon nom ?\" Une seule chose est certaine : cette faim préoccupante. Il faut aller vers cette ville.",
-    "Après une heure de marche, on peut enfin distinguer un panneau, aux néons lumineux :\nBIENVENUE A UTOPIA CITY\nCAPITALE D'UTOPIA",
-    "Une odeur de brulé règne alors, puis une autre... Comme de la chaire calcinée... Une maison semble épargnée. Un intérieur modeste, mais surtout : de la nourriture ! Le sommeil ne tarde alors pas à venir.",
-    "458, ERE DE CASSINI",
-    "\"Il faut partir pour Calypso\"",
-    "Cette voix ? Qui est-ce ? \"Je ne suis donc pas chez moi ?\" Il faut partir !",
-    "Un coffre se trouve dans un coin. Il contient quelques provisions et une arme. \"Elle ne sera pas de trop\". Sur la carte trouvée parmi tous ces objets, un point semble indiquer un dépot \"Si je veux trouver un vaisseau, c'est par là que je devrais commencer\"",
-    "Arrivé au dépot, quelques vaisseaux stationnent, dont l'un qui semble encore en état. Mais on entend alors des bruits de pas : Quelqu'un approche..."
+    "458, ère de Cassini",
+    "L'endroit est inconnu... Aucun bruit sauf celui du vent... Au dessus de vous, un gigantesque arbre. Derrière ? Une ville dont la seule lumière qui en émane est celle de flammes.",
+    "\"Qui suis-je ? Quel est mon nom ?\" Une seule chose est certaine : vous mourez de faim. \nAller vers cette ville est donc une priorité.\n",
+    "Après une heure de marche, vous pouvez enfin distinguer un panneau aux néons lumineux :\nBIENVENUE A UTOPIA CITY\nCAPITALE D'UTOPIA",
+    "Plus vous avancez, plus une odeur de brûlé règne. Puis une autre... Une odeur de chaire calcinée...",
+    "Une maison semble épargnée. Vous y entrez. Un intérieur modeste, mais surtout : de la nourriture ! Le sommeil ne tarde alors pas à venir.",
+    "\"Il faut partir pour Calypso, ta planète natale. \nTu es promis à une grande destinée, suis ton instinct... \"\n",
+    "\"Cette voix ? Qui était-ce ? Je ne suis donc pas chez moi! Je dois partir !\"",
+    "Vous remarquez un casier. Il contient quelques provisions, un pistolet, une épée ainsi qu'une carte. \nUne aubaine...\n Sur la carte, un point semble indiquer un concessionnaire de vaisseaux spatiaux. \"Si je veux quitter cet endroit, c'est par là que je dois commencer\""
   ],
   "finPartie": [
-    "test1",
-    "test2",
-    "test3"
+    "Merci d'avoir joué à notre jeu!",
+    "Clément Dosda",
+    "Louis Friedrich",
+    "Tony Martin",
+    "Quoc-Hieu Phu",
+    "Loïc Steinmetz",
+    "À bientôt pour de nouvelles aventures..."
   ]
 }
