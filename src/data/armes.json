@@ -2,7 +2,7 @@
   "1": {
     "type": "generique",
     "nom": "Epée Toche",
-    "degats": 10
+    "degats": 15
   },
 
   "2": {
@@ -20,7 +20,7 @@
   "5": {
     "type": "cac",
     "nom": "Dark Repulser",
-    "degats": 300
+    "degats": 30
   },
 
   "7": {
@@ -56,7 +56,7 @@
   "17": {
     "type": "distance",
     "nom": "Maverick MV700",
-    "degats": 300
+    "degats": 30
   },
 
   "4": {
@@ -152,7 +152,7 @@
   "34": {
     "type": "generique",
     "nom": "Epée en acier stellaire",
-    "degats": 10
+    "degats": 45
   },
 
   "36": {
@@ -170,13 +170,13 @@
   "40": {
     "type": "generique",
     "nom": "Ultima",
-    "degats": 70
+    "degats": 55
   },
 
   "42": {
     "type": "generique",
     "nom": "Universalis Omega",
-    "degats": 70
+    "degats": 60
   },
 
   "100": {

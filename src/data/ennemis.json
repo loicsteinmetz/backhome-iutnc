@@ -17,7 +17,7 @@
     "nom": "Captaine Banwana",
     "description": "Le roi gorille",
     "idArme": "3",
-    "pv": 150
+    "pv": 90
   },
 
   "5":{
@@ -31,7 +31,7 @@
     "nom": "Chô Peleux",
     "description": "Le roi Bip-Bip",
     "idArme": "9",
-    "pv": 150
+    "pv": 110
   },
 
   "9":{
@@ -52,7 +52,7 @@
     "nom": "Oshar Marif",
     "description": "Le capitaine du navire",
     "idArme": "15",
-    "pv": 150
+    "pv": 120
   },
 
   "4": {
@@ -66,21 +66,21 @@
     "nom": "Goroth",
     "description": "Chef de guerre",
     "idArme": "6",
-    "pv":300
+    "pv":125
   },
 
   "8": {
     "nom": "Troye",
     "description": "Balle filante",
     "idArme": "8",
-    "pv": 250
+    "pv": 150
   },
 
   "10": {
     "nom": "Gareth",
     "description": "Le fou",
     "idArme": "10",
-    "pv":250
+    "pv":150
   },
 
   "12": {
@@ -88,21 +88,21 @@
     "description": "Souveraine de Lumini",
     "idArme": "12",
     "idArmeLegendaire": "14",
-    "pv": 400
+    "pv": 170
   },
 
   "14": {
     "nom": "Katorus",
     "description": "Lieutenant Xenomorphe",
     "idArme": "16",
-    "pv": 250
+    "pv": 150
   },
 
   "16": {
     "nom": "Viramar",
     "description": "Tireur d'exception",
     "idArme": "18",
-    "pv": 250
+    "pv": 150
 },
 
   "18": {
@@ -110,7 +110,7 @@
     "description": "Tyran de Tremor",
     "idArme": "20",
     "idArmeLegendaire": "22",
-    "pv": 400
+    "pv": 160
   },
 
   "20": {
@@ -131,14 +131,14 @@
     "nom":"Geralt",
     "description": "Lieutenant artilleur Royal",
     "idArme": "36",
-    "pv": 50
+    "pv": 75
   },
 
   "26": {
     "nom": "Argos",
     "description": "Caporal Royal",
     "idArme": "38",
-    "pv": 50
+    "pv": 75
   },
 
   "28": {
@@ -146,6 +146,6 @@
     "description": "Empereur divin",
     "idArme": "40",
     "idArmeLegendaire": "42",
-    "pv": 300
+    "pv": 190
   }
 }

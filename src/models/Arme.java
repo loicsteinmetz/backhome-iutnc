@@ -60,7 +60,7 @@ public class Arme extends Item implements Configurable {
      * todo : javadoc
      */
     public int rdm() {
-    	int max = 15;
+    	int max = (int)this.degats/2;
     	int min = -10;
         Random r = new Random();
         int rmd =r.nextInt((max - min) + 1) + min;
