@@ -78,27 +78,26 @@ Ci-dessous, la présentation d'une séquence type du fonctionnement de l'applica
 Déroulement de la séquence :
 
 ```
-1.  Démarrage du controleur suite au démarrage du programme ou via un événement, déclenché par un input utilisateur
-2.  Le controleur charge la vue qui lui est associée
-3.  La view lance l'initialisation du controleur en retour
-4.  Au cours de son initialisation, le controleur fait une requête au modèle auquel il est associé afin de récupérer dynamiquement certaines informations
-5.  Les données lui sont retournées
-6.  Le controleur formate la vue d'après les informations récupérées
-7.  La vue finale est présentée à l'utilisateur
+1.  Démarrage de la vue suite au démarrage du programme ou via un événement, déclenché par une saisie utilisateur
+2.  La vue initialise le controleur qui lui est associé
+3.  Au cours de son initialisation, le controleur fait une requête au modèle auquel il est associé afin de récupérer dynamiquement certaines informations
+4.  Les données lui sont retournées
+5.  Le controleur formate la vue d'après les informations récupérées
+6.  La vue finale est présentée à l'utilisateur
 
 Pour chaque input utilisateur, via un élément de l'interface :
-8.  L'utilisateur génère un événement via un input
-9.  La vue envoie l'événement généré au controleur
-10. Au cours du traitement de l'événement, le controleur fait une requête au modèle auquel il est associé afin de récupérer dynamiquement certaines informations
-11. Les données lui sont retournées
-12. Le controleur met à jour la vue d'après les informations récupérées
-13. Une nouvelle vue est présentée à l'utilisateur
+7.  L'utilisateur génère un événement via une saisie
+8.  La vue envoie l'événement généré au controleur et déclenche son traitement
+9.  Au cours du traitement de l'événement, le controleur fait une requête au modèle auquel il est associé afin de récupérer dynamiquement certaines informations
+10. Les données lui sont retournées
+11. Le controleur met à jour la vue d'après les informations récupérées
+12. La vue mise à jour est présentée à l'utilisateur
 
 Pour un input impliquant le passage à une vue différente
-14. L'utilisateur génère un événement via un input
-15. La vue envoie l'événement généré au controleur
-16. Le controleur actif démarre un nouveau controleur
-17. [Nouvelle séquence à partir du nouveau controleur]
+14. L'utilisateur génère un événement via une saisie
+15. La vue envoie l'événement généré au controleur et déclenche son traitement
+16. Le controleur actif démarre une nouvelle vue
+17. [Nouvelle séquence à partir de la vue]
 ```
 
 ### 2.2 Structure applicative
