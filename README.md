@@ -57,6 +57,10 @@ Le jeu propose principalement deux phases de gameplay :
 ![combat](readme_img/capture2.png)
 ![navigation](readme_img/capture3.png)
 
+L'interface centrale du jeu est celle du vaisseau, qui fait office de carte. Cette interface permet d'afficher les planètes disponible et/ou accessibles et de s'y rendre, mais aussi d'afficher l'inventaire et de sauvegarder la partie.
+
+![cas d'utilisation](readme_img/use_case.png)
+
 ## 2. Conception
 
 ### 2.1 Adaptation du pattern MVC
