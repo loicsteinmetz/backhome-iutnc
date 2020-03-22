@@ -1,13 +1,13 @@
 {
   "1": {
     "type": "generique",
-    "nom": "Epée Toche",
+    "nom": "Lame Toche",
     "degats": 15
   },
 
   "2": {
     "type": "generique",
-    "nom": "Epée en fer",
+    "nom": "Lame en fer",
     "degats": 5
   },
 
@@ -86,7 +86,7 @@
   "12": {
     "type": "generique",
     "nom": "Excelia",
-    "degats": 35
+    "degats": 20
   },
 
   "14": {
@@ -182,11 +182,11 @@
   "100": {
     "type": "cac",
     "nom": "Glaive en fer",
-    "degats": 100
+    "degats": 15
   },
   "101": {
     "type": "distance",
     "nom": "Pistolet AA-1",
-    "degats": 100
+    "degats": 20
   }
 }

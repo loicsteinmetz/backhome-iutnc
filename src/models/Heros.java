@@ -100,6 +100,7 @@ public class Heros extends Personnage {
      */
     public void retour(){
         getInventaire().modifierCarburant(localisation.getNiveau() * 100);
+        localisation.retablirSoin();
         localisation = localisationPrecedente;
     }
 }

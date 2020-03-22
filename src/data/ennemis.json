@@ -88,7 +88,7 @@
     "description": "Souveraine de Lumini",
     "idArme": "12",
     "idArmeLegendaire": "14",
-    "pv": 170
+    "pv": 150
   },
 
   "14": {
@@ -146,6 +146,6 @@
     "description": "Empereur divin",
     "idArme": "40",
     "idArmeLegendaire": "42",
-    "pv": 190
+    "pv": 160
   }
 }

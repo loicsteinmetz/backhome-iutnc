@@ -57,7 +57,7 @@ public class Arme extends Item implements Configurable {
     }
     
     /**
-     * todo : javadoc
+     * Génère une altération aléatoire des dégats
      */
     public int rdm() {
     	int max = (int)this.degats/2;

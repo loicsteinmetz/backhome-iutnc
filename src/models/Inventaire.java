@@ -18,8 +18,8 @@ public class Inventaire {
 	 */
 	private Inventaire(){
 		this.carburant = 0;
-		this.armeCac = new ArmeCac(1);
-		this.armeDist = new ArmeDistance(3);
+		this.armeCac = new ArmeCac(100);
+		this.armeDist = new ArmeDistance(101);
 		this.armure = new Armure(100);
 	}
 
