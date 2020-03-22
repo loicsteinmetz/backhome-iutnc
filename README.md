@@ -105,68 +105,80 @@ Pour un input impliquant le passage à une vue différente
 Outre la division fonctionnelle des différentes classes du programme, répercutée dans leur répartition en différents packages, on peut également diviser le projet en différents groupes de classes répondant d'une même fonction logique. Ces structures sont visibles à travers les conventions de nommage du projet ; modèle, vue et controleur d'une même structure sont nommées de la façon suivante :
 
 - Model
-- Model.fxml
+- Model.fxml *via ModelView, classe privée de View*
 - ModelController
 
 ![classes](readme_img/classes.png)
 
 **Accueil/Conclusion du jeu :**
 
-- Modèle : BackHome
-- Vue : BackHome.fxml
-- Controleur : BackHomeController
+- **Modèle** : BackHome
+- **Vue** : BackHome.fxml *via BackHomeView, classe privée de View*
+- **Controleur** : BackHomeController
 
 Gèrent les options disponibles au lancement du jeu (nouvelle partie et chargement d'une sauvegarde). Gèrent également l'affichage de conclusion du jeu, en fin de partie, avant un retour à l'écran d'accueil.
 
 **Navigation :**
 
-- Modèle : Carte
-- Vue : Carte.fxml
-- Controleur : CarteController
+- **Modèle** : Carte
+- **Vue** : Carte.fxml *via CarteView, classe privée de View*
+- **Controleur** : CarteController
 
 Gèrent les options disponibles à bord du vaisseau, soit l'accès aux différentes planètes disponibles, l'accès à l'inventaire et l'enregistrement d'une sauvegarde.
 
 **Inventaire :**
 
-- Modèle : Inventaire
-- Vue : Inventaire.fxml
-- Controleur : InventaireController
+- **Modèle** : Inventaire
+- **Vue** : Inventaire.fxml *via InventaireView, classe privée de View*
+- **Controleur** : InventaireController
 
 Gèrent l'affichage de la composition de l'inventaire (armes, armure, carburant) et le retour à l'interface de navigation.
 
 **Quête et événements :**
 
-- Modèle : Quete
-- Vue : Quete.fxml
-- Controleur : QueteController
+- **Modèle** : Quete
+- **Vue** : Quete.fxml *via QueteView, classe privée de View*
+- **Controleur** : QueteController
+
+L'accès à la vue de quête peut donner lieu à une redirection en fonction de la situation du héros :
 
 ![états quête](readme_img/etats_quete.png)
+
+```
+DECRIRE FONCTIONNEMENT
+```
 
 Gèrent l'affichage de l'arrivée sur une nouvelle planète et la redirection vers le controleur approprié, en fonction du type d'événement à venir.
 
 **Combats :**
 
-- Modèle : Combat
-- Vue : Combat.fxml
-- Controleur : CombatController
+- **Modèle** : Combat
+- **Vue** : Combat.fxml *via CombatView, classe privée de View*
+- **Controleur** : CombatController
+
+Les combats sont construits en prenant en compte les armes et l'armure du héros, ainsi que le type d'ennemi :
 
 ![états combat](readme_img/etats_combat.png)
+
+```
+DECRIRE FONCTIONNEMENT
+```
 
 Gèrent le déroulement d'un combat : scénario introductif, lancement, phases d'attaque et de contre-attaque, et conclusion en fonction de l'issue du combat. Permettent d'enregistrer le prochain événement en fonction de l'issue, événement qui sera alors traité par le QueteController.
 
 **Prises de décisions :**
 
-- Modèle : Decision
-- Vue : Decision.fxml
-- Controleur : DecisionController
+- **Modèle** : Decision
+- **Vue** : Decision.fxml *via DecisionView, classe privée de View*
+- **Controleur** : DecisionController
 
 Gèrent le déroulement d'une prise de décision : scénario introductif, choix d'une option. Permettent d'enregistrer le prochain événement en fonction du choix réalisé, événement qui sera alors traité par le QueteController. Les décisions peuvent proposer 2, 1 ou 0 choix. Dans le premier cas, la suite des événement tiendra compte du choix du joueur. Le second cas sert à mettre en évidence une information ou une action du héros au moyen d'une validation de la part du joueur. Le dernier cas servira enfin à un simple affichage d'une partie du scénario.
 
 **Sauvegarde :**
 
-- Modèle : Sauvegarde
-- Vue : Sauvegarde.fxml
-- Controleur : SauvegardeController
+- **Modèle** : Sauvegarde
+- **Vue** : Sauvegarde.fxml *via SauvegardeView, classe privée de View*
+- **Controleur** : SauvegardeController
 
 Gèrent le chargement et l'enregistrement d'une sauvegarde. Permettent également l'accès à une interface de gestion des sauvegardes, disponible depuis l'accueil du jeu et permettant à l'utilisateur de charger et supprimer les sauvegardes disponibles.
 
@@ -176,12 +188,17 @@ Les données de configuration, persistantes entre différentes exécutions de l'
 
 La persistance des données entre différentes séquences, une fois l'application exécutée, est quant à elle permise par certains modèles étant construit comme des singletons. Ces modèles sont les suivants :
 
-La gestion des sauvegardes donne lieu à la création d'un fichier de stockage externe au format `json`.
-
 - Heros
 - Inventaire
 - Carte
 - Quete
+
+La gestion des sauvegardes donne lieu à la création d'un fichier de stockage externe au format `json`, permettant cinq enregistrements. Quatre sauvegardes sont initialement enregistrées au premier démarrage du jeu :
+
+- **Utopia** : Premier accès au vaisseau, après passage de la première planète.
+- **Ienos** : Accès possible aux planètes de niveau 2, après avoir passé les quatre premières planètes de niveau 1.
+- **Lumini** : Accès possible à la dernière planète, via Lumini.
+- **Tremor** : Accès possible à la dernière planète, via Tremor.
 
 ## 3. Bilan
 
@@ -191,6 +208,7 @@ Plusieurs difficultés ont été rencontrées au cours du développement, nous a
 - **Gestion des données** : 
     - *Fichiers de stockage* : Le format `json`, retenu pour le stockage des données persistantes, a été privilégié en tenant compte de nos connaissances préalables. Il s'est avéré que ce format n'est pas nécessairement le plus adapté à des traitement Java. Nous en avons conclu qu'il aurait été préférable de stocker les données dans des fichiers `xml`.
     - *Modélisation* : Faute de temps, nous avons du concevoir notre organisation des données au fil du développement, sans conduire une réelle réflexion sur leur structure. Cela nous a permis de comprendre davantage l'importance d'une modélisation réfléchie du système de données, devant être réalisée en amont.
-- **Tests** : Faute de temps encore une fois, les tests ont du être réalisés à la suite du développement proprement dit de l'application. Cela nous a donc privé de tests d'intégration au cours du développement, tests qui auraient été utiles pour valider l'implémentation de nouvelles fonctionnalité, au fur et à mesure que nous réalisions de nouvelles itérations du projet. Dans l'idéal, et si nous avions eut plus de temps, nous avons conclu sur l'intérêt des TDD (*Test Driven Development*) pour la conduite de projets futurs.
+- **Tests** : Faute de temps encore une fois, les tests ont du être réalisés à la suite du développement proprement dit de l'application, et ce en nombre réduit. Cela nous a donc privé de tests d'intégration au cours du développement, tests qui auraient été utiles pour valider l'implémentation de nouvelles fonctionnalité, au fur et à mesure que nous réalisions de nouvelles itérations du projet. Dans l'idéal, et si nous avions eut plus de temps, nous avons conclu sur l'intérêt des TDD (*Test Driven Development*) pour la conduite de projets futurs.
+- **Game Design** : Concentrés sur l'aspect technique de la réalisation du jeu, de nombreux aspect de game design ont été ignoré. Ainsi l'équilibrage, le level design etc. pourraient être revus.
 
 En dépit de ces difficultés, nous avons su être suffisament organisés et impliqués pour livrer un jeu fonctionnel et conforme à nos attentes de départ. Ainsi, nous avons pu conduire ce projet avec enthousiasme et sommes satisfait du résultats, compte tenu des contraintes, notamment de temps, qui nous étaient imposées.
