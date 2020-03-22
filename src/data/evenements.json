@@ -209,7 +209,7 @@
     "scenario": [
       "Vous marchez en observant toute cette désolation environnante.",
       "De nombreux corps sans vie gisent sur la route...",
-      "Vous apercevez au loin une silhouette. Vous vous rapprochez doucement jusqu'à comprendre que cette dernière est en train de dévorer un cadavre humain...",
+      "Vous apercevez au loin une silhouette. Vous vous approchez doucement jusqu'à comprendre que cette dernière est en train de dévorer un cadavre humain...",
       "Devant vous, un arbre. Vous courez pour vous cacher derrière. Malheureusement, vous glissez sur une flaque de sang et renversez un baril en feu. Le bruit alerte l'ennemi: \"Misérable, tu vas mourir!\""
     ],
     "idEnnemi": "4",
@@ -237,7 +237,7 @@
       "Vous reprenez la route vers le concessionnaire...",
       "Vous arrivez enfin devant le concessionnaire. Une partie de la structure s'est effondrée, seul le hangar est intact. En revanche c'est calme, trop calme...",
       "Vous entrez. Immédiatement, vous tombez nez à nez avec un ennemi. Derrière-lui, un chef de guerre équipé d'une armure lourde et d'une masse d'arme impressionnante. Un de ses sbires semble réparer un vaisseau...",
-      "Le chef de guerre s'exclame: \"Laissez le moi, j'ai besoin deme dégourdir les jambes!\""
+      "Le chef de guerre s'exclame: \"Laissez le moi, j'ai besoin de me dégourdir les jambes!\""
     ],
     "idEnnemi": "6",
     "typeEnnemi": "boss",
@@ -268,7 +268,7 @@
       "En revanche vous remarquez quelque chose de troublant: toutes ces personnes ont les yeux violets avec une spirale à leur centre. Etrange...",
       "Afin d'obtenir la dernière coordonnée pour votre planète, vous devez trouver le mal caché qui ronge cette cité...",
       "Midi sonne. Tout le monde marche et se dirige vers la même direction. Vous suivez la foule...",
-      "Vous arrivez devant une majestueuse cathédrale. Apparait, en haut des marches de cette dernière, une femme. Elle est vêtue d'une tunique violette dont une capuche cache son visage...",
+      "Vous arrivez devant une majestueuse cathédrale. Apparaît, en haut des marches de cette dernière, une femme. Elle est vêtue d'une tunique violette dont la capuche cache son visage...",
       "Après quelques secondes de silence, elle récite ce qui semble être une formule dans un dialecte inconnu. Subitement, elle s'interrompt et dit \"Un intrus est présent\". Elle vous désigne du doigt.",
       "La foule s'écarte et forme un cercle autour de vous. Un fusilier court vers vous: \"Veuillez m'excuser de vous déranger ainsi, mais l'Impératrice souhaite votre mort. Je ferai en sorte qu'elle soit rapide et indolore!\""
     ],
@@ -281,7 +281,7 @@
     "scenario": [
       "Vous avez gagné le combat!",
       "La femme mystérieuse, escortée par deux géants impériaux, se réfugie dans la cathédrale. La foule reste immobile, silencieuse. Vous décidez de la poursuivre...",
-      "Les portes de la cathédrale sont fermées. Vous les détruisez avec votre pistolet laser. A l'intérieure, la femme mystérieuse est absente. En revanche, un garde impérial vous attend..."
+      "Les portes de la cathédrale sont fermées. Vous les détruisez avec votre pistolet laser. A l'intérieur, la femme mystérieuse est absente. En revanche, un garde impérial vous attend..."
     ],
     "idEnnemi": "10",
     "typeEnnemi": "brute",
@@ -293,7 +293,7 @@
       "Vous avez gagné le combat!",
       "Vous décidez d'accéder à la tour principale de la cathédrale. Après avoir gravi ses innombrables marches, vous voilà au sommet...",
       "Devant vous, la femme mystérieuse et sa garde rapprochée. Vous lui demandez ce qu'il se passe dans cette ville.",
-      "Elle retire sa capuche. En dessous, une femme au visage angélique. \"En temps normal je n'aurai bien évidemment rien répondu mais comme tu vis tes derniers instants, je vais t'accorder une réponse.",
+      "Elle retire sa capuche. En dessous, une femme au visage angélique. \"En temps normal je n'aurais bien évidemment rien répondu mais comme tu vis tes derniers instants, je vais t'accorder une réponse.",
       "J'ai développé un pouvoir très puissant qui me permet de manipuler la population. Ainsi, j'évite tout conflit et instaure une paix inébranlable.\"",
       "Vous répondez qu'il est indigne de pratiquer ce genre de magie noire. Son visage se métamorphose et devient d'une monstruosité absolue \"Quiconque se trouvant sur mon chemin périra dans la douleur!\""
     ],
@@ -306,7 +306,7 @@
     "scenario": [
       "Vous avez gagné le combat!",
       "Du haut de la tour, vous constatez que toute la population reprend ses esprits et vous acclame. Vous avez sauvé des ténèbres toute la ville!",
-      "Apparait devant vous, dans un halo de lumière, la dernière coordonnée nécessaire de Calypso. De plus, vous sentez qu'un pouvoir vous envahi: c'est celui de la femme mystérieuse! Comment l'utiliserez-vous?...",
+      "Apparaît devant vous, dans un halo de lumière, la dernière coordonnée nécessaire de Calypso. De plus, vous sentez qu'un pouvoir vous envahi: c'est celui de la femme mystérieuse! Comment l'utiliserez-vous?...",
       "Vous récupérez l'ensemble de son équipement",
       "Vous retournez sans plus attendre vers le Nostromo. Sur le chemin, deux barils de carburant! Vous avec donc en votre possession 3 barils de carburant. Plus rien ne vous empêche de rentrer chez vous!",
       "Une fois à bord du Nostromo, vous faites le plein, entrez les coordonnées puis décollez..."
@@ -324,7 +324,7 @@
       "Cette planète est dévastée. Elle vous rappelle Utopia.",
       "Vous descendez de votre vaisseau. Rapidement, plusieurs personnes viennent à votre rencontre: \"Vous devez nous aider étranger. Vous êtes notre dernier espoir!\"",
       "Après discussion, vous comprenez qu'un tyran dirige d'une main de fer cette planète. On vous indique où le trouver: deux chemins sont possibles.",
-      "Le premier, le moins sûr, sera semé d'embuches mais vous permettra de débarrasser les sbires du tyran de cette planète. Le second, est un passage secret souterrain qui vous permettra d'accéder au tyran en peu de temps...",
+      "Le premier, le moins sûr, sera semé d'embûches mais vous permettra de débarrasser les sbires du tyran de cette planète. Le second, est un passage secret souterrain qui vous permettra d'accéder au tyran en peu de temps...",
       "Que choisissez-vous?"
     ],
     "optionA": "Venger les habitants",
@@ -335,7 +335,7 @@
   "24": {
     "type": "combat",
     "scenario": [
-      "Vous ne choisissez pas la simplicité mais les habitants vous en seront d'avantage redevable.",
+      "Vous ne choisissez pas la simplicité mais les habitants vous en seront d'avantage redevables.",
       "Après une heure de marche, vous arrivez aux portes d'une forteresse. Une voix vous interpelle: \"Dégage d'ici misérable\".",
       "Vous levez la tête et défiez du regard la personne d'où provient cette voix.",
       "La porte de la forteresse s'ouvre: un ennemi vient dans votre direction. Il veut en découdre..."
@@ -350,11 +350,11 @@
     "scenario": [
       "Vous avez gagné le combat!",
       "Vous pénétrez dans la forteresses. Elle est magnifique, dans un état irréprochable. Très différent ce que vous avez pu voir avant...",
-      "Vous surprenez un sbire du tyran pleureur: \"Ce monstre est indigne de nous diriger\" . Vous vous approchez  lui les mains en l'air et lui demandez pourquoi:",
+      "Vous surprenez un sbire du tyran pleurer: \"Ce monstre est indigne de nous diriger\" . Vous vous approchez  lui les mains en l'air et lui demandez pourquoi:",
       "\"Cela fait des années que je le sers. J'ai commis des actes terribles pour lui et hier, il a ordonné un raid dans mon village car il était sûr que des opposants s'y trouvaient. Il n'en était rien, toute ma famille est morte... Je me vengerai!\"",
       "Vous lui dites alors que vous êtes en mesure de l'aider: \"Etranger, des centaines de soldates occupent cette forteresse. Ce que je peux faire c'est lancer une alerte afin de créer une diversion.",
       "Si vous parvenez à tuer le tyran, ses sbires et moi compris vous obéiront. Vous semblez être quelqu'un de bien... Au fait, je m'appelle Kaison!\" Vous acceptez.",
-      "Une alarme retenti. Vous vous dirigez vers l'endroit où se trouve le tyran.",
+      "Une alarme retentit. Vous vous dirigez vers l'endroit où se trouve le tyran.",
       "Dans un couloir, vous tombez sur un ennemi: \"C'est une diversion! Il y a un traître parmi nous!\". Vous devez vite le réduire au silence avant que votre plan ne tombe à l'eau..."
     ],
     "idEnnemi": "16",
@@ -365,7 +365,7 @@
     "type": "combat",
     "scenario": [
       "Vous voilà devant l'entrée du donjon du tyran. Vous entrez...",
-      "Une voix retenti \"Quel agitateur ose pénétrer dans mon royaume?\". Vous restez silencieux, déterminé à mettre un terme à cette tyrannie",
+      "Une voix retentit \"Quel agitateur ose pénétrer dans mon royaume?\". Vous restez silencieux, déterminé à mettre un terme à cette tyrannie",
       "\"Comment osez-vous perturber l'harmonie de cette planète?\". Vous lui répondez que l'harmonie est étrangère à ces terres et que le temps est venu de libérer le peuple.",
       "\"L'ordre et le pouvoir s'obtiennent par le sang. Pour les conserver, il en sera de même!\". Il sort de sa poche un diamant, le serre fort.",
       "Un halo de lumière enveloppe le tyran pendant quelques secondes. Le halo se dissipe et laisse apparaitre un jeune homme au physique imposant: \"Voyons ce que tu as dans le ventre!\""
@@ -378,7 +378,7 @@
     "type": "decision",
     "scenario": [
       "Vous avez gagné le combat!",
-      "Apparait devant vous, dans un halo de lumière, la dernière coordonnée nécessaire de Calypso. A vos pieds, le diamant qu'a utilisé le tyran. Comment l'utiliserez-vous?...",
+      "Apparaît devant vous, dans un halo de lumière, la dernière coordonnée nécessaire de Calypso. A vos pieds, le diamant qu'a utilisé le tyran. Comment l'utiliserez-vous?...",
       "Vous récupérez l'ensemble de son équipement",
       "Vous descendez du donjon. Dans la cour de la forteresse, tous les sbires du tyran sont à genoux. Ils vous regardent et attendent vos ordres. Que faire? Remplacer le tyran ou laisser Kaison prendre ce rôle?",
       "Vous appelez Kaison et lui proposez ce rôle. Il accepte :\"Soyez sûr que les choses vont changer!\"",
@@ -396,17 +396,17 @@
     "scenario": [
       "Vous atterrissez sur Calypso.",
       "Après ce long et dangereux périple, vous voilà enfin chez vous.",
-      "Malgré le peu de souvenir que vous en avez, vous pensez reconnaitre au loin votre ville natale. Il est temps de retrouver vos proches et, peut-être, d'obtenir les réponses à vos questions...",
+      "Malgré le peu de souvenirs que vous en avez, vous pensez reconnaitre au loin votre ville natale. Il est temps de retrouver vos proches et, peut-être, d'obtenir les réponses à vos questions...",
       "Vous vous dirigez vers la ville. Vous ne parvenez pas à vous en rappeler le nom jusqu'à voir un panneau d'indication. Il est écrit \"Eternia\",. Ce nom vous est familier, vous continuez d'avancer...",
       "La route est déserte.",
-      "Vous arrivez enfin. Vous croisez quelques habitants qui semblent hagard. Subitement, quelqu'un vous interpelle: \"Lazarus, est-ce toi? \". Il s'agit d'une femme d'un certain âge.",
-      "Vous ne parvenez pas à la reconnaître. \"C'est bien toi je suis sûr! Je suis Eucharis, ta mère! Je n'en reviens pas que tu sois revenu, tu es bien le seul malheureusement...\"",
+      "Vous arrivez enfin. Vous croisez quelques habitants qui semblent hagards. Subitement, quelqu'un vous interpelle: \"Lazarus, est-ce toi? \". Il s'agit d'une femme d'un certain âge.",
+      "Vous ne parvenez pas à la reconnaître. \"C'est bien toi j'en suis sûr! Je suis Eucharis, ta mère! Je n'en reviens pas que tu sois revenu, tu es bien le seul malheureusement...\"",
       "Vous vous souvenez d'elle, ainsi que de votre père et de votre femme. Leurs noms ne vous reviennent pas, seulement leurs visages... Vous demandez à votre mère ce qu'il s'est passé.",
-      "\"Il y a maintenant 10 ans, des envahisseurs sont venus du ciel. C'était la première fois que nous voyions ça! Malheureusement, ils n'étaient pas pacifiques. A peine arrivés, ils nous ont massacré. Une chose les intéressaient, l'arbre de Morgdrul et son pouvoir.\"",
-      "\"Leur leader divin, Noctarion III, s'en est emparé. L'obtention de ce pouvoir à provoqué une conséquence désastreuse: une explosion d'énergie à tuer bon nombres de personnes et il semblerait qu'elle en ai téléporté d'autres...\"",
+      "\"Il y a maintenant 10 ans, des envahisseurs sont venus du ciel. C'était la première fois que nous voyions ça! Malheureusement, ils n'étaient pas pacifiques. A peine arrivés, ils nous ont massacrés. Une chose les intéressait, l'arbre de Morgdrul et son pouvoir.\"",
+      "\"Leur leader divin, Noctarion III, s'en est emparé. L'obtention de ce pouvoir à provoqué une conséquence désastreuse: une explosion d'énergie a tué bon nombres de personnes et il semblerait qu'elle en ait téléporté d'autres...\"",
       "\"Noctarion III se trouve toujours ici avec son armée, à 2h de marche d'ici. A cause de lui, nous sommes réduits en esclavage... \" ",
-      "Tout devient plus clair! Vous vous souvenez en effet d'une invasion suivie d'une explosion. Dix ans se sont écoulées! Et puis votre réveil en dessous d'un arbre sur Utopia a t'il un lien avec Morgdrul?",
-      "En tout cas, il est tant de vous venger et de rétablir la paix sur Calypso. Votre mère vous donne une carte. Il est temps d'en finir!",
+      "Tout devient plus clair! Vous vous souvenez en effet d'une invasion suivie d'une explosion. Dix ans se sont écoulées! Et puis votre réveil en dessous d'un arbre sur Utopia a-t-il un lien avec Morgdrul?",
+      "En tout cas, le temps est venu de vous venger et de rétablir la paix sur Calypso. Votre mère vous donne une carte. Il est temps d'en finir!",
       "Après deux heures de marche, un garde ennemi vous interpelle \"Vous avez interdiction de sortir des zones restreintes. Vous connaissez la conséquence! \" "
     ],
     "idEnnemi": "22",
@@ -440,7 +440,7 @@
     "type": "decision",
     "scenario": [
       "Vous avez gagné!",
-      "Un autre soldat vous a aperçu vous battre. Il a donné l'alerte. Vous courrez vers la tour discrètement."
+      "Un autre soldat vous a aperçu vous battre. Il a donné l'alerte. Vous courez vers la tour discrètement."
     ],
     "optionA": "Courir vers la tour",
     "optionB": null,
@@ -463,7 +463,7 @@
       "Vous avez gagné!",
       "Devant-vous, un escalier composé de milliers de marches... Sans attendre, vous montez",
       "Vous voilà à l'apogée de votre aventure...",
-      "Sur un trône, Noctarion III. Il vous interpelle: \"Te voilà enfin Lazarus. Tu es exactement comme je t'avais vu dans ma vision. Savais-tu que récupérer le pouvoir de Morgdrul doit entrainer la réalisation d'une prophétie?",
+      "Sur un trône, Noctarion III. Il vous interpelle: \"Te voilà enfin Lazarus. Tu es exactement comme je t'avais vu dans ma vision. Savais-tu que récupérer le pouvoir de Morgdrul doit entraîner la réalisation d'une prophétie?",
       "La personne qui se sera emparé de son pouvoir devra faire face à un ennemi pas comme les autres. Un ennemi originaire d'une civilisation très ancienne. Si il parvient à le tuer, alors il sera jusqu'à la fin des temps l'être le plus puissant de l'univers.\"",
       "\"C'est aujourd'hui que je deviendrai cette personne! \""
     ],
@@ -477,7 +477,7 @@
       "Vous avez gagné!",
       "L'empereur est mort... Vive l'Empereur? Non... Vous ne voulez pas de ce rôle. Une lumière s'échappe du corps de Noctarion III, il s'agit du pouvoir de l'arbre. S'en emparer ou le rendre? La décision est rapidement prise.",
       "Vous sortez de la tour et l'ensemble de l'armée de l'Empereur prend la fuite. La paix est rétablie.",
-      "Vous retournez voir votre mère. Elle est très fière de vous! En revanche, toutes les autres personnes qui ont été téléportées comme vous ne sont toujours pas revenue...",
+      "Vous retournez voir votre mère. Elle est très fière de vous! En revanche, toutes les autres personnes qui ont été téléportées comme vous ne sont toujours pas revenues...",
       "Une autre aventure vous attend: retrouver votre famille! Vous saluez votre mère et lui promettez que tout rentrera bientôt dans l'ordre. Vous retournez vers le vaisseau...",
       "FIN"
     ],
