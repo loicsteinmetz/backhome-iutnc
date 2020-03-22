@@ -23,7 +23,7 @@
 
 **Exécution simple :**
 
-Un export du jeu, sous la forme d'un fichier image directement exécutable sous linux, est disponible dans l'onglet [Downloads](https://bitbucket.org/b4va/projet_jeu_iutnc/downloads/) du repository.
+Un export du jeu, sous la forme d'un fichier image, directement exécutable sous linux, est disponible dans l'onglet [Downloads](https://bitbucket.org/b4va/projet_jeu_iutnc/downloads/) du repository.
 
 **Exécution dans un environnement de développement :**
 
@@ -52,12 +52,12 @@ Toutes les planètes ne sont pas disponibles au début du jeu. Il faudra réunir
 Le jeu propose principalement deux phases de gameplay :
 
 - La navigation : Vous êtes à bord du vaisseau. Vous devez choisir la prochaîne planète à visiter, en prenant en compte vos ressources. Ces ressources peuvent être consultées dans un menu d'inventaire.
-- Les événements : Vous atterissez sur une planète, et êtes confrontés à différentes situations. Vous devrez réaliser des choix entre différentes options et affronter des ennemis.
+- Les événements : Vous atterissez sur une planète, et êtes confrontés à différentes situations. Vous devrez réaliser des choix entre différentes options et affronter des ennemis, pour collecter des récompenses et avancer dans la quête.
 
 ![combat](readme_img/capture2.png)
 ![navigation](readme_img/capture3.png)
 
-L'interface centrale du jeu est celle du vaisseau, qui fait office de carte. Cette interface permet d'afficher les planètes disponible et/ou accessibles et de s'y rendre, mais aussi d'afficher l'inventaire et de sauvegarder la partie.
+L'interface centrale du jeu est celle du vaisseau, qui fait office de carte et plus globalement de menu principal. Cette interface permet d'afficher les planètes disponibles et/ou accessibles et de s'y rendre, mais aussi d'afficher l'inventaire et de sauvegarder la partie.
 
 ![cas d'utilisation](readme_img/use_case.png)
 
@@ -67,13 +67,15 @@ L'interface centrale du jeu est celle du vaisseau, qui fait office de carte. Cet
 
 La structure de l'application repose sur les fonctionnalités de JavaFx. Les différentes classes java sont donc réparties en différents packages, selon le pattern MVC (Model, View, Controller), d'après leur usage fonctionnel.
 
-- Le package `models` regroupe les différents modèles mobilisés par l'application, soit la modélisation concrète des différents objets manipulés.
-- Le package `controllers` regroupe les différents controleurs appelés au cours de l'exécution et permettant d'interagir avec la vue proposée à l'utilisateur.
-- Le package `views` regroupe les différentes vues au format `fxml`, qui structurent l'interface utilisateur et qui sont initialisées et mises à jour par le controller.
-- Le package `utils` regroupe des classes utilitaires, dont les méthodes sont mobilisées à différents endroits.
-- Le package `lib` regroupe les librairies externes utiles au projet.
-- Le dossier `data` regroupe les fichiers de stockage au format `json`, servant à la configuration des modèles.
+- Le package `app` inclut la classe exécutable du programme.
 - Le dossier `assets` regroupe les différentes ressources du programme : images, polices, feuilles de style.
+- Le package `controllers` regroupe les différents controleurs appelés au cours de l'exécution et permettant d'interagir avec la vue proposée à l'utilisateur.
+- Le dossier `data` regroupe les fichiers de stockage au format `json`, servant à la configuration des modèles.
+- Le package `lib` regroupe les librairies externes utiles au projet.
+- Le package `models` regroupe les différents modèles mobilisés par l'application, soit la modélisation concrète des différents objets manipulés.
+- Le package `tests` regroupe les classes de test.
+- Le package `utils` regroupe des classes utilitaires, dont les méthodes sont mobilisées à différents endroits.
+- Le package `views` regroupe les différentes vues au format `fxml`, qui structurent l'interface utilisateur ainsi que la classe `View` permettant le lancement de ces dernières.
 
 Ci-dessous, la présentation d'une séquence type du fonctionnement de l'application.
 
@@ -144,7 +146,9 @@ Gèrent l'affichage de la composition de l'inventaire (armes, armure, carburant)
 - **Vue** : Quete.fxml *via QueteView, classe privée de View*
 - **Controleur** : QueteController
 
-L'accès à la vue de quête peut donner lieu à une redirection en fonction de la situation du héros :
+Gèrent l'affichage de l'arrivée sur une nouvelle planète et/ou la redirection vers la vue approprié, en fonction du type d'événement à venir.
+
+L'accès à la vue de quête peut en effet donner lieu à une redirection en fonction de la situation du héros :
 
 ![états quête](readme_img/etats_quete.png)
 
@@ -152,13 +156,13 @@ L'accès à la vue de quête peut donner lieu à une redirection en fonction de 
 DECRIRE FONCTIONNEMENT
 ```
 
-Gèrent l'affichage de l'arrivée sur une nouvelle planète et la redirection vers le controleur approprié, en fonction du type d'événement à venir.
-
 **Combats :**
 
 - **Modèle** : Combat
 - **Vue** : Combat.fxml *via CombatView, classe privée de View*
 - **Controleur** : CombatController
+
+Gèrent le déroulement d'un combat : scénario introductif, lancement, phases d'attaque et de contre-attaque, et conclusion en fonction de l'issue du combat. Permettent d'enregistrer le prochain événement en fonction de l'issue, événement qui sera alors traité par le QueteController.
 
 Les combats sont construits en prenant en compte les armes et l'armure du héros, ainsi que le type d'ennemi :
 
@@ -167,8 +171,6 @@ Les combats sont construits en prenant en compte les armes et l'armure du héros
 ```
 DECRIRE FONCTIONNEMENT
 ```
-
-Gèrent le déroulement d'un combat : scénario introductif, lancement, phases d'attaque et de contre-attaque, et conclusion en fonction de l'issue du combat. Permettent d'enregistrer le prochain événement en fonction de l'issue, événement qui sera alors traité par le QueteController.
 
 **Prises de décisions :**
 
@@ -188,7 +190,7 @@ Gèrent le chargement et l'enregistrement d'une sauvegarde. Permettent égalemen
 
 ### 2.3 Gestion des données
 
-Les données de configuration, persistantes entre différentes exécutions de l'application, sont stockées dans des fichiers au format `json`. Ces fichiers sont parsés au cours de l'exécution des différents programmes de l'application. Ils servent alors à l'initialisation de différents modèles qui implémentent, dans cette perspective, l'interface Configurable, et renvoient à un fichier `json` portant le même nom.
+Les données de configuration, persistantes entre différentes exécutions de l'application, sont stockées dans des fichiers au format `json`. Ces fichiers sont parsés au cours de l'exécution des différents programmes de l'application. Ils servent alors à l'initialisation de différents modèles qui implémentent, dans cette perspective, l'interface `Configurable`, et renvoient à un fichier `json` portant le même nom.
 
 La persistance des données entre différentes séquences, une fois l'application exécutée, est quant à elle permise par certains modèles étant construit comme des singletons. Ces modèles sont les suivants :
 
@@ -208,11 +210,14 @@ La gestion des sauvegardes donne lieu à la création d'un fichier de stockage e
 
 Plusieurs difficultés ont été rencontrées au cours du développement, nous amenant à réfléchir à certaines solutions pour des projets futurs :
 
-- **JavaFx** : Ce projet consituait pour nous une première utilisation des fonctionnalités JavaFx. Il a donc été assez long de maîtriser leurs différents aspects techniques, et de les implémenter de façon claire et rigoureuse. L'implémentation de JavaFx suivant le pattern M.V.C. a ainsi été particulèrement compliquée à mettre en oeuvre, nécessitant plusieurs itérations. Les problèmes rencontrés lors de cette implémentation ont cependant conduit à une recherche approfondie quant aux standards en la matière.
+- **Conception** : Ce projet consituait pour nous une première utilisation des fonctionnalités JavaFx. Il a donc été assez long de maîtriser leurs différents aspects techniques, et de les implémenter de façon claire et rigoureuse. L'implémentation de JavaFx suivant le pattern M.V.C. a ainsi été particulèrement compliquée à mettre en oeuvre, nécessitant plusieurs itérations. Les problèmes rencontrés lors de cette implémentation ont cependant conduit à une recherche approfondie quant aux standards en la matière et nous ont permis de travailler plus avant notre conception du programme.
 - **Gestion des données** : 
-    - *Fichiers de stockage* : Le format `json`, retenu pour le stockage des données persistantes, a été privilégié en tenant compte de nos connaissances préalables. Il s'est avéré que ce format n'est pas nécessairement le plus adapté à des traitement Java. Nous en avons conclu qu'il aurait été préférable de stocker les données dans des fichiers `xml`.
-    - *Modélisation* : Faute de temps, nous avons du concevoir notre organisation des données au fil du développement, sans conduire une réelle réflexion sur leur structure. Cela nous a permis de comprendre davantage l'importance d'une modélisation réfléchie du système de données, devant être réalisée en amont.
+    - *Fichiers de stockage* : Le format `json`, retenu pour le stockage des données persistantes, a été privilégié en tenant compte de nos connaissances préalables. Il s'est avéré que ce format n'est pas nécessairement le plus adapté à des traitements en Java. Nous en avons conclu qu'il aurait été préférable de stocker les données dans des fichiers au format `xml`.
+    - *Modélisation, normalisation* : Faute de temps, nous avons du concevoir notre organisation des données au fil du développement, sans conduire une réelle réflexion sur leur structure. Cela nous a permis de comprendre davantage l'importance d'une modélisation réfléchie du système de données, devant être réalisée en amont.
 - **Tests** : Faute de temps encore une fois, les tests ont du être réalisés à la suite du développement proprement dit de l'application, et ce en nombre réduit. Cela nous a donc privé de tests d'intégration au cours du développement, tests qui auraient été utiles pour valider l'implémentation de nouvelles fonctionnalité, au fur et à mesure que nous réalisions de nouvelles itérations du projet. Dans l'idéal, et si nous avions eut plus de temps, nous avons conclu sur l'intérêt des TDD (*Test Driven Development*) pour la conduite de projets futurs.
-- **Game Design** : Concentrés sur l'aspect technique de la réalisation du jeu, de nombreux aspect de game design ont été ignoré. Ainsi l'équilibrage, le level design etc. pourraient être revus.
+- **Game Design** : Concentrés sur l'aspect technique de la réalisation du jeu, nous avons ignoré, au moins partiellement, de nombreux aspects de game design. Ainsi l'équilibrage, le level design etc. pourraient être revus.
+- **Gestion de projet** :
+    - *Trello* : L'utilisation de Trello a été un gros plus pour la gestion de projet et les fonctionnalités de l'outils ont été progressivement utilisées.
+    - *Git* : Tous les participants au projet n'étant pas familiers de Git, il nous aura fallu quelques temps pour la mise en place. L'outil nous a néanmoins rapidement permis de travailler collectivement.
 
-En dépit de ces difficultés, nous avons su être suffisament organisés et impliqués pour livrer un jeu fonctionnel et conforme à nos attentes de départ. Ainsi, nous avons pu conduire ce projet avec enthousiasme et sommes satisfait du résultats, compte tenu des contraintes, notamment de temps, qui nous étaient imposées.
+En dépit des difficultés, nous avons finalement su être suffisament organisés et impliqués pour livrer, nous semble-t-il, un jeu convainquant, fonctionnel et conforme à nos attentes de départ. Ainsi, nous avons pu mener ce projet à terme et sommes satisfait du résultats compte tenu des contraintes, notamment de temps et d'organisation, qui se sont imposées à nous.
