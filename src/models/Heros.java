@@ -3,8 +3,6 @@ package models;
 import static models.Carte.getCarte;
 import static models.Inventaire.getInventaire;
 
-
-
 /**
  * Singleton modélisant le héros du jeu
  */

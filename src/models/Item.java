@@ -36,5 +36,5 @@ public abstract class Item {
     /**
      * Constructeur servant uniquement aux tests
      */
-    public Item(){};
+    public Item(){}
 }

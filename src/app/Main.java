@@ -17,7 +17,7 @@ public class Main extends Application {
      * @param primaryStage stage initial
      */
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) {
         // configuration générale
         FontsLoader.load();
         primaryStage.setTitle("Back Home");
