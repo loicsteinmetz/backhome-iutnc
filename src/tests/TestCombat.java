@@ -7,9 +7,12 @@ import static models.Heros.getHeros;
 import static models.Inventaire.getInventaire;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * Permet de tester toutes les méthodes inhérentes aux combats
+ */
 public class TestCombat {
 
-    @Test // indirectement, test aussi méthode subirAttaque() et attaque()
+    @Test
     void testFaiblessesTireur(){
         int deg = 10;
         int pv = 100;
@@ -27,7 +30,7 @@ public class TestCombat {
         assertTrue(p.getPv() <= pv - deg*0.75 + deg*0.5);
     }
 
-    @Test // indirectement, test aussi méthode subirAttaque() et attaque()
+    @Test
     void testFaiblessesBrute(){
         int deg = 10;
         int pv = 100;
@@ -58,7 +61,7 @@ public class TestCombat {
 
     }
 
-    @Test // indirectement, test aussi méthode subirAttaque() et attaque()
+    @Test
     void testResArmureHeros(){
         double deg = 20;
         int pv = 100;
