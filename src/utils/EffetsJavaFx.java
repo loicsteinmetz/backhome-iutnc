@@ -2,6 +2,7 @@ package utils;
 
 import javafx.animation.*;
 import javafx.scene.Node;
+import javafx.scene.layout.HBox;
 import javafx.util.Duration;
 
 /**
@@ -131,6 +132,21 @@ public class EffetsJavaFx {
         );
         tl.setDelay(Duration.seconds(delaiSec));
         tl.play();
+        return tl;
+    }
+
+    public static Timeline barreEtat(HBox niveauBox, double niveau, int niveauTotal, int tailleBox){
+        Timeline tl;
+        tl = new Timeline(
+                new KeyFrame(
+                        Duration.ZERO,
+                        new KeyValue(niveauBox.minWidthProperty(), niveauBox.getMinWidth())),
+                new KeyFrame(
+                        Duration.seconds(0.5),
+                        new KeyValue(
+                                niveauBox.minWidthProperty(),
+                                niveau / niveauTotal * tailleBox))
+        );
         return tl;
     }
 }

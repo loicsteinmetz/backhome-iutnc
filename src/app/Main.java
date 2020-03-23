@@ -1,11 +1,10 @@
 package app;
 
-import controllers.BackHomeController;
 import javafx.application.Application;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import utils.FontsLoader;
-import utils.ViewLoader;
+import views.View;
 
 
 /**
@@ -13,21 +12,20 @@ import utils.ViewLoader;
  */
 public class Main extends Application {
 
-    private static final String START_VIEW = BackHomeController.getView();
-
     /**
      * Génère la fenêtre du programme et l'initialise
      * @param primaryStage stage initial
      */
     @Override
-    public void start(Stage primaryStage){
+    public void start(Stage primaryStage) {
         // configuration générale
         FontsLoader.load();
         primaryStage.setTitle("Back Home");
         primaryStage.setResizable(false);
         primaryStage.getIcons().add(new Image("/assets/img/vaisseau.png"));
+        View.setStage(primaryStage);
         // initialisation de l'interface de lancement
-        new ViewLoader().switchTo(START_VIEW, primaryStage);
+        new View().backHomeView();
         // création de la fenête
         primaryStage.show();
     }

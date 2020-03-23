@@ -1,8 +1,8 @@
 {
-  "1": {
+  "1" : {
     "date":"01-01-2020 - 00:00",
-    "localisation":"Ienos",
-    "statusPlanetes":[true,true,true,true,false,false,false],
+    "localisation":"Utopia",
+    "statusPlanetes":[true,false,false,false,false,false,false],
     "idArmeCac":100,
     "idArmeDistance":101,
     "idArmure":100,
@@ -10,13 +10,34 @@
     "vide": false
   },
   "2": {
-    "vide": true
+    "date":"01-01-2020 - 00:00",
+    "localisation":"Ienos",
+    "statusPlanetes":[true,true,true,true,false,false,false],
+    "idArmeCac":5,
+    "idArmeDistance":17,
+    "idArmure":1,
+    "carburant":200,
+    "vide": false
   },
   "3": {
-    "vide": true
+    "date":"01-01-2020 - 00:00",
+    "localisation":"Lumini",
+    "statusPlanetes":[true,true,true,true,true,false,false],
+    "idArmeCac":24,
+    "idArmeDistance":26,
+    "idArmure":2,
+    "carburant":300,
+    "vide": false
   },
   "4": {
-    "vide": true
+    "date":"01-01-2020 - 00:00",
+    "localisation":"Tremor",
+    "statusPlanetes":[true,true,true,true,false,true,false],
+    "idArmeCac":28,
+    "idArmeDistance":30,
+    "idArmure":4,
+    "carburant":300,
+    "vide": false
   },
   "5": {
     "vide": true

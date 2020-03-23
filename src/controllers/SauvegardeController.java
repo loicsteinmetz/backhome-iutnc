@@ -1,32 +1,22 @@
 package controllers;
 
-import javafx.application.Application;
 import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import models.BackHome;
 import models.Sauvegarde;
-import utils.ViewLoader;
+import views.View;
 
 /**
  * Controleur de l'interface sauvegardes
  */
-public class SauvegardeController extends Application {
+public class SauvegardeController {
 
     private int idSelection;
-
-    @Controller
-    private static final String VIEW = "/views/Sauvegarde.fxml";
-    @Controller
-    private static final String STYLE = "/assets/css/Sauvegarde.css";
 
     @FXML
     private VBox sauvegardes, btns;
@@ -34,55 +24,45 @@ public class SauvegardeController extends Application {
     private Button btn1, btn2;
 
     /**
-     * Retourne la vue associée au controller
-     * @return chemin de la vue
-     */
-    @Controller
-    public static String getView(){
-        return VIEW;
-    }
-
-    /**
-     * Génère l'interface propres aux sauvegardes
-     * @param stage primaryStage
-     * @throws Exception chargement de la vue
-     */
-    @Override
-    public void start(Stage stage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource(VIEW));
-        Scene scene = new Scene(root, 800, 600);
-        scene.getStylesheets().add(STYLE);
-        stage.setScene(scene);
-    }
-
-    /**
      * Initialisation de la vue et du modèle
      */
     @FXML
     private void initialize(){
+
+        // initialise si besoin le fichier de sauvegarde
         Sauvegarde.init();
+
+        // boutons désactivés par défaut, sauf bouton retour
         btn1.setDisable(true);
         btn2.setDisable(true);
+
+        // récupération et affichage des sauvegarde
         Sauvegarde[] allSauvegardes = Sauvegarde.getAllSauvegardes();
         HBox box;
         Label date, localisation;
         for (int i = 0 ; i < sauvegardes.getChildren().size() ; i++){
             box = (HBox)sauvegardes.getChildren().get(i);
+            // si sauvegarde enregistrée
             if (!allSauvegardes[i].estVide()){
                 date = (Label)box.getChildren().get(0);
                 date.setText(allSauvegardes[i].getDate());
                 localisation = (Label)box.getChildren().get(1);
                 localisation.setText(allSauvegardes[i].getLocalisation());
+            // si sauvegarde vide
             } else {
                 box.getStyleClass().add("vide");
             }
         }
+
+        // possibilité de charger les sauvegarde quand accès depuis accueil (jeu non démarré)
         if (!BackHome.getStarted()){
             btn1.setOnAction(this::charger);
             for(Node sauvegarde : sauvegardes.getChildren()){
                 HBox s = (HBox)sauvegarde;
                 if (s.getStyleClass().contains("vide")) s.setDisable(true);
             }
+
+        // possibilité d'enregistrer une sauvegarde quand accès depuis la carte (jeu démarré)
         } else {
             btn1.setOnAction(this::sauvegarder);
             btn1.setText("Sauvegarder");
@@ -97,20 +77,32 @@ public class SauvegardeController extends Application {
      */
     @FXML
     private void selectionner(Event e){
+
+        // active les boutons
         btn1.setDisable(false);
         btn2.setDisable(false);
+
+        // rétablit format par défaut
         for(Node sauvegarde : sauvegardes.getChildren()){
             HBox s = (HBox)sauvegarde;
             s.setStyle("-fx-border-color:transparent;");
             if (!s.getStyleClass().contains("vide") || BackHome.getStarted()) s.setDisable(false);
         }
+
+        // formate l'affichage de la sauvegarde sélectionnée
         HBox selectionee = (HBox)e.getSource();
         selectionee.setStyle("-fx-border-color:white;");
         selectionee.setDisable(true);
         idSelection = Integer.parseInt(selectionee.getUserData().toString());
+
+        // si accès depuis la carte (jeu démarré)
         if (BackHome.getStarted()){
+
+            // affiche bouton 'écraser' si la sauvegarde séléctionnée est déjà configurée
             if (!selectionee.getStyleClass().contains("vide")){
                 btn1.setText("Ecraser");
+
+            // affiche bouton 'sauvegarder' si la sauvegarde sélectionnée est vide
             } else {
                 btn1.setText("Sauvegarder");
             }
@@ -119,26 +111,27 @@ public class SauvegardeController extends Application {
 
     /**
      * Permet le retour à la carte ou à l'écran d'accueil, suivant le contexte
-     * @param e clic sur le bouton retour
      */
     @FXML
-    private void retour(Event e){
-        ViewLoader vl = new ViewLoader();
+    private void retour(){
         if (BackHome.getStarted()){
-            vl.switchTo(CarteController.getView(), e);
+            new View().carteView();
         } else {
-            vl.switchTo(BackHomeController.getView(), e);
+            new View().backHomeView();
         }
     }
 
     /**
      * Supprime la sauvegarde sélectionnée et met à jour la vue
-     * @param e bouton supprimer
      */
     @FXML
-    private void supprimer(Event e){
-        HBox sauvegarde = (HBox)sauvegardes.getChildren().get(idSelection - 1);
+    private void supprimer(){
+
+        // supprime la sauvegarde
         Sauvegarde.supprimerSauvegarde(idSelection);
+
+        // gère l'affichage après suppression
+        HBox sauvegarde = (HBox)sauvegardes.getChildren().get(idSelection - 1);
         sauvegarde.getStyleClass().add("vide");
         sauvegarde.setStyle("-fx-border-color:transparent;");
         Label date = (Label)sauvegarde.getChildren().get(0);
@@ -157,7 +150,7 @@ public class SauvegardeController extends Application {
     @FXML
     private void charger(Event e){
         new Sauvegarde(idSelection).charger();
-        new ViewLoader().switchTo(CarteController.getView(), e);
+        new View().carteView();
     }
 
     /**
@@ -168,7 +161,7 @@ public class SauvegardeController extends Application {
     @FXML
     private void sauvegarder(Event e){
         Sauvegarde.sauvegarder(idSelection);
-        new ViewLoader().switchTo(CarteController.getView(), e);
+        new View().carteView();
     }
 
 

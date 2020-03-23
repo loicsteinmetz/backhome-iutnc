@@ -64,4 +64,18 @@ public abstract class Personnage {
     public boolean enVie() {
     	return 0<this.pv;
     }
+
+    /**
+     * Constructeur servant uniquement aux tests
+     */
+    public Personnage() {
+    }
+
+    /**
+     * Constructeur servant uniquement aux tests
+     * @param pv les pv du combattant
+     */
+    public Personnage(int pv) {
+        this.pv = pv;
+    }
 }

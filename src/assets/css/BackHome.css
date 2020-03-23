@@ -66,3 +66,16 @@ Button{
     -fx-opacity:0;
     -fx-padding: 0 100px;
 }
+
+#clicBox{
+    -fx-min-width:800;
+    -fx-max-width:800;
+    -fx-alignment:center;
+}
+
+#clicBox Label{
+    -fx-font-family: "Roboto Slab";
+    -fx-text-fill:white;
+    -fx-font-size:12;
+    -fx-opacity:0.5;
+}

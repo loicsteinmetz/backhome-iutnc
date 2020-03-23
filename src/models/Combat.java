@@ -75,6 +75,10 @@ public class Combat extends Evenement implements Configurable {
 		return idIssue;
 	}
 
+	/**
+	 * Getter
+	 * @return l'adversaire du héros
+	 */
 	public Ennemi getEnnemi() {
 		return ennemi;
 	}

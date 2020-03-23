@@ -127,6 +127,13 @@ public class Planete {
     }
 
     /**
+     * Rétablit la disponibilité du soin
+     */
+    public void retablirSoin(){
+        soinDisponible = true;
+    }
+
+    /**
      * Getter - Indique si la planète a été visitée
      * @return vrai si la planète a été visitée
      */

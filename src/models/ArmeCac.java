@@ -45,4 +45,14 @@ public class ArmeCac extends Arme {
 		}
 	}
 
+	/**
+	 * Constructeur servant uniquement aux tests
+	 * @param id l'id de l'arme
+	 * @param degats les degats de l'arme
+	 */
+	public ArmeCac(int id, int degats){
+		super(id);
+		this.degats = degats;
+	}
+
 }

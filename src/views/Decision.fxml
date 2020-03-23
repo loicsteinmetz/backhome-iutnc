@@ -17,6 +17,10 @@
 
     <Label fx:id="ecran"/>
 
+    <HBox id="clicBox" layoutY="550">
+        <Label fx:id="cliquez" text="Cliquez pour passer..."/>
+    </HBox>
+
     <HBox fx:id="btnBox" layoutY="600">
         <Button fx:id="issueA" text="issueA" styleClass="choix" onAction="#issueA"/>
         <Button fx:id="issueB" text="issueB" styleClass="choix" onAction="#issueB"/>

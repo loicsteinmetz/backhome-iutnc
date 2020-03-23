@@ -28,6 +28,10 @@
         </HBox>
     </GridPane>
 
+    <HBox id="clicBox" layoutY="550">
+        <Label fx:id="cliquez" text="Cliquez pour passer..."/>
+    </HBox>
+
     <Label fx:id="ecran"/>
 
     <FlowPane fx:id="flow">

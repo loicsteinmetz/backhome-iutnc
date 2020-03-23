@@ -214,3 +214,16 @@ GridPane{
     -fx-text-fill: #207090;
     -fx-cursor: hand;
 }
+
+#clicBox{
+    -fx-min-width:800;
+    -fx-max-width:800;
+    -fx-alignment:center;
+}
+
+#clicBox Label{
+    -fx-font-family: "Roboto Slab";
+    -fx-text-fill:white;
+    -fx-font-size:12;
+    -fx-opacity:0.5;
+}

@@ -57,11 +57,11 @@ public class Arme extends Item implements Configurable {
     }
     
     /**
-     * 
+     * Génère une altération aléatoire des dégats
      */
     public int rdm() {
-    	int max = 15;
-    	int min = -10;
+    	int max = (int)this.degats/2;
+    	int min = -max;
         Random r = new Random();
         int rmd =r.nextInt((max - min) + 1) + min;
         int prctAttaque = ((this.degats*rmd)/100);
@@ -86,5 +86,14 @@ public class Arme extends Item implements Configurable {
             nom = arme.get("nom").toString();
             degats = (int) (long) arme.get("degats");
         }
+    }
+
+    /**
+     * Constructeur servant uniquement aux tests
+     * @param degats les dégâts de l'arme
+     */
+    public Arme(double degats){
+        super();
+        this.degats = (int) degats;
     }
 }
