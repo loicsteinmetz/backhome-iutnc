@@ -5,39 +5,71 @@ import org.junit.jupiter.api.Test;
 
 import static models.Heros.getHeros;
 import static models.Inventaire.getInventaire;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TestCombat {
 
     @Test // indirectement, test aussi méthode subirAttaque() et attaque()
     void testFaiblessesTireur(){
-        Tireur t = new Tireur(100, new Arme(0.0));
-        getHeros().attaquer(t, new ArmeCac(0,80));
+        int deg = 10;
+        int pv = 100;
+        //test faiblesse
+        Tireur p = new Tireur(pv, new Arme(0.0));
+        getHeros().attaquer(p, new ArmeCac(0,deg));
+        assertTrue(p.getPv() != pv);
+        assertTrue(p.getPv() >= pv - deg*1.5 - deg*0.5);
+        assertTrue(p.getPv() <= pv - deg*1.5 + deg*0.5);
+        //test résistance
+        p = new Tireur(pv, new Arme(0.0));
+        getHeros().attaquer(p, new ArmeDistance(0,deg));
+        assertTrue(p.getPv() != pv);
+        assertTrue(p.getPv() >= pv - deg*0.75 - deg*0.5);
+        assertTrue(p.getPv() <= pv - deg*0.75 + deg*0.5);
     }
 
     @Test // indirectement, test aussi méthode subirAttaque() et attaque()
     void testFaiblessesBrute(){
-        Brute b = new Brute(100, new Arme(0.0));
-        getHeros().attaquer(b, new ArmeDistance(0,80));
+        int deg = 10;
+        int pv = 100;
+        //test faiblesse
+        Brute p = new Brute(pv, new Arme(0.0));
+        getHeros().attaquer(p, new ArmeDistance(0,deg));
+        assertTrue(p.getPv() != pv);
+        assertTrue(p.getPv() >= pv - deg*1.5 - deg*0.5);
+        assertTrue(p.getPv() <= pv - deg*1.5 + deg*0.5);
+        //test résistance
+        p = new Brute(pv, new Arme(0.0));
+        getHeros().attaquer(p, new ArmeCac(0,deg));
+        assertTrue(p.getPv() != pv);
+        assertTrue(p.getPv() >= pv - deg*0.75 - deg*0.5);
+        assertTrue(p.getPv() <= pv - deg*0.75 + deg*0.5);
     }
 
     @Test
     void testFaiblessesBoss(){
-        Boss b = new Boss(100, new Arme(0.0));
-        getHeros().attaquer(b, new ArmeDistance(0,20));
-        assertTrue(b.getPv()>75);
-        getHeros().attaquer(b, new ArmeCac(0,20));
-        assertTrue(b.getPv()>55);
+        int deg = 10;
+        int pv = 100;
+        //test neutralité
+        Brute p = new Brute(pv, new Arme(0.0));
+        getHeros().attaquer(p, new ArmeDistance(0,deg));
+        assertTrue(p.getPv() != pv);
+        assertTrue(p.getPv() >= pv - deg - deg*0.5);
+        assertTrue(p.getPv() <= pv - deg + deg*0.5);
 
     }
 
     @Test // indirectement, test aussi méthode subirAttaque() et attaque()
-    void testResArmure(){
-        Brute b = new Brute(100, new Arme(20.0));
-        getInventaire().setArmure(new Armure(0,10));
-        b.attaque();
+    void testResArmureHeros(){
+        double deg = 20;
+        int pv = 100;
+        int res = 10;
+        Brute p = new Brute(1, new Arme(deg));
+        getInventaire().setArmure(new Armure(0,res));
+        p.attaque();
+        assertTrue(getHeros().getPv() != pv);
+        assertTrue(getHeros().getPv() >= pv - deg - deg*0.5 + res);
+        assertTrue(getHeros().getPv() <= pv - deg + deg*0.5 + res);
     }
-
 
 }
 
