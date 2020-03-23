@@ -79,7 +79,7 @@
     "type": "decision",
     "scenario": [
       "BIENVENUE SUR IENOS, Des terres de feu",
-      "Elle est considérée comme l’une des planètes les plus hostile du système. Ses habitants ont dû creuser galeries souterraines pour y vivre.",
+      "Elle est considérée comme l’une des planètes les plus hostile du système. Ses habitants ont dû creuser des galeries souterraines pour y vivre.",
       "Ienos est principalement constituée de sable et de roches volcaniques de couleur rouge.",
       "Avant votre arrivée à la station de « Nowso », vous apercevez un paysage désertique sans vie.",
       "Vous avez atterri à la station « Nowso », la plus grande station pour vaisseaux. Vous vous dirigez vers la sortie de la station.",
@@ -110,7 +110,7 @@
     "scenario": [
       "Vous avez gagné le combat !",
       "Après votre combat contre Tink Berval, vous continuez votre chemin.",
-      "Vous arrivez de la grotte, il y a une pancarte devant.  \"Gare à vous ! Ne pas entrer sinon vous etes mort !\" Vous continuerez votre route sans y faire attention.",
+      "Vous arrivez devant la grotte, il y a une pancarte à l'entrée.  \"Gare à vous ! Ne pas entrer sinon vous etes mort !\" Vous continuerez votre route sans y faire attention.",
       "Au bout de cette grotte, vous vous cachez derrière un rocher pour analyser la situation. Au loin, vous apercevez Chô Peleux.",
       "Chô Peleux : \"Cette grotte est faite pour moi. Elle est isolée et personne n'osera y pénétrer. Tout le monde a peur de moi ! Ahah !\""
     ],
@@ -157,10 +157,10 @@
       "Zephyr a amené Fortune, Gloire et Pouvoir ! Un homme avait amassé toutes les richesses du monde, son nom God R.Devil, Roi des pirates, ces dernières paroles incitaient tous les hommes de la planète à s’aventurer en mer.",
       "God R.Devil : \"Mon trésor ? Je vous le laisse si vous le voulez : TROUVER LE ! Je l'ai laissé quelque part dans ce monde. \"",
       "Tous se lancèrent sur la route de BlueLine dans l’espoir de mettre la main sur ce fameux trésor ! Le monde entier connut alors une grande vague de piraterie.",
-      "Vous venez d'atterrir à REDLINE. Vous vous promenez dans la ville à la recherche de quêtes. Vous arrivez devant un tableau à quêtes, vous consultez les quêtes qui pourrez-vous plaire.",
+      "Vous venez d'atterrir à REDLINE. Vous vous promenez dans la ville à la recherche de missions. Vous arrivez devant un tableau, vous consultez les quêtes qui pourrez-vous plaire.",
       "Tout à coup, vous sentez que quelqu'un vous touche le dos... Vous vous retournez. Et là un enfant se trouve devant vous et vous demande de l'aide.",
       "L'enfant : \"Un monsieur m'a volé mon pendentif qui appartenait à mon père parti en mer... Pouvez-vous me le récupérer s'il vous plait !\"",
-      "Vous acceptez et vous suivez l'enfant jusqu'à un bar. Il vous montre la personne qui lui a volé le pendentif. Vous allez vers cette personne.",
+      "Vous acceptez et vous suivez l'enfant jusqu'à un bar. Il vous montre la personne qui lui a volé le pendentif. Vous allez vers lui.",
       "Vous commencez à discuter avec cette personne. Mais vue, qu'il est bourré il commence à vous bousculer et à dégainer son arme."
     ],
     "idEnnemi": "9",
@@ -172,8 +172,8 @@
     "scenario": [
       "Vous avez battu Tek Apout, mais aucun objet pour l'enfant. Vous retournez le voir et il vous explique que c'était un test !",
       "Il vous ramène au port. Vous montre un bateau et vous explique que son pendentif est dans ce bateau.",
-      "Vous allez vers ce bateau, mais un moussaillon vous interpelle et vous attaque, car il a entendu la conversion que vous avez eu avec l'enfant.",
-      "Moussaillon : \" Vous ! N'y penser pas ! Vous ne passerez pas tant que je suis là ! \" \nDu coup, vous chargez sur le moussaillon pouvoir passer !\n"
+      "Vous allez vers ce bateau, mais un moussaillon vous interpelle et vous attaque, car il a entendu la conversation que vous avez eu avec l'enfant.",
+      "Moussaillon : \" Vous ! N'y penser pas ! Vous ne passerez pas tant que je suis là ! \" \nDu coup, vous chargez sur le moussaillon pour pouvoir passer !\n"
     ],
     "idEnnemi": "11",
     "typeEnnemi": "brute",
@@ -184,7 +184,7 @@
     "scenario": [
       "Vous avez réussi à vaincre Loudmerawa Le Marin. Vous montez à bord du bateau et vous le fouiller. Vous avez trouvé le pendentif de l'enfant et vous le récupérer.... ",
       "Sauf que le capitaine du navire, vous surprend !",
-      "Capitaine du navire: \"Toi ! Comment oses-tu monter dans mon navire et me voler mon trésor ! Tu te crois pour qui ?! Je suis OSHAR MARIF ! En garde ! Je vais te montrer ce que fais a ceux qui ose me voler !\""
+      "Capitaine du navire: \"Toi ! Comment oses-tu monter dans mon navire et me voler mon trésor ! Tu te prends pour qui ?! Je suis OSHAR MARIF ! En garde ! Je vais te montrer ce que je fais a ceux qui ose me voler !\""
     ],
     "idEnnemi": "13",
     "typeEnnemi": "boss",
@@ -308,7 +308,7 @@
       "Du haut de la tour, vous constatez que toute la population reprend ses esprits et vous acclame. Vous avez sauvé des ténèbres toute la ville!",
       "Apparaît devant vous, dans un halo de lumière, la dernière coordonnée nécessaire de Calypso. De plus, vous sentez qu'un pouvoir vous envahi: c'est celui de la femme mystérieuse! Comment l'utiliserez-vous?...",
       "Vous récupérez l'ensemble de son équipement",
-      "Vous retournez sans plus attendre vers le Nostromo. Sur le chemin, deux barils de carburant! Vous avec donc en votre possession 3 barils de carburant. Plus rien ne vous empêche de rentrer chez vous!",
+      "Vous retournez sans plus attendre vers le Nostromo. Sur le chemin, deux barils de carburant! Vous avez donc en votre possession 3 barils de carburant. Plus rien ne vous empêche de rentrer chez vous!",
       "Une fois à bord du Nostromo, vous faites le plein, entrez les coordonnées puis décollez..."
     ],
     "optionA": null,
