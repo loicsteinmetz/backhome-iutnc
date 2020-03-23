@@ -60,7 +60,7 @@ public class Arme extends Item implements Configurable {
      * Génère une altération aléatoire des dégats
      */
     public int rdm() {
-    	int max = (int)this.degats/4;
+    	int max = (int)this.degats/2;
     	int min = -max;
         Random r = new Random();
         int rmd =r.nextInt((max - min) + 1) + min;
