@@ -34,7 +34,7 @@ public class QueteController {
      * Initialisation de la vue et du modèle
      */
     @FXML
-    public void initialize(){
+    private void initialize(){
 
         // initialise le modèle
         MODELE = getQuete();

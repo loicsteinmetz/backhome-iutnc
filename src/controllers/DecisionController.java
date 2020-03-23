@@ -36,7 +36,7 @@ public class DecisionController {
      * Initialisation de la vue et du modèle
      */
     @FXML
-    public void initialize(){
+    private void initialize(){
 
         // initialisation du modèle
         MODELE = (Decision) getQuete().getProchainEvenement();

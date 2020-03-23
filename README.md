@@ -115,6 +115,7 @@ Outre la division fonctionnelle des différentes classes du programme, répercut
 - ModelController
 
 ![classes](readme_img/classes.png)
+*[Cliquer ici](https://ibb.co/wYhY1Mg) pour l'image zoomée*
 
 **Accueil/Conclusion du jeu :**
 
