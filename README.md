@@ -151,7 +151,7 @@ Gèrent l'affichage de l'arrivée sur une nouvelle planète et/ou la redirection
 
 L'accès à la vue de quête peut en effet donner lieu à une redirection en fonction de la situation du héros :
 
-![états quête](readme_img/etats_quete.png)
+![activité quête](readme_img/activite_quete.png)
 
 ```
 DECRIRE FONCTIONNEMENT
@@ -167,7 +167,7 @@ Gèrent le déroulement d'un combat : scénario introductif, lancement, phases d
 
 Les combats sont construits en prenant en compte les armes et l'armure du héros, ainsi que le type d'ennemi :
 
-![états combat](readme_img/etats_combat.png)
+![activite combat](readme_img/activite_combat.png)
 
 ```
 DECRIRE FONCTIONNEMENT
