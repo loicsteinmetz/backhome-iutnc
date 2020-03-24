@@ -464,7 +464,7 @@
       "Devant-vous, un escalier composé de milliers de marches... Sans attendre, vous montez.",
       "Vous voilà à l'apogée de votre aventure...",
       "Sur un trône, Noctarion III. Il vous interpelle: \n\"Te voilà enfin Lazarus. Tu es exactement comme je t'avais vu dans ma vision. Savais-tu que récupérer le pouvoir de Morgdrul doit entraîner la réalisation d'une prophétie?\n",
-      "La personne qui se sera emparé de son pouvoir devra faire face à un ennemi pas comme les autres. Un ennemi originaire d'une civilisation très ancienne. Si il parvient à le tuer, alors il sera jusqu'à la fin des temps l'être le plus puissant de l'univers.\"",
+      "La personne qui se sera emparée de son pouvoir devra faire face à un ennemi pas comme les autres. Un ennemi originaire d'une civilisation très ancienne. S'il parvient à le tuer, alors il sera jusqu'à la fin des temps l'être le plus puissant de l'univers.\"",
       "\"C'est aujourd'hui que je deviendrai cette personne!\""
     ],
     "idEnnemi": "28",
@@ -475,7 +475,7 @@
     "type": "decision",
     "scenario": [
       "Vous avez gagné!",
-      "L'empereur est mort... Vive l'Empereur? Non... Vous ne voulez pas de ce rôle. Une lumière s'échappe du corps de Noctarion III, il s'agit du pouvoir de l'arbre. S'en emparer ou le rendre? La décision est rapidement prise.",
+      "L'empereur est mort... Vive l'Empereur? Non... Vous ne voulez pas de ce rôle. Une lumière s'échappe du corps de Noctarion III. Il s'agit du pouvoir de l'arbre. S'en emparer ou le rendre? La décision est rapidement prise.",
       "Vous sortez de la tour et l'ensemble de l'armée de l'Empereur prend la fuite. La paix est rétablie.",
       "Vous retournez voir votre mère. Elle est très fière de vous! En revanche, toutes les autres personnes qui ont été téléportées comme vous ne sont pas revenues...",
       "Une autre aventure vous attend: retrouver votre famille! Vous saluez votre mère et lui promettez que tout rentrera bientôt dans l'ordre. Vous retournez vers le vaisseau, déterminé à accomplir votre destinée!",
