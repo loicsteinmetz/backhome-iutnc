@@ -350,7 +350,7 @@
     "scenario": [
       "Vous avez gagné le combat!",
       "Vous pénétrez dans la forteresses. Elle est magnifique, dans un état irréprochable. Très différent ce que vous avez pu voir avant...",
-      "Vous surprenez un sbire du tyran pleurer: \"Ce monstre est indigne de nous diriger\" . Vous vous approchez  lui les mains en l'air et lui demandez pourquoi:",
+      "Vous surprenez un sbire du tyran pleurer: \"Ce monstre est indigne de nous diriger\" . Vous vous approchez de lui les mains en l'air et lui demandez pourquoi:",
       "\"Cela fait des années que je le sers. J'ai commis des actes terribles pour lui et hier, il a ordonné un raid dans mon village car il était sûr que des opposants s'y trouvaient. Il n'en était rien, toute ma famille est morte... Je me vengerai!\"",
       "Vous lui dites alors que vous êtes en mesure de l'aider: \"Etranger, des centaines de soldates occupent cette forteresse. Ce que je peux faire c'est lancer une alerte afin de créer une diversion.",
       "Si vous parvenez à tuer le tyran, ses sbires et moi compris vous obéiront. Vous semblez être quelqu'un de bien... Au fait, je m'appelle Kaison!\" Vous acceptez.",
@@ -361,6 +361,7 @@
     "typeEnnemi": "tireur",
     "idIssue": "28"
   },
+
   "28": {
     "type": "combat",
     "scenario": [
@@ -380,8 +381,8 @@
       "Vous avez gagné le combat!",
       "Apparaît devant vous, dans un halo de lumière, la dernière coordonnée nécessaire de Calypso. A vos pieds, le diamant qu'a utilisé le tyran. Comment l'utiliserez-vous?...",
       "Vous récupérez l'ensemble de son équipement",
-      "Vous descendez du donjon. Dans la cour de la forteresse, tous les sbires du tyran sont à genoux. Ils vous regardent et attendent vos ordres. Que faire? Remplacer le tyran ou laisser Kaison prendre ce rôle?",
-      "Vous appelez Kaison et lui proposez ce rôle. Il accepte :\"Soyez sûr que les choses vont changer!\"",
+      "Vous descendez du donjon. Dans la cour de la forteresse, tous les sbires du tyran sont à genoux. Ils vous regardent et attendent vos ordres. Que faire?",
+      "La démocratie doit être rétablie. Vous demandez alors aux soldats d'annoncer la mort du tyran et ordonnez, qu'après votre départ, ils devront réaliser des élections.",
       "Avant de vous diriger vers le Nostromo, vous récupérez deux barils de carburant dans la forteresse. Kaison vous aide à les porter jusqu'à votre vaisseau.",
       "\"Merci! Tu seras toujours le bienvenu ici!\"",
       "Une fois à bord du Nostromo vous faites le plein, entrez les coordonnées puis décollez..."
