@@ -154,7 +154,29 @@ L'accès à la vue de quête peut en effet donner lieu à une redirection en fon
 ![activité quête](readme_img/activite_quete.png)
 
 ```
-DECRIRE FONCTIONNEMENT
+Le début de ce diagramme correspond au moment où le joueur se dirige vers une planète.
+A ce stade, la classe QueteController récupère l’attribut « situation »* du héros.
+Si ce dernier  est à DEBUT, il récupère l’ID du premier événement de Calypso, première planète du jeu.
+Si situation est à VAISSEAU, cela signifie que le joueur a déjà achevé les quêtes de la première planète.
+QueteController récupère donc l’ID du premier événement de la planète que le joueur a choisi de visiter.
+Quelle que soit la planète, la classe passe la situation du héros à EVENEMENT
+puisqu’il va désormais participer aux quêtes proposées.
+
+La classe View prend alors le relais, pour aller chercher dans les fichiers de configuration
+de quel type était l’événement correspondant à l’ID récupéré au préalable.
+
+En fonction du dit type (decision ou combat), une redirection est opérée vers la vue propre aux
+décision ou la vue propre aux combats, et vers leur controleur, qui se charge de lancer la phase
+d’événement qui leur correspond.
+
+Lorsque le joueur achève cette phase, c’est le même contrôleur qui vérifie s’il reste un événement
+suivant sur cette planète.
+Si oui il demande à View de quel type il s’agit pour relancer la phase adéquate.
+Si non le programme se tourne vers la vue propre à la carte et vers CarteController pour remettre la
+situation du héros à VAISSEAU et gérer la phase pendant laquelle le joueur est dans le vaisseau et peut
+choisir sa prochaine planète de destination.
+
+*Cet attribut est une énumération comprenant DEBUT, VAISSEAU et EVENEMENT.
 ```
 
 **Combats :**
