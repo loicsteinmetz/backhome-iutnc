@@ -109,7 +109,7 @@
 
   "20": {
   "type": "generique",
-  "nom": "Meteora Divinus",
+  "nom": "Meteora",
   "degats": 20
 },
 
@@ -133,7 +133,7 @@
 
   "28": {
     "type": "cac",
-    "nom": "Meteora Divinus",
+    "nom": "Meteora",
     "degats": 35
   },
 
