@@ -1,17 +1,17 @@
 {
   "1": {
     "nom": "Plastron Credo de Gloire",
-    "resistance": 8
+    "resistance": 10
   },
 
   "2": {
     "nom": "Tunique divin de Saturnus",
-    "resistance": 40
+    "resistance": 25
   },
 
   "4": {
     "nom": "Armure immortel d'Agarothi",
-    "resistance": 40
+    "resistance": 25
   },
 
   "100": {
