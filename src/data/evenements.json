@@ -16,7 +16,7 @@
       "Vous marchez en observant toute cette désolation environnante...",
       "De nombreux corps sans vie gisent sur la route...",
       "Vous entendez des voix au loin. Vous ralentissez le pas et vous cachez.",
-      "A proximité, une silhouette. Vous entendez: \"Si je croise encore un humain vivant, je lui tranche la tête! Le massacre d'hier ne m'a pas suffit\"",
+      "À proximité, une silhouette. Vous entendez: \"Si je croise encore un humain vivant, je lui tranche la tête! Le massacre d'hier ne m'a pas suffit\"",
       "Malheureusement, vous entendez derrière vous une autre voix. Vous vous retournez: un Orc court vers vous \"Il en reste un! Tuons-le!\". Malheureusement pour lui, une maison explose et il disparaît dans la déflagration.",
       "\"Ce sera entre toi et moi!\""
     ],
@@ -193,7 +193,7 @@
   "23": {
     "type": "decision",
     "scenario": [
-      "Vous retournez voir l'enfant, cacher derrière une caisse pour ne pas se faire attraper par les pirates.",
+      "Vous retournez voir l'enfant, caché derrière une caisse pour ne pas se faire attraper par les pirates.",
       "\"Voilà mon enfant, je te redonne le pendentif de ton père. Garde le précieusement et ne le perds plus.\"",
       "L'enfant le récupère est vous remercie. Et vous remet une récompense... L'enfant retourna chez lui, en ayant les larmes aux yeux.",
       "Vous avez reçu Maverick MV700 !",
@@ -236,8 +236,8 @@
       "Vous avez gagné le combat!",
       "Vous reprenez la route vers le concessionnaire...",
       "Vous arrivez enfin devant le concessionnaire. Une partie de la structure s'est effondrée, seul le hangar est intact. En revanche c'est calme, trop calme...",
-      "Vous entrez. Immédiatement, vous tombez nez à nez avec un ennemi. Derrière-lui, un chef de guerre équipé d'une armure lourde et d'une masse d'arme impressionnante. Un de ses sbires semble réparer un vaisseau...",
-      "Le chef de guerre s'exclame: \"Laissez le moi, j'ai besoin de me dégourdir les jambes!\""
+      "Vous entrez. Immédiatement, vous tombez nez à nez avec un ennemi. Derrière lui, un chef de guerre équipé d'une armure lourde et d'une masse d'arme impressionnante. Un de ses sbires semble réparer un vaisseau...",
+      "Le chef de guerre s'exclame: \"Laissez-le-moi, j'ai besoin de me dégourdir les jambes!\""
     ],
     "idEnnemi": "6",
     "typeEnnemi": "boss",
@@ -247,9 +247,9 @@
     "type": "decision",
     "scenario": [
       "Vous avez gagné le combat!",
-      "A la fin de ce combat, vous apercevez un sbire du chef de guerre mettre le feu au hangar. Vous ne voyez qu'un seul vaisseau. Un \"Nostromo\", modèle qui permet les voyages interstellaires. Une aubaine... Mais il faut vite partir.",
+      "À la fin de ce combat, vous apercevez un sbire du chef de guerre mettre le feu au hangar. Vous ne voyez qu'un seul vaisseau. Un \"Nostromo\", modèle qui permet les voyages interstellaires. Une aubaine... Mais il faut vite partir.",
       "Vous montez à bord et mettez le contact. Bonne nouvelle, tous les voyants sont au vert! Malheureusement, un ne l'est pas: celui du carburant.",
-      "Vous descendez du vaisseau et par chance, un baril de 125L de carburant se trouve à quelques mètres du vaisseaux. Vous faites donc le plein...",
+      "Vous descendez du vaisseau et par chance, un baril de 125L de carburant se trouve à quelques mètres du vaisseau. Vous faites donc le plein...",
       "Vous remontez à bord du Nostromo et décollez en catastrophe.",
       "Une fois en sécurité, vous scannez votre carte stellaire, et constatez que 100L d'essence seront nécessaires pour accéder aux trois planètes les plus proches, 200L pour celles plus lointaines et 300L pour Calypso, votre planète natale..."
     ],
@@ -265,7 +265,7 @@
       "Vous savez qu'il s'agit de la dernière étape avant de rentrer chez vous...",
       "Tout semble paisible sur cette planète. Vous vous trouvez dans une ville moderne où buildings et nature coexistent de façon harmonieuse. Tout est si lumineux...",
       "La population est dense. Vous croisez de nombreuses personnes, toutes vous saluent, sourient, vous demande si vous avez besoin d'aide sans que vous ne demandiez rien.",
-      "En revanche vous remarquez quelque chose de troublant: toutes ces personnes ont les yeux violets avec une spirale à leur centre. Etrange...",
+      "En revanche, vous remarquez quelque chose de troublant: toutes ces personnes ont les yeux violets avec une spirale à leur centre. Étrange...",
       "Afin d'obtenir la dernière coordonnée pour votre planète, vous devez trouver le mal caché qui ronge cette cité...",
       "Midi sonne. Tout le monde marche et se dirige vers la même direction. Vous suivez la foule...",
       "Vous arrivez devant une majestueuse cathédrale. Apparaît, en haut des marches de cette dernière, une femme. Elle est vêtue d'une tunique violette dont la capuche cache son visage...",
@@ -281,7 +281,7 @@
     "scenario": [
       "Vous avez gagné le combat!",
       "La femme mystérieuse, escortée par deux géants impériaux, se réfugie dans la cathédrale. La foule reste immobile, silencieuse. Vous décidez de la poursuivre...",
-      "Les portes de la cathédrale sont fermées. Vous les détruisez avec votre pistolet laser. A l'intérieur, la femme mystérieuse est absente. En revanche, un garde impérial vous attend..."
+      "Les portes de la cathédrale sont fermées. Vous les détruisez avec votre pistolet laser. À l'intérieur, la femme mystérieuse est absente. En revanche, un garde impérial vous attend..."
     ],
     "idEnnemi": "10",
     "typeEnnemi": "brute",
@@ -349,10 +349,10 @@
     "type": "combat",
     "scenario": [
       "Vous avez gagné le combat!",
-      "Vous pénétrez dans la forteresses. Elle est magnifique, dans un état irréprochable. Très différent ce que vous avez pu voir avant...",
+      "Vous pénétrez dans la forteresse. Elle est magnifique, dans un état irréprochable. Très différent ce que vous avez pu voir avant...",
       "Vous surprenez un sbire du tyran pleurer: \"Ce monstre est indigne de nous diriger\" . Vous vous approchez de lui les mains en l'air et lui demandez pourquoi:",
       "\"Cela fait des années que je le sers. J'ai commis des actes terribles pour lui et hier, il a ordonné un raid dans mon village car il était sûr que des opposants s'y trouvaient. Il n'en était rien, toute ma famille est morte... Je me vengerai!\"",
-      "Vous lui dites alors que vous êtes en mesure de l'aider: \"Etranger, des centaines de soldates occupent cette forteresse. Ce que je peux faire c'est lancer une alerte afin de créer une diversion.",
+      "Vous lui dites alors que vous êtes en mesure de l'aider: \"Étranger, des centaines de soldates occupent cette forteresse. Ce que je peux faire c'est lancer une alerte afin de créer une diversion.",
       "Si vous parvenez à tuer le tyran, ses sbires et moi compris vous obéiront. Vous semblez être quelqu'un de bien... Au fait, je m'appelle Kaison!\" Vous acceptez.",
       "Une alarme retentit. Vous vous dirigez vers l'endroit où se trouve le tyran.",
       "Dans un couloir, vous tombez sur un ennemi: \"C'est une diversion! Il y a un traître parmi nous!\". Vous devez vite le réduire au silence avant que votre plan ne tombe à l'eau..."
@@ -369,7 +369,7 @@
       "Une voix retentit \"Quel agitateur ose pénétrer dans mon royaume?\". Vous restez silencieux, déterminé à mettre un terme à cette tyrannie",
       "\"Comment osez-vous perturber l'harmonie de cette planète?\". Vous lui répondez que l'harmonie est étrangère à ces terres et que le temps est venu de libérer le peuple.",
       "\"L'ordre et le pouvoir s'obtiennent par le sang. Pour les conserver, il en sera de même!\". Il sort de sa poche un diamant, le serre fort.",
-      "Un halo de lumière enveloppe le tyran pendant quelques secondes. Le halo se dissipe et laisse apparaitre un jeune homme au physique imposant: \"Voyons ce que tu as dans le ventre!\""
+      "Un halo de lumière enveloppe le tyran pendant quelques secondes. Le halo se dissipe et laisse apparaître un jeune homme au physique imposant: \"Voyons ce que tu as dans le ventre!\""
     ],
     "idEnnemi": "18",
     "typeEnnemi": "superBoss",
@@ -383,8 +383,7 @@
       "Vous récupérez l'ensemble de son équipement",
       "Vous descendez du donjon. Dans la cour de la forteresse, tous les sbires du tyran sont à genoux. Ils vous regardent et attendent vos ordres. Que faire?",
       "La démocratie doit être rétablie. Vous demandez alors aux soldats d'annoncer la mort du tyran et ordonnez, qu'après votre départ, ils devront réaliser des élections.",
-      "Avant de vous diriger vers le Nostromo, vous récupérez deux barils de carburant dans la forteresse. Kaison vous aide à les porter jusqu'à votre vaisseau.",
-      "\"Merci! Tu seras toujours le bienvenu ici!\"",
+      "Avant de vous diriger vers le Nostromo, vous récupérez deux barils de carburant dans la forteresse.",
       "Une fois à bord du Nostromo vous faites le plein, entrez les coordonnées puis décollez..."
     ],
     "optionA": null,
@@ -401,7 +400,7 @@
       "Vous vous dirigez vers la ville. Vous ne parvenez pas à vous en rappeler le nom jusqu'à voir un panneau d'indication. Il est écrit \"Eternia\". Ce nom vous est familier, vous continuez d'avancer...",
       "La route est déserte.",
       "Vous arrivez enfin. Vous croisez quelques habitants qui semblent hagards. Subitement, quelqu'un vous interpelle: \"Lazarus, est-ce toi? \". Il s'agit d'une femme d'un certain âge.",
-      "Vous ne parvenez pas à la reconnaître. \"C'est bien toi j'en suis sûr! Je suis Eucharis, ta mère! Je n'en reviens pas que tu sois revenu, tu es bien le seul malheureusement...\"",
+      "Vous ne parvenez pas à la reconnaître. \"C'est bien toi j'en suis sûre! Je suis Eucharis, ta mère! Je n'en reviens pas que tu sois revenu, tu es bien le seul malheureusement...\"",
       "Vous vous souvenez d'elle, ainsi que de votre père et de votre femme. Leurs noms ne vous reviennent pas, seulement leurs visages... Vous demandez à votre mère ce qu'il s'est passé.",
       "\"Il y a maintenant 10 ans, des envahisseurs sont venus du ciel. C'était la première fois que nous voyions ça! Malheureusement, ils n'étaient pas pacifiques. À peine arrivés, ils nous ont massacrés. Une chose les intéressait, l'arbre de Morgdrul et son pouvoir.\"",
       "\"Leur leader, Noctarion III, s'en est emparé. L'obtention de ce pouvoir à provoqué une conséquence désastreuse: une explosion d'énergie a tué bon nombre de personnes et il semblerait qu'elle en ait téléporté d'autres...\"",
