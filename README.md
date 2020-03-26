@@ -35,7 +35,7 @@ Pour un ajout manuel, télécharger JavaFx et ajouter une option à la VM :
 --module-path %PATH_TO_FX% --add-modules=javafx.controls
 ```
 
-Le projet a été développé sur Intellij et Eclipse et contient donc les fichiers de configurations propres à ces IDE, le rendant plus directement exploitable sur ces derniers.
+Le projet a été développé sur Intellij et Eclipse et contient donc les fichiers de configuration propres à ces IDE, le rendant plus directement exploitable sur ces derniers.
 
 ### 1.2 Scénario
 
@@ -65,7 +65,7 @@ L'interface centrale du jeu est celle du vaisseau, qui fait office de carte et p
 
 ### 2.1 Adaptation du pattern MVC
 
-La structure de l'application repose sur les fonctionnalités de JavaFx. Les différentes classes java sont donc réparties en différents packages, selon le pattern MVC (Model, View, Controller), d'après leur usage fonctionnel.
+La structure de l'application repose sur les fonctionnalités de JavaFx. Les différentes classes java sont donc réparties en différents packages, selon le pattern MVC (Model, View, Controller) notamment, et plus largement d'après leur usage fonctionnel.
 
 - Le package `app` inclut la classe exécutable du programme.
 - Le dossier `assets` regroupe les différentes ressources du programme : images, polices, feuilles de style.
@@ -259,10 +259,10 @@ Plusieurs difficultés ont été rencontrées au cours du développement, nous a
 - **Gestion des données** : 
     - *Fichiers de stockage* : Le format `json`, retenu pour le stockage des données persistantes, a été privilégié en tenant compte de nos connaissances préalables. Il s'est avéré que ce format n'est pas nécessairement le plus adapté à des traitements en Java. Nous en avons conclu qu'il aurait été préférable de stocker les données dans des fichiers au format `xml`.
     - *Modélisation, normalisation* : Faute de temps, nous avons du concevoir notre organisation des données au fil du développement, sans conduire une réelle réflexion sur leur structure. Cela nous a permis de comprendre davantage l'importance d'une modélisation réfléchie du système de données, devant être réalisée en amont.
-- **Tests** : Faute de temps encore une fois, les tests ont du être réalisés à la suite du développement proprement dit de l'application, et ce en nombre réduit. Cela nous a donc privé de tests d'intégration au cours du développement, tests qui auraient été utiles pour valider l'implémentation de nouvelles fonctionnalité, au fur et à mesure que nous réalisions de nouvelles itérations du projet. Dans l'idéal, et si nous avions eut plus de temps, nous avons conclu sur l'intérêt des TDD (*Test Driven Development*) pour la conduite de projets futurs.
+- **Tests** : Faute de temps encore une fois, les tests ont du être réalisés à la suite du développement proprement dit de l'application, et ce en nombre réduit. Cela nous a donc privé de tests d'intégration au cours du développement, tests qui auraient été utiles pour valider l'implémentation de nouvelles fonctionnalités, au fur et à mesure que nous réalisions de nouvelles itérations du projet. Dans l'idéal, et si nous avions eut plus de temps, nous avons conclu sur l'intérêt des TDD (*Test Driven Development*) pour la conduite de projets futurs.
 - **Game Design** : Concentrés sur l'aspect technique de la réalisation du jeu, nous avons ignoré, au moins partiellement, de nombreux aspects de game design. Ainsi l'équilibrage, le level design etc. pourraient être revus.
 - **Gestion de projet** :
     - *Trello* : L'utilisation de Trello a été un gros plus pour la gestion de projet et les fonctionnalités de l'outils ont été progressivement utilisées.
     - *Git* : Tous les participants au projet n'étant pas familiers de Git, il nous aura fallu quelques temps pour la mise en place. L'outil nous a néanmoins rapidement permis de travailler collectivement.
 
-En dépit des difficultés, nous avons finalement su être suffisament organisés et impliqués pour livrer, nous semble-t-il, un jeu convainquant, fonctionnel et conforme à nos attentes de départ. Ainsi, nous avons pu mener ce projet à terme et sommes satisfait du résultats compte tenu des contraintes, notamment de temps et d'organisation, qui se sont imposées à nous.
+En dépit des difficultés, nous avons finalement su être suffisament organisés et impliqués pour livrer, nous semble-t-il, un jeu convainquant, fonctionnel et conforme à nos attentes de départ. Ainsi, nous avons pu mener ce projet à terme et sommes satisfaits du résultats, compte tenu des contraintes, notamment de temps et d'organisation, qui se sont imposées à nous.
