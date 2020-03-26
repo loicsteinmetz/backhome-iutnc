@@ -192,7 +192,29 @@ Les combats sont construits en prenant en compte les armes et l'armure du héros
 ![activite combat](readme_img/activite_combat.png)
 
 ```
-DECRIRE FONCTIONNEMENT
+Le début de ce diagramme correspond au lancement du combat, par la classe CombatController.
+Le joueur doit alors choisir une attaque.
+
+L'attaque est alors exécutée, en fonction du type choisi par le joueur, de la puissance de son arme
+et du type de héros :
+  - Les héros de types Brute sont plus sensibles aux attaques à distance
+  - Les héros de type Tireur sont plus sensibles aux attaques au corps à corps
+  - Les héros de type Boss n'ont pas de sensibilité partiulière.
+Dans tous les cas les dégats sont partiellement aléatoires (+/- 10%).
+
+Si l'ennemi meurt de l'attaque, une reidrection est opérée vers le controller adéquat en fonction du
+type de l'événement suivante (voir diagramme Quête), ou vers la carte.
+Si l'ennemi n'est pas mort, il peut alors contre-attaquer.
+Les dégats sont calculés à partir de la puissance de l'arme de l'ennemi (+/- 10%).
+Seul les ennemis de type SuperBoss ont une particularité en ce qui concerne leur attaque :
+Ils attaqueront aléatoirement avec leur arme courante (75% des cas) ou leur arme légendaire,
+plus puissante (25% des cas).
+
+Si le héros meurt de l'attaque, le parcours effectué sur la planète en cours est annulé, et le
+joueur est redirigé vers la carte. Il peut alors choisir de retenter la même planète ou explorer
+une autre planète disponible et accessible.
+Si le héros n'est pas mort, s'en suit une nouvelle phase de combat à partir du choix d'une attaque
+de la part du joueur.
 ```
 
 **Prises de décisions :**
