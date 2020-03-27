@@ -13,7 +13,7 @@
     "nom":"Ienos",
     "niveau":"1",
     "planetesVoisines": ["zephyr","hermes","lumini","tremor"],
-    "description": "Une planète hostile. Ses habitants ont dû creuser galeries souterraines pour y vivre. Et la loi du plus fort est instaurée.",
+    "description": "Une planète hostile. Ses habitants ont dû creuser des galeries souterraines pour y vivre. Et la loi du plus fort est instaurée.",
     "idPremierEvenement": "7",
     "idRecompenseArmeCac": null,
     "idRecompenseDistance": null,

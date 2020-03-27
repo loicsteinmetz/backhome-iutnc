@@ -35,7 +35,7 @@ Pour un ajout manuel, télécharger JavaFx et ajouter une option à la VM :
 --module-path %PATH_TO_FX% --add-modules=javafx.controls
 ```
 
-Le projet a été développé sur Intellij et Eclipse et contient donc les fichiers de configurations propres à ces IDE, le rendant plus directement exploitable sur ces derniers.
+Le projet a été développé sur Intellij et Eclipse et contient donc les fichiers de configuration propres à ces IDE, le rendant plus directement exploitable sur ces derniers.
 
 ### 1.2 Scénario
 
@@ -65,7 +65,7 @@ L'interface centrale du jeu est celle du vaisseau, qui fait office de carte et p
 
 ### 2.1 Adaptation du pattern MVC
 
-La structure de l'application repose sur les fonctionnalités de JavaFx. Les différentes classes java sont donc réparties en différents packages, selon le pattern MVC (Model, View, Controller), d'après leur usage fonctionnel.
+La structure de l'application repose sur les fonctionnalités de JavaFx. Les différentes classes java sont donc réparties en différents packages, selon le pattern MVC (Model, View, Controller) notamment, et plus largement d'après leur usage fonctionnel.
 
 - Le package `app` inclut la classe exécutable du programme.
 - Le dossier `assets` regroupe les différentes ressources du programme : images, polices, feuilles de style.
@@ -151,10 +151,32 @@ Gèrent l'affichage de l'arrivée sur une nouvelle planète et/ou la redirection
 
 L'accès à la vue de quête peut en effet donner lieu à une redirection en fonction de la situation du héros :
 
-![états quête](readme_img/etats_quete.png)
+![activité quête](readme_img/activite_quete.png)
 
 ```
-DECRIRE FONCTIONNEMENT
+Le début de ce diagramme correspond au moment où le joueur se dirige vers une planète.
+A ce stade, la classe QueteController récupère l’attribut « situation »* du héros.
+Si ce dernier  est à DEBUT, il récupère l’ID du premier événement de Calypso, première planète du jeu.
+Si situation est à VAISSEAU, cela signifie que le joueur a déjà achevé les quêtes de la première planète.
+QueteController récupère donc l’ID du premier événement de la planète que le joueur a choisi de visiter.
+Quelle que soit la planète, la classe passe la situation du héros à EVENEMENT
+puisqu’il va désormais participer aux quêtes proposées.
+
+La classe View prend alors le relais, pour aller chercher dans les fichiers de configuration
+de quel type était l’événement correspondant à l’ID récupéré au préalable.
+
+En fonction du dit type (decision ou combat), une redirection est opérée vers la vue propre aux
+décision ou la vue propre aux combats, et vers leur controleur, qui se charge de lancer la phase
+d’événement qui leur correspond.
+
+Lorsque le joueur achève cette phase, c’est le même contrôleur qui vérifie s’il reste un événement
+suivant sur cette planète.
+Si oui il demande à View de quel type il s’agit pour relancer la phase adéquate.
+Si non le programme se tourne vers la vue propre à la carte et vers CarteController pour remettre la
+situation du héros à VAISSEAU et gérer la phase pendant laquelle le joueur est dans le vaisseau et peut
+choisir sa prochaine planète de destination.
+
+*Cet attribut est une énumération comprenant DEBUT, VAISSEAU et EVENEMENT.
 ```
 
 **Combats :**
@@ -167,10 +189,32 @@ Gèrent le déroulement d'un combat : scénario introductif, lancement, phases d
 
 Les combats sont construits en prenant en compte les armes et l'armure du héros, ainsi que le type d'ennemi :
 
-![états combat](readme_img/etats_combat.png)
+![activite combat](readme_img/activite_combat.png)
 
 ```
-DECRIRE FONCTIONNEMENT
+Le début de ce diagramme correspond au lancement du combat, par la classe CombatController.
+Le joueur doit alors choisir une attaque.
+
+L'attaque est alors exécutée, en fonction du type choisi par le joueur, de la puissance de son arme
+et du type de héros :
+  - Les héros de types Brute sont plus sensibles aux attaques à distance
+  - Les héros de type Tireur sont plus sensibles aux attaques au corps à corps
+  - Les héros de type Boss n'ont pas de sensibilité partiulière.
+Dans tous les cas les dégats sont partiellement aléatoires (+/- 10%).
+
+Si l'ennemi meurt de l'attaque, une reidrection est opérée vers le controller adéquat en fonction du
+type de l'événement suivante (voir diagramme Quête), ou vers la carte.
+Si l'ennemi n'est pas mort, il peut alors contre-attaquer.
+Les dégats sont calculés à partir de la puissance de l'arme de l'ennemi (+/- 10%).
+Seul les ennemis de type SuperBoss ont une particularité en ce qui concerne leur attaque :
+Ils attaqueront aléatoirement avec leur arme courante (75% des cas) ou leur arme légendaire,
+plus puissante (25% des cas).
+
+Si le héros meurt de l'attaque, le parcours effectué sur la planète en cours est annulé, et le
+joueur est redirigé vers la carte. Il peut alors choisir de retenter la même planète ou explorer
+une autre planète disponible et accessible.
+Si le héros n'est pas mort, s'en suit une nouvelle phase de combat à partir du choix d'une attaque
+de la part du joueur.
 ```
 
 **Prises de décisions :**
@@ -215,10 +259,10 @@ Plusieurs difficultés ont été rencontrées au cours du développement, nous a
 - **Gestion des données** : 
     - *Fichiers de stockage* : Le format `json`, retenu pour le stockage des données persistantes, a été privilégié en tenant compte de nos connaissances préalables. Il s'est avéré que ce format n'est pas nécessairement le plus adapté à des traitements en Java. Nous en avons conclu qu'il aurait été préférable de stocker les données dans des fichiers au format `xml`.
     - *Modélisation, normalisation* : Faute de temps, nous avons du concevoir notre organisation des données au fil du développement, sans conduire une réelle réflexion sur leur structure. Cela nous a permis de comprendre davantage l'importance d'une modélisation réfléchie du système de données, devant être réalisée en amont.
-- **Tests** : Faute de temps encore une fois, les tests ont du être réalisés à la suite du développement proprement dit de l'application, et ce en nombre réduit. Cela nous a donc privé de tests d'intégration au cours du développement, tests qui auraient été utiles pour valider l'implémentation de nouvelles fonctionnalité, au fur et à mesure que nous réalisions de nouvelles itérations du projet. Dans l'idéal, et si nous avions eut plus de temps, nous avons conclu sur l'intérêt des TDD (*Test Driven Development*) pour la conduite de projets futurs.
+- **Tests** : Faute de temps encore une fois, les tests ont du être réalisés à la suite du développement proprement dit de l'application, et ce en nombre réduit. Cela nous a donc privé de tests d'intégration au cours du développement, tests qui auraient été utiles pour valider l'implémentation de nouvelles fonctionnalités, au fur et à mesure que nous réalisions de nouvelles itérations du projet. Dans l'idéal, et si nous avions eut plus de temps, nous avons conclu sur l'intérêt des TDD (*Test Driven Development*) pour la conduite de projets futurs.
 - **Game Design** : Concentrés sur l'aspect technique de la réalisation du jeu, nous avons ignoré, au moins partiellement, de nombreux aspects de game design. Ainsi l'équilibrage, le level design etc. pourraient être revus.
 - **Gestion de projet** :
     - *Trello* : L'utilisation de Trello a été un gros plus pour la gestion de projet et les fonctionnalités de l'outils ont été progressivement utilisées.
     - *Git* : Tous les participants au projet n'étant pas familiers de Git, il nous aura fallu quelques temps pour la mise en place. L'outil nous a néanmoins rapidement permis de travailler collectivement.
 
-En dépit des difficultés, nous avons finalement su être suffisament organisés et impliqués pour livrer, nous semble-t-il, un jeu convainquant, fonctionnel et conforme à nos attentes de départ. Ainsi, nous avons pu mener ce projet à terme et sommes satisfait du résultats compte tenu des contraintes, notamment de temps et d'organisation, qui se sont imposées à nous.
+En dépit des difficultés, nous avons finalement su être suffisament organisés et impliqués pour livrer, nous semble-t-il, un jeu convainquant, fonctionnel et conforme à nos attentes de départ. Ainsi, nous avons pu mener ce projet à terme et sommes satisfaits du résultats, compte tenu des contraintes, notamment de temps et d'organisation, qui se sont imposées à nous.

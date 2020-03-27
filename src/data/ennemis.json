@@ -8,7 +8,7 @@
 
   "2":{
     "nom": "Galdur",
-    "description": "Responsable des sanitaires",
+    "description": "Soldat de seconde classe",
     "idArme": "2",
     "pv": 100
   },
@@ -136,7 +136,7 @@
 
   "26": {
     "nom": "Argos",
-    "description": "Caporal Royal",
+    "description": "Général Royal",
     "idArme": "38",
     "pv": 75
   },

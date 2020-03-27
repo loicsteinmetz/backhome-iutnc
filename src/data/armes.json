@@ -109,7 +109,7 @@
 
   "20": {
   "type": "generique",
-  "nom": "Meteora Divinus",
+  "nom": "Meteora",
   "degats": 20
 },
 
@@ -133,7 +133,7 @@
 
   "28": {
     "type": "cac",
-    "nom": "Meteora Divinus",
+    "nom": "Meteora",
     "degats": 35
   },
 
@@ -152,31 +152,31 @@
   "34": {
     "type": "generique",
     "nom": "Epée en acier stellaire",
-    "degats": 45
+    "degats": 40
   },
 
   "36": {
     "type": "generique",
     "nom": "Fusil à cellule atomique",
-    "degats": 10
+    "degats": 40
   },
 
   "38": {
     "type": "generique",
     "nom": "Proxima Centauris",
-    "degats": 50
+    "degats": 40
   },
 
   "40": {
     "type": "generique",
     "nom": "Ultima",
-    "degats": 55
+    "degats": 42
   },
 
   "42": {
     "type": "generique",
     "nom": "Universalis Omega",
-    "degats": 60
+    "degats": 42
   },
 
   "100": {

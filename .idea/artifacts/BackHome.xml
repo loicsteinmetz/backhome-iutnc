@@ -7,6 +7,11 @@
         <option name="description" value="IUT Nancy Charlemagne - Dosda Clément, Friedrich Louis, Martin Tony, Phu Quoc-Hieu, Steinmetz Loïc" />
         <option name="height" value="600" />
         <option name="htmlPlaceholderId" value="" />
+        <option name="icons">
+          <JavaFxApplicationIcons>
+            <option name="linuxIcon" value="$PROJECT_DIR$/src/assets/img/vaisseau.png" />
+          </JavaFxApplicationIcons>
+        </option>
         <option name="nativeBundle" value="image" />
         <option name="title" value="BackHome" />
         <option name="vendor" value="" />
