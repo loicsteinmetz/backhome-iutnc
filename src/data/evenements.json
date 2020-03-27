@@ -86,7 +86,7 @@
       "A la sortie de la station, vous apercevez un groupe d’hommes criant : \"Cherche guerrier fort pour nous aider à effectuer une quête !\"",
       "Vous vous rapprochez d'eux pour avoir des renseignements sur cette quête.",
       "Le chef du groupe : \"La quête consiste à ramener l’arme d’un grand boss. Celle de Chô Peleux, l'un des cinq boss de cette planète. Si tu y arrives, tu auras droit à une récompense.\"",
-      "Vous acceptez directement la quête ! \nD'une vous n'avez peur de rien et deux vous voulez en savoir plus sur la récompense.\n"
+      "Vous acceptez directement la quête ! \nD'une vous n'avez peur de rien et deux vous voulez en savoir plus sur la récompense."
     ],
     "optionA": "Prendre la porte EST",
     "optionB": "Prendre la porte OUEST",
@@ -173,7 +173,7 @@
       "Vous avez battu Tek Apout, mais aucun objet pour l'enfant. Vous retournez le voir et il vous explique que c'était un test !",
       "Il vous ramène au port. Vous montre un bateau et vous explique que son pendentif est dans ce bateau.",
       "Vous allez vers ce bateau, mais un moussaillon vous interpelle et vous attaque, car il a entendu la conversation que vous avez eu avec l'enfant.",
-      "Moussaillon : \" Vous ! N'y penser pas ! Vous ne passerez pas tant que je suis là ! \" \nDu coup, vous chargez sur le moussaillon pour pouvoir passer !\n"
+      "Moussaillon : \" Vous ! N'y penser pas ! Vous ne passerez pas tant que je suis là ! \" \nDu coup, vous chargez sur le moussaillon pour pouvoir passer !"
     ],
     "idEnnemi": "11",
     "typeEnnemi": "brute",
@@ -463,7 +463,7 @@
       "Vous avez gagné!",
       "Devant-vous, un escalier composé de milliers de marches... Sans attendre, vous montez.",
       "Vous voilà à l'apogée de votre aventure...",
-      "Sur un trône, Noctarion III. Il vous interpelle: \n\"Te voilà enfin Lazarus. Tu es exactement comme je t'avais vu dans ma vision. Savais-tu que récupérer le pouvoir de Morgdrul doit entraîner la réalisation d'une prophétie?\n",
+      "Sur un trône, Noctarion III. Il vous interpelle: \n\"Te voilà enfin Lazarus. Tu es exactement comme je t'avais vu dans ma vision. Savais-tu que récupérer le pouvoir de Morgdrul doit entraîner la réalisation d'une prophétie?",
       "La personne qui se sera emparée de son pouvoir devra faire face à un ennemi pas comme les autres. Un ennemi originaire d'une civilisation très ancienne. S'il parvient à le tuer, alors il sera jusqu'à la fin des temps l'être le plus puissant de l'univers.\"",
       "\"C'est aujourd'hui que je deviendrai cette personne!\""
     ],
